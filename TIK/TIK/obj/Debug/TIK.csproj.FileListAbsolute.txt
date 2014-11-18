@@ -1,0 +1,166 @@
+c:\users\ильназ\documents\visual studio 2013\Projects\TIK\TIK\obj\Debug\TIK.csprojResolveAssemblyReference.cache
+c:\users\ильназ\documents\visual studio 2013\Projects\TIK\TIK\bin\TIK.dll.config
+c:\users\ильназ\documents\visual studio 2013\Projects\TIK\TIK\bin\TIK.dll
+c:\users\ильназ\documents\visual studio 2013\Projects\TIK\TIK\bin\TIK.pdb
+c:\users\ильназ\documents\visual studio 2013\Projects\TIK\TIK\bin\Brio.dll
+c:\users\ильназ\documents\visual studio 2013\Projects\TIK\TIK\bin\EntityFramework.dll
+c:\users\ильназ\documents\visual studio 2013\Projects\TIK\TIK\bin\EntityFramework.SqlServer.dll
+c:\users\ильназ\documents\visual studio 2013\Projects\TIK\TIK\bin\Microsoft.Web.Infrastructure.dll
+c:\users\ильназ\documents\visual studio 2013\Projects\TIK\TIK\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+c:\users\ильназ\documents\visual studio 2013\Projects\TIK\TIK\bin\Newtonsoft.Json.dll
+c:\users\ильназ\documents\visual studio 2013\Projects\TIK\TIK\bin\Ninject.dll
+c:\users\ильназ\documents\visual studio 2013\Projects\TIK\TIK\bin\Ninject.Web.Common.dll
+c:\users\ильназ\documents\visual studio 2013\Projects\TIK\TIK\bin\Ninject.Web.Mvc.dll
+c:\users\ильназ\documents\visual studio 2013\Projects\TIK\TIK\bin\System.Net.Http.Formatting.dll
+c:\users\ильназ\documents\visual studio 2013\Projects\TIK\TIK\bin\System.Web.Helpers.dll
+c:\users\ильназ\documents\visual studio 2013\Projects\TIK\TIK\bin\System.Web.Http.dll
+c:\users\ильназ\documents\visual studio 2013\Projects\TIK\TIK\bin\System.Web.Http.WebHost.dll
+c:\users\ильназ\documents\visual studio 2013\Projects\TIK\TIK\bin\System.Web.Mvc.dll
+c:\users\ильназ\documents\visual studio 2013\Projects\TIK\TIK\bin\System.Web.Razor.dll
+c:\users\ильназ\documents\visual studio 2013\Projects\TIK\TIK\bin\System.Web.WebPages.Deployment.dll
+c:\users\ильназ\documents\visual studio 2013\Projects\TIK\TIK\bin\System.Web.WebPages.dll
+c:\users\ильназ\documents\visual studio 2013\Projects\TIK\TIK\bin\System.Web.WebPages.Razor.dll
+c:\users\ильназ\documents\visual studio 2013\Projects\TIK\TIK\bin\WebActivatorEx.dll
+c:\users\ильназ\documents\visual studio 2013\Projects\TIK\TIK\bin\Brio.pdb
+c:\users\ильназ\documents\visual studio 2013\Projects\TIK\TIK\bin\EntityFramework.xml
+c:\users\ильназ\documents\visual studio 2013\Projects\TIK\TIK\bin\EntityFramework.SqlServer.xml
+c:\users\ильназ\documents\visual studio 2013\Projects\TIK\TIK\bin\Ninject.xml
+c:\users\ильназ\documents\visual studio 2013\Projects\TIK\TIK\bin\Ninject.Web.Common.xml
+c:\users\ильназ\documents\visual studio 2013\Projects\TIK\TIK\bin\Ninject.Web.Mvc.xml
+c:\users\ильназ\documents\visual studio 2013\Projects\TIK\TIK\bin\Newtonsoft.Json.xml
+c:\users\ильназ\documents\visual studio 2013\Projects\TIK\TIK\bin\System.Net.Http.Formatting.xml
+c:\users\ильназ\documents\visual studio 2013\Projects\TIK\TIK\bin\System.Web.Helpers.xml
+c:\users\ильназ\documents\visual studio 2013\Projects\TIK\TIK\bin\System.Web.Http.xml
+c:\users\ильназ\documents\visual studio 2013\Projects\TIK\TIK\bin\System.Web.Http.WebHost.xml
+c:\users\ильназ\documents\visual studio 2013\Projects\TIK\TIK\bin\System.Web.Mvc.xml
+c:\users\ильназ\documents\visual studio 2013\Projects\TIK\TIK\bin\System.Web.Razor.xml
+c:\users\ильназ\documents\visual studio 2013\Projects\TIK\TIK\bin\System.Web.WebPages.xml
+c:\users\ильназ\documents\visual studio 2013\Projects\TIK\TIK\bin\System.Web.WebPages.Deployment.xml
+c:\users\ильназ\documents\visual studio 2013\Projects\TIK\TIK\bin\System.Web.WebPages.Razor.xml
+c:\users\ильназ\documents\visual studio 2013\Projects\TIK\TIK\obj\Debug\TIK.dll
+c:\users\ильназ\documents\visual studio 2013\Projects\TIK\TIK\obj\Debug\TIK.pdb
+C:\Users\Ильназ\Desktop\Projects\TIK\TIK\obj\Debug\TIK.csprojResolveAssemblyReference.cache
+C:\Users\Ильназ\Desktop\Projects\TIK\TIK\obj\Debug\TIK.dll
+C:\Users\Ильназ\Desktop\Projects\TIK\TIK\obj\Debug\TIK.pdb
+C:\Users\Ильназ\Desktop\Projects\TIK\TIK\bin\TIK.dll.config
+C:\Users\Ильназ\Desktop\Projects\TIK\TIK\bin\TIK.dll
+C:\Users\Ильназ\Desktop\Projects\TIK\TIK\bin\TIK.pdb
+C:\Users\Ильназ\Desktop\Projects\TIK\TIK\bin\Brio.dll
+C:\Users\Ильназ\Desktop\Projects\TIK\TIK\bin\EntityFramework.dll
+C:\Users\Ильназ\Desktop\Projects\TIK\TIK\bin\EntityFramework.SqlServer.dll
+C:\Users\Ильназ\Desktop\Projects\TIK\TIK\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Ильназ\Desktop\Projects\TIK\TIK\bin\Newtonsoft.Json.dll
+C:\Users\Ильназ\Desktop\Projects\TIK\TIK\bin\Ninject.dll
+C:\Users\Ильназ\Desktop\Projects\TIK\TIK\bin\Ninject.Web.Common.dll
+C:\Users\Ильназ\Desktop\Projects\TIK\TIK\bin\Ninject.Web.Mvc.dll
+C:\Users\Ильназ\Desktop\Projects\TIK\TIK\bin\System.Net.Http.Formatting.dll
+C:\Users\Ильназ\Desktop\Projects\TIK\TIK\bin\System.Web.Helpers.dll
+C:\Users\Ильназ\Desktop\Projects\TIK\TIK\bin\System.Web.Http.dll
+C:\Users\Ильназ\Desktop\Projects\TIK\TIK\bin\System.Web.Http.WebHost.dll
+C:\Users\Ильназ\Desktop\Projects\TIK\TIK\bin\System.Web.Mvc.dll
+C:\Users\Ильназ\Desktop\Projects\TIK\TIK\bin\System.Web.Razor.dll
+C:\Users\Ильназ\Desktop\Projects\TIK\TIK\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Ильназ\Desktop\Projects\TIK\TIK\bin\System.Web.WebPages.dll
+C:\Users\Ильназ\Desktop\Projects\TIK\TIK\bin\System.Web.WebPages.Razor.dll
+C:\Users\Ильназ\Desktop\Projects\TIK\TIK\bin\WebActivatorEx.dll
+C:\Users\Ильназ\Desktop\Projects\TIK\TIK\bin\Brio.pdb
+C:\Users\Ильназ\Desktop\Projects\TIK\TIK\bin\EntityFramework.xml
+C:\Users\Ильназ\Desktop\Projects\TIK\TIK\bin\EntityFramework.SqlServer.xml
+C:\Users\Ильназ\Desktop\Projects\TIK\TIK\bin\Ninject.xml
+C:\Users\Ильназ\Desktop\Projects\TIK\TIK\bin\Ninject.Web.Common.xml
+C:\Users\Ильназ\Desktop\Projects\TIK\TIK\bin\Ninject.Web.Mvc.xml
+C:\Users\Ильназ\Desktop\Projects\TIK\TIK\bin\Microsoft.Web.Infrastructure.xml
+C:\Users\Ильназ\Desktop\Projects\TIK\TIK\bin\System.Net.Http.Formatting.xml
+C:\Users\Ильназ\Desktop\Projects\TIK\TIK\bin\System.Web.Helpers.xml
+C:\Users\Ильназ\Desktop\Projects\TIK\TIK\bin\System.Web.Http.xml
+C:\Users\Ильназ\Desktop\Projects\TIK\TIK\bin\System.Web.Http.WebHost.xml
+C:\Users\Ильназ\Desktop\Projects\TIK\TIK\bin\System.Web.Mvc.xml
+C:\Users\Ильназ\Desktop\Projects\TIK\TIK\bin\System.Web.Razor.xml
+C:\Users\Ильназ\Desktop\Projects\TIK\TIK\bin\System.Web.WebPages.xml
+C:\Users\Ильназ\Desktop\Projects\TIK\TIK\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Ильназ\Desktop\Projects\TIK\TIK\bin\System.Web.WebPages.Razor.xml
+D:\Actpromo\TIK\TIK\bin\TIK.dll
+D:\Actpromo\TIK\TIK\bin\TIK.pdb
+D:\Actpromo\TIK\TIK\bin\Brio.dll
+D:\Actpromo\TIK\TIK\bin\EntityFramework.dll
+D:\Actpromo\TIK\TIK\bin\EntityFramework.SqlServer.dll
+D:\Actpromo\TIK\TIK\bin\Microsoft.Web.Infrastructure.dll
+D:\Actpromo\TIK\TIK\bin\Ninject.dll
+D:\Actpromo\TIK\TIK\bin\Ninject.Web.Common.dll
+D:\Actpromo\TIK\TIK\bin\Ninject.Web.Mvc.dll
+D:\Actpromo\TIK\TIK\bin\System.Net.Http.Formatting.dll
+D:\Actpromo\TIK\TIK\bin\System.Web.Helpers.dll
+D:\Actpromo\TIK\TIK\bin\System.Web.Http.dll
+D:\Actpromo\TIK\TIK\bin\System.Web.Http.WebHost.dll
+D:\Actpromo\TIK\TIK\bin\System.Web.Mvc.dll
+D:\Actpromo\TIK\TIK\bin\System.Web.Razor.dll
+D:\Actpromo\TIK\TIK\bin\System.Web.WebPages.Deployment.dll
+D:\Actpromo\TIK\TIK\bin\System.Web.WebPages.dll
+D:\Actpromo\TIK\TIK\bin\System.Web.WebPages.Razor.dll
+D:\Actpromo\TIK\TIK\bin\WebActivatorEx.dll
+D:\Actpromo\TIK\TIK\bin\Brio.pdb
+D:\Actpromo\TIK\TIK\bin\EntityFramework.xml
+D:\Actpromo\TIK\TIK\bin\EntityFramework.SqlServer.xml
+D:\Actpromo\TIK\TIK\bin\Ninject.xml
+D:\Actpromo\TIK\TIK\bin\Ninject.Web.Common.xml
+D:\Actpromo\TIK\TIK\bin\Ninject.Web.Mvc.xml
+D:\Actpromo\TIK\TIK\bin\Microsoft.Web.Infrastructure.xml
+D:\Actpromo\TIK\TIK\bin\System.Net.Http.Formatting.xml
+D:\Actpromo\TIK\TIK\bin\System.Web.Helpers.xml
+D:\Actpromo\TIK\TIK\bin\System.Web.Http.xml
+D:\Actpromo\TIK\TIK\bin\System.Web.Http.WebHost.xml
+D:\Actpromo\TIK\TIK\bin\System.Web.Mvc.xml
+D:\Actpromo\TIK\TIK\bin\System.Web.Razor.xml
+D:\Actpromo\TIK\TIK\bin\System.Web.WebPages.xml
+D:\Actpromo\TIK\TIK\bin\System.Web.WebPages.Deployment.xml
+D:\Actpromo\TIK\TIK\bin\System.Web.WebPages.Razor.xml
+D:\Actpromo\TIK\TIK\bin\ru\System.Net.Http.Formatting.resources.dll
+D:\Actpromo\TIK\TIK\bin\ru\System.Web.Helpers.resources.dll
+D:\Actpromo\TIK\TIK\bin\ru\System.Web.Http.resources.dll
+D:\Actpromo\TIK\TIK\bin\ru\System.Web.Http.WebHost.resources.dll
+D:\Actpromo\TIK\TIK\bin\ru\System.Web.Mvc.resources.dll
+D:\Actpromo\TIK\TIK\bin\ru\System.Web.Razor.resources.dll
+D:\Actpromo\TIK\TIK\bin\ru\System.Web.WebPages.resources.dll
+D:\Actpromo\TIK\TIK\bin\ru\System.Web.WebPages.Deployment.resources.dll
+D:\Actpromo\TIK\TIK\bin\ru\System.Web.WebPages.Razor.resources.dll
+D:\Actpromo\TIK\TIK\obj\Debug\TIK.csprojResolveAssemblyReference.cache
+D:\Actpromo\TIK\TIK\obj\Debug\TIK.dll
+D:\Actpromo\TIK\TIK\obj\Debug\TIK.pdb
+D:\ActualPromotion\TIK\TIK\bin\TIK.dll
+D:\ActualPromotion\TIK\TIK\bin\TIK.pdb
+D:\ActualPromotion\TIK\TIK\bin\Brio.dll
+D:\ActualPromotion\TIK\TIK\bin\EntityFramework.dll
+D:\ActualPromotion\TIK\TIK\bin\EntityFramework.SqlServer.dll
+D:\ActualPromotion\TIK\TIK\bin\Microsoft.Web.Infrastructure.dll
+D:\ActualPromotion\TIK\TIK\bin\Ninject.dll
+D:\ActualPromotion\TIK\TIK\bin\Ninject.Web.Common.dll
+D:\ActualPromotion\TIK\TIK\bin\Ninject.Web.Mvc.dll
+D:\ActualPromotion\TIK\TIK\bin\System.Net.Http.Formatting.dll
+D:\ActualPromotion\TIK\TIK\bin\System.Web.Helpers.dll
+D:\ActualPromotion\TIK\TIK\bin\System.Web.Http.dll
+D:\ActualPromotion\TIK\TIK\bin\System.Web.Http.WebHost.dll
+D:\ActualPromotion\TIK\TIK\bin\System.Web.Mvc.dll
+D:\ActualPromotion\TIK\TIK\bin\System.Web.Razor.dll
+D:\ActualPromotion\TIK\TIK\bin\System.Web.WebPages.Deployment.dll
+D:\ActualPromotion\TIK\TIK\bin\System.Web.WebPages.dll
+D:\ActualPromotion\TIK\TIK\bin\System.Web.WebPages.Razor.dll
+D:\ActualPromotion\TIK\TIK\bin\WebActivatorEx.dll
+D:\ActualPromotion\TIK\TIK\bin\Brio.pdb
+D:\ActualPromotion\TIK\TIK\bin\EntityFramework.xml
+D:\ActualPromotion\TIK\TIK\bin\EntityFramework.SqlServer.xml
+D:\ActualPromotion\TIK\TIK\bin\Ninject.xml
+D:\ActualPromotion\TIK\TIK\bin\Ninject.Web.Common.xml
+D:\ActualPromotion\TIK\TIK\bin\Ninject.Web.Mvc.xml
+D:\ActualPromotion\TIK\TIK\bin\Microsoft.Web.Infrastructure.xml
+D:\ActualPromotion\TIK\TIK\bin\System.Net.Http.Formatting.xml
+D:\ActualPromotion\TIK\TIK\bin\System.Web.Helpers.xml
+D:\ActualPromotion\TIK\TIK\bin\System.Web.Http.xml
+D:\ActualPromotion\TIK\TIK\bin\System.Web.Http.WebHost.xml
+D:\ActualPromotion\TIK\TIK\bin\System.Web.Mvc.xml
+D:\ActualPromotion\TIK\TIK\bin\System.Web.Razor.xml
+D:\ActualPromotion\TIK\TIK\bin\System.Web.WebPages.xml
+D:\ActualPromotion\TIK\TIK\bin\System.Web.WebPages.Deployment.xml
+D:\ActualPromotion\TIK\TIK\bin\System.Web.WebPages.Razor.xml
+D:\ActualPromotion\TIK\TIK\obj\Debug\TIK.csprojResolveAssemblyReference.cache
+D:\ActualPromotion\TIK\TIK\obj\Debug\TIK.dll
+D:\ActualPromotion\TIK\TIK\obj\Debug\TIK.pdb

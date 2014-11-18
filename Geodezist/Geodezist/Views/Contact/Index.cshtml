@@ -1,0 +1,120 @@
+﻿@model Brio.Models.SendFeedback
+@{
+    ViewBag.Title = "КОНТАКТЫ";
+    Layout = "~/Views/Layouts/LayoutDefault.cshtml";
+}
+
+@section styles{
+    <style>
+        .page_logo {
+            background: url('../Content/images/contacts.png') no-repeat 0 0;
+            background-size: contain;
+        }
+        </style>
+    } 
+
+<div class="container run1">
+    <div data-id="0" class="slider"></div>
+</div>
+<div class="page_logo_container"><div class="page_logo"></div></div>
+
+<div class="block_ins">
+    <div class="title">
+        @ViewBag.Title
+    </div>
+    <article class="page-content">
+        <div class="articles">
+            <div class="contact-container">
+                <div class="adress">
+                    <div class="adress1">
+                        @{var contacts = ViewBag.Contacts as Brio.Models.Company;}
+                        @contacts.Adress,<br />
+                        @contacts.Postcode, а/я @contacts.POBox
+                    </div>
+                    <div class="telephone">
+                        тел./факс: @contacts.Phone,<br />
+                        @contacts.Phone2
+                    </div>
+                </div>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2243.6622345521087!2d49.1254735!3d55.78173789999989!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x415ead060b262e81%3A0xabf4994e2a66837f!2z0KHQv9Cw0YDRgtCw0LrQvtCy0YHQutCw0Y8g0YPQuy4sIDIsINCa0LDQt9Cw0L3RjCwg0KDQtdGB0L_Rg9Cx0LvQuNC60LAg0KLQsNGC0LDRgNGB0YLQsNC9LCA0MjAwMDA!5e0!3m2!1sru!2sru!4v1410433593720" height="220" frameborder="0" style="border:0; width:100%"></iframe>
+            </div>
+        </div>
+        <div class="brio-tasks">
+            @using (Html.BeginForm("SendFeedback", "Contact", FormMethod.Post, new { @class = "pure-form", enctype = "multipart/form-data" }))
+            {
+                <fieldset id="feedback_form" style="position: absolute; margin-left: 10%; width: 80%;">
+                    @Html.ValidationSummary(true)
+                    <p>@ViewBag.Message</p>
+                    <div class="feedback_title">ОБРАТНАЯ СВЯЗЬ</div>
+                    @Html.TextBoxFor(model => model.Name, new { placeholder = "Имя" })
+                    @Html.TextBoxFor(model => model.Email, new { placeholder = "E-mail" })
+                    @Html.TextBoxFor(model => model.Phone, new { placeholder = "Телефон" })
+                    @Html.TextAreaFor(model => model.Message, 4, 22, new { placeholder = "Текст" })
+                    <button class="button-error pure-button feedback">ОТПРАВИТЬ</button>
+                </fieldset>
+            }
+        </div>
+    </article>
+</div>
+
+<script>
+    (function () {
+        $(".pure-button.feedback").bind("click", function(event){
+            event.preventDefault();
+            var that = this;
+            var isDataValid = true;
+            $(that).parents("#feedback_form").find("input, textarea").each(function () {
+                if ($(this).val() == "") {
+                    isDataValid = false;
+                    $(this).addClass("error");
+                }
+                else {
+                    $(this).removeClass("error");
+                }
+            });
+
+            if (!validateEmail($("input[name='Email']").val())) {
+                isDataValid = false;
+                $("#feedback_form input[name='Email']").addClass("error");
+            }
+            else {
+                $("#feedback_form input[name='Email']").removeClass("error");
+            }
+
+            if (isDataValid) {
+                postFeedback();
+            }
+        });
+    })();
+
+    function validateEmail(email) { 
+        var re = /^(([^<>()[\]\\.,;:\s@@\"]+(\.[^<>()[\]\\.,;:\s@@\"]+)*)|(\".+\"))@@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return re.test(email);
+    }
+
+    function postFeedback() {
+        $.ajax({
+            type: 'POST',
+            dataType: 'json',
+            url: "/Contact/SendFeedback",
+            data: $("#feedback_form").serialize(),
+            success: function (response) {
+                if (response.success){
+                    $("#feedback_form").find("input, textarea").each(function(){
+                        $(this).val("");
+                    });
+                }
+                $(".pure-button.feedback").attr("disabled", true).text(response.message);
+                setTimeout(function(){
+                    $(".pure-button.feedback").attr("disabled", false).text("ОТПРАВИТЬ");
+                }, 3000);
+            },
+            error: function (xhr, ajaxOptions, thrownError) {
+                console.log("request failed");
+            },
+            processData: false,
+            async: false
+        });
+    }
+</script>
+

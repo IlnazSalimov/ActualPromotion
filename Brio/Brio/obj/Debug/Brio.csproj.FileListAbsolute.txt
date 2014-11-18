@@ -1,0 +1,104 @@
+c:\users\ильназ\documents\visual studio 2013\Projects\Brio\Brio\bin\Debug\Brio.dll.config
+c:\users\ильназ\documents\visual studio 2013\Projects\Brio\Brio\bin\Debug\Brio.dll
+c:\users\ильназ\documents\visual studio 2013\Projects\Brio\Brio\bin\Debug\Brio.pdb
+c:\users\ильназ\documents\visual studio 2013\Projects\Brio\Brio\bin\Debug\EntityFramework.dll
+c:\users\ильназ\documents\visual studio 2013\Projects\Brio\Brio\bin\Debug\EntityFramework.SqlServer.dll
+c:\users\ильназ\documents\visual studio 2013\Projects\Brio\Brio\bin\Debug\Microsoft.Web.Infrastructure.dll
+c:\users\ильназ\documents\visual studio 2013\Projects\Brio\Brio\bin\Debug\Ninject.dll
+c:\users\ильназ\documents\visual studio 2013\Projects\Brio\Brio\bin\Debug\Ninject.Web.Common.dll
+c:\users\ильназ\documents\visual studio 2013\Projects\Brio\Brio\bin\Debug\Ninject.Web.Mvc.dll
+c:\users\ильназ\documents\visual studio 2013\Projects\Brio\Brio\bin\Debug\System.Web.Http.dll
+c:\users\ильназ\documents\visual studio 2013\Projects\Brio\Brio\bin\Debug\System.Web.Http.WebHost.dll
+c:\users\ильназ\documents\visual studio 2013\Projects\Brio\Brio\bin\Debug\WebActivatorEx.dll
+c:\users\ильназ\documents\visual studio 2013\Projects\Brio\Brio\bin\Debug\System.Net.Http.Formatting.dll
+c:\users\ильназ\documents\visual studio 2013\Projects\Brio\Brio\bin\Debug\Newtonsoft.Json.dll
+c:\users\ильназ\documents\visual studio 2013\Projects\Brio\Brio\bin\Debug\EntityFramework.xml
+c:\users\ильназ\documents\visual studio 2013\Projects\Brio\Brio\bin\Debug\EntityFramework.SqlServer.xml
+c:\users\ильназ\documents\visual studio 2013\Projects\Brio\Brio\bin\Debug\Ninject.xml
+c:\users\ильназ\documents\visual studio 2013\Projects\Brio\Brio\bin\Debug\Ninject.Web.Common.xml
+c:\users\ильназ\documents\visual studio 2013\Projects\Brio\Brio\bin\Debug\Ninject.Web.Mvc.xml
+c:\users\ильназ\documents\visual studio 2013\Projects\Brio\Brio\bin\Debug\System.Web.Http.xml
+c:\users\ильназ\documents\visual studio 2013\Projects\Brio\Brio\bin\Debug\System.Web.Http.WebHost.xml
+c:\users\ильназ\documents\visual studio 2013\Projects\Brio\Brio\bin\Debug\System.Net.Http.Formatting.xml
+c:\users\ильназ\documents\visual studio 2013\Projects\Brio\Brio\obj\Debug\Brio.dll
+c:\users\ильназ\documents\visual studio 2013\Projects\Brio\Brio\obj\Debug\Brio.pdb
+C:\Users\Ильназ\Documents\Visual Studio 2013\Projects\Brio\Brio\obj\Debug\Brio.csprojResolveAssemblyReference.cache
+C:\Users\Ильназ\Desktop\Projects\Brio\Brio\bin\Debug\Brio.dll.config
+C:\Users\Ильназ\Desktop\Projects\Brio\Brio\bin\Debug\Brio.dll
+C:\Users\Ильназ\Desktop\Projects\Brio\Brio\bin\Debug\Brio.pdb
+C:\Users\Ильназ\Desktop\Projects\Brio\Brio\bin\Debug\EntityFramework.dll
+C:\Users\Ильназ\Desktop\Projects\Brio\Brio\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Ильназ\Desktop\Projects\Brio\Brio\bin\Debug\Microsoft.Web.Infrastructure.dll
+C:\Users\Ильназ\Desktop\Projects\Brio\Brio\bin\Debug\Ninject.dll
+C:\Users\Ильназ\Desktop\Projects\Brio\Brio\bin\Debug\Ninject.Web.Common.dll
+C:\Users\Ильназ\Desktop\Projects\Brio\Brio\bin\Debug\Ninject.Web.Mvc.dll
+C:\Users\Ильназ\Desktop\Projects\Brio\Brio\bin\Debug\System.Web.Http.dll
+C:\Users\Ильназ\Desktop\Projects\Brio\Brio\bin\Debug\System.Web.Http.WebHost.dll
+C:\Users\Ильназ\Desktop\Projects\Brio\Brio\bin\Debug\WebActivatorEx.dll
+C:\Users\Ильназ\Desktop\Projects\Brio\Brio\bin\Debug\System.Net.Http.Formatting.dll
+C:\Users\Ильназ\Desktop\Projects\Brio\Brio\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Ильназ\Desktop\Projects\Brio\Brio\bin\Debug\EntityFramework.xml
+C:\Users\Ильназ\Desktop\Projects\Brio\Brio\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Ильназ\Desktop\Projects\Brio\Brio\bin\Debug\Microsoft.Web.Infrastructure.xml
+C:\Users\Ильназ\Desktop\Projects\Brio\Brio\bin\Debug\Ninject.xml
+C:\Users\Ильназ\Desktop\Projects\Brio\Brio\bin\Debug\Ninject.Web.Common.xml
+C:\Users\Ильназ\Desktop\Projects\Brio\Brio\bin\Debug\Ninject.Web.Mvc.xml
+C:\Users\Ильназ\Desktop\Projects\Brio\Brio\bin\Debug\System.Web.Http.xml
+C:\Users\Ильназ\Desktop\Projects\Brio\Brio\bin\Debug\System.Web.Http.WebHost.xml
+C:\Users\Ильназ\Desktop\Projects\Brio\Brio\bin\Debug\System.Net.Http.Formatting.xml
+C:\Users\Ильназ\Desktop\Projects\Brio\Brio\obj\Debug\Brio.csprojResolveAssemblyReference.cache
+C:\Users\Ильназ\Desktop\Projects\Brio\Brio\obj\Debug\Brio.dll
+C:\Users\Ильназ\Desktop\Projects\Brio\Brio\obj\Debug\Brio.pdb
+D:\Actpromo\Brio\Brio\bin\Debug\Brio.dll.config
+D:\Actpromo\Brio\Brio\bin\Debug\Brio.dll
+D:\Actpromo\Brio\Brio\bin\Debug\Brio.pdb
+D:\Actpromo\Brio\Brio\bin\Debug\EntityFramework.dll
+D:\Actpromo\Brio\Brio\bin\Debug\EntityFramework.SqlServer.dll
+D:\Actpromo\Brio\Brio\bin\Debug\Microsoft.Web.Infrastructure.dll
+D:\Actpromo\Brio\Brio\bin\Debug\Ninject.dll
+D:\Actpromo\Brio\Brio\bin\Debug\Ninject.Web.Common.dll
+D:\Actpromo\Brio\Brio\bin\Debug\Ninject.Web.Mvc.dll
+D:\Actpromo\Brio\Brio\bin\Debug\System.Web.Http.dll
+D:\Actpromo\Brio\Brio\bin\Debug\System.Web.Http.WebHost.dll
+D:\Actpromo\Brio\Brio\bin\Debug\WebActivatorEx.dll
+D:\Actpromo\Brio\Brio\bin\Debug\System.Net.Http.Formatting.dll
+D:\Actpromo\Brio\Brio\bin\Debug\EntityFramework.xml
+D:\Actpromo\Brio\Brio\bin\Debug\EntityFramework.SqlServer.xml
+D:\Actpromo\Brio\Brio\bin\Debug\Microsoft.Web.Infrastructure.xml
+D:\Actpromo\Brio\Brio\bin\Debug\Ninject.xml
+D:\Actpromo\Brio\Brio\bin\Debug\Ninject.Web.Common.xml
+D:\Actpromo\Brio\Brio\bin\Debug\Ninject.Web.Mvc.xml
+D:\Actpromo\Brio\Brio\bin\Debug\System.Web.Http.xml
+D:\Actpromo\Brio\Brio\bin\Debug\System.Web.Http.WebHost.xml
+D:\Actpromo\Brio\Brio\bin\Debug\System.Net.Http.Formatting.xml
+D:\Actpromo\Brio\Brio\bin\Debug\ru\System.Web.Http.resources.dll
+D:\Actpromo\Brio\Brio\bin\Debug\ru\System.Web.Http.WebHost.resources.dll
+D:\Actpromo\Brio\Brio\bin\Debug\ru\System.Net.Http.Formatting.resources.dll
+D:\Actpromo\Brio\Brio\obj\Debug\Brio.csprojResolveAssemblyReference.cache
+D:\Actpromo\Brio\Brio\obj\Debug\Brio.dll
+D:\Actpromo\Brio\Brio\obj\Debug\Brio.pdb
+D:\ActualPromotion\Brio\Brio\bin\Debug\Brio.dll.config
+D:\ActualPromotion\Brio\Brio\bin\Debug\Brio.dll
+D:\ActualPromotion\Brio\Brio\bin\Debug\Brio.pdb
+D:\ActualPromotion\Brio\Brio\bin\Debug\EntityFramework.dll
+D:\ActualPromotion\Brio\Brio\bin\Debug\EntityFramework.SqlServer.dll
+D:\ActualPromotion\Brio\Brio\bin\Debug\Microsoft.Web.Infrastructure.dll
+D:\ActualPromotion\Brio\Brio\bin\Debug\Ninject.dll
+D:\ActualPromotion\Brio\Brio\bin\Debug\Ninject.Web.Common.dll
+D:\ActualPromotion\Brio\Brio\bin\Debug\Ninject.Web.Mvc.dll
+D:\ActualPromotion\Brio\Brio\bin\Debug\System.Web.Http.dll
+D:\ActualPromotion\Brio\Brio\bin\Debug\System.Web.Http.WebHost.dll
+D:\ActualPromotion\Brio\Brio\bin\Debug\WebActivatorEx.dll
+D:\ActualPromotion\Brio\Brio\bin\Debug\System.Net.Http.Formatting.dll
+D:\ActualPromotion\Brio\Brio\bin\Debug\EntityFramework.xml
+D:\ActualPromotion\Brio\Brio\bin\Debug\EntityFramework.SqlServer.xml
+D:\ActualPromotion\Brio\Brio\bin\Debug\Microsoft.Web.Infrastructure.xml
+D:\ActualPromotion\Brio\Brio\bin\Debug\Ninject.xml
+D:\ActualPromotion\Brio\Brio\bin\Debug\Ninject.Web.Common.xml
+D:\ActualPromotion\Brio\Brio\bin\Debug\Ninject.Web.Mvc.xml
+D:\ActualPromotion\Brio\Brio\bin\Debug\System.Web.Http.xml
+D:\ActualPromotion\Brio\Brio\bin\Debug\System.Web.Http.WebHost.xml
+D:\ActualPromotion\Brio\Brio\bin\Debug\System.Net.Http.Formatting.xml
+D:\ActualPromotion\Brio\Brio\obj\Debug\Brio.csprojResolveAssemblyReference.cache
+D:\ActualPromotion\Brio\Brio\obj\Debug\Brio.dll
+D:\ActualPromotion\Brio\Brio\obj\Debug\Brio.pdb

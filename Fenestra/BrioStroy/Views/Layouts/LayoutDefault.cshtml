@@ -1,0 +1,84 @@
+﻿@using BrioStroy;
+<!doctype html>
+<html>
+<head>
+    <title>ФЕНЕСТРА</title>
+    <meta charset="utf-8" />
+
+    @RenderSection("styles", false)
+
+    <script src="@Url.Content("~/Content/js/jquery.min.js")"></script>
+
+    <!-- styles needed by jScrollPane -->
+    <link type="text/css" href="@Url.Content("~/Content/css/jquery.jscrollpane.css")" rel="stylesheet" media="all" />
+
+    <!-- the mousewheel plugin - optional to provide mousewheel support -->
+    <script type="text/javascript" src="@Url.Content("~/Content/js/jquery.mousewheel.js")"></script>
+
+    <!-- the jScrollPane script -->
+    <script type="text/javascript" src="@Url.Content("~/Content/js/jquery.jscrollpane.js")"></script>
+
+    <link rel="stylesheet" href="@Url.Content("~/Content/css/reset.css")">
+    <link rel="stylesheet" href="@Url.Content("~/Content/css/forms.css")">
+    <link rel="stylesheet" href="@Url.Content("~/Content/css/buttons.css")">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="@Url.Content("~/Content/css/style.css")">
+    <link rel="stylesheet" href="@Url.Content("~/Content/css/specific-styles.css")">
+
+    <script src="@Url.Content("~/Content/js/slider.js")"></script>
+    <script src="@Url.Content("~/Content/js/init.js")"></script>
+</head>
+<body>
+    <div class="wrapper">
+        <div id="header">
+            <div class="menu">
+                <ul>
+                    <li>
+                        @Html.ActionLink("ГЛАВНАЯ", "Index", "Home", new { }, new { @class = @Html.IsSelected("Home", "Index") })
+                    </li>
+                    <li>
+                        @Html.ActionLink("О КОМПАНИИ", "About", "Articles", new { }, new { @class = @Html.IsSelected("Articles", "About") })
+                    </li>
+                    <li>
+                        @Html.ActionLink("ПОРТФОЛИО", "Index", "Portfolio", new { }, new { @class = "price " + @Html.IsSelected("Portfolio", "Index") })
+                    </li>
+                    <li>
+                        <a href="/" class="logo">
+                            <div class="loupe"></div>
+                        </a>
+                    </li>
+                    <li>
+                        @Html.ActionLink("ДОКУМЕНТЫ", "GetAll", "Document", new {}, new { @class = @Html.IsSelected("Document", "GetAll") })
+                    </li>
+                    <li>
+                        @Html.ActionLink("ОТЗЫВЫ", "GetAll", "Review", new { }, new { @class = @Html.IsSelected("Review", "GetAll") })
+                    </li>
+                    <li>
+                        @Html.ActionLink("КОНТАКТЫ", "Index", "Contact", new { }, new { @class = "price " + @Html.IsSelected("Contact", "Index") })
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <section class="content">
+            @if (!User.Identity.IsAuthenticated)
+            {
+                <button class="button-error pure-button login-button" onclick="location.href = '/Account/Login'">ВОЙТИ</button>
+            }
+            else
+            {
+                <button class="button-error pure-button login-button" onclick="location.href = '/Account/Logout'">ВЫЙТИ</button>
+            }
+            @RenderBody()
+        </section>
+        <footer id="footer">
+            <div class="bottom-logo">
+                БРИО
+                <div class="company">
+                    ФЕНЕСТРА
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

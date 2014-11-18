@@ -1,0 +1,121 @@
+c:\users\ильназ\documents\visual studio 2013\Projects\Geodezist\Geodezist\obj\Debug\Geodezist.csprojResolveAssemblyReference.cache
+c:\users\ильназ\documents\visual studio 2013\Projects\Geodezist\Geodezist\bin\Geodezist.dll.config
+c:\users\ильназ\documents\visual studio 2013\Projects\Geodezist\Geodezist\bin\Geodezist.dll
+c:\users\ильназ\documents\visual studio 2013\Projects\Geodezist\Geodezist\bin\Geodezist.pdb
+c:\users\ильназ\documents\visual studio 2013\Projects\Geodezist\Geodezist\bin\Brio.dll
+c:\users\ильназ\documents\visual studio 2013\Projects\Geodezist\Geodezist\bin\EntityFramework.dll
+c:\users\ильназ\documents\visual studio 2013\Projects\Geodezist\Geodezist\bin\EntityFramework.SqlServer.dll
+c:\users\ильназ\documents\visual studio 2013\Projects\Geodezist\Geodezist\bin\Microsoft.Web.Infrastructure.dll
+c:\users\ильназ\documents\visual studio 2013\Projects\Geodezist\Geodezist\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+c:\users\ильназ\documents\visual studio 2013\Projects\Geodezist\Geodezist\bin\Newtonsoft.Json.dll
+c:\users\ильназ\documents\visual studio 2013\Projects\Geodezist\Geodezist\bin\Ninject.dll
+c:\users\ильназ\documents\visual studio 2013\Projects\Geodezist\Geodezist\bin\Ninject.Web.Common.dll
+c:\users\ильназ\documents\visual studio 2013\Projects\Geodezist\Geodezist\bin\Ninject.Web.Mvc.dll
+c:\users\ильназ\documents\visual studio 2013\Projects\Geodezist\Geodezist\bin\System.Net.Http.Formatting.dll
+c:\users\ильназ\documents\visual studio 2013\Projects\Geodezist\Geodezist\bin\System.Web.Helpers.dll
+c:\users\ильназ\documents\visual studio 2013\Projects\Geodezist\Geodezist\bin\System.Web.Http.dll
+c:\users\ильназ\documents\visual studio 2013\Projects\Geodezist\Geodezist\bin\System.Web.Http.WebHost.dll
+c:\users\ильназ\documents\visual studio 2013\Projects\Geodezist\Geodezist\bin\System.Web.Mvc.dll
+c:\users\ильназ\documents\visual studio 2013\Projects\Geodezist\Geodezist\bin\System.Web.Razor.dll
+c:\users\ильназ\documents\visual studio 2013\Projects\Geodezist\Geodezist\bin\System.Web.WebPages.Deployment.dll
+c:\users\ильназ\documents\visual studio 2013\Projects\Geodezist\Geodezist\bin\System.Web.WebPages.dll
+c:\users\ильназ\documents\visual studio 2013\Projects\Geodezist\Geodezist\bin\System.Web.WebPages.Razor.dll
+c:\users\ильназ\documents\visual studio 2013\Projects\Geodezist\Geodezist\bin\WebActivatorEx.dll
+c:\users\ильназ\documents\visual studio 2013\Projects\Geodezist\Geodezist\bin\Brio.pdb
+c:\users\ильназ\documents\visual studio 2013\Projects\Geodezist\Geodezist\bin\EntityFramework.xml
+c:\users\ильназ\documents\visual studio 2013\Projects\Geodezist\Geodezist\bin\EntityFramework.SqlServer.xml
+c:\users\ильназ\documents\visual studio 2013\Projects\Geodezist\Geodezist\bin\Ninject.xml
+c:\users\ильназ\documents\visual studio 2013\Projects\Geodezist\Geodezist\bin\Ninject.Web.Common.xml
+c:\users\ильназ\documents\visual studio 2013\Projects\Geodezist\Geodezist\bin\Ninject.Web.Mvc.xml
+c:\users\ильназ\documents\visual studio 2013\Projects\Geodezist\Geodezist\bin\Newtonsoft.Json.xml
+c:\users\ильназ\documents\visual studio 2013\Projects\Geodezist\Geodezist\bin\System.Net.Http.Formatting.xml
+c:\users\ильназ\documents\visual studio 2013\Projects\Geodezist\Geodezist\bin\System.Web.Helpers.xml
+c:\users\ильназ\documents\visual studio 2013\Projects\Geodezist\Geodezist\bin\System.Web.Http.xml
+c:\users\ильназ\documents\visual studio 2013\Projects\Geodezist\Geodezist\bin\System.Web.Http.WebHost.xml
+c:\users\ильназ\documents\visual studio 2013\Projects\Geodezist\Geodezist\bin\System.Web.Mvc.xml
+c:\users\ильназ\documents\visual studio 2013\Projects\Geodezist\Geodezist\bin\System.Web.Razor.xml
+c:\users\ильназ\documents\visual studio 2013\Projects\Geodezist\Geodezist\bin\System.Web.WebPages.xml
+c:\users\ильназ\documents\visual studio 2013\Projects\Geodezist\Geodezist\bin\System.Web.WebPages.Deployment.xml
+c:\users\ильназ\documents\visual studio 2013\Projects\Geodezist\Geodezist\bin\System.Web.WebPages.Razor.xml
+c:\users\ильназ\documents\visual studio 2013\Projects\Geodezist\Geodezist\obj\Debug\Geodezist.dll
+c:\users\ильназ\documents\visual studio 2013\Projects\Geodezist\Geodezist\obj\Debug\Geodezist.pdb
+D:\Actpromo\Geodezist\Geodezist\bin\Geodezist.dll
+D:\Actpromo\Geodezist\Geodezist\bin\Geodezist.pdb
+D:\Actpromo\Geodezist\Geodezist\bin\Brio.dll
+D:\Actpromo\Geodezist\Geodezist\bin\EntityFramework.dll
+D:\Actpromo\Geodezist\Geodezist\bin\EntityFramework.SqlServer.dll
+D:\Actpromo\Geodezist\Geodezist\bin\Microsoft.Web.Infrastructure.dll
+D:\Actpromo\Geodezist\Geodezist\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+D:\Actpromo\Geodezist\Geodezist\bin\Newtonsoft.Json.dll
+D:\Actpromo\Geodezist\Geodezist\bin\Ninject.dll
+D:\Actpromo\Geodezist\Geodezist\bin\Ninject.Web.Common.dll
+D:\Actpromo\Geodezist\Geodezist\bin\Ninject.Web.Mvc.dll
+D:\Actpromo\Geodezist\Geodezist\bin\System.Net.Http.Formatting.dll
+D:\Actpromo\Geodezist\Geodezist\bin\System.Web.Helpers.dll
+D:\Actpromo\Geodezist\Geodezist\bin\System.Web.Http.dll
+D:\Actpromo\Geodezist\Geodezist\bin\System.Web.Http.WebHost.dll
+D:\Actpromo\Geodezist\Geodezist\bin\System.Web.Mvc.dll
+D:\Actpromo\Geodezist\Geodezist\bin\System.Web.Razor.dll
+D:\Actpromo\Geodezist\Geodezist\bin\System.Web.WebPages.Deployment.dll
+D:\Actpromo\Geodezist\Geodezist\bin\System.Web.WebPages.dll
+D:\Actpromo\Geodezist\Geodezist\bin\System.Web.WebPages.Razor.dll
+D:\Actpromo\Geodezist\Geodezist\bin\WebActivatorEx.dll
+D:\Actpromo\Geodezist\Geodezist\bin\Brio.pdb
+D:\Actpromo\Geodezist\Geodezist\bin\EntityFramework.xml
+D:\Actpromo\Geodezist\Geodezist\bin\EntityFramework.SqlServer.xml
+D:\Actpromo\Geodezist\Geodezist\bin\Ninject.xml
+D:\Actpromo\Geodezist\Geodezist\bin\Ninject.Web.Common.xml
+D:\Actpromo\Geodezist\Geodezist\bin\Ninject.Web.Mvc.xml
+D:\Actpromo\Geodezist\Geodezist\bin\Newtonsoft.Json.xml
+D:\Actpromo\Geodezist\Geodezist\bin\System.Net.Http.Formatting.xml
+D:\Actpromo\Geodezist\Geodezist\bin\System.Web.Helpers.xml
+D:\Actpromo\Geodezist\Geodezist\bin\System.Web.Http.xml
+D:\Actpromo\Geodezist\Geodezist\bin\System.Web.Http.WebHost.xml
+D:\Actpromo\Geodezist\Geodezist\bin\System.Web.Mvc.xml
+D:\Actpromo\Geodezist\Geodezist\bin\System.Web.Razor.xml
+D:\Actpromo\Geodezist\Geodezist\bin\System.Web.WebPages.xml
+D:\Actpromo\Geodezist\Geodezist\bin\System.Web.WebPages.Deployment.xml
+D:\Actpromo\Geodezist\Geodezist\bin\System.Web.WebPages.Razor.xml
+D:\Actpromo\Geodezist\Geodezist\obj\Debug\Geodezist.csprojResolveAssemblyReference.cache
+D:\Actpromo\Geodezist\Geodezist\obj\Debug\Geodezist.dll
+D:\Actpromo\Geodezist\Geodezist\obj\Debug\Geodezist.pdb
+d:\ActualPromotion\Geodezist\Geodezist\bin\Geodezist.dll
+d:\ActualPromotion\Geodezist\Geodezist\bin\Geodezist.pdb
+d:\ActualPromotion\Geodezist\Geodezist\bin\Brio.dll
+d:\ActualPromotion\Geodezist\Geodezist\bin\EntityFramework.dll
+d:\ActualPromotion\Geodezist\Geodezist\bin\EntityFramework.SqlServer.dll
+d:\ActualPromotion\Geodezist\Geodezist\bin\Microsoft.Web.Infrastructure.dll
+d:\ActualPromotion\Geodezist\Geodezist\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+d:\ActualPromotion\Geodezist\Geodezist\bin\Newtonsoft.Json.dll
+d:\ActualPromotion\Geodezist\Geodezist\bin\Ninject.dll
+d:\ActualPromotion\Geodezist\Geodezist\bin\Ninject.Web.Common.dll
+d:\ActualPromotion\Geodezist\Geodezist\bin\Ninject.Web.Mvc.dll
+d:\ActualPromotion\Geodezist\Geodezist\bin\System.Net.Http.Formatting.dll
+d:\ActualPromotion\Geodezist\Geodezist\bin\System.Web.Helpers.dll
+d:\ActualPromotion\Geodezist\Geodezist\bin\System.Web.Http.dll
+d:\ActualPromotion\Geodezist\Geodezist\bin\System.Web.Http.WebHost.dll
+d:\ActualPromotion\Geodezist\Geodezist\bin\System.Web.Mvc.dll
+d:\ActualPromotion\Geodezist\Geodezist\bin\System.Web.Razor.dll
+d:\ActualPromotion\Geodezist\Geodezist\bin\System.Web.WebPages.Deployment.dll
+d:\ActualPromotion\Geodezist\Geodezist\bin\System.Web.WebPages.dll
+d:\ActualPromotion\Geodezist\Geodezist\bin\System.Web.WebPages.Razor.dll
+d:\ActualPromotion\Geodezist\Geodezist\bin\WebActivatorEx.dll
+d:\ActualPromotion\Geodezist\Geodezist\bin\Brio.pdb
+d:\ActualPromotion\Geodezist\Geodezist\bin\EntityFramework.xml
+d:\ActualPromotion\Geodezist\Geodezist\bin\EntityFramework.SqlServer.xml
+d:\ActualPromotion\Geodezist\Geodezist\bin\Ninject.xml
+d:\ActualPromotion\Geodezist\Geodezist\bin\Ninject.Web.Common.xml
+d:\ActualPromotion\Geodezist\Geodezist\bin\Ninject.Web.Mvc.xml
+d:\ActualPromotion\Geodezist\Geodezist\bin\Newtonsoft.Json.xml
+d:\ActualPromotion\Geodezist\Geodezist\bin\System.Net.Http.Formatting.xml
+d:\ActualPromotion\Geodezist\Geodezist\bin\System.Web.Helpers.xml
+d:\ActualPromotion\Geodezist\Geodezist\bin\System.Web.Http.xml
+d:\ActualPromotion\Geodezist\Geodezist\bin\System.Web.Http.WebHost.xml
+d:\ActualPromotion\Geodezist\Geodezist\bin\System.Web.Mvc.xml
+d:\ActualPromotion\Geodezist\Geodezist\bin\System.Web.Razor.xml
+d:\ActualPromotion\Geodezist\Geodezist\bin\System.Web.WebPages.xml
+d:\ActualPromotion\Geodezist\Geodezist\bin\System.Web.WebPages.Deployment.xml
+d:\ActualPromotion\Geodezist\Geodezist\bin\System.Web.WebPages.Razor.xml
+d:\ActualPromotion\Geodezist\Geodezist\obj\Debug\Geodezist.csprojResolveAssemblyReference.cache
+d:\ActualPromotion\Geodezist\Geodezist\obj\Debug\Geodezist.dll
+d:\ActualPromotion\Geodezist\Geodezist\obj\Debug\Geodezist.pdb

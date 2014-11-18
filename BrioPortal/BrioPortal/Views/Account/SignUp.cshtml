@@ -1,0 +1,67 @@
+﻿@{
+    ViewBag.Title = "SignUp";
+    Layout = "~/Views/Layouts/DefaultLayouts.cshtml";
+}
+
+<h2>SignUp</h2>
+
+<section>
+    @Html.Partial("RightBarNews")
+    <div class="content">
+        <form action="" method="post" name="serch">
+            <input name="name" type="text" placeholder="ВВЕДИТЕ НАЗВАНИЕ ДОКУМЕНТА">
+            <button type="submit">
+                <h2 class="left"><span>Поиск</span></h2>
+            </button>
+        </form>
+
+        <div class="content-right-bar">
+
+
+            <h2>Создание аккаунта</h2>
+            @using (Html.BeginForm("SignUp", "Account", FormMethod.Post, new { @class = "acc-form" }))
+            {
+                <p>
+                    @Html.LabelFor(a => a.Name):
+                    @Html.TextBoxFor(a => a.Name)
+                </p>
+                <p>
+                    @Html.LabelFor(a => a.Surname):
+                    @Html.TextBoxFor(a => a.Surname)
+                </p>
+                <p>
+                    @Html.LabelFor(a => a.Patronymic):
+                    @Html.TextBoxFor(a => a.Patronymic)
+                </p>
+                <p>
+                    @Html.LabelFor(a => a.Email):
+                    @Html.TextBoxFor(a => a.Email)
+                </p>
+                <p>
+                    @Html.LabelFor(a => a.Password):
+                    @Html.TextBoxFor(a => a.Password)
+                </p>
+                <p>
+                    @Html.LabelFor(a => a.ConfirmPassword):
+                    @Html.TextBoxFor(a => a.ConfirmPassword)
+                </p>
+                <p>
+                    @Html.LabelFor(a => a.Phone):
+                    @Html.TextBoxFor(a => a.Phone)
+                </p>
+                <p>
+                    @Html.LabelFor(a => a.CompanyId):
+                    @Html.DropDownList("CompaniesDD", ViewBag.Companies as SelectList, "Выберите компанию")
+                </p>
+                <p>
+                    @Html.LabelFor(a => a.RememberMe):
+                    @Html.CheckBoxFor(a => a.RememberMe)
+                </p>
+
+                <button type="submit">
+                    <h2 class="right creat-title"><span>Создать</span></h2>
+                </button>
+            }
+        </div>
+    </div>
+</section>

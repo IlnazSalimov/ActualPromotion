@@ -1,0 +1,77 @@
+C:\Users\Ильназ\Documents\Visual Studio 2013\Projects\BrioPortal\BrioPortal\obj\Debug\BrioPortal.csprojResolveAssemblyReference.cache
+C:\Users\Ильназ\Documents\Visual Studio 2013\Projects\BrioPortal\BrioPortal\bin\BrioPortal.dll.config
+C:\Users\Ильназ\Documents\Visual Studio 2013\Projects\BrioPortal\BrioPortal\bin\BrioPortal.dll
+C:\Users\Ильназ\Documents\Visual Studio 2013\Projects\BrioPortal\BrioPortal\bin\BrioPortal.pdb
+C:\Users\Ильназ\Documents\Visual Studio 2013\Projects\BrioPortal\BrioPortal\bin\Brio.dll
+C:\Users\Ильназ\Documents\Visual Studio 2013\Projects\BrioPortal\BrioPortal\bin\EntityFramework.dll
+C:\Users\Ильназ\Documents\Visual Studio 2013\Projects\BrioPortal\BrioPortal\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Ильназ\Documents\Visual Studio 2013\Projects\BrioPortal\BrioPortal\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+C:\Users\Ильназ\Documents\Visual Studio 2013\Projects\BrioPortal\BrioPortal\bin\Newtonsoft.Json.dll
+C:\Users\Ильназ\Documents\Visual Studio 2013\Projects\BrioPortal\BrioPortal\bin\Ninject.dll
+C:\Users\Ильназ\Documents\Visual Studio 2013\Projects\BrioPortal\BrioPortal\bin\Ninject.Web.Common.dll
+C:\Users\Ильназ\Documents\Visual Studio 2013\Projects\BrioPortal\BrioPortal\bin\Ninject.Web.Mvc.dll
+C:\Users\Ильназ\Documents\Visual Studio 2013\Projects\BrioPortal\BrioPortal\bin\System.Net.Http.Formatting.dll
+C:\Users\Ильназ\Documents\Visual Studio 2013\Projects\BrioPortal\BrioPortal\bin\System.Web.Helpers.dll
+C:\Users\Ильназ\Documents\Visual Studio 2013\Projects\BrioPortal\BrioPortal\bin\System.Web.Http.dll
+C:\Users\Ильназ\Documents\Visual Studio 2013\Projects\BrioPortal\BrioPortal\bin\System.Web.Http.WebHost.dll
+C:\Users\Ильназ\Documents\Visual Studio 2013\Projects\BrioPortal\BrioPortal\bin\System.Web.Mvc.dll
+C:\Users\Ильназ\Documents\Visual Studio 2013\Projects\BrioPortal\BrioPortal\bin\System.Web.Razor.dll
+C:\Users\Ильназ\Documents\Visual Studio 2013\Projects\BrioPortal\BrioPortal\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Ильназ\Documents\Visual Studio 2013\Projects\BrioPortal\BrioPortal\bin\System.Web.WebPages.dll
+C:\Users\Ильназ\Documents\Visual Studio 2013\Projects\BrioPortal\BrioPortal\bin\System.Web.WebPages.Razor.dll
+C:\Users\Ильназ\Documents\Visual Studio 2013\Projects\BrioPortal\BrioPortal\bin\WebActivatorEx.dll
+C:\Users\Ильназ\Documents\Visual Studio 2013\Projects\BrioPortal\BrioPortal\bin\Brio.pdb
+C:\Users\Ильназ\Documents\Visual Studio 2013\Projects\BrioPortal\BrioPortal\bin\EntityFramework.xml
+C:\Users\Ильназ\Documents\Visual Studio 2013\Projects\BrioPortal\BrioPortal\bin\Ninject.xml
+C:\Users\Ильназ\Documents\Visual Studio 2013\Projects\BrioPortal\BrioPortal\bin\Ninject.Web.Common.xml
+C:\Users\Ильназ\Documents\Visual Studio 2013\Projects\BrioPortal\BrioPortal\bin\Ninject.Web.Mvc.xml
+C:\Users\Ильназ\Documents\Visual Studio 2013\Projects\BrioPortal\BrioPortal\bin\Newtonsoft.Json.xml
+C:\Users\Ильназ\Documents\Visual Studio 2013\Projects\BrioPortal\BrioPortal\bin\System.Net.Http.Formatting.xml
+C:\Users\Ильназ\Documents\Visual Studio 2013\Projects\BrioPortal\BrioPortal\bin\System.Web.Helpers.xml
+C:\Users\Ильназ\Documents\Visual Studio 2013\Projects\BrioPortal\BrioPortal\bin\System.Web.Http.xml
+C:\Users\Ильназ\Documents\Visual Studio 2013\Projects\BrioPortal\BrioPortal\bin\System.Web.Http.WebHost.xml
+C:\Users\Ильназ\Documents\Visual Studio 2013\Projects\BrioPortal\BrioPortal\bin\System.Web.Mvc.xml
+C:\Users\Ильназ\Documents\Visual Studio 2013\Projects\BrioPortal\BrioPortal\bin\System.Web.Razor.xml
+C:\Users\Ильназ\Documents\Visual Studio 2013\Projects\BrioPortal\BrioPortal\bin\System.Web.WebPages.xml
+C:\Users\Ильназ\Documents\Visual Studio 2013\Projects\BrioPortal\BrioPortal\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Ильназ\Documents\Visual Studio 2013\Projects\BrioPortal\BrioPortal\bin\System.Web.WebPages.Razor.xml
+C:\Users\Ильназ\Documents\Visual Studio 2013\Projects\BrioPortal\BrioPortal\obj\Debug\BrioPortal.dll
+C:\Users\Ильназ\Documents\Visual Studio 2013\Projects\BrioPortal\BrioPortal\obj\Debug\BrioPortal.pdb
+d:\ActualPromotion\BrioPortal\BrioPortal\obj\Debug\BrioPortal.csprojResolveAssemblyReference.cache
+d:\ActualPromotion\BrioPortal\BrioPortal\obj\Debug\BrioPortal.dll
+d:\ActualPromotion\BrioPortal\BrioPortal\bin\BrioPortal.dll
+d:\ActualPromotion\BrioPortal\BrioPortal\bin\BrioPortal.pdb
+d:\ActualPromotion\BrioPortal\BrioPortal\bin\Brio.dll
+d:\ActualPromotion\BrioPortal\BrioPortal\bin\EntityFramework.dll
+d:\ActualPromotion\BrioPortal\BrioPortal\bin\Microsoft.Web.Infrastructure.dll
+d:\ActualPromotion\BrioPortal\BrioPortal\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+d:\ActualPromotion\BrioPortal\BrioPortal\bin\Newtonsoft.Json.dll
+d:\ActualPromotion\BrioPortal\BrioPortal\bin\Ninject.dll
+d:\ActualPromotion\BrioPortal\BrioPortal\bin\Ninject.Web.Common.dll
+d:\ActualPromotion\BrioPortal\BrioPortal\bin\Ninject.Web.Mvc.dll
+d:\ActualPromotion\BrioPortal\BrioPortal\bin\System.Net.Http.Formatting.dll
+d:\ActualPromotion\BrioPortal\BrioPortal\bin\System.Web.Helpers.dll
+d:\ActualPromotion\BrioPortal\BrioPortal\bin\System.Web.Http.dll
+d:\ActualPromotion\BrioPortal\BrioPortal\bin\System.Web.Http.WebHost.dll
+d:\ActualPromotion\BrioPortal\BrioPortal\bin\System.Web.Mvc.dll
+d:\ActualPromotion\BrioPortal\BrioPortal\bin\System.Web.Razor.dll
+d:\ActualPromotion\BrioPortal\BrioPortal\bin\System.Web.WebPages.Deployment.dll
+d:\ActualPromotion\BrioPortal\BrioPortal\bin\System.Web.WebPages.dll
+d:\ActualPromotion\BrioPortal\BrioPortal\bin\System.Web.WebPages.Razor.dll
+d:\ActualPromotion\BrioPortal\BrioPortal\bin\WebActivatorEx.dll
+d:\ActualPromotion\BrioPortal\BrioPortal\bin\Brio.pdb
+d:\ActualPromotion\BrioPortal\BrioPortal\bin\EntityFramework.xml
+d:\ActualPromotion\BrioPortal\BrioPortal\bin\Ninject.xml
+d:\ActualPromotion\BrioPortal\BrioPortal\bin\Ninject.Web.Common.xml
+d:\ActualPromotion\BrioPortal\BrioPortal\bin\Ninject.Web.Mvc.xml
+d:\ActualPromotion\BrioPortal\BrioPortal\bin\Newtonsoft.Json.xml
+d:\ActualPromotion\BrioPortal\BrioPortal\bin\System.Net.Http.Formatting.xml
+d:\ActualPromotion\BrioPortal\BrioPortal\bin\System.Web.Helpers.xml
+d:\ActualPromotion\BrioPortal\BrioPortal\bin\System.Web.Http.xml
+d:\ActualPromotion\BrioPortal\BrioPortal\bin\System.Web.Http.WebHost.xml
+d:\ActualPromotion\BrioPortal\BrioPortal\bin\System.Web.Mvc.xml
+d:\ActualPromotion\BrioPortal\BrioPortal\bin\System.Web.Razor.xml
+d:\ActualPromotion\BrioPortal\BrioPortal\bin\System.Web.WebPages.xml
+d:\ActualPromotion\BrioPortal\BrioPortal\bin\System.Web.WebPages.Deployment.xml
+d:\ActualPromotion\BrioPortal\BrioPortal\bin\System.Web.WebPages.Razor.xml
+d:\ActualPromotion\BrioPortal\BrioPortal\obj\Debug\BrioPortal.pdb

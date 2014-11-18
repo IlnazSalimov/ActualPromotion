@@ -1,0 +1,28 @@
+﻿@model Brio.Models.AddDocument
+
+@{
+    ViewBag.Title = "ДОБАВИТЬ ДОКУМЕНТ";
+    Layout = "~/Views/Layouts/LayoutDefault.cshtml";
+}
+
+<div class="content">
+    <h1>ДОБАВИТЬ ДОКУМЕНТ</h1>
+    @using (Html.BeginForm("Add", "Document", FormMethod.Post, new { @class = "pure-form pure-form-aligned", enctype = "multipart/form-data" }))
+    {
+        @Html.ValidationSummary(true)
+        <fieldset>
+            <div class="pure-control-group">
+                @Html.TextBoxFor(model => model.DocumentTitle, new { @class = "pure-input-2-3", placeholder = "Заголовок" })
+                @Html.ValidationMessageFor(model => model.DocumentTitle)
+            </div>
+
+            <div class="pure-control-group">
+                @Html.TextBoxFor(model => model.DocumentPath, new { @class = "pure-input-2-3", type = "file" })
+                @Html.ValidationMessageFor(model => model.DocumentPath)
+            </div>
+            <div class="pure-controls">
+                <button type="submit" class="pure-button pure-button-primary">ДОБАВИТЬ</button>
+            </div>
+        </fieldset>
+    }
+</div>

@@ -1,0 +1,165 @@
+﻿@font-face {
+    font-family: 'Russo One';
+    src: url('fonts/RussoOne.eot');
+    src: local('Russo One'), url('../fonts/RussoOne.woff') format('woff'), url('../fonts/RussoOne.ttf') format('truetype'), url('../fonts/RussoOne.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.relative {
+    position: relative;
+}
+
+.content {
+    position: relative;
+    min-width: 1200px;
+    overflow:auto;
+}
+
+.logo-container {
+    position: absolute;
+    top: 50%;
+    margin-top: -260px;
+    left: 50%;
+    margin-left: -550px;
+}
+
+.logo-line {
+    width: 1100px;
+    position: relative;
+    height: 315px;
+}
+
+    .logo-line.second .wrapper {
+        height: 100%;
+        position: absolute;
+        top: -68px;
+        left: 136px;
+    }
+
+.logo {
+    height: 235px;
+    width: 196px;
+    margin: auto;
+    float: left;
+    margin-top: 59px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+    .logo.lab {
+        height: 235px;
+        width: 251px;
+    }
+
+.logo-line.second .logo:not(.big) {
+    margin-top: 20px;
+}
+
+.logo.big {
+    width: 262px;
+    height: 100%;
+    margin-top: 0;
+    margin-left: 0;
+}
+
+.logo.brio {
+    background: url('../images/brio.png') no-repeat 0 0;
+    background-size: contain;
+}
+
+.logo.geo {
+    background: url('../images/geodezist.png') no-repeat 0 0;
+    background-size: contain;
+}
+
+    .logo.geo:hover {
+        background: url('../images/geodezist_c.png') no-repeat 0 0;
+        background-size: contain;
+    }
+
+.logo.stroy {
+    background: url('../images/stroy.png') no-repeat 0 0;
+    background-size: contain;
+}
+
+    .logo.stroy:hover {
+        background: url('../images/stroy_c.png') no-repeat 0 0;
+        background-size: contain;
+    }
+
+.logo.jeldor {
+    background: url('../images/jeldor.png') no-repeat 0 0;
+    background-size: contain;
+}
+
+    .logo.jeldor:hover {
+        background: url('../images/jeldor_c.png') no-repeat 0 0;
+        background-size: contain;
+    }
+
+.logo.text-bckg {
+    background: url('../images/text_bckg.png') no-repeat 0 0;
+    background-size: contain;
+}
+
+.logo.volgastroy {
+    background: url('../images/volgastroy.png') no-repeat 0 0;
+    background-size: contain;
+}
+
+    .logo.volgastroy:hover {
+        background: url('../images/volgastroy_c.png') no-repeat 0 0;
+        background-size: contain;
+    }
+
+.logo.fenestra {
+    background: url('../images/fenestra.png') no-repeat 0 0;
+    background-size: contain;
+}
+
+    .logo.fenestra:hover {
+        background: url('../images/fenestra_c.png') no-repeat 0 0;
+        background-size: contain;
+    }
+
+.logo.lab {
+    background: url('../images/lab.png') no-repeat 0 0;
+    background-size: contain;
+}
+
+    .logo.lab:hover {
+        background: url('../images/lab_c.png') no-repeat 0 0;
+        background-size: contain;
+    }
+
+.logo:not(.description) .short-description {
+    display: none;
+}
+
+.short-description {
+    margin-top: 77px;
+    padding: 5px 15px;
+    color: #fff;
+    font-family: Arial,sans-serif;
+    font-size: 12px;
+    line-height: 17px;
+    text-align: justify;
+}
+
+.short-description .title
+{
+    text-align: center;
+    font-size: 19px;
+    margin-bottom: 10px;
+}
+
+.top-logo-text {
+	background: url('../images/briogroup.png') no-repeat 0 0;
+	background-size: contain;
+	position: absolute;
+	left: 24%;
+	top: -45px;
+	width: 190px;
+	height: 82px;
+}

@@ -1,0 +1,118 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Актуальное продвижение</title>
+    <meta name="description" content="">
+    <!-- Make mobile devices behave properly -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Place favicon.ico and apple-touch-icon(s) in the root directory -->
+    <!-- Core CSS (Bootstrap 3.0.2 with custom variables, overrides and styles) -->
+    <link rel="stylesheet" href="@Url.Content("~/Content/Styles/bootstrap-custom.css")">
+    <link rel="stylesheet" href="@Url.Content("~/Content/Styles/bootstrap-theme.css")">
+    <link rel="stylesheet" href="@Url.Content("~/Content/Styles/custom.css")">
+    <!-- Plugins CSS -->
+    <link href="@Url.Content("~/Content/Styles/owl.carousel.css")" rel="stylesheet" type="text/css">
+    <link href="@Url.Content("~/Content/Styles/owl.theme.css")" rel="stylesheet" type="text/css">
+    <!-- Load jQuery -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="@Url.Content("~/Content/Scripts/owl.carousel.js")"></script>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+            <![endif]-->
+</head>
+<body>
+    <div class="main-container">
+
+        <!-- Navbar -->
+        <header class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+                    <!-- Brand name -->
+                    <a class="navbar-brand" href="/"><img src="../Content/img/logo.png" alt=""></a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <nav class="collapse navbar-collapse navbar-right">
+                    <ul class="nav navbar-nav">
+                        <li><a href="/"><u><span>МЫ</span> О НАС </u></a></li>
+                        <li><a href="/uslugi.html"><u><span>КАК</span> <span class="norm-spaise">УСЛУГИ</span> <span class="hide">ПРИНЦИПЫ</span></u></a></li>
+                        <li><a href="/portfolio.html"><u><span>ЧТО</span> ПОРТФОЛИО</u></a></li>
+                        <li><a href="/vacation.html"><u><span>К НАМ</span> ВАКАНСИИ</u></a></li>
+                        <li><a href="/vacation.html#contacts"><u><span>ГДЕ</span> КОНТАКТЫ</u></a></li>
+                    </ul>
+                </nav>
+                <p class="phone"><span>8</span>(<span class="code">843</span>) 253-87-03</p>
+            </div>
+        </header>
+        <!-- END .navbar -->
+        
+        @RenderBody()
+
+        <!--футер-->
+        <div class="form-wrapp">
+            <div class="footer-wrapper2">
+                <img src="../Content/img/main-footer.gif">
+                <div class="address">
+                    <p>Адрес:</p>
+                    <p>улица Сибгата Хакима 47,</p>
+                    <p>3 этаж</p>
+                    <p>Сот. тел.:+7(917) 254-64-67</p>
+                </div>
+            </div>
+            <div class="container">
+                <form action="#" method="post" class="long bottom-form contact-form">
+                    <div class="col-sm-6">
+                        <h5>ЗАЯВКА</h5>
+                        <label>
+                            <span class="red">* </span>Имя:
+                            <input name="name" type="text" class="required">
+                        </label>
+                        <label>
+                            <span class="red">* </span>E-mail:
+                            <input name="mail" type="text" class="required">
+                        </label>
+                        <label>
+                            <span class="red">* </span>Тел.:
+                            <input name="phone" type="text" class="required">
+                        </label>
+                        <label>
+                            ТЗ:
+                            <input name="term" type="file" />
+                        </label>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="inner">
+                            <label>
+                                Текст сообщения:
+                                <textarea name="msg" placeholder="Необязательно для заполнения"></textarea>
+                            </label>
+                            <button type="submit" class="red">Подать заявку</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="footer-bottom">
+                <div class="container">
+                    <p>Актуальное продвижение</p>
+                </div>
+            </div>
+        </div>
+        <!--конец футера-->
+    </div>
+    <!-- END .main-container -->
+    <!-- Plugins -->
+    <script src="@Url.Content("~/Content/Scripts/plugins/bootstrap.min.js")"></script>
+    <script src="@Url.Content("~/Content/Scripts/plugins/jquery.smartscroll.min.js")"></script>
+    <script src="@Url.Content("~/Content/Scripts/plugins/jquery.magnific-popup.min.js")"></script>
+    <!-- Core JS files -->
+    <script src="@Url.Content("~/Content/Scripts/main.js")"></script>
+    <script src="@Url.Content("~/Content/Scripts/script.js")"></script>
+</body>
+</html>
+

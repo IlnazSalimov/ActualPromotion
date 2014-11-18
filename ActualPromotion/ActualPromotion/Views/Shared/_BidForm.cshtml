@@ -1,0 +1,111 @@
+﻿@model ActualPromotion.Models.PostBid
+
+@{
+    ViewBag.Title = "BidForm";
+}
+<script src="~/Content/Scripts/jquery-1.4.4.min.js"></script>
+<script src="~/Content/Scripts/MicrosoftMvcAjax.js"></script>
+<script src="~/Content/Scripts/jquery.unobtrusive-ajax.js"></script>
+
+@if (ViewData["bidFormType"] == "top")
+{
+    using (Ajax.BeginForm("SendFeedback", "Home", null, new AjaxOptions() { HttpMethod = "POST" }, new { enctype = "multipart/form-data" }))
+    {
+        Html.AntiForgeryToken();
+        <h5 class="text-center ">ЗАЯВКА</h5>
+        <label>
+            <span class="red">* </span>
+            @Html.DisplayNameFor(model => model.Name):
+            @Html.TextBoxFor(model => model.Name, new { @class = "required" })
+        </label>
+        <label>
+            <span class="red">* </span>
+            @Html.DisplayNameFor(model => model.Email):
+            @Html.TextBoxFor(model => model.Email, new { @class = "required" })
+        </label>
+        <label>
+            <span class="red">* </span>
+            @Html.DisplayNameFor(model => model.Phone):
+            @Html.TextBoxFor(model => model.Phone, new { @class = "required" })
+        </label>
+        <label>
+            @Html.DisplayNameFor(model => model.TermPath):
+            @Html.TextBoxFor(model => model.TermPath, new { type = "file" })
+        </label>
+        <label>
+            @Html.DisplayNameFor(model => model.Message):
+            @Html.TextAreaFor(model => model.Message, new { placeholder = "Необязательно для заполнения" })
+        </label>
+        <button type="submit" class="red">Подать заявку</button>
+    }
+}
+
+<script>
+    /*(function () {
+        $("button[type='submit']").bind("click", function (event) {
+            var form = $(this).parents("form.contact-form");
+
+            var that = this;
+            var isDataValid = true;
+            form.find("input.required").each(function () {
+                if ($(this).val() == "") {
+                    event.preventDefault();
+                    isDataValid = false;
+                    $(this).addClass("warning");
+                }
+                else {
+                    $(this).removeClass("warning");
+                }
+            });
+
+            if (!validateEmail($("input[name='Email']").val())) {
+                event.preventDefault();
+                isDataValid = false;
+                form.find("input[name='Email']").addClass("warning");
+            }
+            else {
+                form.find("input[name='Email']").removeClass("warning");
+            }
+
+            if (isDataValid) {
+               //postBid(form);
+            }
+        });
+    })();
+
+    function validateEmail(email) {
+        var re = /^(([^<>()[\]\\.,;:\s@@\"]+(\.[^<>()[\]\\.,;:\s@@\"]+)*)|(\".+\"))@@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return re.test(email);
+    }
+
+    function postBid(form) {
+        $.ajax({
+            type: 'POST',
+            dataType: 'json',
+            url: "/Home/SendFeedback",
+            data: getBid(),
+            success: function (response) {
+                if (response.success) {
+                    console.log(response.message);
+                }
+                else {
+
+                }
+            },
+            error: function (xhr, ajaxOptions, thrownError) {
+                console.log("request failed");
+            },
+            async: true
+        });
+    }
+
+    function getBid() {
+        return {
+            Name: $("input[name='Name']").val(),
+            Email: $("input[name='Email']").val(),
+            Phone: $("input[name='Phone']").val(),
+            TermPath: $("input[name='TermPath']")[0].files[0],
+            Message: $("textarea[name='Message']").val(),
+        };
+    }*/
+</script>

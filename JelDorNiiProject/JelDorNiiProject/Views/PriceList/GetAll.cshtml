@@ -1,0 +1,147 @@
+﻿@model IEnumerable<Brio.Models.PriceList>
+
+@{
+    ViewBag.Title = "ПРАЙСЫ";
+    Layout = "~/Views/Layouts/LayoutDefault.cshtml";
+}
+
+@section styles{
+    <style>
+        .jspVerticalBar {
+            left: 0;
+        }
+
+        .jspContainer{
+            width:100% !important;
+        }
+
+        .jspPane {
+            width:100% !important;
+        }
+    </style>
+}
+
+<div class="container run1">
+    <div data-id="0" class="slider"></div>
+</div>
+<div class="block_ins">
+    <div class="title">
+        @ViewBag.Title
+    </div>
+    <article class="page-content relative-width">
+        <div class="price_container">
+            @foreach (var item in Model)
+            {
+                <div class="price_row" data-priceid="@item.ID">
+                    <div class="price_title">
+                        @item.Title
+                        <div class="price_date">
+                            @item.UploadDate.ToString("dd.MM.yyyy")
+                        </div>
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <div class="admin_buttons">
+                                <a href="/PriceList/Edit/@item.ID"><i class="fa fa-pencil-square-o"></i></a>
+                                <a class="delete" href="" data-articleid="@item.ID"><i class="fa fa-times"></i></a>
+                            </div>
+                        }
+                        <div class="arrow_corner_bckg"></div>
+                        <div class="arrow_corner"></div>
+                    </div>
+                </div>
+            }
+            @if (Model.Count() < 5)
+            {
+                for (var i = 0; i < (5 - Model.Count()); i++)
+                {
+                    @:<div class="price_row empty"><div class="arrow_corner_bckg"></div><div class="arrow_corner"></div></div>
+                }
+            }
+        </div>
+        <div class="right-block">
+            <div class="price_buttons">
+                @if (Model.Count() > 0)
+                {
+                <div class="price_buttons_head">
+                    ВЫ МОЖЕТЕ:
+                </div>
+                
+                    <button class="button-blue pure-button">@Html.ActionLink("Просмотреть файл", "Show", new { }, new { @class = "pdf-button show" })</button>
+                    <button class="button-blue pure-button">@Html.ActionLink("Скачать файлы в PDF", "Download", new { }, new { @class = "pdf-button download" })</button>
+                }
+                else
+                {
+                    <div class="empty_list">
+                        Список пуст
+                    </div>
+                }
+
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <div class="add_button_bot price">@Html.ActionLink("Добавить прайс", "Add")</div>
+                }
+            </div>
+        </div>
+    </article>
+</div>
+
+<script>
+    (function () {
+        $('.price_container').jScrollPane();
+
+        var showPriceRoute = "/PriceList/Show/";
+        var downloadPriceRoute = "/PriceList/Download/";
+
+        var firstRow = $(".price_row:not(.empty):first-child");
+        firstRow.addClass("active_price").find(".arrow_corner").show();
+
+        $("a.show").attr("href", showPriceRoute + firstRow.attr("data-priceId"));
+        $("a.download").attr("href", downloadPriceRoute + firstRow.attr("data-priceId"));
+
+        $(".price_row:not(.empty)").bind("click", function () {
+            $(".arrow_corner").hide();
+            $(".price_row").removeClass("active_price");
+            $(this).addClass("active_price").find(".arrow_corner").show();
+
+            $("a.show").attr("href", showPriceRoute + $(this).attr("data-priceId"));
+            $("a.download").attr("href", downloadPriceRoute + $(this).attr("data-priceId"));
+        });
+
+        $(".delete").bind("click", function (e) {
+            e.preventDefault();
+            var that = this;
+            $.ajax({
+                type: 'POST',
+                dataType: 'json',
+                url: "/PriceList/Delete",
+                data: "id=" + $(that).attr("data-articleid"),
+                success: function (response) {
+                    if (response.success) {
+                        if ($(that).parents(".price_row").hasClass("active_price")) {
+                            firstRow.next().click();
+                        }
+
+                        $(that).parents(".price_row").remove();
+                        $(".price_container .jspPane").append("<div class=\"price_row empty\"><div class=\"arrow_corner_bckg\"></div><div class=\"arrow_corner\"></div></div>");
+
+                        if ($(".price_row:not(.empty)").length == 0) {
+                            $(".price_buttons .pure-button").fadeOut(function () {
+                                if ($(this).is(".price_buttons .pure-button:last"))
+                                    $(".price_buttons").append("<div class=\"empty_list\">Список пуст</div>");
+                            });
+                        }
+                    }
+                    else {
+                        console.log(response.message);
+                    }
+                },
+                error: function (xhr, ajaxOptions, thrownError) {
+                    console.log("request failed");
+                },
+
+                processData: false,
+                async: false
+            });
+        });
+    })();
+</script>

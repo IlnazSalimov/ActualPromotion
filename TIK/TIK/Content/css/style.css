@@ -1,0 +1,597 @@
+@font-face {
+    font-family: 'Russo One';
+    src: url('fonts/RussoOne.eot');
+    src: local('Russo One'), url('../fonts/RussoOne.woff') format('woff'), url('../fonts/RussoOne.ttf') format('truetype'), url('../fonts/RussoOne.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+.field-validation-error,
+.validation-summary-errors {
+    color: #CA2728;
+}
+
+
+
+.pure-form {
+    margin-left: 20%;
+}
+
+table.k-editor {
+    width: 66% !important;
+    height: 300px !important;
+    display: inline-table;
+}
+
+.warning-msg-container {
+    padding: 20px 40px;
+    text-align: center;
+    color: #fff;
+    background: #4D4948;
+    box-sizing: border-box;
+    margin: 0 15px;
+}
+
+.relative {
+        position:relative;
+    }
+
+.disp-none {
+    display: none;
+}
+
+.button-success,
+.button-error,
+.button-warning,
+.button-secondary,
+.button-pink,
+.button-yelow {
+    border-radius: 0;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    margin: 0 0 10px;
+}
+
+.pure-button:not(.button-secondary),
+.pure-button:not(.button-secondary) a {
+    color: #fff !important;
+}
+
+.pure-button.button-secondary, 
+.pure-button.button-secondary a{
+    color: #4D4948 !important;
+}
+
+.button-error {
+    background: #CA2728; /* this is a maroon */
+}
+
+.button-pink {
+    background: #EA5C5D; /* this is a maroon */
+}
+
+.button-secondary {
+    background: #FFF;
+}
+
+.button-yelow {
+    background: #E0B635;
+}
+
+.admin-buttons {
+    position: absolute;
+    z-index: 1;
+}
+
+.articles .admin-buttons {
+    top: 4px;
+    right: 50px;
+}
+
+.articles .admin-buttons.add
+{
+    top: 25px;
+    right: 45px;
+}
+
+.documents .admin-buttons
+{
+    top: 10px;
+    right: 30px;
+}
+
+.documents .admin-buttons.add
+{
+    top: -29px;
+    right: 30px;
+}
+
+.reviews .admin-buttons.add
+{
+    top: 7px;
+    right: 30px;
+}
+
+.reviews .admin-buttons
+{
+    top: 0;
+    right: 30px;
+}
+
+.admin-buttons.add a {
+    color: #4D4948;
+}
+
+.admin-buttons a {
+    color: #E0B635;
+    opacity: 0.5;
+}
+.documents .admin-buttons:not(.add) a {
+    color: #fff;
+}
+
+.reviews .admin-buttons:not(.add) a {
+    color: #4D4948 
+}
+
+.admin-buttons a:hover {
+    opacity: 1;
+}
+
+button a{
+    width:100%;
+    height:100%;
+}
+
+
+body {
+    font-family: Segoe UI Light, sans-serif;
+    color: #4D4948;
+    overflow: auto !important;
+}
+
+h1, .title_h1 {
+    font-family: Russo One, sans-serif;
+    margin-bottom: 40px;
+    font-size:2em;
+    margin:.67em 0
+}
+
+.title_h1.white {
+    color: #fff;
+}
+
+.feedback-unit .title_h1 {
+    text-align:center;
+}
+
+h2{
+    margin: 25px 0 10px;
+}
+
+.wrapper {
+    position: relative;
+    width: 100%;
+    z-index: 10;
+    max-width: 1000px;
+    margin: auto;
+}
+
+header .logo {
+    background: url('../images/logo.png') no-repeat 0 0;
+    background-size: 100%;
+    width: 90px;
+    height: 105px;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+header address{
+    padding: 20px 10px;
+    float: right;
+}
+
+header address .phone{
+    margin-left: 20px;
+    font-family: Russo One, sans-serif;
+}
+
+header nav{
+    background-color: #4D4948;
+}
+
+header nav ul {
+    margin: 0;
+}
+
+header nav li{
+    display: inline-block;
+    line-height: 60px;
+}
+
+header nav li a {
+    position: relative;
+    display: block;
+    padding: 0 15px;
+    -webkit-transition: color .25s ease-out;
+    -moz-transition: color .25s ease-out;
+    -o-transition: color .25s ease-out;
+    transition: color .25s ease-out;
+}
+
+h2,
+.title {
+    position: relative;
+    margin: 10px 0;
+}
+
+h2::before,
+.title::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: -18px;
+    width: 3px;
+    height: 28px;
+    margin-top: -18px;
+    background-color: #E0B635;
+}
+
+.documents .title::before {
+    background-color: #04496B;
+    left: 13px;
+    width: 2.5px;
+    height: 23px;
+    margin-top: -23px;
+}
+
+.reviews .title::before
+{
+    background-color: #04496B;
+    left: -10px;
+    width: 2.5px;
+    height: 25px;
+    margin-top: -15px;
+}
+
+.company-desription h2::before {
+    background-color: #fff;
+}
+
+header nav li a:link {
+    color: #d3d3d3;
+}
+
+header nav li a:visited {
+    color: #d3d3d3;
+}
+
+header nav li a:hover, 
+header nav li a.active {
+    color: #fff;
+}
+
+figure.banner {
+    height: 380px;
+    position: relative;
+    margin: 40px 0;
+}
+
+    figure.banner figcaption {
+        height: 48.5%;
+        left: 20%;
+        top: 50%;
+        margin-top: -13%;
+        position: absolute;
+        width: 60%;
+    }
+
+.articles article {
+    position: relative;
+    padding: 0 40px;
+    box-sizing: border-box;
+}
+
+.reviews article
+{
+    padding: 0 30px;
+}
+
+.ovrflow-x-400px {
+    max-height: 300px;
+    overflow: auto;
+}
+
+.articles h2 {
+    color:#E0B635;
+}
+
+.reviews .title {
+    color: #04496B;
+}
+
+.content {
+    line-height: 24px;
+}
+
+.content ul
+{
+    list-style: initial;
+}
+
+.content ol {
+    list-style:decimal;   
+}
+
+.about-company aside{
+    background-color: #4D4948;
+    color: #fff;
+    padding: 20px 30px 20px 40px;
+    box-sizing: border-box;
+    margin-top: 20px;
+}
+
+.partner-logo {
+    height: 192px;
+    cursor: pointer;
+}
+
+.rosjeldor{
+    background: url('../images/rosjeldor.png') no-repeat 0 0;
+    background-size: 100%;
+}
+
+.rosjeldor:hover{
+    background: url('../images/rosjeldor_c.png') no-repeat 0 0;
+    background-size: 100%;
+}
+
+.panel{
+    background: url('../images/panel.png') no-repeat 0 0;
+    background-size: 100%;
+}
+
+.panel:hover{
+    background: url('../images/panel_c.png') no-repeat 0 0;
+    background-size: 100%;
+}
+
+.kungur{
+    background: url('../images/kungur.png') no-repeat 0 0;
+    background-size: 100%;
+}
+
+.kungur:hover {
+    background: url('../images/kungur_c.png') no-repeat 0 0;
+    background-size: 100%;
+}
+
+.malan {
+    background: url('../images/malan.png') no-repeat 0 0;
+    background-size: 100%;
+}
+
+.malan:hover {
+    background: url('../images/malan_c.png') no-repeat 0 0;
+    background-size: 100%;
+}
+
+.dolina {
+    background: url('../images/dolina.png') no-repeat 0 0;
+    background-size: 100%;
+}
+
+.dolina:hover {
+    background: url('../images/dolina_c.png') no-repeat 0 0;
+    background-size: 100%;
+}
+
+.elvis {
+    background: url('../images/elvis.png') no-repeat 0 0;
+    background-size: 100%;
+}
+
+.elvis:hover {
+    background: url('../images/elvis_c.png') no-repeat 0 0;
+    background-size: 100%;
+}
+
+.documents .doc-container
+{
+    margin-bottom: 30px;
+    box-sizing: border-box;
+}
+
+    .documents .doc-container:not(.last) {
+        padding-right: 15px;
+    }
+
+.documents .doc-bckg {
+    background-color: #4D4948;
+    overflow: auto;
+    border: 1px solid #4D4948;
+}
+
+.documents .title-container{
+    margin-top: 40px;
+    background: #fff;
+}
+
+.documents .title {
+    color: #04496B;
+    padding: 15px 25px 30px;
+}
+
+.documents .button-container {
+    width: 206px;
+    margin: auto;
+    margin-top: 10px;
+}
+
+    .documents .button-container button {
+        width: 100%;
+    }
+
+.content {
+    position: relative;
+}
+
+.content .contact_container {
+    height: 100%;
+    position: absolute;
+    width: 300px;
+    top: 0;
+    right: 30px;
+    background: #fff;
+    text-align: center;
+    opacity: 0.88;
+}
+
+    .content .contact_container address {
+        line-height: 20px;
+    }
+
+.feedback-unit {
+    background-color: #4D4948;
+    width: 90%;
+    height: 100%;
+    overflow: auto;
+    margin: auto;
+}
+
+.fb-result-msg {
+    width: 70%;
+    background: #4D4948;
+    position: absolute;
+    left: 15%;
+    top: 40%;
+    color: #fff;
+    padding: 30px;
+    text-align: center;
+}
+
+.feedback-unit .pure-form input,
+.feedback-unit .pure-form textarea {
+    border-radius: 0;
+    margin-bottom: 8px;
+    width: 100%;
+}
+
+#feedback_form {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.pure-button.feedback {
+    margin-left: calc(50% - 60px);
+    margin-left: -moz-calc(50% - 60px);
+    margin-left: -webkit-calc(50% - 60px);
+    margin-left: -o-calc(50% - 60px);
+}
+
+footer {
+    margin-top: 40px;
+    background-color: #4D4948;
+    color: #fff;
+}
+
+footer section.float_left{
+    float: left;
+    text-align: left;
+    padding: 20px 0;
+}
+
+footer section.float_right{
+    float: right;
+    text-align: right;
+    padding: 20px 0;
+}
+
+footer .footer_wrapper {
+    position: relative;
+    max-width:1000px;
+    height: 100px;
+    margin: auto;
+}
+
+footer section.logo {
+    background: url('../images/footer_logo.png') no-repeat 0 0;
+    background-size: 100%;
+}
+
+footer .logo {
+    position: absolute;
+    height: 50px;
+    width: 55px;
+    left: 50%;
+    margin-left: -27.5px;
+    top:20px;
+}
+
+.line {
+    background: url('../images/line.png') no-repeat 0 0;
+    width: 2px;
+    height: 30px;
+    position: absolute;
+    top: 50%;
+    margin-top: -15px;
+    right: 0;
+}
+
+.marker_descriptions {
+    position: absolute;
+    right: 0;
+    bottom: 50px;
+}
+
+.marker {
+    position: relative;
+    width: 55px;
+    height: 100%;
+    float: right;
+}
+
+.m {
+    position: relative;
+    width: 25px;
+    height: 34px;
+    right: -15px;
+    top: 50%;
+    margin-top: -17px;
+}
+    .marker .red {
+        background: url('../images/marker2.png') no-repeat 0 0;
+        background-size: contain;
+    }
+
+    .marker .blue {
+        background: url('../images/marker.png') no-repeat 0 0;
+        background-size: contain;
+    }
+
+    .marker .green {
+        background: url('../images/marker3.png') no-repeat 0 0;
+        background-size: contain;
+    }
+
+    .marker .yellow {
+        background: url('../images/marker4.png') no-repeat 0 0;
+        background-size: contain;
+    }
+
+.marker_cont {
+    background-color: rgb(255, 255, 255);
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+.mark-desc {
+    line-height: 48px;
+    margin: 0 15px;
+}
+
+.desc {
+    float: right;
+    position: relative;
+    height: 100%;
+}

@@ -1,0 +1,81 @@
+C:\Users\Ильназ\Documents\Visual Studio 2013\Projects\JelDorNiiProject\JelDorNiiProject\bin\JelDorNiiProject.dll.config
+C:\Users\Ильназ\Documents\Visual Studio 2013\Projects\JelDorNiiProject\JelDorNiiProject\bin\JelDorNiiProject.dll
+C:\Users\Ильназ\Documents\Visual Studio 2013\Projects\JelDorNiiProject\JelDorNiiProject\bin\JelDorNiiProject.pdb
+C:\Users\Ильназ\Documents\Visual Studio 2013\Projects\JelDorNiiProject\JelDorNiiProject\bin\Brio.dll
+C:\Users\Ильназ\Documents\Visual Studio 2013\Projects\JelDorNiiProject\JelDorNiiProject\bin\EntityFramework.dll
+C:\Users\Ильназ\Documents\Visual Studio 2013\Projects\JelDorNiiProject\JelDorNiiProject\bin\EntityFramework.SqlServer.dll
+C:\Users\Ильназ\Documents\Visual Studio 2013\Projects\JelDorNiiProject\JelDorNiiProject\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Ильназ\Documents\Visual Studio 2013\Projects\JelDorNiiProject\JelDorNiiProject\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+C:\Users\Ильназ\Documents\Visual Studio 2013\Projects\JelDorNiiProject\JelDorNiiProject\bin\Newtonsoft.Json.dll
+C:\Users\Ильназ\Documents\Visual Studio 2013\Projects\JelDorNiiProject\JelDorNiiProject\bin\Ninject.dll
+C:\Users\Ильназ\Documents\Visual Studio 2013\Projects\JelDorNiiProject\JelDorNiiProject\bin\Ninject.Web.Common.dll
+C:\Users\Ильназ\Documents\Visual Studio 2013\Projects\JelDorNiiProject\JelDorNiiProject\bin\Ninject.Web.Mvc.dll
+C:\Users\Ильназ\Documents\Visual Studio 2013\Projects\JelDorNiiProject\JelDorNiiProject\bin\System.Net.Http.Formatting.dll
+C:\Users\Ильназ\Documents\Visual Studio 2013\Projects\JelDorNiiProject\JelDorNiiProject\bin\System.Web.Helpers.dll
+C:\Users\Ильназ\Documents\Visual Studio 2013\Projects\JelDorNiiProject\JelDorNiiProject\bin\System.Web.Http.dll
+C:\Users\Ильназ\Documents\Visual Studio 2013\Projects\JelDorNiiProject\JelDorNiiProject\bin\System.Web.Http.WebHost.dll
+C:\Users\Ильназ\Documents\Visual Studio 2013\Projects\JelDorNiiProject\JelDorNiiProject\bin\System.Web.Mvc.dll
+C:\Users\Ильназ\Documents\Visual Studio 2013\Projects\JelDorNiiProject\JelDorNiiProject\bin\System.Web.Razor.dll
+C:\Users\Ильназ\Documents\Visual Studio 2013\Projects\JelDorNiiProject\JelDorNiiProject\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Ильназ\Documents\Visual Studio 2013\Projects\JelDorNiiProject\JelDorNiiProject\bin\System.Web.WebPages.dll
+C:\Users\Ильназ\Documents\Visual Studio 2013\Projects\JelDorNiiProject\JelDorNiiProject\bin\System.Web.WebPages.Razor.dll
+C:\Users\Ильназ\Documents\Visual Studio 2013\Projects\JelDorNiiProject\JelDorNiiProject\bin\WebActivatorEx.dll
+C:\Users\Ильназ\Documents\Visual Studio 2013\Projects\JelDorNiiProject\JelDorNiiProject\bin\Brio.pdb
+C:\Users\Ильназ\Documents\Visual Studio 2013\Projects\JelDorNiiProject\JelDorNiiProject\bin\EntityFramework.xml
+C:\Users\Ильназ\Documents\Visual Studio 2013\Projects\JelDorNiiProject\JelDorNiiProject\bin\EntityFramework.SqlServer.xml
+C:\Users\Ильназ\Documents\Visual Studio 2013\Projects\JelDorNiiProject\JelDorNiiProject\bin\Ninject.xml
+C:\Users\Ильназ\Documents\Visual Studio 2013\Projects\JelDorNiiProject\JelDorNiiProject\bin\Ninject.Web.Common.xml
+C:\Users\Ильназ\Documents\Visual Studio 2013\Projects\JelDorNiiProject\JelDorNiiProject\bin\Ninject.Web.Mvc.xml
+C:\Users\Ильназ\Documents\Visual Studio 2013\Projects\JelDorNiiProject\JelDorNiiProject\bin\Newtonsoft.Json.xml
+C:\Users\Ильназ\Documents\Visual Studio 2013\Projects\JelDorNiiProject\JelDorNiiProject\bin\System.Net.Http.Formatting.xml
+C:\Users\Ильназ\Documents\Visual Studio 2013\Projects\JelDorNiiProject\JelDorNiiProject\bin\System.Web.Helpers.xml
+C:\Users\Ильназ\Documents\Visual Studio 2013\Projects\JelDorNiiProject\JelDorNiiProject\bin\System.Web.Http.xml
+C:\Users\Ильназ\Documents\Visual Studio 2013\Projects\JelDorNiiProject\JelDorNiiProject\bin\System.Web.Http.WebHost.xml
+C:\Users\Ильназ\Documents\Visual Studio 2013\Projects\JelDorNiiProject\JelDorNiiProject\bin\System.Web.Mvc.xml
+C:\Users\Ильназ\Documents\Visual Studio 2013\Projects\JelDorNiiProject\JelDorNiiProject\bin\System.Web.Razor.xml
+C:\Users\Ильназ\Documents\Visual Studio 2013\Projects\JelDorNiiProject\JelDorNiiProject\bin\System.Web.WebPages.xml
+C:\Users\Ильназ\Documents\Visual Studio 2013\Projects\JelDorNiiProject\JelDorNiiProject\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Ильназ\Documents\Visual Studio 2013\Projects\JelDorNiiProject\JelDorNiiProject\bin\System.Web.WebPages.Razor.xml
+C:\Users\Ильназ\Documents\Visual Studio 2013\Projects\JelDorNiiProject\JelDorNiiProject\obj\Release\JelDorNiiProject.csprojResolveAssemblyReference.cache
+C:\Users\Ильназ\Documents\Visual Studio 2013\Projects\JelDorNiiProject\JelDorNiiProject\obj\Release\JelDorNiiProject.dll
+C:\Users\Ильназ\Documents\Visual Studio 2013\Projects\JelDorNiiProject\JelDorNiiProject\obj\Release\JelDorNiiProject.pdb
+D:\Actpromo\JelDorNiiProject\JelDorNiiProject\bin\JelDorNiiProject.dll
+D:\Actpromo\JelDorNiiProject\JelDorNiiProject\bin\JelDorNiiProject.pdb
+D:\Actpromo\JelDorNiiProject\JelDorNiiProject\bin\Brio.dll
+D:\Actpromo\JelDorNiiProject\JelDorNiiProject\bin\EntityFramework.dll
+D:\Actpromo\JelDorNiiProject\JelDorNiiProject\bin\EntityFramework.SqlServer.dll
+D:\Actpromo\JelDorNiiProject\JelDorNiiProject\bin\Microsoft.Web.Infrastructure.dll
+D:\Actpromo\JelDorNiiProject\JelDorNiiProject\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+D:\Actpromo\JelDorNiiProject\JelDorNiiProject\bin\Newtonsoft.Json.dll
+D:\Actpromo\JelDorNiiProject\JelDorNiiProject\bin\Ninject.dll
+D:\Actpromo\JelDorNiiProject\JelDorNiiProject\bin\Ninject.Web.Common.dll
+D:\Actpromo\JelDorNiiProject\JelDorNiiProject\bin\Ninject.Web.Mvc.dll
+D:\Actpromo\JelDorNiiProject\JelDorNiiProject\bin\System.Net.Http.Formatting.dll
+D:\Actpromo\JelDorNiiProject\JelDorNiiProject\bin\System.Web.Helpers.dll
+D:\Actpromo\JelDorNiiProject\JelDorNiiProject\bin\System.Web.Http.dll
+D:\Actpromo\JelDorNiiProject\JelDorNiiProject\bin\System.Web.Http.WebHost.dll
+D:\Actpromo\JelDorNiiProject\JelDorNiiProject\bin\System.Web.Mvc.dll
+D:\Actpromo\JelDorNiiProject\JelDorNiiProject\bin\System.Web.Razor.dll
+D:\Actpromo\JelDorNiiProject\JelDorNiiProject\bin\System.Web.WebPages.Deployment.dll
+D:\Actpromo\JelDorNiiProject\JelDorNiiProject\bin\System.Web.WebPages.dll
+D:\Actpromo\JelDorNiiProject\JelDorNiiProject\bin\System.Web.WebPages.Razor.dll
+D:\Actpromo\JelDorNiiProject\JelDorNiiProject\bin\WebActivatorEx.dll
+D:\Actpromo\JelDorNiiProject\JelDorNiiProject\bin\Brio.pdb
+D:\Actpromo\JelDorNiiProject\JelDorNiiProject\bin\EntityFramework.xml
+D:\Actpromo\JelDorNiiProject\JelDorNiiProject\bin\EntityFramework.SqlServer.xml
+D:\Actpromo\JelDorNiiProject\JelDorNiiProject\bin\Ninject.xml
+D:\Actpromo\JelDorNiiProject\JelDorNiiProject\bin\Ninject.Web.Common.xml
+D:\Actpromo\JelDorNiiProject\JelDorNiiProject\bin\Ninject.Web.Mvc.xml
+D:\Actpromo\JelDorNiiProject\JelDorNiiProject\bin\Newtonsoft.Json.xml
+D:\Actpromo\JelDorNiiProject\JelDorNiiProject\bin\System.Net.Http.Formatting.xml
+D:\Actpromo\JelDorNiiProject\JelDorNiiProject\bin\System.Web.Helpers.xml
+D:\Actpromo\JelDorNiiProject\JelDorNiiProject\bin\System.Web.Http.xml
+D:\Actpromo\JelDorNiiProject\JelDorNiiProject\bin\System.Web.Http.WebHost.xml
+D:\Actpromo\JelDorNiiProject\JelDorNiiProject\bin\System.Web.Mvc.xml
+D:\Actpromo\JelDorNiiProject\JelDorNiiProject\bin\System.Web.Razor.xml
+D:\Actpromo\JelDorNiiProject\JelDorNiiProject\bin\System.Web.WebPages.xml
+D:\Actpromo\JelDorNiiProject\JelDorNiiProject\bin\System.Web.WebPages.Deployment.xml
+D:\Actpromo\JelDorNiiProject\JelDorNiiProject\bin\System.Web.WebPages.Razor.xml
+D:\Actpromo\JelDorNiiProject\JelDorNiiProject\obj\Release\JelDorNiiProject.csprojResolveAssemblyReference.cache
+D:\Actpromo\JelDorNiiProject\JelDorNiiProject\obj\Release\JelDorNiiProject.dll
+D:\Actpromo\JelDorNiiProject\JelDorNiiProject\obj\Release\JelDorNiiProject.pdb

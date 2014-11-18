@@ -1,0 +1,225 @@
+C:\Users\Ильназ\Documents\Visual Studio 2013\Projects\Brio-Lab\Brio-Lab\bin\BrioLab.dll.config
+C:\Users\Ильназ\Documents\Visual Studio 2013\Projects\Brio-Lab\Brio-Lab\bin\BrioLab.dll
+C:\Users\Ильназ\Documents\Visual Studio 2013\Projects\Brio-Lab\Brio-Lab\bin\BrioLab.pdb
+C:\Users\Ильназ\Documents\Visual Studio 2013\Projects\Brio-Lab\Brio-Lab\bin\EntityFramework.dll
+C:\Users\Ильназ\Documents\Visual Studio 2013\Projects\Brio-Lab\Brio-Lab\bin\EntityFramework.SqlServer.dll
+C:\Users\Ильназ\Documents\Visual Studio 2013\Projects\Brio-Lab\Brio-Lab\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Ильназ\Documents\Visual Studio 2013\Projects\Brio-Lab\Brio-Lab\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+C:\Users\Ильназ\Documents\Visual Studio 2013\Projects\Brio-Lab\Brio-Lab\bin\Newtonsoft.Json.dll
+C:\Users\Ильназ\Documents\Visual Studio 2013\Projects\Brio-Lab\Brio-Lab\bin\System.Net.Http.Formatting.dll
+C:\Users\Ильназ\Documents\Visual Studio 2013\Projects\Brio-Lab\Brio-Lab\bin\System.Web.Helpers.dll
+C:\Users\Ильназ\Documents\Visual Studio 2013\Projects\Brio-Lab\Brio-Lab\bin\System.Web.Http.dll
+C:\Users\Ильназ\Documents\Visual Studio 2013\Projects\Brio-Lab\Brio-Lab\bin\System.Web.Http.WebHost.dll
+C:\Users\Ильназ\Documents\Visual Studio 2013\Projects\Brio-Lab\Brio-Lab\bin\System.Web.Mvc.dll
+C:\Users\Ильназ\Documents\Visual Studio 2013\Projects\Brio-Lab\Brio-Lab\bin\System.Web.Razor.dll
+C:\Users\Ильназ\Documents\Visual Studio 2013\Projects\Brio-Lab\Brio-Lab\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Ильназ\Documents\Visual Studio 2013\Projects\Brio-Lab\Brio-Lab\bin\System.Web.WebPages.dll
+C:\Users\Ильназ\Documents\Visual Studio 2013\Projects\Brio-Lab\Brio-Lab\bin\System.Web.WebPages.Razor.dll
+C:\Users\Ильназ\Documents\Visual Studio 2013\Projects\Brio-Lab\Brio-Lab\bin\EntityFramework.xml
+C:\Users\Ильназ\Documents\Visual Studio 2013\Projects\Brio-Lab\Brio-Lab\bin\EntityFramework.SqlServer.xml
+C:\Users\Ильназ\Documents\Visual Studio 2013\Projects\Brio-Lab\Brio-Lab\bin\Newtonsoft.Json.xml
+C:\Users\Ильназ\Documents\Visual Studio 2013\Projects\Brio-Lab\Brio-Lab\bin\System.Net.Http.Formatting.xml
+C:\Users\Ильназ\Documents\Visual Studio 2013\Projects\Brio-Lab\Brio-Lab\bin\System.Web.Helpers.xml
+C:\Users\Ильназ\Documents\Visual Studio 2013\Projects\Brio-Lab\Brio-Lab\bin\System.Web.Http.xml
+C:\Users\Ильназ\Documents\Visual Studio 2013\Projects\Brio-Lab\Brio-Lab\bin\System.Web.Http.WebHost.xml
+C:\Users\Ильназ\Documents\Visual Studio 2013\Projects\Brio-Lab\Brio-Lab\bin\System.Web.Mvc.xml
+C:\Users\Ильназ\Documents\Visual Studio 2013\Projects\Brio-Lab\Brio-Lab\bin\System.Web.Razor.xml
+C:\Users\Ильназ\Documents\Visual Studio 2013\Projects\Brio-Lab\Brio-Lab\bin\System.Web.WebPages.xml
+C:\Users\Ильназ\Documents\Visual Studio 2013\Projects\Brio-Lab\Brio-Lab\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Ильназ\Documents\Visual Studio 2013\Projects\Brio-Lab\Brio-Lab\bin\System.Web.WebPages.Razor.xml
+C:\Users\Ильназ\Documents\Visual Studio 2013\Projects\Brio-Lab\Brio-Lab\obj\Debug\BrioLab.dll
+C:\Users\Ильназ\Documents\Visual Studio 2013\Projects\Brio-Lab\Brio-Lab\obj\Debug\BrioLab.pdb
+C:\Users\Ильназ\Documents\Visual Studio 2013\Projects\Brio-Lab\Brio-Lab\bin\Ninject.dll
+C:\Users\Ильназ\Documents\Visual Studio 2013\Projects\Brio-Lab\Brio-Lab\bin\Ninject.Web.Common.dll
+C:\Users\Ильназ\Documents\Visual Studio 2013\Projects\Brio-Lab\Brio-Lab\bin\Ninject.xml
+C:\Users\Ильназ\Documents\Visual Studio 2013\Projects\Brio-Lab\Brio-Lab\bin\Ninject.Web.Common.xml
+c:\Users\Ильназ\Documents\Visual Studio 2013\Projects\Brio-Lab\Brio-Lab\bin\WebActivatorEx.dll
+c:\Users\Ильназ\Documents\Visual Studio 2013\Projects\Brio-Lab\Brio-Lab\obj\Debug\BrioLab.csprojResolveAssemblyReference.cache
+c:\Users\Ильназ\Documents\Visual Studio 2013\Projects\Brio-Lab\Brio-Lab\bin\Ninject.Web.Mvc.dll
+c:\Users\Ильназ\Documents\Visual Studio 2013\Projects\Brio-Lab\Brio-Lab\bin\Ninject.Web.Mvc.xml
+F:\Brio-Lab\Brio-Lab\bin\BrioLab.dll.config
+F:\Brio-Lab\Brio-Lab\bin\BrioLab.dll
+F:\Brio-Lab\Brio-Lab\bin\BrioLab.pdb
+F:\Brio-Lab\Brio-Lab\bin\EntityFramework.dll
+F:\Brio-Lab\Brio-Lab\bin\EntityFramework.SqlServer.dll
+F:\Brio-Lab\Brio-Lab\bin\Microsoft.Web.Infrastructure.dll
+F:\Brio-Lab\Brio-Lab\bin\Newtonsoft.Json.dll
+F:\Brio-Lab\Brio-Lab\bin\Ninject.dll
+F:\Brio-Lab\Brio-Lab\bin\Ninject.Web.Common.dll
+F:\Brio-Lab\Brio-Lab\bin\Ninject.Web.Mvc.dll
+F:\Brio-Lab\Brio-Lab\bin\System.Net.Http.Formatting.dll
+F:\Brio-Lab\Brio-Lab\bin\System.Web.Helpers.dll
+F:\Brio-Lab\Brio-Lab\bin\System.Web.Http.dll
+F:\Brio-Lab\Brio-Lab\bin\System.Web.Http.WebHost.dll
+F:\Brio-Lab\Brio-Lab\bin\System.Web.Mvc.dll
+F:\Brio-Lab\Brio-Lab\bin\System.Web.Razor.dll
+F:\Brio-Lab\Brio-Lab\bin\System.Web.WebPages.Deployment.dll
+F:\Brio-Lab\Brio-Lab\bin\System.Web.WebPages.dll
+F:\Brio-Lab\Brio-Lab\bin\System.Web.WebPages.Razor.dll
+F:\Brio-Lab\Brio-Lab\bin\WebActivatorEx.dll
+F:\Brio-Lab\Brio-Lab\bin\EntityFramework.xml
+F:\Brio-Lab\Brio-Lab\bin\EntityFramework.SqlServer.xml
+F:\Brio-Lab\Brio-Lab\bin\Ninject.xml
+F:\Brio-Lab\Brio-Lab\bin\Ninject.Web.Common.xml
+F:\Brio-Lab\Brio-Lab\bin\Ninject.Web.Mvc.xml
+F:\Brio-Lab\Brio-Lab\bin\Microsoft.Web.Infrastructure.xml
+F:\Brio-Lab\Brio-Lab\bin\System.Net.Http.Formatting.xml
+F:\Brio-Lab\Brio-Lab\bin\System.Web.Helpers.xml
+F:\Brio-Lab\Brio-Lab\bin\System.Web.Http.xml
+F:\Brio-Lab\Brio-Lab\bin\System.Web.Http.WebHost.xml
+F:\Brio-Lab\Brio-Lab\bin\System.Web.Mvc.xml
+F:\Brio-Lab\Brio-Lab\bin\System.Web.Razor.xml
+F:\Brio-Lab\Brio-Lab\bin\System.Web.WebPages.xml
+F:\Brio-Lab\Brio-Lab\bin\System.Web.WebPages.Deployment.xml
+F:\Brio-Lab\Brio-Lab\bin\System.Web.WebPages.Razor.xml
+F:\Brio-Lab\Brio-Lab\obj\Debug\BrioLab.dll
+F:\Brio-Lab\Brio-Lab\obj\Debug\BrioLab.pdb
+F:\Brio-Lab\Brio-Lab\obj\Debug\BrioLab.csprojResolveAssemblyReference.cache
+C:\Users\Ильназ\Desktop\Brio-Lab\Brio-Lab\bin\BrioLab.dll.config
+C:\Users\Ильназ\Desktop\Brio-Lab\Brio-Lab\bin\BrioLab.dll
+C:\Users\Ильназ\Desktop\Brio-Lab\Brio-Lab\bin\BrioLab.pdb
+C:\Users\Ильназ\Desktop\Brio-Lab\Brio-Lab\bin\EntityFramework.dll
+C:\Users\Ильназ\Desktop\Brio-Lab\Brio-Lab\bin\EntityFramework.SqlServer.dll
+C:\Users\Ильназ\Desktop\Brio-Lab\Brio-Lab\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Ильназ\Desktop\Brio-Lab\Brio-Lab\bin\Newtonsoft.Json.dll
+C:\Users\Ильназ\Desktop\Brio-Lab\Brio-Lab\bin\Ninject.dll
+C:\Users\Ильназ\Desktop\Brio-Lab\Brio-Lab\bin\Ninject.Web.Common.dll
+C:\Users\Ильназ\Desktop\Brio-Lab\Brio-Lab\bin\Ninject.Web.Mvc.dll
+C:\Users\Ильназ\Desktop\Brio-Lab\Brio-Lab\bin\System.Net.Http.Formatting.dll
+C:\Users\Ильназ\Desktop\Brio-Lab\Brio-Lab\bin\System.Web.Helpers.dll
+C:\Users\Ильназ\Desktop\Brio-Lab\Brio-Lab\bin\System.Web.Http.dll
+C:\Users\Ильназ\Desktop\Brio-Lab\Brio-Lab\bin\System.Web.Http.WebHost.dll
+C:\Users\Ильназ\Desktop\Brio-Lab\Brio-Lab\bin\System.Web.Mvc.dll
+C:\Users\Ильназ\Desktop\Brio-Lab\Brio-Lab\bin\System.Web.Razor.dll
+C:\Users\Ильназ\Desktop\Brio-Lab\Brio-Lab\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Ильназ\Desktop\Brio-Lab\Brio-Lab\bin\System.Web.WebPages.dll
+C:\Users\Ильназ\Desktop\Brio-Lab\Brio-Lab\bin\System.Web.WebPages.Razor.dll
+C:\Users\Ильназ\Desktop\Brio-Lab\Brio-Lab\bin\WebActivatorEx.dll
+C:\Users\Ильназ\Desktop\Brio-Lab\Brio-Lab\bin\EntityFramework.xml
+C:\Users\Ильназ\Desktop\Brio-Lab\Brio-Lab\bin\EntityFramework.SqlServer.xml
+C:\Users\Ильназ\Desktop\Brio-Lab\Brio-Lab\bin\Ninject.xml
+C:\Users\Ильназ\Desktop\Brio-Lab\Brio-Lab\bin\Ninject.Web.Common.xml
+C:\Users\Ильназ\Desktop\Brio-Lab\Brio-Lab\bin\Ninject.Web.Mvc.xml
+C:\Users\Ильназ\Desktop\Brio-Lab\Brio-Lab\bin\Microsoft.Web.Infrastructure.xml
+C:\Users\Ильназ\Desktop\Brio-Lab\Brio-Lab\bin\System.Net.Http.Formatting.xml
+C:\Users\Ильназ\Desktop\Brio-Lab\Brio-Lab\bin\System.Web.Helpers.xml
+C:\Users\Ильназ\Desktop\Brio-Lab\Brio-Lab\bin\System.Web.Http.xml
+C:\Users\Ильназ\Desktop\Brio-Lab\Brio-Lab\bin\System.Web.Http.WebHost.xml
+C:\Users\Ильназ\Desktop\Brio-Lab\Brio-Lab\bin\System.Web.Mvc.xml
+C:\Users\Ильназ\Desktop\Brio-Lab\Brio-Lab\bin\System.Web.Razor.xml
+C:\Users\Ильназ\Desktop\Brio-Lab\Brio-Lab\bin\System.Web.WebPages.xml
+C:\Users\Ильназ\Desktop\Brio-Lab\Brio-Lab\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Ильназ\Desktop\Brio-Lab\Brio-Lab\bin\System.Web.WebPages.Razor.xml
+C:\Users\Ильназ\Desktop\Brio-Lab\Brio-Lab\obj\Debug\BrioLab.csprojResolveAssemblyReference.cache
+C:\Users\Ильназ\Desktop\Brio-Lab\Brio-Lab\obj\Debug\BrioLab.dll
+C:\Users\Ильназ\Desktop\Brio-Lab\Brio-Lab\obj\Debug\BrioLab.pdb
+F:\Brio-Lab\Brio-Lab\bin\Brio.dll
+F:\Brio-Lab\Brio-Lab\bin\Brio.pdb
+F:\Brio-Lab\Brio-Lab\bin\Antlr3.Runtime.dll
+F:\Brio-Lab\Brio-Lab\bin\System.Web.Optimization.dll
+F:\Brio-Lab\Brio-Lab\bin\WebActivator.dll
+F:\Brio-Lab\Brio-Lab\bin\WebGrease.dll
+F:\Brio-Lab\Brio-Lab\bin\Antlr3.Runtime.pdb
+F:\Brio-Lab\Brio-Lab\bin\Newtonsoft.Json.xml
+F:\Brio-Lab\Brio-Lab\bin\System.Web.Optimization.xml
+D:\Actpromo\Brio-Lab\Brio-Lab\obj\Debug\BrioLab.csprojResolveAssemblyReference.cache
+D:\Actpromo\Brio-Lab\Brio-Lab\obj\Debug\BrioLab.dll
+D:\Actpromo\Brio-Lab\Brio-Lab\bin\BrioLab.dll
+D:\Actpromo\Brio-Lab\Brio-Lab\bin\BrioLab.pdb
+D:\Actpromo\Brio-Lab\Brio-Lab\bin\Antlr3.Runtime.dll
+D:\Actpromo\Brio-Lab\Brio-Lab\bin\Brio.dll
+D:\Actpromo\Brio-Lab\Brio-Lab\bin\EntityFramework.dll
+D:\Actpromo\Brio-Lab\Brio-Lab\bin\EntityFramework.SqlServer.dll
+D:\Actpromo\Brio-Lab\Brio-Lab\bin\Microsoft.Web.Infrastructure.dll
+D:\Actpromo\Brio-Lab\Brio-Lab\bin\Newtonsoft.Json.dll
+D:\Actpromo\Brio-Lab\Brio-Lab\bin\Ninject.dll
+D:\Actpromo\Brio-Lab\Brio-Lab\bin\Ninject.Web.Common.dll
+D:\Actpromo\Brio-Lab\Brio-Lab\bin\Ninject.Web.Mvc.dll
+D:\Actpromo\Brio-Lab\Brio-Lab\bin\System.Net.Http.Formatting.dll
+D:\Actpromo\Brio-Lab\Brio-Lab\bin\System.Web.Helpers.dll
+D:\Actpromo\Brio-Lab\Brio-Lab\bin\System.Web.Http.dll
+D:\Actpromo\Brio-Lab\Brio-Lab\bin\System.Web.Http.WebHost.dll
+D:\Actpromo\Brio-Lab\Brio-Lab\bin\System.Web.Mvc.dll
+D:\Actpromo\Brio-Lab\Brio-Lab\bin\System.Web.Optimization.dll
+D:\Actpromo\Brio-Lab\Brio-Lab\bin\System.Web.Razor.dll
+D:\Actpromo\Brio-Lab\Brio-Lab\bin\System.Web.WebPages.Deployment.dll
+D:\Actpromo\Brio-Lab\Brio-Lab\bin\System.Web.WebPages.dll
+D:\Actpromo\Brio-Lab\Brio-Lab\bin\System.Web.WebPages.Razor.dll
+D:\Actpromo\Brio-Lab\Brio-Lab\bin\WebActivator.dll
+D:\Actpromo\Brio-Lab\Brio-Lab\bin\WebActivatorEx.dll
+D:\Actpromo\Brio-Lab\Brio-Lab\bin\WebGrease.dll
+D:\Actpromo\Brio-Lab\Brio-Lab\bin\Brio.pdb
+D:\Actpromo\Brio-Lab\Brio-Lab\bin\Antlr3.Runtime.pdb
+D:\Actpromo\Brio-Lab\Brio-Lab\bin\EntityFramework.xml
+D:\Actpromo\Brio-Lab\Brio-Lab\bin\EntityFramework.SqlServer.xml
+D:\Actpromo\Brio-Lab\Brio-Lab\bin\Newtonsoft.Json.xml
+D:\Actpromo\Brio-Lab\Brio-Lab\bin\Ninject.xml
+D:\Actpromo\Brio-Lab\Brio-Lab\bin\Ninject.Web.Common.xml
+D:\Actpromo\Brio-Lab\Brio-Lab\bin\Ninject.Web.Mvc.xml
+D:\Actpromo\Brio-Lab\Brio-Lab\bin\System.Web.Optimization.xml
+D:\Actpromo\Brio-Lab\Brio-Lab\bin\Microsoft.Web.Infrastructure.xml
+D:\Actpromo\Brio-Lab\Brio-Lab\bin\System.Net.Http.Formatting.xml
+D:\Actpromo\Brio-Lab\Brio-Lab\bin\System.Web.Helpers.xml
+D:\Actpromo\Brio-Lab\Brio-Lab\bin\System.Web.Http.xml
+D:\Actpromo\Brio-Lab\Brio-Lab\bin\System.Web.Http.WebHost.xml
+D:\Actpromo\Brio-Lab\Brio-Lab\bin\System.Web.Mvc.xml
+D:\Actpromo\Brio-Lab\Brio-Lab\bin\System.Web.Razor.xml
+D:\Actpromo\Brio-Lab\Brio-Lab\bin\System.Web.WebPages.xml
+D:\Actpromo\Brio-Lab\Brio-Lab\bin\System.Web.WebPages.Deployment.xml
+D:\Actpromo\Brio-Lab\Brio-Lab\bin\System.Web.WebPages.Razor.xml
+D:\Actpromo\Brio-Lab\Brio-Lab\bin\ru\System.Net.Http.Formatting.resources.dll
+D:\Actpromo\Brio-Lab\Brio-Lab\bin\ru\System.Web.Helpers.resources.dll
+D:\Actpromo\Brio-Lab\Brio-Lab\bin\ru\System.Web.Http.resources.dll
+D:\Actpromo\Brio-Lab\Brio-Lab\bin\ru\System.Web.Http.WebHost.resources.dll
+D:\Actpromo\Brio-Lab\Brio-Lab\bin\ru\System.Web.Mvc.resources.dll
+D:\Actpromo\Brio-Lab\Brio-Lab\bin\ru\System.Web.Razor.resources.dll
+D:\Actpromo\Brio-Lab\Brio-Lab\bin\ru\System.Web.WebPages.resources.dll
+D:\Actpromo\Brio-Lab\Brio-Lab\bin\ru\System.Web.WebPages.Deployment.resources.dll
+D:\Actpromo\Brio-Lab\Brio-Lab\bin\ru\System.Web.WebPages.Razor.resources.dll
+D:\Actpromo\Brio-Lab\Brio-Lab\obj\Debug\BrioLab.pdb
+D:\ActualPromotion\Brio-Lab\Brio-Lab\bin\BrioLab.dll
+D:\ActualPromotion\Brio-Lab\Brio-Lab\bin\BrioLab.pdb
+D:\ActualPromotion\Brio-Lab\Brio-Lab\bin\Antlr3.Runtime.dll
+D:\ActualPromotion\Brio-Lab\Brio-Lab\bin\Brio.dll
+D:\ActualPromotion\Brio-Lab\Brio-Lab\bin\EntityFramework.dll
+D:\ActualPromotion\Brio-Lab\Brio-Lab\bin\EntityFramework.SqlServer.dll
+D:\ActualPromotion\Brio-Lab\Brio-Lab\bin\Microsoft.Web.Infrastructure.dll
+D:\ActualPromotion\Brio-Lab\Brio-Lab\bin\Newtonsoft.Json.dll
+D:\ActualPromotion\Brio-Lab\Brio-Lab\bin\Ninject.dll
+D:\ActualPromotion\Brio-Lab\Brio-Lab\bin\Ninject.Web.Common.dll
+D:\ActualPromotion\Brio-Lab\Brio-Lab\bin\Ninject.Web.Mvc.dll
+D:\ActualPromotion\Brio-Lab\Brio-Lab\bin\System.Net.Http.Formatting.dll
+D:\ActualPromotion\Brio-Lab\Brio-Lab\bin\System.Web.Helpers.dll
+D:\ActualPromotion\Brio-Lab\Brio-Lab\bin\System.Web.Http.dll
+D:\ActualPromotion\Brio-Lab\Brio-Lab\bin\System.Web.Http.WebHost.dll
+D:\ActualPromotion\Brio-Lab\Brio-Lab\bin\System.Web.Mvc.dll
+D:\ActualPromotion\Brio-Lab\Brio-Lab\bin\System.Web.Optimization.dll
+D:\ActualPromotion\Brio-Lab\Brio-Lab\bin\System.Web.Razor.dll
+D:\ActualPromotion\Brio-Lab\Brio-Lab\bin\System.Web.WebPages.Deployment.dll
+D:\ActualPromotion\Brio-Lab\Brio-Lab\bin\System.Web.WebPages.dll
+D:\ActualPromotion\Brio-Lab\Brio-Lab\bin\System.Web.WebPages.Razor.dll
+D:\ActualPromotion\Brio-Lab\Brio-Lab\bin\WebActivator.dll
+D:\ActualPromotion\Brio-Lab\Brio-Lab\bin\WebActivatorEx.dll
+D:\ActualPromotion\Brio-Lab\Brio-Lab\bin\WebGrease.dll
+D:\ActualPromotion\Brio-Lab\Brio-Lab\bin\Brio.pdb
+D:\ActualPromotion\Brio-Lab\Brio-Lab\bin\Antlr3.Runtime.pdb
+D:\ActualPromotion\Brio-Lab\Brio-Lab\bin\EntityFramework.xml
+D:\ActualPromotion\Brio-Lab\Brio-Lab\bin\EntityFramework.SqlServer.xml
+D:\ActualPromotion\Brio-Lab\Brio-Lab\bin\Newtonsoft.Json.xml
+D:\ActualPromotion\Brio-Lab\Brio-Lab\bin\Ninject.xml
+D:\ActualPromotion\Brio-Lab\Brio-Lab\bin\Ninject.Web.Common.xml
+D:\ActualPromotion\Brio-Lab\Brio-Lab\bin\Ninject.Web.Mvc.xml
+D:\ActualPromotion\Brio-Lab\Brio-Lab\bin\System.Web.Optimization.xml
+D:\ActualPromotion\Brio-Lab\Brio-Lab\bin\Microsoft.Web.Infrastructure.xml
+D:\ActualPromotion\Brio-Lab\Brio-Lab\bin\System.Net.Http.Formatting.xml
+D:\ActualPromotion\Brio-Lab\Brio-Lab\bin\System.Web.Helpers.xml
+D:\ActualPromotion\Brio-Lab\Brio-Lab\bin\System.Web.Http.xml
+D:\ActualPromotion\Brio-Lab\Brio-Lab\bin\System.Web.Http.WebHost.xml
+D:\ActualPromotion\Brio-Lab\Brio-Lab\bin\System.Web.Mvc.xml
+D:\ActualPromotion\Brio-Lab\Brio-Lab\bin\System.Web.Razor.xml
+D:\ActualPromotion\Brio-Lab\Brio-Lab\bin\System.Web.WebPages.xml
+D:\ActualPromotion\Brio-Lab\Brio-Lab\bin\System.Web.WebPages.Deployment.xml
+D:\ActualPromotion\Brio-Lab\Brio-Lab\bin\System.Web.WebPages.Razor.xml
+D:\ActualPromotion\Brio-Lab\Brio-Lab\obj\Debug\BrioLab.csprojResolveAssemblyReference.cache
+D:\ActualPromotion\Brio-Lab\Brio-Lab\obj\Debug\BrioLab.dll
+D:\ActualPromotion\Brio-Lab\Brio-Lab\obj\Debug\BrioLab.pdb

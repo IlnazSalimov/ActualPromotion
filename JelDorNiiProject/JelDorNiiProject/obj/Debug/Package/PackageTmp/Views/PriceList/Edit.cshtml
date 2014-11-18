@@ -1,0 +1,36 @@
+﻿@model Brio.Models.EditPriceList
+
+@{
+    ViewBag.Title = "ПРАЙСЛИСТ";
+    Layout = "~/Views/Layouts/LayoutDefault.cshtml";
+}
+
+<div class="container run1">
+    <div data-id="0" class="slider"></div>
+</div>
+<div class="block_ins">
+    <div class="title">
+        @ViewBag.Title
+    </div>
+    <article class="page-content" style="padding: 30px; box-sizing: border-box; overflow:auto;">
+        @using (Html.BeginForm("Edit", "PriceList", FormMethod.Post, new { @class = "pure-form pure-form-aligned", enctype = "multipart/form-data" }))
+        {
+            @Html.ValidationSummary(true)
+            <fieldset>
+                @Html.HiddenFor(model => model.ID)
+                <div class="pure-control-group">
+                    @Html.LabelFor(model => model.Title)
+                    @Html.TextBoxFor(model => model.Title, new { @class = "pure-input-1-2" })
+                    @Html.ValidationMessageFor(model => model.Title)
+                </div>
+                <div class="pure-controls">
+                    <button type="submit" class="pure-button pure-button-primary">СОХРАНИТЬ</button>
+                </div>
+            </fieldset>
+        }
+    </article>
+</div>
+<div class="bottom_arrows_container">
+    <div class="bottom-arrows">
+    </div>
+</div>

@@ -1,0 +1,77 @@
+﻿@model IEnumerable<Brio.Models.Article>
+@{
+    ViewBag.Title = "ГЛАВНАЯ";
+    Layout = "~/Views/Layouts/LayoutDefault.cshtml";
+}
+
+@section Styles{
+    <style>
+        figure.banner {
+            background: url('../Content/images/banner1.jpg') no-repeat 0 0;
+            background-size: cover;
+        }
+
+        figure.banner figcaption {
+            background: url('../Content/images/banner_topsheet.png') no-repeat 0 0;
+            background-size: cover;
+        }
+    </style>
+}
+
+<figure class="banner">
+    <figcaption></figcaption>
+</figure>
+
+<content>
+    <section class="about-company pure-g">
+        <div class="articles relative pure-u-1 pure-u-sm-2-3">
+            <h1>О КОМПАНИИ</h1>
+            @if (User.Identity.IsAuthenticated)
+            {
+                <div class="add admin-buttons">@Html.ActionLink("Добавить запись", "Add", "Articles", null, null)</div>
+            }
+
+            @foreach (var item in Model)
+            {
+                <article>
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <div class="admin-buttons">
+                            <a href="/Articles/Edit?articleId=@item.ID"><i class=" fa fa-pencil-square-o"></i></a>
+                            <a class="delete" href="" data-articleid="@item.ID"><i class="fa fa-times"></i></a>
+                        </div>
+                    }
+                    <h2>@item.Title</h2>
+                    <p>
+                        @Html.Raw(HttpUtility.HtmlDecode(item.Text))
+                    </p>
+                </article>
+            }
+            @if (Model.Count() == 0)
+            {
+                <div class="warning-msg-container pure-u-22-24">Новостей на данный момент нет</div>
+            }
+        </div>
+
+        <aside class="company-desription pure-u-1 pure-u-sm-1-3">
+            <h2>"ЖЕЛДОРНИИ"</h2>
+            <p>
+                Компания имеет собственный цех, оснащенный оборудованием итальянских и немецких производителей.
+                Оборудованием итальянских и немецких производителей.
+            </p>
+        </aside>
+    </section>
+
+    <section class="partners">
+        <div class="title_h1">ПАРТНЕРЫ</div>
+        <div class="pure-g">
+            <div class="partner-logo pure-u-1-6 rosjeldor"></div>
+            <div class="partner-logo pure-u-1-6 panel"></div>
+            <div class="partner-logo pure-u-1-6 kungur"></div>
+            <div class="partner-logo pure-u-1-6 malan"></div>
+            <div class="partner-logo pure-u-1-6 dolina"></div>
+            <div class="partner-logo pure-u-1-6 elvis"></div>
+        </div>
+    </section>
+</content>
+

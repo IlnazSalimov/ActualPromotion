@@ -1,0 +1,220 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BrioLabModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Article">
+    <Key>
+      <PropertyRef Name="ArticleID" />
+    </Key>
+    <Property Name="Title" Type="String" MaxLength="127" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Text" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ArticleID" Type="Int32" Nullable="false" />
+    <Property Name="Page" Type="String" MaxLength="127" FixedLength="false" Unicode="false" />
+    <Property Name="Author" Type="Int32" Nullable="false" />
+    <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="0" />
+    <NavigationProperty Name="User" Relationship="BrioLabModel.FK__Articles__Author__15502E78" FromRole="Article" ToRole="User" />
+    <Property Name="CompanyId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Company" Relationship="BrioLabModel.FK__Articles__Compan__412EB0B6" FromRole="Article" ToRole="Company" />
+  </EntityType>
+  <EntityContainer Name="BrioLabEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Articles" EntityType="Self.Article" />
+    <EntitySet Name="Roles" EntityType="BrioLabModel.Role" />
+    <EntitySet Name="Users" EntityType="BrioLabModel.User" />
+    <AssociationSet Name="FK__Users__RoleId__145C0A3F" Association="BrioLabModel.FK__Users__RoleId__145C0A3F">
+      <End Role="Role" EntitySet="Roles" />
+      <End Role="User" EntitySet="Users" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Articles__Author__15502E78" Association="BrioLabModel.FK__Articles__Author__15502E78">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Article" EntitySet="Articles" />
+    </AssociationSet>
+    <EntitySet Name="Feedbacks" EntityType="BrioLabModel.Feedback" />
+    <EntitySet Name="Companies" EntityType="BrioLabModel.Company" />
+    <EntitySet Name="PriceLists" EntityType="BrioLabModel.PriceList" />
+    <AssociationSet Name="FK__PriceList__Compa__3C69FB99" Association="BrioLabModel.FK__PriceList__Compa__3C69FB99">
+      <End Role="Company" EntitySet="Companies" />
+      <End Role="PriceList" EntitySet="PriceLists" />
+    </AssociationSet>
+    <EntitySet Name="Documents" EntityType="BrioLabModel.Document" />
+    <AssociationSet Name="FK__Articles__Compan__412EB0B6" Association="BrioLabModel.FK__Articles__Compan__412EB0B6">
+      <End Role="Company" EntitySet="Companies" />
+      <End Role="Article" EntitySet="Articles" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Documents__Compa__3F466844" Association="BrioLabModel.FK__Documents__Compa__3F466844">
+      <End Role="Company" EntitySet="Companies" />
+      <End Role="Document" EntitySet="Documents" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Feedbacks__Compa__440B1D61" Association="BrioLabModel.FK__Feedbacks__Compa__440B1D61">
+      <End Role="Company" EntitySet="Companies" />
+      <End Role="Feedback" EntitySet="Feedbacks" />
+    </AssociationSet>
+    <EntitySet Name="Reviews" EntityType="BrioLabModel.Review" />
+    <AssociationSet Name="FK__Reviews__Company__46E78A0C" Association="BrioLabModel.FK__Reviews__Company__46E78A0C">
+      <End Role="Company" EntitySet="Companies" />
+      <End Role="Review" EntitySet="Reviews" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Role">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="RoleName" Type="String" Nullable="false" MaxLength="127" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Users" Relationship="BrioLabModel.FK__Users__RoleId__145C0A3F" FromRole="Role" ToRole="User" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Email" Type="String" Nullable="false" MaxLength="127" FixedLength="false" Unicode="false" />
+    <Property Name="Password" Type="String" Nullable="false" MaxLength="127" FixedLength="false" Unicode="false" />
+    <Property Name="RoleId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Role" Relationship="BrioLabModel.FK__Users__RoleId__145C0A3F" FromRole="User" ToRole="Role" />
+    <NavigationProperty Name="Articles" Relationship="BrioLabModel.FK__Articles__Author__15502E78" FromRole="User" ToRole="Article" />
+  </EntityType>
+  <Association Name="FK__Users__RoleId__145C0A3F">
+    <End Type="BrioLabModel.Role" Role="Role" Multiplicity="1" />
+    <End Type="BrioLabModel.User" Role="User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Role">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Articles__Author__15502E78">
+    <End Type="BrioLabModel.User" Role="User" Multiplicity="1" />
+    <End Type="BrioLabModel.Article" Role="Article" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Article">
+        <PropertyRef Name="Author" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Feedback">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="127" FixedLength="false" Unicode="false" />
+    <Property Name="Phone" Type="String" Nullable="false" MaxLength="127" FixedLength="false" Unicode="false" />
+    <Property Name="Message" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" Nullable="false" MaxLength="127" FixedLength="false" Unicode="false" />
+    <Property Name="CompanyId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Company" Relationship="BrioLabModel.FK__Feedbacks__Compa__440B1D61" FromRole="Feedback" ToRole="Company" />
+  </EntityType>
+  <EntityType Name="Company">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CompanyName" Type="String" Nullable="false" MaxLength="127" FixedLength="false" Unicode="false" />
+    <Property Name="Adress" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Phone" Type="String" Nullable="false" MaxLength="127" FixedLength="false" Unicode="false" />
+    <Property Name="Phone2" Type="String" MaxLength="127" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="127" FixedLength="false" Unicode="false" />
+    <Property Name="Postcode" Type="String" MaxLength="127" FixedLength="false" Unicode="false" />
+    <Property Name="POBox" Type="Int32" />
+    <NavigationProperty Name="PriceLists" Relationship="BrioLabModel.FK__PriceList__Compa__3C69FB99" FromRole="Company" ToRole="PriceList" />
+    <NavigationProperty Name="Articles" Relationship="BrioLabModel.FK__Articles__Compan__412EB0B6" FromRole="Company" ToRole="Article" />
+    <NavigationProperty Name="Documents" Relationship="BrioLabModel.FK__Documents__Compa__3F466844" FromRole="Company" ToRole="Document" />
+    <NavigationProperty Name="Feedbacks" Relationship="BrioLabModel.FK__Feedbacks__Compa__440B1D61" FromRole="Company" ToRole="Feedback" />
+    <NavigationProperty Name="Reviews" Relationship="BrioLabModel.FK__Reviews__Company__46E78A0C" FromRole="Company" ToRole="Review" />
+  </EntityType>
+  <EntityType Name="PriceList">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CompanyId" Type="Int32" Nullable="false" />
+    <Property Name="PriceList1" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Company" Relationship="BrioLabModel.FK__PriceList__Compa__3C69FB99" FromRole="PriceList" ToRole="Company" />
+  </EntityType>
+  <Association Name="FK__PriceList__Compa__3C69FB99">
+    <End Type="BrioLabModel.Company" Role="Company" Multiplicity="1" />
+    <End Type="BrioLabModel.PriceList" Role="PriceList" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Company">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PriceList">
+        <PropertyRef Name="CompanyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Document">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CompanyId" Type="Int32" Nullable="false" />
+    <Property Name="DocumentPath" Type="String" Nullable="false" MaxLength="127" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Company" Relationship="BrioLabModel.FK__Documents__Compa__3F466844" FromRole="Document" ToRole="Company" />
+  </EntityType>
+  <Association Name="FK__Articles__Compan__412EB0B6">
+    <End Type="BrioLabModel.Company" Role="Company" Multiplicity="1" />
+    <End Type="BrioLabModel.Article" Role="Article" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Company">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Article">
+        <PropertyRef Name="CompanyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Documents__Compa__3F466844">
+    <End Type="BrioLabModel.Company" Role="Company" Multiplicity="1" />
+    <End Type="BrioLabModel.Document" Role="Document" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Company">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Document">
+        <PropertyRef Name="CompanyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Feedbacks__Compa__440B1D61">
+    <End Type="BrioLabModel.Company" Role="Company" Multiplicity="1" />
+    <End Type="BrioLabModel.Feedback" Role="Feedback" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Company">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Feedback">
+        <PropertyRef Name="CompanyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Review">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Title" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="ReviewMessage" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="AutorPosition" Type="String" Nullable="false" MaxLength="127" FixedLength="false" Unicode="false" />
+    <Property Name="AuthorCompany" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="AuthorPhoto" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="CompanyId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Company" Relationship="BrioLabModel.FK__Reviews__Company__46E78A0C" FromRole="Review" ToRole="Company" />
+  </EntityType>
+  <Association Name="FK__Reviews__Company__46E78A0C">
+    <End Type="BrioLabModel.Company" Role="Company" Multiplicity="1" />
+    <End Type="BrioLabModel.Review" Role="Review" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Company">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Review">
+        <PropertyRef Name="CompanyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

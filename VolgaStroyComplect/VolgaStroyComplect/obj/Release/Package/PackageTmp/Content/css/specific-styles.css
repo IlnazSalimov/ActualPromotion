@@ -1,0 +1,71 @@
+﻿.logo .loupe {
+    background: url('../images/logo.png') no-repeat 25px 4px;
+    background-size: 38%;
+    width: 170px;
+    height: 90px;
+}
+
+.content div.slider[data-id="0"] {
+    background: url('../images/overlay.png'), url('../images/volga1.jpg');
+    background-size: 256px 256px, cover;
+    background-position: top left, bottom center;
+    background-repeat: repeat, no-repeat;
+}
+
+.content div.slider[data-id="1"] {
+    background: url('../images/overlay.png'), url('../images/volga2.jpg');
+    background-size: 256px 256px, cover;
+    background-position: top left, bottom center;
+    background-repeat: repeat, no-repeat;
+}
+
+.content div.slider[data-id="2"] {
+    background: url('../images/overlay.png'), url('../images/volga3.jpg');
+    background-size: 256px 256px, cover;
+    background-position: top left, bottom center;
+    background-repeat: repeat, no-repeat;
+}
+
+.articles .article_header h1::before {
+    background: #0060AA;
+}
+
+.content .block_ins .brio-tasks {
+    background-color: #0060AA;
+}
+
+.button-blue {
+    background: #0060AA;
+}
+
+.price_buttons_head {
+    color: #0060AA;
+}
+
+    .price_buttons_head::before {
+        background: #0060AA;
+    }
+
+.articles .article_header h1 {
+    color: #0060AA;
+}
+
+.bottom-logo {
+    font-size: 27.1px;
+}
+
+.bottom-logo .company {
+    font-size: 15px;
+    margin-left: 0.5px;
+}
+
+.big-logo {
+    right: 50%;
+    margin-right: -120px;
+}
+
+.bottom-logo {
+    margin-left: -45px;
+}
+
+

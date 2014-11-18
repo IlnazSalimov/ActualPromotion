@@ -1,0 +1,46 @@
+﻿@model Brio.Models.EditArticle
+
+@{
+    ViewBag.Title = "РЕДАКТИРОВАТЬ";
+    Layout = "~/Views/Layouts/LayoutDefault.cshtml";
+}
+
+@section Styles{
+    <link href="~/Content/css/kendo.common.min.css" rel="stylesheet" />
+    <link href="~/Content/css/kendo.default.min.css" rel="stylesheet" />
+}
+
+<div class="content">
+    <h1>РЕДАКТИРОВАТЬ ЗАПИСЬ</h1>
+    @using (Html.BeginForm("EditExaminingDivisionPage", "Articles", FormMethod.Post, new { @class = "pure-form pure-form-aligned", enctype = "multipart/form-data" }))
+    {
+        <fieldset>
+            @Html.HiddenFor(model => model.ID)
+
+            <div class="pure-control-group">
+                @Html.TextBoxFor(model => model.Title, new { @class = "pure-input-2-3", placeholder = "Заглавие" })
+                @Html.ValidationMessageFor(model => model.Title)
+            </div>
+
+            <div class="pure-control-group">
+                @Html.TextAreaFor(model => model.Text, 5, 40, new { @class = "pure-input-2-3", placeholder = "Текст" })
+                @Html.ValidationMessageFor(model => model.Text)
+            </div>
+            <div class="pure-controls">
+                <button type="submit" class="pure-button pure-button-primary">СОХРАНИТЬ</button>
+            </div>
+        </fieldset>
+    }
+</div>
+
+
+
+<script src="~/Content/js/kendo.web.min.js"></script>
+<script src="~/Content/js/kendo.ru-RU.js"></script>
+<script>
+    (function () {
+        $("#Text").kendoEditor({
+            encoded: false
+        });
+    })();
+</script>

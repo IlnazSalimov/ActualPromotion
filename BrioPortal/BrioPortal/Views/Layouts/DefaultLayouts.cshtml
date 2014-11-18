@@ -1,0 +1,51 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Документ без названия</title>
+    <link href="../Content/css/style.css" rel="stylesheet" type="text/css">
+    <link href="../Content/css/jquery-ui-1.8.21.custom.css" rel="stylesheet" type="text/css">
+    <script src="../Content/js/jquery-1.7.1.min.js"></script>
+    <script src="../Content/js/jquery-ui-1.8.21.custom.min.js"></script>
+    <script src="../Content/js/jquery.ui.datepicker-ru.js"></script>
+    <script src="../Content/js/script.js"></script>
+</head>
+
+<body>
+    <div class="main-wrapp">
+        <div class="enter">
+            <ul>
+                <li>ТЕРЕЩЕНКО АНДРЕЙ ВЛАДИМИРОВИЧ</li>
+                <li><a href="#">ВЫХОД</a></li>
+            </ul>
+            <p class="lk"><span>ЛИЧНЫЙ КАБИНЕТ</span></p>
+        </div>
+
+        <nav class="main-nav">
+            <ul>
+                <li><a href="staf.html">СОТРУДНИКИ</a></li>
+                <li><a href="news.html">НОВОСТИ</a></li>
+                <li><a href="doks.html">ДОКУМЕНТЫ</a></li>
+                <li><a href="projects.html">ПРОЕКТЫ</a></li>
+            </ul>
+        </nav>
+        @RenderBody()
+    </div>
+    <div id="pop-up">
+        <form action="" method="post" name="enter">
+            <h1>
+                Добро <br>
+                пожаловать
+            </h1>
+            <p><input name="login" type="text" placeholder="Логин"></p>
+            <p><input name="pass" type="text" placeholder="Пароль"></p>
+            <button type="submit"><h2 class="right creat-title"><span>Войти</span></h2></button>
+        </form>
+    </div>
+</body>
+</html>
+

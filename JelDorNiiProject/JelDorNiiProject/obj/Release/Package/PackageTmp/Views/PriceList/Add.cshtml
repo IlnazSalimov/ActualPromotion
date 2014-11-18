@@ -1,0 +1,42 @@
+﻿@model Brio.Models.AddPriceList
+
+@{
+    ViewBag.Title = "ДОБАВИТЬ ПРАЙС";
+    Layout = "~/Views/Layouts/LayoutDefault.cshtml";
+}
+
+<div class="container run1">
+    <div data-id="0" class="slider"></div>
+</div>
+<div class="block_ins">
+    <div class="title">
+        @ViewBag.Title
+    </div>
+    <article class="page-content" style="padding: 30px; box-sizing: border-box; overflow:auto;">
+        @using (Html.BeginForm("Add", "PriceList", FormMethod.Post, new { @class = "pure-form pure-form-aligned", enctype = "multipart/form-data" }))
+        {
+            @Html.ValidationSummary(true)
+            <fieldset>
+                <div class="pure-control-group">
+                    @Html.LabelFor(model => model.Title)
+                    @Html.TextBoxFor(model => model.Title, new { @class = "pure-input-1-2" })
+                    @Html.ValidationMessageFor(model => model.Title)
+                </div>
+
+                <div class="pure-control-group">
+                    @Html.LabelFor(model => model.PricePath)
+                    @Html.TextBoxFor(model => model.PricePath, new { @class = "pure-input-1-2", type = "file" })
+                    @Html.ValidationMessageFor(model => model.PricePath)
+                </div>
+                <div class="pure-controls">
+                    <button type="submit" class="pure-button pure-button-primary">ДОБАВИТЬ</button>
+                </div>
+            </fieldset>
+        }
+    </article>
+</div>
+<div class="bottom_arrows_container">
+    <div class="bottom-arrows">
+    </div>
+</div>
+

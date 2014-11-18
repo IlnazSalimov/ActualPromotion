@@ -1,0 +1,55 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Layouts/LayoutDefault.cshtml";
+}
+
+@section styles{
+    <style>
+        .container {
+            width:100% !important;
+        }
+    </style>
+}
+
+<div class="container">
+    <div class="slider">
+        <iframe width='100%' height='100%' frameborder='0' src='https://a.tiles.mapbox.com/v4/briogroup.jfi8k1cl/attribution,zoompan,zoomwheel,geocoder,share.html?access_token=pk.eyJ1IjoiYnJpb2dyb3VwIiwiYSI6IkNtN0NibVEifQ.MrIAe15Os9yFyPG7fl4nqQ'></iframe>
+    </div>
+
+    <div style="clear: both"></div>
+    <div class="marker_descriptions">
+        <div class="marker_cont">
+            <div class="marker">
+                <div class="blue m"></div>
+            </div>
+            <div class="desc">
+                <div class="line"></div>
+                <div class="mark-desc">Геодезия</div>
+            </div>
+        </div>
+
+       <div style="clear: both"></div>
+       <div class="marker_cont">
+            <div class="marker">
+                <div class="red m"></div>
+            </div>
+            <div class="desc">
+                <div class="line"></div>
+                <div class="mark-desc">Геология</div>
+            </div>
+        </div>
+
+        <div style="clear: both"></div>
+        <div class="marker_cont">
+            <div class="marker">
+                <div class="green m"></div>
+            </div>
+            <div class="desc">
+                <div class="line"></div>
+                <div class="mark-desc">Экология</div>
+            </div>
+        </div>
+    </div>
+    
+</div>
+

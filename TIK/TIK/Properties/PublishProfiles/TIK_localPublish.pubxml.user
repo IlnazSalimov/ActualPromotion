@@ -1,0 +1,354 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+Этот файл используется в процессе публикации или упаковки вашего веб-проекта. Вы можете настроить поведение процесса,
+изменив этот файл MSBuild. Дополнительные сведения см. по адресу http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <LastUsedBuildConfiguration>Release</LastUsedBuildConfiguration>
+    <LastUsedPlatform>Any CPU</LastUsedPlatform>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>C:\Users\Ильназ\Desktop\tikpublish</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="bin/Brio.dll">
+      <publishTime>10/22/2014 00:35:51</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.dll">
+      <publishTime>10/09/2014 15:34:26</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.SqlServer.dll">
+      <publishTime>10/09/2014 15:34:26</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Web.Infrastructure.dll">
+      <publishTime>03/08/2012 09:20:10</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Web.Mvc.FixedDisplayModes.dll">
+      <publishTime>10/09/2014 15:06:10</publishTime>
+    </File>
+    <File Include="bin/Newtonsoft.Json.dll">
+      <publishTime>10/02/2013 12:10:10</publishTime>
+    </File>
+    <File Include="bin/Ninject.dll">
+      <publishTime>10/09/2014 15:25:52</publishTime>
+    </File>
+    <File Include="bin/Ninject.Web.Common.dll">
+      <publishTime>10/09/2014 15:25:52</publishTime>
+    </File>
+    <File Include="bin/Ninject.Web.Mvc.dll">
+      <publishTime>10/09/2014 15:25:52</publishTime>
+    </File>
+    <File Include="bin/ru/System.Net.Http.Formatting.resources.dll">
+      <publishTime>07/10/2012 23:30:26</publishTime>
+    </File>
+    <File Include="bin/ru/System.Web.Helpers.resources.dll">
+      <publishTime>07/10/2012 23:31:58</publishTime>
+    </File>
+    <File Include="bin/ru/System.Web.Http.resources.dll">
+      <publishTime>07/10/2012 23:30:26</publishTime>
+    </File>
+    <File Include="bin/ru/System.Web.Http.WebHost.resources.dll">
+      <publishTime>07/10/2012 23:30:34</publishTime>
+    </File>
+    <File Include="bin/ru/System.Web.Mvc.resources.dll">
+      <publishTime>07/10/2012 23:30:42</publishTime>
+    </File>
+    <File Include="bin/ru/System.Web.Razor.resources.dll">
+      <publishTime>07/10/2012 23:31:42</publishTime>
+    </File>
+    <File Include="bin/ru/System.Web.WebPages.Deployment.resources.dll">
+      <publishTime>07/10/2012 23:31:52</publishTime>
+    </File>
+    <File Include="bin/ru/System.Web.WebPages.Razor.resources.dll">
+      <publishTime>07/10/2012 23:31:48</publishTime>
+    </File>
+    <File Include="bin/ru/System.Web.WebPages.resources.dll">
+      <publishTime>07/10/2012 23:31:42</publishTime>
+    </File>
+    <File Include="bin/System.Net.Http.Formatting.dll">
+      <publishTime>07/10/2012 21:51:54</publishTime>
+    </File>
+    <File Include="bin/System.Web.Helpers.dll">
+      <publishTime>07/10/2012 21:53:02</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.dll">
+      <publishTime>07/10/2012 21:51:54</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.WebHost.dll">
+      <publishTime>07/10/2012 21:51:54</publishTime>
+    </File>
+    <File Include="bin/System.Web.Mvc.dll">
+      <publishTime>07/10/2012 21:51:54</publishTime>
+    </File>
+    <File Include="bin/System.Web.Razor.dll">
+      <publishTime>07/10/2012 21:53:02</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Deployment.dll">
+      <publishTime>07/10/2012 21:53:02</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.dll">
+      <publishTime>07/10/2012 21:53:02</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Razor.dll">
+      <publishTime>07/10/2012 21:53:02</publishTime>
+    </File>
+    <File Include="bin/TIK.dll">
+      <publishTime>10/22/2014 00:35:53</publishTime>
+    </File>
+    <File Include="bin/WebActivatorEx.dll">
+      <publishTime>10/09/2014 15:25:52</publishTime>
+    </File>
+    <File Include="Content/css/buttons.css">
+      <publishTime>05/27/2014 14:30:52</publishTime>
+    </File>
+    <File Include="Content/css/Default/editor.png">
+      <publishTime>06/20/2014 06:45:40</publishTime>
+    </File>
+    <File Include="Content/css/Default/imagebrowser.png">
+      <publishTime>06/20/2014 06:45:40</publishTime>
+    </File>
+    <File Include="Content/css/Default/indeterminate.gif">
+      <publishTime>06/20/2014 06:45:40</publishTime>
+    </File>
+    <File Include="Content/css/Default/loading-image.gif">
+      <publishTime>06/20/2014 06:45:40</publishTime>
+    </File>
+    <File Include="Content/css/Default/loading.gif">
+      <publishTime>06/20/2014 06:45:40</publishTime>
+    </File>
+    <File Include="Content/css/Default/loading_2x.gif">
+      <publishTime>06/20/2014 06:45:40</publishTime>
+    </File>
+    <File Include="Content/css/Default/markers.png">
+      <publishTime>06/20/2014 06:45:40</publishTime>
+    </File>
+    <File Include="Content/css/Default/markers_2x.png">
+      <publishTime>06/20/2014 06:45:40</publishTime>
+    </File>
+    <File Include="Content/css/Default/slider-h.gif">
+      <publishTime>06/20/2014 06:45:40</publishTime>
+    </File>
+    <File Include="Content/css/Default/slider-v.gif">
+      <publishTime>06/20/2014 06:45:40</publishTime>
+    </File>
+    <File Include="Content/css/Default/sprite.png">
+      <publishTime>06/20/2014 06:45:40</publishTime>
+    </File>
+    <File Include="Content/css/Default/sprite_2x.png">
+      <publishTime>06/20/2014 06:45:40</publishTime>
+    </File>
+    <File Include="Content/css/forms.css">
+      <publishTime>05/27/2014 14:30:52</publishTime>
+    </File>
+    <File Include="Content/css/grids-responsive-min.css">
+      <publishTime>10/09/2014 15:17:28</publishTime>
+    </File>
+    <File Include="Content/css/jquery.jscrollpane.css">
+      <publishTime>09/12/2014 15:33:32</publishTime>
+    </File>
+    <File Include="Content/css/kendo.common.min.css">
+      <publishTime>06/20/2014 06:45:40</publishTime>
+    </File>
+    <File Include="Content/css/kendo.default.min.css">
+      <publishTime>06/20/2014 06:45:40</publishTime>
+    </File>
+    <File Include="Content/css/pure-min.css">
+      <publishTime>10/09/2014 17:19:08</publishTime>
+    </File>
+    <File Include="Content/css/reset.css">
+      <publishTime>10/17/2014 11:49:48</publishTime>
+    </File>
+    <File Include="Content/css/style.css">
+      <publishTime>10/20/2014 17:03:04</publishTime>
+    </File>
+    <File Include="Content/fonts/RussoOne.eot">
+      <publishTime>08/12/2014 15:45:14</publishTime>
+    </File>
+    <File Include="Content/fonts/RussoOne.svg">
+      <publishTime>08/12/2014 15:45:14</publishTime>
+    </File>
+    <File Include="Content/fonts/RussoOne.ttf">
+      <publishTime>08/12/2014 15:45:04</publishTime>
+    </File>
+    <File Include="Content/fonts/RussoOne.woff">
+      <publishTime>08/12/2014 15:45:08</publishTime>
+    </File>
+    <File Include="Content/images/banner1.jpg">
+      <publishTime>10/10/2014 12:14:54</publishTime>
+    </File>
+    <File Include="Content/images/banner2.jpg">
+      <publishTime>10/10/2014 12:32:12</publishTime>
+    </File>
+    <File Include="Content/images/banner3.jpg">
+      <publishTime>10/10/2014 12:31:20</publishTime>
+    </File>
+    <File Include="Content/images/banner_feed.jpg">
+      <publishTime>10/10/2014 12:20:26</publishTime>
+    </File>
+    <File Include="Content/images/banner_topsheet.png">
+      <publishTime>10/10/2014 12:15:28</publishTime>
+    </File>
+    <File Include="Content/images/banner_topsheet_doc.png">
+      <publishTime>10/10/2014 12:18:50</publishTime>
+    </File>
+    <File Include="Content/images/banner_topsheet_feed.png">
+      <publishTime>10/10/2014 12:19:42</publishTime>
+    </File>
+    <File Include="Content/images/dolina.png">
+      <publishTime>10/09/2014 11:37:46</publishTime>
+    </File>
+    <File Include="Content/images/dolina_c.png">
+      <publishTime>10/09/2014 11:40:00</publishTime>
+    </File>
+    <File Include="Content/images/elvis.png">
+      <publishTime>10/09/2014 11:37:56</publishTime>
+    </File>
+    <File Include="Content/images/elvis_c.png">
+      <publishTime>10/09/2014 11:40:34</publishTime>
+    </File>
+    <File Include="Content/images/footer_logo.png">
+      <publishTime>10/10/2014 12:16:10</publishTime>
+    </File>
+    <File Include="Content/images/kungur.png">
+      <publishTime>10/09/2014 11:37:20</publishTime>
+    </File>
+    <File Include="Content/images/kungur_c.png">
+      <publishTime>10/09/2014 11:39:22</publishTime>
+    </File>
+    <File Include="Content/images/logo.png">
+      <publishTime>10/10/2014 12:12:18</publishTime>
+    </File>
+    <File Include="Content/images/malan.png">
+      <publishTime>10/09/2014 11:37:30</publishTime>
+    </File>
+    <File Include="Content/images/malan_c.png">
+      <publishTime>10/09/2014 11:39:40</publishTime>
+    </File>
+    <File Include="Content/images/overlay.png">
+      <publishTime>10/01/2014 13:19:02</publishTime>
+    </File>
+    <File Include="Content/images/panel.png">
+      <publishTime>10/09/2014 11:37:08</publishTime>
+    </File>
+    <File Include="Content/images/panel_c.png">
+      <publishTime>10/09/2014 11:39:02</publishTime>
+    </File>
+    <File Include="Content/images/rosjeldor.png">
+      <publishTime>10/09/2014 11:36:34</publishTime>
+    </File>
+    <File Include="Content/images/rosjeldor_c.png">
+      <publishTime>10/09/2014 11:38:46</publishTime>
+    </File>
+    <File Include="Content/images/vashbit.png">
+      <publishTime>10/09/2014 11:38:10</publishTime>
+    </File>
+    <File Include="Content/images/vashbit_c.png">
+      <publishTime>10/09/2014 11:40:52</publishTime>
+    </File>
+    <File Include="Content/js/init.js">
+      <publishTime>10/02/2014 12:49:24</publishTime>
+    </File>
+    <File Include="Content/js/jquery-1.10.2.min.js">
+      <publishTime>08/18/2014 17:13:44</publishTime>
+    </File>
+    <File Include="Content/js/jquery-ui.min.js">
+      <publishTime>10/03/2014 04:36:18</publishTime>
+    </File>
+    <File Include="Content/js/jquery.jscrollpane.js">
+      <publishTime>09/12/2014 16:06:02</publishTime>
+    </File>
+    <File Include="Content/js/jquery.jscrollpane.min.js">
+      <publishTime>09/12/2014 15:33:16</publishTime>
+    </File>
+    <File Include="Content/js/jquery.min.js">
+      <publishTime>08/05/2014 03:06:08</publishTime>
+    </File>
+    <File Include="Content/js/jquery.mousewheel.js">
+      <publishTime>09/12/2014 15:35:32</publishTime>
+    </File>
+    <File Include="Content/js/jquery.mousewheel.min.js">
+      <publishTime>07/10/2014 08:27:18</publishTime>
+    </File>
+    <File Include="Content/js/kendo.ru-RU.js">
+      <publishTime>06/20/2014 06:45:40</publishTime>
+    </File>
+    <File Include="Content/js/kendo.web.min.js">
+      <publishTime>06/20/2014 06:45:40</publishTime>
+    </File>
+    <File Include="Content/js/slider.js">
+      <publishTime>09/03/2014 14:27:48</publishTime>
+    </File>
+    <File Include="Files/Photos/ava.png">
+      <publishTime>09/12/2014 10:45:14</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>10/09/2014 15:05:28</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>10/21/2014 12:41:13</publishTime>
+    </File>
+    <File Include="Views/Account/Login.cshtml">
+      <publishTime>10/20/2014 13:33:01</publishTime>
+    </File>
+    <File Include="Views/Admin/Index.cshtml">
+      <publishTime>09/09/2014 09:54:24</publishTime>
+    </File>
+    <File Include="Views/Articles/About.cshtml">
+      <publishTime>10/09/2014 13:28:52</publishTime>
+    </File>
+    <File Include="Views/Articles/Add.cshtml">
+      <publishTime>10/17/2014 10:59:33</publishTime>
+    </File>
+    <File Include="Views/Articles/Edit.cshtml">
+      <publishTime>10/17/2014 11:00:43</publishTime>
+    </File>
+    <File Include="Views/Contact/Index.cshtml">
+      <publishTime>10/20/2014 17:08:04</publishTime>
+    </File>
+    <File Include="Views/Document/Add.cshtml">
+      <publishTime>10/17/2014 10:57:37</publishTime>
+    </File>
+    <File Include="Views/Document/Edit.cshtml">
+      <publishTime>10/20/2014 09:59:35</publishTime>
+    </File>
+    <File Include="Views/Document/GetAll.cshtml">
+      <publishTime>10/17/2014 15:39:04</publishTime>
+    </File>
+    <File Include="Views/Home/Index.cshtml">
+      <publishTime>10/20/2014 13:25:33</publishTime>
+    </File>
+    <File Include="Views/Layouts/LayoutDefault.cshtml">
+      <publishTime>10/16/2014 17:56:00</publishTime>
+    </File>
+    <File Include="Views/Portfolio/Index.cshtml">
+      <publishTime>10/02/2014 15:32:18</publishTime>
+    </File>
+    <File Include="Views/PriceList/Add.cshtml">
+      <publishTime>10/02/2014 17:14:10</publishTime>
+    </File>
+    <File Include="Views/PriceList/Edit.cshtml">
+      <publishTime>10/02/2014 17:14:10</publishTime>
+    </File>
+    <File Include="Views/PriceList/GetAll.cshtml">
+      <publishTime>09/24/2014 14:18:42</publishTime>
+    </File>
+    <File Include="Views/Review/Add.cshtml">
+      <publishTime>10/20/2014 12:55:28</publishTime>
+    </File>
+    <File Include="Views/Review/Edit.cshtml">
+      <publishTime>10/20/2014 15:06:36</publishTime>
+    </File>
+    <File Include="Views/Review/GetAll.cshtml">
+      <publishTime>10/20/2014 14:22:44</publishTime>
+    </File>
+    <File Include="Views/Shared/_BundleLayout.cshtml">
+      <publishTime>09/29/2014 16:32:30</publishTime>
+    </File>
+    <File Include="Views/Web.config">
+      <publishTime>09/05/2014 10:15:46</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>10/22/2014 00:35:55</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

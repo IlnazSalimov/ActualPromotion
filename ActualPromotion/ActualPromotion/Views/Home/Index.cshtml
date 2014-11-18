@@ -1,0 +1,202 @@
+﻿@{
+    ViewBag.Title = "ГЛАВНАЯ";
+    Layout = "~/Views/Layouts/Default.cshtml";
+}
+<!--Слайдер-->
+<section class="green bg">
+    <div class="post-form">
+        @Html.Partial("_BidForm", new ViewDataDictionary { {"bidFormType","top"}})
+    </div>
+    <div class="phone-img">
+        <p>Какой-то текст</p>
+    </div>
+    <div id="owl" class="owl-carousel">
+        <div class="slide slide1">
+
+            <div class="container">
+                <p>
+                    ТЫ
+                    НАСТОЛЬКО ХОРОШ,
+                    НАСКОЛЬКО
+                    ХОРОШ
+                    ТВОЙ САЙТ!
+                </p>
+            </div>
+        </div>
+        <div class="slide slide2">
+            <div class="container">
+                <p>
+                    ТЫ
+                    НАСТОЛЬКО ХОРОШ,
+                    НАСКОЛЬКО
+                    ХОРОШ
+                    ТВОЙ САЙТ!
+                </p>
+            </div>
+        </div>
+        <div class="slide slide3">
+            <div class="container">
+                <p>
+                    ТЫ
+                    НАСТОЛЬКО ХОРОШ,
+                    НАСКОЛЬКО
+                    ХОРОШ
+                    ТВОЙ САЙТ!
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+<!--Конец слайдера-->
+<!--Партнеры-->
+<section class="white partners">
+    <div class="container"> </div>
+</section>
+<!--Конец партнеров-->
+<!--Услуги-->
+<section class="pink">
+    <div class="container">
+        <h3 class="text-center line-bottom">УСЛУГИ</h3>
+        <h5>От идеи до результата</h5>
+        <div class="row row-center-vertical">
+            <div class="col-sm-4">
+                <article class="bild">
+                    <div>
+                        <h5 class="article-title">Создание</h5>
+                        <a href="#">
+                            Качественный и продуктивный дизайн<br>
+                            логотипа и сайта с особым подходом.
+                            Верстка и програмирование сайта разной типовой сложности. Создание <br>
+                            приложений для iPhone
+                        </a>.
+                    </div>
+                </article>
+            </div>
+            <div class="col-sm-4">
+                <article class="move">
+                    <div>
+                        <h5 class="article-title">Продвижение</h5>
+                        <a href="#">Результативное продвижение сайта в поисковых системах. Стабильная позиция в топе. Мастерская внутренняя оптимизация сайта. Белые методы<br> продвижения.</a>
+                    </div>
+                </article>
+            </div>
+            <div class="col-sm-4">
+                <article class="rek">
+                    <div>
+                        <h5 class="article-title">Реклама</h5>
+                        <a href="#">Все виды медийной рекламы с высокой конверсией. Креативные концепции, разработка идей для создания рекламного повода. Контекстная и баннерная<br> реклама.</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </div>
+</section>
+<!--конец услуг-->
+<!--о нас-->
+<section class="white bg">
+    <div class="container">
+        <h3 class="text-center line-bottom black-line">О нас</h3>
+        <h5 class="text-center ">Превращаем сайты в деньги</h5>
+        <div class="row row-center-vertical">
+            <div class="col-sm-6">
+                <p style="text-indent:25px; text-align:justify;">
+                    В лице компании «Актуальное продвижение» вы получите не просто подрядчика, а надежного партнера, который не меньше вашего заинтересован в эффективности выбранных решений.
+                    Сайт — важнейший инструмент современного бизнеса, который позволит наладить расширенный диалог с Вашим клиентом.
+                </p>
+            </div>
+            <div class="col-sm-6">
+                <p style="text-indent:25px; text-align:justify;">
+                    Мы предпочитаем разрабатывать многополярную стратегию отделения от конкурентов, делая акцент на ключевых факторах вашего бизнеса.
+                    Мы не гонимся за красивыми показателями, уделяя внимание прибыльности выбранных инструментов. Наша цель — преподнести вам «на блюдечке» статус универсального лидера в выбранной нише.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+<!--конец о нас-->
+<!--форма обратной связи-->
+<section class="black">
+    <div class="container">
+        <form action="#" method="post" class="long contact-form">
+            <div class="col-sm-6">
+                <h5 class="mainh5">ЗАЯВКА</h5>
+
+                <label>
+                    <span class="red">* </span>Имя:
+                    <input name="name" type="text" class="required">
+                </label>
+                <label>
+                    <span class="red">* </span>E-mail:
+                    <input name="mail" type="text" class="required">
+                </label>
+                <label>
+                    <span class="red">* </span>Тел.:
+                    <input name="phone" type="text" class="required">
+                </label>
+                <label>
+                    ТЗ:
+                    <input name="term" type="file" />
+                </label>
+
+            </div>
+            <div class="col-sm-6">
+                <div class="inner">
+                    <label>
+                        Текст сообщения:
+                        <textarea name="msg" placeholder="Необязательно для заполнения"></textarea>
+                    </label>
+                    <button type="submit" class="red">Подать заявку</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
+<!--конец формв-->
+<!--мы-->
+<section class="green photo">
+    <div class="container">
+        <h3 class="text-center line-bottom">МЫ</h3>
+        <h5>Команда сумасшедших позитивов!</h5>
+        <div class="row row-center-vertical">
+            <div class="col-sm-12 photo">
+                <figure>
+                    <img src="../Content/photo/petr.png" alt=" ">
+                    <p class="name">ПЕТР</p>
+                    <p class="staff">ДИРЕКТОР</p>
+                    <p class="soc-ico"><a href="#" title="В контакте" class="vk"></a> <a href="#" title="фейсбук" class="fb"></a> <a href="#" title="Скайп" class="sk"></a> <a href="mailto:" class="mail"></a> </p>
+                </figure>
+                <figure>
+                    <img src="../Content/photo/1.jpg" alt=" ">
+                    <p class="name">АНАСТАСИЯ</p>
+                    <p class="staff">ПРОЕКТ-МЕНЕДЖЕР</p>
+                    <p class="soc-ico"><a href="#" title="В контакте" class="vk"></a> <a href="#" title="фейсбук" class="fb"></a> <a href="#" title="Скайп" class="sk"></a> <a href="mailto:" class="mail"></a> </p>
+                </figure>
+                <figure>
+                    <img src="../Content/photo/uliya.png" alt=" ">
+                    <p class="name">ЮЛИЯ</p>
+                    <p class="staff">WEB-ДИЗАЙНЕР</p>
+                    <p class="soc-ico"><a href="#" title="В контакте" class="vk"></a> <a href="#" title="фейсбук" class="fb"></a> <a href="#" title="Скайп" class="sk"></a> <a href="mailto:" class="mail"></a> </p>
+                </figure>
+                <figure>
+                    <img src="../Content/photo/ildar.png" alt=" ">
+                    <p class="name">ИЛЬДАР</p>
+                    <p class="staff">CEO-СПЕЦИАЛИСТ</p>
+                    <p class="soc-ico"><a href="#" title="В контакте" class="vk"></a> <a href="#" title="фейсбук" class="fb"></a> <a href="#" title="Скайп" class="sk"></a> <a href="mailto:" class="mail"></a> </p>
+                </figure>
+                <figure>
+                    <img src="../Content/photo/ilnaz.png" alt=" ">
+                    <p class="name">ИЛЬНАЗ</p>
+                    <p class="staff">WEB-РАЗРАБОТЧИК</p>
+                    <p class="soc-ico"><a href="#" title="В контакте" class="vk"></a> <a href="#" title="фейсбук" class="fb"></a> <a href="#" title="Скайп" class="sk"></a> <a href="mailto:" class="mail"></a> </p>
+                </figure>
+                <figure>
+                    <img src="../Content/photo/roma.png" alt=" ">
+                    <p class="name">РОМАН</p>
+                    <p class="staff">КЛИЕНТ-МЕНЕДЖЕР</p>
+                    <p class="soc-ico"><a href="#" title="В контакте" class="vk"></a> <a href="#" title="фейсбук" class="fb"></a> <a href="#" title="Скайп" class="sk"></a> <a href="mailto:" class="mail"></a> </p>
+                </figure>
+            </div>
+        </div>
+    </div>
+</section>
+<!--the end--> 

@@ -1,0 +1,159 @@
+﻿@model Brio.Models.CreatePortalAccount
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Layouts/DefaultLayouts.cshtml";
+}
+
+<section>
+    @Html.Partial("RightBarNews")
+    <div class="content">
+        <form action="" method="post" name="serch">
+            <input name="name" type="text" placeholder="ВВЕДИТЕ НАЗВАНИЕ ДОКУМЕНТА">
+            <button type="submit">
+                <h2 class="left"><span>Поиск</span></h2>
+            </button>
+        </form>
+
+        <div class="content-right-bar account-create-form">
+            <h2>Создание аккаунта</h2>
+            @using (Html.BeginForm("SignUp", "Account", FormMethod.Post, new { @class = "acc-form" }))
+            {
+                <p>
+                    @Html.LabelFor(a => a.Name):
+                    @Html.TextBoxFor(a => a.Name)
+                </p>
+                <p>
+                    @Html.LabelFor(a => a.Surname):
+                    @Html.TextBoxFor(a => a.Surname)
+                </p>
+                <p>
+                    @Html.LabelFor(a => a.Patronymic):
+                    @Html.TextBoxFor(a => a.Patronymic)
+                </p>
+                <p>
+                    @Html.LabelFor(a => a.Email):
+                    @Html.TextBoxFor(a => a.Email)
+                </p>
+                <p>
+                    @Html.LabelFor(a => a.Password):
+                    @Html.TextBoxFor(a => a.Password)
+                </p>
+                <p>
+                    @Html.LabelFor(a => a.ConfirmPassword):
+                    @Html.TextBoxFor(a => a.ConfirmPassword)
+                </p>
+                <p>
+                    @Html.LabelFor(a => a.Phone):
+                    @Html.TextBoxFor(a => a.Phone)
+                </p>
+                <p>
+                    @Html.LabelFor(a => a.CompanyId):
+                    @Html.DropDownListFor(a => a.CompanyId, ViewBag.Companies as SelectList, "Выберите компанию")
+                </p>
+                <p>
+                    @Html.LabelFor(a => a.RememberMe):
+                    @Html.CheckBoxFor(a => a.RememberMe)
+                </p>
+                @Html.HiddenFor(a => a.RoleId)
+
+                <button type="submit">
+                    <h2 class="right creat-title"><span>Создать</span></h2>
+                </button>
+            }
+        </div>
+        <div class="content-right-bar" ng-controller="infoCardController">
+            <h2>Карточка сотрудника</h2>
+            <div class="staf">
+                <img src="photo/Tarasova_Ybilei.jpg" width="120" height="140" alt="staff">
+                <h3>Aникеенко Людмила
+                    <br>
+                    Федоровна</h3>
+
+                <ul class="staf-text">
+                    <li>Отдел: </li>
+                    <li>Должность: Начальник </li>
+                    <li>Стаж работы: 3 года</li>
+                    <li>Зачислена в штат с: 2.02.2011 </li>
+                    <li>&nbsp;</li>
+                    <li>Личные данные:</li>
+                    <li>Дата рождения: 10.05.1970</li>
+                    <li>Адрес: ул. Бородинская 10</li>
+                    <li>тел. +7 (917) 456-34-78</li>
+                    <li>е-mail: ani@ya.ru</li>
+                </ul>
+            </div>
+        </div>
+        <div class="content-left-bar">
+            <h2 class="right white shadow"><span class="project-title">Аккаунты</span></h2>
+            <div class="wrapp accaunt-page">
+                <ul>
+                    <li>
+                        <p><span>Администратор</span></p>
+                        <ul>
+                            <li>ФИО</li>
+                            <li>ФИО</li>
+                            <li>ФИО</li>
+                        </ul>
+
+                    </li>
+                    <li>
+                        <p><span>Проект-менеджер</span></p>
+                    </li>
+                    <li>
+                        <p><span>Клиент</span></p>
+                    </li>
+                    <li>
+                        <p><span>Сотрудник</span></p>
+                    </li>
+                    <li>
+                        <p><span>Проект-менеджер</span></p>
+                    </li>
+                    <li>
+                        <p><span>Клиент</span></p>
+                    </li>
+                    <li>
+                        <p><span>Сотрудник</span></p>
+                    </li>
+                </ul>
+            </div>
+            <h2 class="right white no-shadow"><span class="project-title">Создать аккаунт</span></h2>
+            <ul class="acc-open">
+                @foreach(var r in (ViewBag.Roles as List<Brio.Models.Role>)){
+                    <li data-role-id="@r.ID">@r.CyrillicName</li>
+                }
+                
+            </ul>
+
+            <script>
+                $(function () {
+                    $("ul.acc-open li").bind("click", function () {
+                        $("ul.acc-open li").removeClass("active");
+                        $(this).addClass("active");
+                        $("input[name='RoleId']").val($(this).attr("data-role-id"));
+                    });
+                });
+                angular.module('ngAppDemo', []).controller('infoCardController', function ($scope) {
+                    $scope.a = 1;
+                    $scope.b = 2;
+                });
+
+                function getInfoCard() {
+                    $.ajax({
+                        type: 'POST',
+                        dataType: 'json',
+                        url: "/Review/GetReviewContent",
+                        data: "reviewId=" + reviewId,
+                        success: function (review) {
+                            callBack(review);
+                        },
+                        error: function (xhr, ajaxOptions, thrownError) {
+                            console.log("request failed");
+                        },
+                        processData: false,
+                        async: false
+                    });
+                }
+            </script>
+        </div>
+    </div>
+</section>

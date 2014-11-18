@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="BrioLabModelStoreContainer" CdmEntityContainer="Entities">
+    <EntitySetMapping Name="Articles">
+      <EntityTypeMapping TypeName="BrioLabModel.Article">
+        <MappingFragment StoreEntitySet="Articles">
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Text" ColumnName="Text" />
+          <ScalarProperty Name="ArticleID" ColumnName="ArticleID" />
+          <ScalarProperty Name="Page" ColumnName="Page" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Companies">
+      <EntityTypeMapping TypeName="BrioLabModel.Company">
+        <MappingFragment StoreEntitySet="Companies">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="Adress" ColumnName="Adress" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Phone2" ColumnName="Phone2" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Postcode" ColumnName="Postcode" />
+          <ScalarProperty Name="POBox" ColumnName="POBox" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Documents">
+      <EntityTypeMapping TypeName="BrioLabModel.Document">
+        <MappingFragment StoreEntitySet="Documents">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="DocumentPath" ColumnName="DocumentPath" />
+          <ScalarProperty Name="DocumentTitle" ColumnName="DocumentTitle" />
+          <ScalarProperty Name="UploadDate" ColumnName="UploadDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Feedbacks">
+      <EntityTypeMapping TypeName="BrioLabModel.Feedback">
+        <MappingFragment StoreEntitySet="Feedbacks">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Message" ColumnName="Message" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PriceLists">
+      <EntityTypeMapping TypeName="BrioLabModel.PriceList">
+        <MappingFragment StoreEntitySet="PriceLists">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Path" ColumnName="Path" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="UploadDate" ColumnName="UploadDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Reviews">
+      <EntityTypeMapping TypeName="BrioLabModel.Review">
+        <MappingFragment StoreEntitySet="Reviews">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="ReviewMessage" ColumnName="ReviewMessage" />
+          <ScalarProperty Name="AutorPosition" ColumnName="AutorPosition" />
+          <ScalarProperty Name="AuthorCompany" ColumnName="AuthorCompany" />
+          <ScalarProperty Name="AuthorPhoto" ColumnName="AuthorPhoto" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Roles">
+      <EntityTypeMapping TypeName="BrioLabModel.Role">
+        <MappingFragment StoreEntitySet="Roles">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="BrioLabModel.User">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="FK__Articles__Author__15502E78" TypeName="BrioLabModel.FK__Articles__Author__15502E78" StoreEntitySet="Articles">
+      <EndProperty Name="Users">
+        <ScalarProperty Name="Id" ColumnName="Author" />
+      </EndProperty>
+      <EndProperty Name="Articles">
+        <ScalarProperty Name="ArticleID" ColumnName="ArticleID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK__Articles__Compan__412EB0B6" TypeName="BrioLabModel.FK__Articles__Compan__412EB0B6" StoreEntitySet="Articles">
+      <EndProperty Name="Companies">
+        <ScalarProperty Name="Id" ColumnName="CompanyId" />
+      </EndProperty>
+      <EndProperty Name="Articles">
+        <ScalarProperty Name="ArticleID" ColumnName="ArticleID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK__Documents__Compa__3F466844" TypeName="BrioLabModel.FK__Documents__Compa__3F466844" StoreEntitySet="Documents">
+      <EndProperty Name="Companies">
+        <ScalarProperty Name="Id" ColumnName="CompanyId" />
+      </EndProperty>
+      <EndProperty Name="Documents">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK__Feedbacks__Compa__440B1D61" TypeName="BrioLabModel.FK__Feedbacks__Compa__440B1D61" StoreEntitySet="Feedbacks">
+      <EndProperty Name="Companies">
+        <ScalarProperty Name="Id" ColumnName="CompanyId" />
+      </EndProperty>
+      <EndProperty Name="Feedbacks">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK__PriceList__Compa__5441852A" TypeName="BrioLabModel.FK__PriceList__Compa__5441852A" StoreEntitySet="PriceLists">
+      <EndProperty Name="Companies">
+        <ScalarProperty Name="Id" ColumnName="CompanyId" />
+      </EndProperty>
+      <EndProperty Name="PriceLists">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK__Reviews__Company__46E78A0C" TypeName="BrioLabModel.FK__Reviews__Company__46E78A0C" StoreEntitySet="Reviews">
+      <EndProperty Name="Companies">
+        <ScalarProperty Name="Id" ColumnName="CompanyId" />
+      </EndProperty>
+      <EndProperty Name="Reviews">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK__Users__RoleId__145C0A3F" TypeName="BrioLabModel.FK__Users__RoleId__145C0A3F" StoreEntitySet="Users">
+      <EndProperty Name="Roles">
+        <ScalarProperty Name="Id" ColumnName="RoleId" />
+      </EndProperty>
+      <EndProperty Name="Users">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,70 @@
+﻿@using TIK;
+<!doctype html>
+<html>
+<head>
+    <link href="~/Content/css/reset.css" rel="stylesheet" />
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="~/Content/css/pure-min.css" rel="stylesheet" />
+    <link href="~/Content/css/grids-responsive-min.css" rel="stylesheet" />
+    <link href="~/Content/css/style.css" rel="stylesheet" />
+    @RenderSection("Styles", false)
+
+    <script src="~/Content/js/jquery-1.10.2.min.js"></script>
+</head>
+<body>
+    <div class="wrapper">
+        <header class="pure-g">
+            <div class="pure-u-4-24">
+                <div class="logo">
+                </div>
+            </div>
+            <div class="pure-u-20-24">
+                <address>
+                    <span class="adress">
+                        Ул.Гагарина 43, офис 24
+                    </span>
+                    <span class="phone">
+                        +7(934)564-96-46
+                    </span>
+                </address>
+                <div style="clear:both"></div>
+                <nav>
+                    <ul>
+                        <li>@Html.ActionLink("О КОМПАНИИ", "Index", "Home", new { }, new { @class = @Html.IsSelected("Home", "Index") })</li>
+                        <li>@Html.ActionLink("ПОРТФОЛИО", "Index", "Portfolio", new { }, new { @class = @Html.IsSelected("Portfolio", "Index") })</li>
+                        <li>@Html.ActionLink("ДОКУМЕНТЫ", "GetAll", "Document", new { }, new { @class = @Html.IsSelected("Document", "GetAll") })</li>
+                        <li>@Html.ActionLink("ОТЗЫВЫ", "GetAll", "Review", new { }, new { @class = @Html.IsSelected("Review", "GetAll") })</li>
+                        <li>@Html.ActionLink("КОНТАКТЫ", "Index", "Contact", new { }, new { @class = @Html.IsSelected("Contact", "Index") })</li>
+                        <li>
+                             @if (!User.Identity.IsAuthenticated)
+                                {
+                                    <button class="button-error pure-button login-button" onclick="location.href = '/Account/Login'">ВОЙТИ</button>
+                                }
+                                else
+                                {
+                                    <button class="button-error pure-button login-button" onclick="location.href = '/Account/Logout'">ВЫЙТИ</button>
+                                }
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        @RenderBody()
+    </div>
+    <footer>
+        <div class="footer_wrapper">
+            <section class="float_left">
+                Tells Sohne<br />
+                GmbH Dammstrasse 2<br />
+                CH-6440 Brunnen
+            </section>
+            <section class="logo"></section>
+            <section class="float_right">
+                Tells Sohne<br />
+                GmbH Dammstrasse 2<br />
+                CH-6440 Brunnen
+            </section>
+        </div>
+    </footer>
+</body>
+</html>

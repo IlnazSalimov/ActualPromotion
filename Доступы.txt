@@ -1,0 +1,54 @@
+
+К домену:
+acrilatic@yandex.ru
+пароль acrilatic0409
+
+reg.2domains.ru
+
+Хостинг сайта: sweb.ru
+Логин: acrilatiru
+Пароль:muhahimein
+IP-адрес сервера: 77.222.40.13
+База данных: acrilatiru  пароль zxcv1976
+
+
+Администратирование сайта:
+http://acrilatica.ru/wp-admin/
+Имя: Redactor
+Пароль: Redactor20122012
+
+Новый домен:
+сайт для регистрации домена-reg.2domains.ru
+почта регистрации:
+acrilatic@yandex.ru
+пароль: acrilatic0409
+
+доступ на сайт reg.2domains.ru такой же:
+acrilatic@yandex.ru
+пароль: acrilatic0409
+
+
+Логин: acrilatiru
+Пароль: acrilatiruadmin
+
+http://acrilatica.ru/wp-login.php
+Redactor
+20f251hr514-2
+
+[18.09.2014 14:36:22] Анастасия  Михайлова: [18 сентября 2014 г. 14:31] Ильдар Мулюков: 
+
+<<< Хост ftp: 77.222.40.122
+Логин: acrilatiru
+Пароль: acrilatiruadmin
+Порт: 21
+
+Новые доступы:
+http://acrilatic.ru/wp-admin/
+Хост: fox.beget.ru (5.101.156.42)
+Логин: actpro_ acrilatic / t0NS?hl9
+
+Имя пользователя: 
+actpro
+Пароль: 
+SSEFfXd2
+https://cp.beget.ru

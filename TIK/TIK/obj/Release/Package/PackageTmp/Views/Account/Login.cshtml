@@ -1,0 +1,39 @@
+﻿@model Brio.Models.LoginUser
+
+@{
+    ViewBag.Title = "ВХОД";
+    Layout = "~/Views/Layouts/LayoutDefault.cshtml";
+}
+
+@section Styles{
+    <style>
+        .pure-form {
+            width: 65%;
+            margin: auto;
+        }
+    </style>
+}
+
+<div class="content">
+    @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "pure-form pure-form-aligned", enctype = "multipart/form-data" }))
+    {
+        <fieldset>
+            @Html.ValidationSummary()
+            <div class="pure-control-group">
+                @Html.LabelFor(model => model.Email)
+                @Html.EditorFor(model => model.Email)
+            </div>
+            <div class="pure-control-group">
+                @Html.LabelFor(model => model.Password)
+                @Html.PasswordFor(model => model.Password)
+            </div>
+            <div class="pure-control-group">
+                @Html.LabelFor(model => model.RememberMe)
+                @Html.CheckBoxFor(model => model.RememberMe)
+            </div>
+            <div class="pure-controls">
+                <button type="submit" class="pure-button pure-button-primary">ВОЙТИ</button>
+            </div>
+        </fieldset>
+    }
+</div>

@@ -1,0 +1,122 @@
+c:\Users\Ильназ\Documents\Visual Studio 2013\Projects\BrioStroy\BrioStroy\bin\BrioStroy.dll.config
+c:\Users\Ильназ\Documents\Visual Studio 2013\Projects\BrioStroy\BrioStroy\bin\BrioStroy.dll
+c:\Users\Ильназ\Documents\Visual Studio 2013\Projects\BrioStroy\BrioStroy\bin\BrioStroy.pdb
+c:\Users\Ильназ\Documents\Visual Studio 2013\Projects\BrioStroy\BrioStroy\bin\Brio.dll
+c:\Users\Ильназ\Documents\Visual Studio 2013\Projects\BrioStroy\BrioStroy\bin\EntityFramework.dll
+c:\Users\Ильназ\Documents\Visual Studio 2013\Projects\BrioStroy\BrioStroy\bin\EntityFramework.SqlServer.dll
+c:\Users\Ильназ\Documents\Visual Studio 2013\Projects\BrioStroy\BrioStroy\bin\Microsoft.Web.Infrastructure.dll
+c:\Users\Ильназ\Documents\Visual Studio 2013\Projects\BrioStroy\BrioStroy\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+c:\Users\Ильназ\Documents\Visual Studio 2013\Projects\BrioStroy\BrioStroy\bin\Newtonsoft.Json.dll
+c:\Users\Ильназ\Documents\Visual Studio 2013\Projects\BrioStroy\BrioStroy\bin\Ninject.dll
+c:\Users\Ильназ\Documents\Visual Studio 2013\Projects\BrioStroy\BrioStroy\bin\Ninject.Web.Common.dll
+c:\Users\Ильназ\Documents\Visual Studio 2013\Projects\BrioStroy\BrioStroy\bin\Ninject.Web.Mvc.dll
+c:\Users\Ильназ\Documents\Visual Studio 2013\Projects\BrioStroy\BrioStroy\bin\System.Net.Http.Formatting.dll
+c:\Users\Ильназ\Documents\Visual Studio 2013\Projects\BrioStroy\BrioStroy\bin\System.Web.Helpers.dll
+c:\Users\Ильназ\Documents\Visual Studio 2013\Projects\BrioStroy\BrioStroy\bin\System.Web.Http.dll
+c:\Users\Ильназ\Documents\Visual Studio 2013\Projects\BrioStroy\BrioStroy\bin\System.Web.Http.WebHost.dll
+c:\Users\Ильназ\Documents\Visual Studio 2013\Projects\BrioStroy\BrioStroy\bin\System.Web.Mvc.dll
+c:\Users\Ильназ\Documents\Visual Studio 2013\Projects\BrioStroy\BrioStroy\bin\System.Web.Razor.dll
+c:\Users\Ильназ\Documents\Visual Studio 2013\Projects\BrioStroy\BrioStroy\bin\System.Web.WebPages.Deployment.dll
+c:\Users\Ильназ\Documents\Visual Studio 2013\Projects\BrioStroy\BrioStroy\bin\System.Web.WebPages.dll
+c:\Users\Ильназ\Documents\Visual Studio 2013\Projects\BrioStroy\BrioStroy\bin\System.Web.WebPages.Razor.dll
+c:\Users\Ильназ\Documents\Visual Studio 2013\Projects\BrioStroy\BrioStroy\bin\WebActivatorEx.dll
+c:\Users\Ильназ\Documents\Visual Studio 2013\Projects\BrioStroy\BrioStroy\bin\Brio.pdb
+c:\Users\Ильназ\Documents\Visual Studio 2013\Projects\BrioStroy\BrioStroy\bin\EntityFramework.xml
+c:\Users\Ильназ\Documents\Visual Studio 2013\Projects\BrioStroy\BrioStroy\bin\EntityFramework.SqlServer.xml
+c:\Users\Ильназ\Documents\Visual Studio 2013\Projects\BrioStroy\BrioStroy\bin\Ninject.xml
+c:\Users\Ильназ\Documents\Visual Studio 2013\Projects\BrioStroy\BrioStroy\bin\Ninject.Web.Common.xml
+c:\Users\Ильназ\Documents\Visual Studio 2013\Projects\BrioStroy\BrioStroy\bin\Ninject.Web.Mvc.xml
+c:\Users\Ильназ\Documents\Visual Studio 2013\Projects\BrioStroy\BrioStroy\bin\Newtonsoft.Json.xml
+c:\Users\Ильназ\Documents\Visual Studio 2013\Projects\BrioStroy\BrioStroy\bin\System.Net.Http.Formatting.xml
+c:\Users\Ильназ\Documents\Visual Studio 2013\Projects\BrioStroy\BrioStroy\bin\System.Web.Helpers.xml
+c:\Users\Ильназ\Documents\Visual Studio 2013\Projects\BrioStroy\BrioStroy\bin\System.Web.Http.xml
+c:\Users\Ильназ\Documents\Visual Studio 2013\Projects\BrioStroy\BrioStroy\bin\System.Web.Http.WebHost.xml
+c:\Users\Ильназ\Documents\Visual Studio 2013\Projects\BrioStroy\BrioStroy\bin\System.Web.Mvc.xml
+c:\Users\Ильназ\Documents\Visual Studio 2013\Projects\BrioStroy\BrioStroy\bin\System.Web.Razor.xml
+c:\Users\Ильназ\Documents\Visual Studio 2013\Projects\BrioStroy\BrioStroy\bin\System.Web.WebPages.xml
+c:\Users\Ильназ\Documents\Visual Studio 2013\Projects\BrioStroy\BrioStroy\bin\System.Web.WebPages.Deployment.xml
+c:\Users\Ильназ\Documents\Visual Studio 2013\Projects\BrioStroy\BrioStroy\bin\System.Web.WebPages.Razor.xml
+c:\Users\Ильназ\Documents\Visual Studio 2013\Projects\BrioStroy\BrioStroy\obj\Release\BrioStroy.csprojResolveAssemblyReference.cache
+c:\Users\Ильназ\Documents\Visual Studio 2013\Projects\BrioStroy\BrioStroy\obj\Release\BrioStroy.dll
+c:\Users\Ильназ\Documents\Visual Studio 2013\Projects\BrioStroy\BrioStroy\obj\Release\BrioStroy.pdb
+d:\Actpromo\BrioStroy\BrioStroy\bin\BrioStroy.dll
+d:\Actpromo\BrioStroy\BrioStroy\bin\BrioStroy.pdb
+d:\Actpromo\BrioStroy\BrioStroy\bin\Brio.dll
+d:\Actpromo\BrioStroy\BrioStroy\bin\EntityFramework.dll
+d:\Actpromo\BrioStroy\BrioStroy\bin\EntityFramework.SqlServer.dll
+d:\Actpromo\BrioStroy\BrioStroy\bin\Microsoft.Web.Infrastructure.dll
+d:\Actpromo\BrioStroy\BrioStroy\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+d:\Actpromo\BrioStroy\BrioStroy\bin\Newtonsoft.Json.dll
+d:\Actpromo\BrioStroy\BrioStroy\bin\Ninject.dll
+d:\Actpromo\BrioStroy\BrioStroy\bin\Ninject.Web.Common.dll
+d:\Actpromo\BrioStroy\BrioStroy\bin\Ninject.Web.Mvc.dll
+d:\Actpromo\BrioStroy\BrioStroy\bin\System.Net.Http.Formatting.dll
+d:\Actpromo\BrioStroy\BrioStroy\bin\System.Web.Helpers.dll
+d:\Actpromo\BrioStroy\BrioStroy\bin\System.Web.Http.dll
+d:\Actpromo\BrioStroy\BrioStroy\bin\System.Web.Http.WebHost.dll
+d:\Actpromo\BrioStroy\BrioStroy\bin\System.Web.Mvc.dll
+d:\Actpromo\BrioStroy\BrioStroy\bin\System.Web.Razor.dll
+d:\Actpromo\BrioStroy\BrioStroy\bin\System.Web.WebPages.Deployment.dll
+d:\Actpromo\BrioStroy\BrioStroy\bin\System.Web.WebPages.dll
+d:\Actpromo\BrioStroy\BrioStroy\bin\System.Web.WebPages.Razor.dll
+d:\Actpromo\BrioStroy\BrioStroy\bin\WebActivatorEx.dll
+d:\Actpromo\BrioStroy\BrioStroy\bin\Brio.pdb
+d:\Actpromo\BrioStroy\BrioStroy\bin\EntityFramework.xml
+d:\Actpromo\BrioStroy\BrioStroy\bin\EntityFramework.SqlServer.xml
+d:\Actpromo\BrioStroy\BrioStroy\bin\Ninject.xml
+d:\Actpromo\BrioStroy\BrioStroy\bin\Ninject.Web.Common.xml
+d:\Actpromo\BrioStroy\BrioStroy\bin\Ninject.Web.Mvc.xml
+d:\Actpromo\BrioStroy\BrioStroy\bin\Newtonsoft.Json.xml
+d:\Actpromo\BrioStroy\BrioStroy\bin\System.Net.Http.Formatting.xml
+d:\Actpromo\BrioStroy\BrioStroy\bin\System.Web.Helpers.xml
+d:\Actpromo\BrioStroy\BrioStroy\bin\System.Web.Http.xml
+d:\Actpromo\BrioStroy\BrioStroy\bin\System.Web.Http.WebHost.xml
+d:\Actpromo\BrioStroy\BrioStroy\bin\System.Web.Mvc.xml
+d:\Actpromo\BrioStroy\BrioStroy\bin\System.Web.Razor.xml
+d:\Actpromo\BrioStroy\BrioStroy\bin\System.Web.WebPages.xml
+d:\Actpromo\BrioStroy\BrioStroy\bin\System.Web.WebPages.Deployment.xml
+d:\Actpromo\BrioStroy\BrioStroy\bin\System.Web.WebPages.Razor.xml
+d:\Actpromo\BrioStroy\BrioStroy\obj\Release\BrioStroy.csprojResolveAssemblyReference.cache
+d:\Actpromo\BrioStroy\BrioStroy\obj\Release\BrioStroy.dll
+d:\Actpromo\BrioStroy\BrioStroy\obj\Release\BrioStroy.pdb
+d:\ActualPromotion\Fenestra\BrioStroy\bin\BrioStroy.dll.config
+d:\ActualPromotion\Fenestra\BrioStroy\bin\BrioStroy.dll
+d:\ActualPromotion\Fenestra\BrioStroy\bin\BrioStroy.pdb
+d:\ActualPromotion\Fenestra\BrioStroy\bin\Brio.dll
+d:\ActualPromotion\Fenestra\BrioStroy\bin\EntityFramework.dll
+d:\ActualPromotion\Fenestra\BrioStroy\bin\EntityFramework.SqlServer.dll
+d:\ActualPromotion\Fenestra\BrioStroy\bin\Microsoft.Web.Infrastructure.dll
+d:\ActualPromotion\Fenestra\BrioStroy\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+d:\ActualPromotion\Fenestra\BrioStroy\bin\Newtonsoft.Json.dll
+d:\ActualPromotion\Fenestra\BrioStroy\bin\Ninject.dll
+d:\ActualPromotion\Fenestra\BrioStroy\bin\Ninject.Web.Common.dll
+d:\ActualPromotion\Fenestra\BrioStroy\bin\Ninject.Web.Mvc.dll
+d:\ActualPromotion\Fenestra\BrioStroy\bin\System.Net.Http.Formatting.dll
+d:\ActualPromotion\Fenestra\BrioStroy\bin\System.Web.Helpers.dll
+d:\ActualPromotion\Fenestra\BrioStroy\bin\System.Web.Http.dll
+d:\ActualPromotion\Fenestra\BrioStroy\bin\System.Web.Http.WebHost.dll
+d:\ActualPromotion\Fenestra\BrioStroy\bin\System.Web.Mvc.dll
+d:\ActualPromotion\Fenestra\BrioStroy\bin\System.Web.Razor.dll
+d:\ActualPromotion\Fenestra\BrioStroy\bin\System.Web.WebPages.Deployment.dll
+d:\ActualPromotion\Fenestra\BrioStroy\bin\System.Web.WebPages.dll
+d:\ActualPromotion\Fenestra\BrioStroy\bin\System.Web.WebPages.Razor.dll
+d:\ActualPromotion\Fenestra\BrioStroy\bin\WebActivatorEx.dll
+d:\ActualPromotion\Fenestra\BrioStroy\bin\Brio.pdb
+d:\ActualPromotion\Fenestra\BrioStroy\bin\EntityFramework.xml
+d:\ActualPromotion\Fenestra\BrioStroy\bin\EntityFramework.SqlServer.xml
+d:\ActualPromotion\Fenestra\BrioStroy\bin\Ninject.xml
+d:\ActualPromotion\Fenestra\BrioStroy\bin\Ninject.Web.Common.xml
+d:\ActualPromotion\Fenestra\BrioStroy\bin\Ninject.Web.Mvc.xml
+d:\ActualPromotion\Fenestra\BrioStroy\bin\Newtonsoft.Json.xml
+d:\ActualPromotion\Fenestra\BrioStroy\bin\System.Net.Http.Formatting.xml
+d:\ActualPromotion\Fenestra\BrioStroy\bin\System.Web.Helpers.xml
+d:\ActualPromotion\Fenestra\BrioStroy\bin\System.Web.Http.xml
+d:\ActualPromotion\Fenestra\BrioStroy\bin\System.Web.Http.WebHost.xml
+d:\ActualPromotion\Fenestra\BrioStroy\bin\System.Web.Mvc.xml
+d:\ActualPromotion\Fenestra\BrioStroy\bin\System.Web.Razor.xml
+d:\ActualPromotion\Fenestra\BrioStroy\bin\System.Web.WebPages.xml
+d:\ActualPromotion\Fenestra\BrioStroy\bin\System.Web.WebPages.Deployment.xml
+d:\ActualPromotion\Fenestra\BrioStroy\bin\System.Web.WebPages.Razor.xml
+d:\ActualPromotion\Fenestra\BrioStroy\obj\Release\BrioStroy.csprojResolveAssemblyReference.cache
+d:\ActualPromotion\Fenestra\BrioStroy\obj\Release\BrioStroy.dll
+d:\ActualPromotion\Fenestra\BrioStroy\obj\Release\BrioStroy.pdb

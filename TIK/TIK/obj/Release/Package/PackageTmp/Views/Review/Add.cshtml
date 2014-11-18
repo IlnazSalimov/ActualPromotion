@@ -1,0 +1,44 @@
+﻿@model TIK.ReviewContent
+@using TIK
+
+@{
+    ViewBag.Title = "ДОБАВИТЬ ОТЗЫВ";
+    Layout = "~/Views/Layouts/LayoutDefault.cshtml";
+}
+
+<div class="content">
+    <h1>ДОБАВИТЬ ЗАПИСЬ</h1>
+    @using (Html.BeginForm("Add", "Review", FormMethod.Post, new { @class = "pure-form pure-form-aligned", enctype = "multipart/form-data" }))
+    {
+        @Html.ValidationSummary(true)
+        <fieldset>
+            <div class="pure-control-group">
+                @Html.TextBoxFor(model => model.AuthorCompany, new { @class = "pure-input-2-3", placeholder = @Html.DisplayName("AuthorCompany") })
+                @Html.ValidationMessageFor(model => model.AuthorCompany)
+            </div>
+
+            <div class="pure-control-group">
+                @Html.TextBoxFor(model => model.AuthorName, new { @class = "pure-input-2-3", placeholder = @Html.DisplayName("AuthorName") })
+                @Html.ValidationMessageFor(model => model.AuthorName)
+            </div>
+
+            <div class="pure-control-group">
+                @Html.TextBoxFor(model => model.AuthorPosition, new { @class = "pure-input-2-3", placeholder = @Html.DisplayName("AuthorPosition") })
+                @Html.ValidationMessageFor(model => model.AuthorPosition)
+            </div>
+
+            <!--<div class="pure-control-group">
+                <input id="LinkToImg" type="file" name="LinkToImg" class="pure-input-2-3" />
+                @Html.ValidationMessageFor(model => model.AuthorAvatar)
+            </div>-->
+
+            <div class="pure-control-group">
+                @Html.TextAreaFor(model => model.Message, 5, 40, new { @class = "pure-input-2-3", placeholder = @Html.DisplayName("Message") })
+                @Html.ValidationMessageFor(model => model.Message)
+            </div>
+            <div class="pure-controls">
+                <button type="submit" class="pure-button pure-button-primary">ДОБАВИТЬ</button>
+            </div>
+        </fieldset>
+    }
+</div>

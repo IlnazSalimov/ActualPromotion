@@ -1,0 +1,45 @@
+﻿@model IEnumerable<Brio.Models.Document>
+@using TIK;
+
+@{
+    ViewBag.Title = "ДОКУМЕНТЫ";
+    Layout = "~/Views/Layouts/LayoutDefault.cshtml";
+}
+
+@section Styles{
+    <style>
+        figure.banner {
+            background: url('../Content/images/banner2.jpg') no-repeat 0 0;
+            background-size: cover;
+        }
+
+            figure.banner figcaption {
+                background: url('../Content/images/banner_topsheet_doc.png') no-repeat 0 0;
+                background-size: contain;
+            }
+    </style>
+}
+
+<figure class="banner">
+    <figcaption></figcaption>
+</figure>
+
+<div class="content documents relative">
+
+    @if (User.Identity.IsAuthenticated)
+    {
+        <div class="add admin-buttons">
+
+            @Html.ActionLink("Добавить запись", "Add")
+        </div>
+    }
+
+    @Html.RenderDocumentUnit(Model)
+
+    @if (Model.Count() == 0)
+    {
+        <div class="warning-msg-container pure-u-1">Доступных документов нет</div>
+    }
+</div>
+
+

@@ -1,0 +1,89 @@
+﻿@model IEnumerable<Brio.Models.Article>
+
+@{
+    ViewBag.Title = "О КОМПАНИИ";
+    Layout = "~/Views/Layouts/LayoutDefault.cshtml";
+}
+
+@section styles{
+    <style>
+        .jspVerticalBar {
+            left: 0;
+        }
+
+        .jspContainer {
+            width: 100% !important;
+        }
+
+        .jspPane {
+            width: 100% !important;
+        }
+    </style>
+}
+
+<div class="container run1">
+    <div data-id="0" class="slider"></div>
+</div>
+<div class="block_ins">
+    <div class="title">
+        @ViewBag.Title
+    </div>
+    <article class="page-content">
+        <div class="articles" style="padding: 25px 30px;">
+            @foreach (var item in Model)
+            {
+                <div class="article_container">
+                    <div class="article_header"><h1>@item.Title</h1></div>
+                    <div class="article">@Html.Raw(HttpUtility.HtmlDecode(item.Text))</div>
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <div class="delete_button admin_buttons">
+                            <a href="/Articles/Edit?articleId=@item.ID"><i class=" fa fa-pencil-square-o"></i></a>
+                            <a class="delete" href="" data-articleid="@item.ID"><i class="fa fa-times"></i></a>
+                        </div>
+                    }
+                </div>
+            }
+            @if (User.Identity.IsAuthenticated)
+            {
+                <div class="add_button admin_buttons">@Html.ActionLink("добавить запись", "Add")</div>
+            }
+        </div>
+        <div class="brio-tasks">
+            <div class="bottom-corner"></div>
+        </div>
+    </article>
+</div>
+<div class="bottom_arrows_container">
+    <div class="bottom-arrows">
+    </div>
+</div>
+
+<script>
+    (function () {
+        $(".delete").bind("click", function (e) {
+            e.preventDefault();
+            var that = this;
+            $.ajax({
+                type: 'POST',
+                dataType: 'json',
+                url: "/Articles/Delete",
+                data: "articleId=" + $(that).attr("data-articleid"),
+                success: function (response) {
+                    if (response.success) {
+                        $(that).parents(".article_container").fadeOut();
+                    }
+                    else {
+                        console.log(response.message);
+                    }
+                },
+                error: function (xhr, ajaxOptions, thrownError) {
+                    console.log("request failed");
+                },
+
+                processData: false,
+                async: false
+            });
+        });
+    })();
+</script>

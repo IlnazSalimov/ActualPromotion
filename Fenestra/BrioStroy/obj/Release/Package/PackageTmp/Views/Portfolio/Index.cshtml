@@ -1,0 +1,43 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Layouts/LayoutDefault.cshtml";
+}
+
+@section styles{
+    <style>
+        .container {
+            width: 100% !important;
+        }
+    </style>
+}
+
+<div class="container">
+    <div class="slider">
+        <iframe width='100%' height='100%' frameborder='0' src='https://a.tiles.mapbox.com/v4/briostroy.jlm974p1/attribution,zoompan,zoomwheel,geocoder,share.html?access_token=pk.eyJ1IjoiYnJpb3N0cm95IiwiYSI6Ikd4TTVIaWMifQ.G8biqI_83EzMMfn_cBl8Lg'></iframe>
+    </div>
+
+    <div style="clear: both"></div>
+    <div class="marker_descriptions">
+        <div class="marker_cont">
+            <div class="marker">
+                <div class="red m"></div>
+            </div>
+            <div class="desc">
+                <div class="line"></div>
+                <div class="mark-desc">Проектирование</div>
+            </div>
+        </div>
+
+        <div style="clear: both"></div>
+        <div class="marker_cont">
+            <div class="marker">
+                <div class="grey m"></div>
+            </div>
+            <div class="desc">
+                <div class="line"></div>
+                <div class="mark-desc">Строительство</div>
+            </div>
+        </div>
+    </div>
+</div>
+
