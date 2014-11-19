@@ -37,5 +37,7 @@ namespace Brio.Models
         public DbSet<Review> Reviews { get; set; }
         public DbSet<Role> Roles { get; set; }
         public DbSet<User> Users { get; set; }
+        public DbSet<Page> Pages { get; set; }
+        public DbSet<Product> Products { get; set; }
     }
 }

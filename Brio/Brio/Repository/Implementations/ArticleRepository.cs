@@ -25,11 +25,11 @@ namespace Brio
             return articleRepository.GetById(id);
         }
 
-        public IQueryable<Article> GetByPage(string page, int currentCompany)
+        public IQueryable<Article> GetByPage(PagesEnum page, int currentCompany)
         {
             IQueryable<Article> articles = articleRepository.GetAll();
             return from a in articles
-                   where a.Page == page &&
+                   where a.PageId == (int)page &&
                    a.CompanyId == currentCompany
                    select a;
 

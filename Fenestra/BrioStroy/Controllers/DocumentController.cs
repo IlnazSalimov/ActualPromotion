@@ -12,10 +12,12 @@ namespace BrioStroy
     public class DocumentController : Controller
     {
         private readonly IDocumentRepository documentRepository;
+        private readonly IProductRepository productRepository;
         private string priceUploadDirectory = "//Files//Documents//";
-        public DocumentController(IDocumentRepository _documentRepository)
+        public DocumentController(IDocumentRepository _documentRepository, IProductRepository _productRepository)
         {
             this.documentRepository = _documentRepository;
+            this.productRepository = _productRepository;
         }
         public ActionResult GetAll()
         {
@@ -77,6 +79,12 @@ namespace BrioStroy
         }
 
         [Authorize(Roles = "Admin")]
+        public ActionResult AddProductDocument(int productId)
+        {
+            return View(new AddProductDocument { ProductId = productId });
+        }
+
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         public ActionResult Add(AddDocument postDoc, HttpPostedFileBase DocumentPath)
         {
@@ -87,6 +95,7 @@ namespace BrioStroy
                 newDoc.DocumentTitle = postDoc.DocumentTitle;
                 newDoc.UploadDate = DateTime.Now;
                 newDoc.CompanyId = AppSettings.CurrentCompany;
+                newDoc.PageId = (int)PagesEnum.Documents;
 
                 /*Сохранение фото*/
                 var fileName = Path.GetFileName(DocumentPath.FileName);
@@ -98,6 +107,36 @@ namespace BrioStroy
                 documentRepository.SaveChanges();
 
                 return RedirectToAction("GetAll");
+                //throw new HttpException(403, "Forbidden");
+            }
+            else
+                return View(postDoc);
+        }
+
+        [Authorize(Roles = "Admin")]
+        [HttpPost]
+        public ActionResult AddProductDocument(AddProductDocument postDoc, HttpPostedFileBase DocumentPath)
+        {
+            if (ModelState.IsValid && (DocumentPath != null && DocumentPath.ContentLength > 0))
+            {
+                Document newDoc = new Document();
+
+                newDoc.DocumentTitle = postDoc.DocumentTitle;
+                newDoc.UploadDate = DateTime.Now;
+                newDoc.CompanyId = AppSettings.CurrentCompany;
+                newDoc.PageId = (int)PagesEnum.Products;
+                newDoc.ProductId = postDoc.ProductId;
+
+                /*Сохранение фото*/
+                var fileName = Path.GetFileName(DocumentPath.FileName);
+                var savingPath = Path.Combine(HttpContext.Server.MapPath(priceUploadDirectory), fileName);
+                DocumentPath.SaveAs(savingPath);
+                newDoc.DocumentPath = VirtualPathUtility.ToAbsolute(Path.Combine(priceUploadDirectory, fileName));
+
+                documentRepository.Insert(newDoc);
+                documentRepository.SaveChanges();
+
+                return RedirectToAction("GetAll", "Product");
                 //throw new HttpException(403, "Forbidden");
             }
             else

@@ -54,7 +54,7 @@ namespace Brio
 
         public IQueryable<Document> GetCompanyDocuments(int currentCompany)
         {
-            return documentRepository.GetAll().Where(doc => doc.CompanyId == currentCompany);
+            return documentRepository.GetAll().Where(doc => doc.CompanyId == currentCompany && doc.PageId == (int)PagesEnum.Documents);
         }
     }
 }

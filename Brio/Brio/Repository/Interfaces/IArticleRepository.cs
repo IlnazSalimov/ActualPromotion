@@ -14,7 +14,7 @@ namespace Brio
     {
         IQueryable<Article> GetAll();
         Article GetById(int id);
-        IQueryable<Article> GetByPage(string page, int currentCompany);
+        IQueryable<Article> GetByPage(PagesEnum page, int currentCompany);
 
         int Insert(Article model);
         void Update(Article model);

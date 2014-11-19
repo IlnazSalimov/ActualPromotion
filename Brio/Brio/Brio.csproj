@@ -121,6 +121,9 @@
     <Compile Include="Models\News.cs">
       <DependentUpon>BrioEntityModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Page.cs">
+      <DependentUpon>BrioEntityModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Partials\Article.cs" />
     <Compile Include="Models\Partials\Company.cs" />
     <Compile Include="Models\Partials\Division.cs" />
@@ -128,12 +131,17 @@
     <Compile Include="Models\Partials\Entities.cs" />
     <Compile Include="Models\Partials\Feedback.cs" />
     <Compile Include="Models\Partials\InfoCard.cs" />
+    <Compile Include="Models\Partials\Page.cs" />
     <Compile Include="Models\Partials\PriceList.cs" />
+    <Compile Include="Models\Partials\Product.cs" />
     <Compile Include="Models\Partials\Project.cs" />
     <Compile Include="Models\Partials\Review.cs" />
     <Compile Include="Models\Partials\Role.cs" />
     <Compile Include="Models\Partials\User.cs" />
     <Compile Include="Models\PriceList.cs">
+      <DependentUpon>BrioEntityModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Product.cs">
       <DependentUpon>BrioEntityModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Project.cs">
@@ -148,9 +156,11 @@
     <Compile Include="Models\Showcases\Article\AddArticle.cs" />
     <Compile Include="Models\Showcases\Article\EditArticle.cs" />
     <Compile Include="Models\Showcases\Document\AddDocument.cs" />
+    <Compile Include="Models\Showcases\Document\AddProductDocument.cs" />
     <Compile Include="Models\Showcases\Document\EditDocument.cs" />
     <Compile Include="Models\Showcases\PriceList\AddPriceList.cs" />
     <Compile Include="Models\Showcases\PriceList\EditPriceList.cs" />
+    <Compile Include="Models\Showcases\Product\EditProduct.cs" />
     <Compile Include="Models\Showcases\Review\EditReviewContent.cs" />
     <Compile Include="Models\Showcases\Review\ReviewContent.cs" />
     <Compile Include="Models\Showcases\SendFeedback.cs" />
@@ -163,6 +173,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\Implementations\ArticleRepository.cs" />
     <Compile Include="Repository\Implementations\CompanyRepository.cs" />
+    <Compile Include="Repository\Implementations\ProductRepository.cs" />
     <Compile Include="Repository\Implementations\DocumentRepository.cs" />
     <Compile Include="Repository\Implementations\FeedbackRepository.cs" />
     <Compile Include="Repository\Implementations\InfoCardRepository.cs" />
@@ -171,6 +182,7 @@
     <Compile Include="Repository\Implementations\ReviewRepository.cs" />
     <Compile Include="Repository\Implementations\RoleRepository.cs" />
     <Compile Include="Repository\Implementations\UserRepository.cs" />
+    <Compile Include="Repository\Interfaces\IProductRepository.cs" />
     <Compile Include="Repository\Interfaces\IInfoCardRepository.cs" />
     <Compile Include="Repository\Interfaces\IArticleRepository.cs" />
     <Compile Include="Repository\Interfaces\ICompanyRepository.cs" />

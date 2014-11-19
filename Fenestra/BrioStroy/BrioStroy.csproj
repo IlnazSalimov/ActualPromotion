@@ -135,7 +135,7 @@
     <Compile Include="Controllers\DocumentController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PortfolioController.cs" />
-    <Compile Include="Controllers\ProductsController.cs" />
+    <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Controllers\ReviewController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -247,7 +247,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Products\Index.cshtml" />
+    <Content Include="Views\Product\GetAll.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\fonts\RussoOne.eot" />
@@ -256,6 +256,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\PublishProfiles\BrioStroyPublish.pubxml" />
+    <Content Include="Views\Product\Edit.cshtml" />
+    <Content Include="Views\Document\AddProductDocument.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

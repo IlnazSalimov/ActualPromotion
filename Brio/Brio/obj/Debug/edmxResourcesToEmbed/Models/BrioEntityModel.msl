@@ -4,10 +4,10 @@
     <EntitySetMapping Name="Articles">
       <EntityTypeMapping TypeName="actual98_brioDbModel.Article">
         <MappingFragment StoreEntitySet="Articles">
+          <ScalarProperty Name="PageId" ColumnName="PageId" />
           <ScalarProperty Name="ArticleID" ColumnName="ArticleID" />
           <ScalarProperty Name="Title" ColumnName="Title" />
           <ScalarProperty Name="Text" ColumnName="Text" />
-          <ScalarProperty Name="Page" ColumnName="Page" />
           <ScalarProperty Name="Author" ColumnName="Author" />
           <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
           <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
@@ -42,6 +42,8 @@
     <EntitySetMapping Name="Documents">
       <EntityTypeMapping TypeName="actual98_brioDbModel.Document">
         <MappingFragment StoreEntitySet="Documents">
+          <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+          <ScalarProperty Name="PageId" ColumnName="PageId" />
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
           <ScalarProperty Name="DocumentPath" ColumnName="DocumentPath" />
@@ -148,6 +150,24 @@
           <ScalarProperty Name="Email" ColumnName="Email" />
           <ScalarProperty Name="Password" ColumnName="Password" />
           <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Pages">
+      <EntityTypeMapping TypeName="actual98_brioDbModel.Page">
+        <MappingFragment StoreEntitySet="Pages">
+          <ScalarProperty Name="PageName" ColumnName="PageName" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Products">
+      <EntityTypeMapping TypeName="actual98_brioDbModel.Product">
+        <MappingFragment StoreEntitySet="Products">
+          <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

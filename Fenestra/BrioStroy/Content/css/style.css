@@ -582,6 +582,13 @@ div.price_container {
     height: 100%;
     margin-left: 9%;
 }
+show_buttons {
+    width: 82%;
+    height: 100%;
+    margin-left: 9%;
+    padding-top: 15px;
+}
+
 
 .price_buttons_head {
     position: relative;
@@ -705,6 +712,12 @@ div.price_container {
         margin-left: -83px;
     }
 
+    .add_button_bot.prod_doc {
+        margin-left: -105px;
+        bottom: 10px;
+    }
+
+
 .empty_list {
     text-align: center;
     margin-left: -45px;
@@ -801,6 +814,7 @@ div.price_container {
     height: 78%;
     float: left;
     margin: 0 1% 1%;
+    cursor: pointer;
 }
 
 .partner_logo.rosjeldor{
@@ -872,6 +886,90 @@ div.price_container {
     background: url('../images/vashbit_c.png') no-repeat 0 0;
     background-size: contain;
 }
+
+.partner_logo.windows{
+    background: url('../images/1.png') no-repeat 0 0;
+    background-size: contain;
+}
+
+.partner_logo.windows:hover {
+    background: url('../images/1hover.png'), url('../images/1.png');
+    background-repeat: no-repeat;
+    background-position:0 0;
+    background-size: contain;
+}
+
+.partner_logo.facades{
+    background: url('../images/2.png') no-repeat 0 0;
+    background-size: contain;
+}
+
+.partner_logo.facades:hover {
+    background: url('../images/2hover.png'), url('../images/2.png');
+    background-repeat: no-repeat;
+    background-position:0 0;
+    background-size: contain;
+}
+
+ .partner_logo.balconies{
+    background: url('../images/3.png') no-repeat 0 0;
+    background-size: contain;
+}
+
+.partner_logo.balconies:hover {
+    background: url('../images/3hover.png'), url('../images/3.png');
+    background-repeat: no-repeat;
+    background-position:0 0;
+    background-size: contain;
+}
+
+.partner_logo.windows_system{
+    background: url('../images/4.png') no-repeat 0 0;
+    background-size: contain;
+}
+
+.partner_logo.windows_system:hover {
+    background: url('../images/4hover.png'), url('../images/4.png');
+    background-repeat: no-repeat;
+    background-position:0 0;
+    background-size: contain;
+}
+
+.partner_logo.doors{
+    background: url('../images/5.png') no-repeat 0 0;
+    background-size: contain;
+}
+
+.partner_logo.doors:hover {
+    background: url('../images/5hover.png'), url('../images/5.png');
+    background-repeat: no-repeat;
+    background-position:0 0;
+    background-size: contain;
+}
+.partner_logo.winter_gardens{
+    background: url('../images/6.png') no-repeat 0 0;
+    background-size: contain;
+}
+
+.partner_logo.winter_gardens:hover {
+    background: url('../images/6hover.png'), url('../images/6.png');
+    background-repeat: no-repeat;
+    background-position:0 0;
+    background-size: contain;
+}
+
+.partner_logo.pvh{
+    background: url('../images/7.png') no-repeat 0 0;
+    background-size: contain;
+}
+
+.partner_logo.pvh:hover {
+    background: url('../images/7hover.png'), url('../images/7.png');
+    background-repeat: no-repeat;
+    background-position:0 0;
+    background-size: contain;
+}
+
 
 .logo_cont {
     width: 100%;

@@ -17,10 +17,10 @@ namespace Brio.Models
         public int ArticleID { get; set; }
         public string Title { get; set; }
         public string Text { get; set; }
-        public string Page { get; set; }
         public int Author { get; set; }
         public System.DateTime CreateDate { get; set; }
         public int CompanyId { get; set; }
+        public int PageId { get; set; }
     
         public virtual User User { get; set; }
         public virtual Company Company { get; set; }

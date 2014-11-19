@@ -102,3 +102,4 @@ D:\ActualPromotion\Brio\Brio\bin\Debug\System.Net.Http.Formatting.xml
 D:\ActualPromotion\Brio\Brio\obj\Debug\Brio.csprojResolveAssemblyReference.cache
 D:\ActualPromotion\Brio\Brio\obj\Debug\Brio.dll
 D:\ActualPromotion\Brio\Brio\obj\Debug\Brio.pdb
+d:\ActualPromotion\Brio\Brio\bin\Debug\Newtonsoft.Json.dll

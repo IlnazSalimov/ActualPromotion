@@ -1,0 +1,261 @@
+﻿@model IEnumerable<Brio.Models.Product>
+
+@{
+    ViewBag.Title = "ПРОДУКЦИЯ";
+    Layout = "~/Views/Layouts/LayoutDefault.cshtml";
+}
+
+@section styles{
+    <style>
+        .container {
+            width: 100% !important;
+        }
+
+        .page_logo {
+            background: url('../Content/images/products.png') no-repeat 0 0;
+            background-size: contain;
+        }
+    </style>
+}
+
+<script src="~/Content/js/jquery-ui.min.js"></script>
+<script src="~/Content/js/jquery.mousewheel.min.js"></script>
+<div class="container run1">
+    <div data-id="0" class="slider">
+        <div class="units-nav-container">
+
+        </div>
+    </div>
+</div>
+
+<div class="page_logo_container"><div class="page_logo"></div></div>
+
+@{var i = 0;}
+
+@{i++;}
+<div class='block_ins partner current'>
+    <div class="logo_cont">
+        <div class="partner_logo windows" data-id="1"></div>
+        <div class="partner_logo facades" data-id="2"></div>
+        <div class="partner_logo balconies" data-id="3"></div>
+        <div class="partner_logo windows_system" data-id="4"></div>
+    </div>
+    <div class="logo_cont line2">
+        <div class="logo_inner_cont">
+            <div class="partner_logo doors" data-id="5"></div>
+            <div class="partner_logo winter_gardens" data-id="6"></div>
+            <div class="partner_logo pvh" data-id="7"></div>
+        </div>
+    </div>
+</div>
+
+@foreach (var item in Model)
+{
+    <div class='block_ins @(@i != 0 ? "disp_none" : "current")' data-id="@item.ID">
+        @{i++;}
+        <div class="title">
+            @ViewBag.Title
+        </div>
+        <article class="page-content">
+            <div class="articles">
+
+                <div class="article_container">
+                    <div class="article_header"><h1>@item.Title</h1></div>
+                    <div class="article">@Html.Raw(HttpUtility.HtmlDecode(item.Description))</div>
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <div class="delete_button admin_buttons">
+                            <a href="/Product/Edit/@item.ID"><i class=" fa fa-pencil-square-o"></i></a>
+                            <!--<a class="delete" href="" data-id="@item.ID"><i class="fa fa-times"></i></a>-->
+                        </div>
+                    }
+                </div>
+
+            </div>
+            <div class="brio-tasks">
+                <div class="show_buttons">
+                    <div class="price_buttons_head">
+                        ВЫ МОЖЕТЕ:
+                    </div>
+                    <button class="button-error pure-button">@Html.ActionLink("Просмотреть файл", "Show", new { }, new { @class = "pdf-button show", target = "_blank" })</button>
+                </div>
+                <div class="bottom-corner"></div>
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <div class="add_button_bot prod_doc">@Html.ActionLink("Добавить документ", "AddProductDocument", "Document", new { productId = item.ID }, new { })</div>
+                    }
+                </div>
+        </article>
+    </div>
+}
+
+<div class="bottom_arrows_container">
+    <div class="bottom-arrows">
+    </div>
+</div>
+
+<script>
+    (function () {
+        for (var i = 0; i < $(".block_ins").length; i++) {
+            if ($(".unit_nav").length == 0) {
+                $(".units-nav-container").append('<div class="unit_nav"></div>');
+            }
+            else {
+                $(".unit_nav").last().before('<div class="unit_nav"></div>');
+            }
+        }
+
+        $(".unit_nav").css({ "height": (100 / $(".unit_nav").length) - 2 + "%" });
+        $(".unit_nav").eq(0).addClass("active");
+
+        showOrHidePageLogo($(".block_ins.current"));
+        $(".partner_logo").bind("click", function () {
+            toogleBlock($(".block_ins[data-id='" + $(this).attr("data-id") + "']").index(".block_ins"), 350, function () { }, false);
+        });
+        $(".delete").bind("click", function (e) {
+            e.preventDefault();
+            var that = this;
+
+            if (!confirm("Вы действительно хотите удалить эту запись?")) {
+                return false;
+            }
+            $.ajax({
+                type: 'POST',
+                dataType: 'json',
+                url: "/Product/Delete",
+                data: "id=" + $(that).attr("data-id"),
+                success: function (response) {
+                    if (response.success) {
+                        var isFirstElement = $(".block_ins").index($(".block_ins.current")) == 0;
+                        var isLastElement = $(".block_ins").index($(".block_ins.current")) == $(".block_ins").length - 1;
+                        var blockToShow = isFirstElement ? $(".block_ins.current").next() : isLastElement ? $(".block_ins.current").prev() : $(".block_ins.current").next();
+                        var deletingBlockIndex = $(".block_ins").index($(".block_ins.current"));
+
+                        if ($(".block_ins").length > 1) {
+                            toogleBlock($(".block_ins").index(blockToShow), 350, function (activeElementIndex) {
+                                isBusy = false;
+                                if (activeElementIndex !== undefined) {
+                                    $(".unit_nav").removeClass("active");
+                                    $(".unit_nav").eq(activeElementIndex).addClass("active");
+
+                                    $(".unit_nav").eq(deletingBlockIndex).remove();
+                                    $(".unit_nav").css("height", (100 / $(".unit_nav").length) - 2 + "%");
+
+
+                                    $(".block_ins").eq(deletingBlockIndex).remove();
+                                }
+                            }, true);
+                        }
+                        else {
+                            $(".unit_nav").eq(deletingBlockIndex).remove();
+                            $(".unit_nav").css("height", (100 / $(".unit_nav").length) - 2 + "%");
+                            $(".block_ins").eq(deletingBlockIndex).find(".article_container").remove();
+                        }
+                    }
+                    else {
+                        console.log(response.message);
+                    }
+                },
+                error: function (xhr, ajaxOptions, thrownError) {
+                    console.log("request failed");
+                },
+
+                processData: false,
+                async: false
+            });
+        });
+
+        var isBusy = false;
+        $(document).mousewheel(function (event, delta) {
+            if (isBusy) {
+                return false;
+            }
+            isBusy = true;
+            if (delta < 0) {
+                var blockIndexToShow = $(".block_ins").index($(".block_ins.current").next());
+                toogleBlock(blockIndexToShow, 350, function (activeElementIndex) {
+                    isBusy = false;
+                });
+            }
+
+            if (delta > 0) {
+                var blockIndexToShow = $(".block_ins").index($(".block_ins.current").prev());
+                toogleBlock(blockIndexToShow, 350, function (activeElementIndex) {
+                    isBusy = false;
+                });
+            }
+        });
+
+        $(".unit_nav").bind("click", function () {
+            toogleBlock($(this).index(), 350, function (activeElementIndex) {
+                isBusy = false;
+            });
+        });
+
+        function toogleBlock(showingBlockIndex /*Индекс DOM элемента в коллекции $(".block_ins")*/, duration, onComplete, isRemove) {
+            var blocksCollection = $(".block_ins"),
+                currentBlock = $(".block_ins.current"),
+                currentBlockIndex = blocksCollection.index(currentBlock);
+
+            var isFirstElement = currentBlockIndex == 0;
+            var isLastElement = currentBlockIndex == blocksCollection.length - 1;
+            if (showingBlockIndex != -1 && showingBlockIndex > currentBlockIndex && !isLastElement) {
+                var showingBlock = showingBlockIndex === undefined ? currentBlock.next() : blocksCollection.eq(showingBlockIndex);
+
+                currentBlock.toggle("drop", { direction: (isRemove !== undefined && isRemove ? "right" : "up") }, duration, function () {
+                    currentBlock.removeClass("current");
+                    showOrHidePageLogo(showingBlock);
+                    showingBlock.addClass("current").toggle("drop", { direction: "down" }, duration, function () {
+                        activeElementIndex = blocksCollection.index(showingBlock);
+                        if (activeElementIndex !== undefined) {
+                            $(".unit_nav").removeClass("active");
+                            $(".unit_nav").eq(activeElementIndex).addClass("active");
+                        }
+                        onComplete(activeElementIndex);
+                    });
+                });
+            }
+            else if (showingBlockIndex != -1 && showingBlockIndex < currentBlockIndex && !isFirstElement) {
+                var showingBlock = showingBlockIndex === undefined ? currentBlock.prev() : blocksCollection.eq(showingBlockIndex);
+
+                currentBlock.toggle("drop", { direction: (isRemove !== undefined && isRemove ? "right" : "down") }, duration, function () {
+                    currentBlock.removeClass("current");
+                    showOrHidePageLogo(showingBlock);
+                    showingBlock.addClass("current").toggle("drop", { direction: "up" }, duration, function () {
+                        activeElementIndex = blocksCollection.index(showingBlock);
+                        if (activeElementIndex !== undefined) {
+                            $(".unit_nav").removeClass("active");
+                            $(".unit_nav").eq(activeElementIndex).addClass("active");
+                        }
+                        onComplete(activeElementIndex);
+                    });
+                });
+            }
+            else {
+                onComplete();
+            }
+        }
+
+        function showOrHidePageLogo(showingBlock) {
+            console.log(showingBlock);
+            if (showingBlock.hasClass("partner")) {
+                //$(".bottom_arrows_container").hide();
+                if ($(window).height() >= 1000) {
+                    $(".page_logo_container").css("display", "inherit");
+                }
+                else {
+                    $(".page_logo_container").hide();
+                }
+            }
+            else {
+                $(".bottom_arrows_container").show();
+                if ($(window).height() >= 751) {
+                    $(".page_logo_container").show();
+                }
+                else {
+                    $(".page_logo_container").hide();
+                }
+            }
+        }
+    })();
+</script>

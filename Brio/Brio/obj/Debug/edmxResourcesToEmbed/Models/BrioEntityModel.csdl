@@ -73,6 +73,20 @@
       <End Role="Roles" EntitySet="Roles" />
       <End Role="Users" EntitySet="Users" />
     </AssociationSet>
+    <EntitySet Name="Pages" EntityType="actual98_brioDbModel.Page" />
+    <EntitySet Name="Products" EntityType="actual98_brioDbModel.Product" />
+    <AssociationSet Name="FK__Documents__PageI__3D5E1FD2" Association="actual98_brioDbModel.FK__Documents__PageI__3D5E1FD2">
+      <End Role="Page" EntitySet="Pages" />
+      <End Role="Document" EntitySet="Documents" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Documents__Produ__403A8C7D" Association="actual98_brioDbModel.FK__Documents__Produ__403A8C7D">
+      <End Role="Product" EntitySet="Products" />
+      <End Role="Document" EntitySet="Documents" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Products__Compan__4316F928" Association="actual98_brioDbModel.FK__Products__Compan__4316F928">
+      <End Role="Company" EntitySet="Companies" />
+      <End Role="Product" EntitySet="Products" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType Name="Article">
     <Key>
@@ -81,12 +95,12 @@
     <Property Name="ArticleID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
     <Property Name="Title" Type="String" Nullable="false" MaxLength="127" Unicode="false" FixedLength="false" />
     <Property Name="Text" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
-    <Property Name="Page" Type="String" MaxLength="127" Unicode="false" FixedLength="false" />
     <Property Name="Author" Type="Int32" Nullable="false" />
     <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
     <Property Name="CompanyId" Type="Int32" Nullable="false" />
     <NavigationProperty Name="User" Relationship="actual98_brioDbModel.FK__Articles__Author__1ED998B2" FromRole="Articles" ToRole="Users" />
     <NavigationProperty Name="Company" Relationship="actual98_brioDbModel.FK__Articles__Compan__412EB0B6" FromRole="Articles" ToRole="Companies" />
+    <Property Name="PageId" Type="Int32" Nullable="false" />
   </EntityType>
   <EntityType Name="Company">
     <Key>
@@ -110,6 +124,7 @@
     <NavigationProperty Name="PriceLists" Relationship="actual98_brioDbModel.FK__PriceList__Compa__5441852A" FromRole="Companies" ToRole="PriceLists" />
     <NavigationProperty Name="Projects" Relationship="actual98_brioDbModel.FK__Projects__Compan__6B24EA82" FromRole="Companies" ToRole="Projects" />
     <NavigationProperty Name="Reviews" Relationship="actual98_brioDbModel.FK__Reviews__Company__46E78A0C" FromRole="Companies" ToRole="Reviews" />
+    <NavigationProperty Name="Products" Relationship="actual98_brioDbModel.FK__Products__Compan__4316F928" FromRole="Company" ToRole="Product" />
   </EntityType>
   <EntityType Name="Division">
     <Key>
@@ -132,6 +147,10 @@
     <Property Name="DocumentTitle" Type="String" Nullable="false" MaxLength="255" Unicode="false" FixedLength="false" />
     <Property Name="UploadDate" Type="DateTime" Nullable="false" Precision="3" />
     <NavigationProperty Name="Company" Relationship="actual98_brioDbModel.FK__Documents__Compa__3F466844" FromRole="Documents" ToRole="Companies" />
+    <Property Name="PageId" Type="Int32" Nullable="false" />
+    <Property Name="ProductId" Type="Int32" />
+    <NavigationProperty Name="Page" Relationship="actual98_brioDbModel.FK__Documents__PageI__3D5E1FD2" FromRole="Document" ToRole="Page" />
+    <NavigationProperty Name="Product" Relationship="actual98_brioDbModel.FK__Documents__Produ__403A8C7D" FromRole="Document" ToRole="Product" />
   </EntityType>
   <EntityType Name="Feedback">
     <Key>
@@ -419,6 +438,61 @@
       </Principal>
       <Dependent Role="Users">
         <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Page">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PageName" Type="String" Nullable="false" MaxLength="127" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Documents" Relationship="actual98_brioDbModel.FK__Documents__PageI__3D5E1FD2" FromRole="Page" ToRole="Document" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Title" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Description" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Documents" Relationship="actual98_brioDbModel.FK__Documents__Produ__403A8C7D" FromRole="Product" ToRole="Document" />
+    <Property Name="CompanyId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Company" Relationship="actual98_brioDbModel.FK__Products__Compan__4316F928" FromRole="Product" ToRole="Company" />
+  </EntityType>
+  <Association Name="FK__Documents__PageI__3D5E1FD2">
+    <End Type="actual98_brioDbModel.Page" Role="Page" Multiplicity="1" />
+    <End Type="actual98_brioDbModel.Document" Role="Document" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Page">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Document">
+        <PropertyRef Name="PageId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Documents__Produ__403A8C7D">
+    <End Type="actual98_brioDbModel.Product" Role="Product" Multiplicity="0..1" />
+    <End Type="actual98_brioDbModel.Document" Role="Document" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Document">
+        <PropertyRef Name="ProductId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Products__Compan__4316F928">
+    <End Type="actual98_brioDbModel.Company" Role="Company" Multiplicity="1" />
+    <End Type="actual98_brioDbModel.Product" Role="Product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Company">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Product">
+        <PropertyRef Name="CompanyId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

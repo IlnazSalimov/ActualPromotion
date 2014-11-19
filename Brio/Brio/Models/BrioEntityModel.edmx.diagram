@@ -32,6 +32,11 @@
         <AssociationConnector Association="actual98_brioDbModel.FK__News__AuthorUser__68487DD7" ManuallyRouted="false" />
         <AssociationConnector Association="actual98_brioDbModel.FK__Projects__Respon__6C190EBB" ManuallyRouted="false" />
         <AssociationConnector Association="actual98_brioDbModel.FK__Users__RoleId__1BFD2C07" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="actual98_brioDbModel.Page" Width="1.5" PointX="1.125" PointY="19.375" />
+        <EntityTypeShape EntityType="actual98_brioDbModel.Product" Width="1.5" PointX="0.75" PointY="0.875" />
+        <AssociationConnector Association="actual98_brioDbModel.FK__Documents__PageI__3D5E1FD2" />
+        <AssociationConnector Association="actual98_brioDbModel.FK__Documents__Produ__403A8C7D" />
+        <AssociationConnector Association="actual98_brioDbModel.FK__Products__Compan__4316F928" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

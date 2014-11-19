@@ -19,7 +19,11 @@ namespace Brio.Models
         public string DocumentPath { get; set; }
         public string DocumentTitle { get; set; }
         public System.DateTime UploadDate { get; set; }
+        public int PageId { get; set; }
+        public Nullable<int> ProductId { get; set; }
     
         public virtual Company Company { get; set; }
+        public virtual Page Page { get; set; }
+        public virtual Product Product { get; set; }
     }
 }

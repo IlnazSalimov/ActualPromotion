@@ -25,6 +25,7 @@ namespace Brio.Models
             this.PriceLists = new HashSet<PriceList>();
             this.Projects = new HashSet<Project>();
             this.Reviews = new HashSet<Review>();
+            this.Products = new HashSet<Product>();
         }
     
         public int Id { get; set; }
@@ -46,5 +47,6 @@ namespace Brio.Models
         public virtual ICollection<PriceList> PriceLists { get; set; }
         public virtual ICollection<Project> Projects { get; set; }
         public virtual ICollection<Review> Reviews { get; set; }
+        public virtual ICollection<Product> Products { get; set; }
     }
 }
