@@ -5,6 +5,13 @@ using System.Web;
 
 namespace Brio.Models
 {
+    public enum Roles
+    {
+        Admin = 1,
+        ProjectManager = 2,
+        Client = 3,
+        Employee = 4
+    }
     public partial class Role : IEntity
     {
         public int ID

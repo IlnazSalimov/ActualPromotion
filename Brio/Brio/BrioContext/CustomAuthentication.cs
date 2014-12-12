@@ -5,6 +5,7 @@ using System.Security.Principal;
 using System.Web;
 using System.Web.Security;
 using Ninject;
+using Brio;
 using Brio.Models;
 
 namespace Brio
@@ -72,7 +73,7 @@ namespace Brio
                   1,
                   userName,
                   DateTime.Now,
-                  DateTime.Now.Add(FormsAuthentication.Timeout),
+                  DateTime.Now.AddHours(20),
                   isPersistent,
                   string.Empty,
                   FormsAuthentication.FormsCookiePath);

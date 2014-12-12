@@ -12,5 +12,10 @@ namespace Brio.Models
         {
             get { return this.Id; }
         }
+
+        public string FullName
+        {
+            get { return this.Surname + " " + this.Name + " " + this.Patronymic; }
+        }
     }
 }

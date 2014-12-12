@@ -177,6 +177,7 @@
     <Content Include="Content\images\about_company.png" />
     <Content Include="Content\images\active_slide.png" />
     <Content Include="Content\images\arrow.png" />
+    <Content Include="Content\images\arrow_right.png" />
     <Content Include="Content\images\big_logo.png" />
     <Content Include="Content\images\contacts.png" />
     <Content Include="Content\images\documents.png" />
@@ -223,25 +224,6 @@
     <Content Include="Content\js\kendo.ru-RU.js" />
     <Content Include="Content\js\kendo.web.min.js" />
     <Content Include="Content\js\slider.js" />
-    <Content Include="Files\Photos\12\IMAG1060.jpg" />
-    <Content Include="Files\Photos\12\IMAG1062.jpg" />
-    <Content Include="Files\Photos\12\труба волоч-ка слева.jpg" />
-    <Content Include="Files\Photos\13\20140512-0014.jpeg" />
-    <Content Include="Files\Photos\13\20140512-0015.jpeg" />
-    <Content Include="Files\Photos\13\Отбор пробы воздуха для ППР.jpeg" />
-    <Content Include="Files\Photos\14\20140729-0009.jpeg" />
-    <Content Include="Files\Photos\14\фото с юга на север 3.jpeg" />
-    <Content Include="Files\Photos\15\20140811-0014.jpeg" />
-    <Content Include="Files\Photos\15\20140811-0021.jpeg" />
-    <Content Include="Files\Photos\5\SDC10471.JPG" />
-    <Content Include="Files\Photos\5\SDC10473.JPG" />
-    <Content Include="Files\Photos\5\SDC10482.JPG" />
-    <Content Include="Files\Photos\6\SDC10508.JPG" />
-    <Content Include="Files\Photos\6\SDC10514.JPG" />
-    <Content Include="Files\Photos\6\SDC10517.JPG" />
-    <Content Include="Files\Photos\7,8,9,10\2013-11-02 11.09.08.jpg" />
-    <Content Include="Files\Photos\7,8,9,10\2013-11-02 11.09.27.jpg" />
-    <Content Include="Files\Photos\7,8,9,10\2013-11-02 11.32.44.jpg" />
     <Content Include="Files\Photos\ava.png" />
     <Content Include="Global.asax" />
     <Content Include="Web.config">
@@ -298,7 +280,10 @@
     <Content Include="Views\Portfolio\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Properties\PublishProfiles\GeoPublish.pubxml" />
+    <None Include="Properties\PublishProfiles\GeoPublish.pubxml">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Views\Shared\Error.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

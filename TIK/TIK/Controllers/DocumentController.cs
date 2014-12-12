@@ -102,6 +102,7 @@ namespace TIK
                 newDoc.DocumentTitle = postDoc.DocumentTitle;
                 newDoc.UploadDate = DateTime.Now;
                 newDoc.CompanyId = AppSettings.CurrentCompany.ID;
+                newDoc.PageId = (int)PagesEnum.Documents;
 
                 /*Сохранение фото*/
                 var fileName = Path.GetFileName(DocumentPath.FileName);

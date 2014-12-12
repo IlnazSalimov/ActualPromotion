@@ -130,11 +130,16 @@
   <ItemGroup>
     <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\EmployeeController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InfoCardController.cs" />
+    <Compile Include="Controllers\NewsController.cs" />
+    <Compile Include="Controllers\ProjectController.cs" />
+    <Compile Include="Controllers\ProjectDocumentController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="HtmlExtension.cs" />
     <Compile Include="NinjectCustom\CustomDependencyResolver.cs" />
     <Compile Include="NinjectCustom\DependencyConfigure.cs" />
     <Compile Include="NinjectCustom\NinjectWebApiResolver.cs" />
@@ -145,12 +150,14 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Content Include="Content\css\bootstrap.min.css" />
     <Content Include="Content\css\jquery-ui-1.8.21.custom.css" />
     <Content Include="Content\css\style.css" />
     <Content Include="Content\img\add-file.png" />
     <Content Include="Content\img\add.gif" />
     <Content Include="Content\img\arrow.png" />
     <Content Include="Content\img\big-plus.png" />
+    <Content Include="Content\img\dark_gray.png" />
     <Content Include="Content\img\gray.png" />
     <Content Include="Content\img\left-shadow.png" />
     <Content Include="Content\img\left-side-rot.gif" />
@@ -162,10 +169,14 @@
     <Content Include="Content\img\right-side.gif" />
     <Content Include="Content\img\toltip.png" />
     <Content Include="Content\js\ajaxupload.3.5.js" />
+    <Content Include="Content\js\angular.min.js" />
     <Content Include="Content\js\jquery-1.7.1.min.js" />
     <Content Include="Content\js\jquery-ui-1.8.21.custom.min.js" />
     <Content Include="Content\js\jquery.ui.datepicker-ru.js" />
     <Content Include="Content\js\script.js" />
+    <Content Include="Files\Documents\logo.png" />
+    <Content Include="Files\Documents\script.sql" />
+    <Content Include="Files\Documents\Фото0424.jpg" />
     <Content Include="Global.asax" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -180,16 +191,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Account\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="NinjectCustom\Layouts\DefaultLayouts.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Home\Index.cshtml" />
@@ -213,6 +220,24 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Shared\RightBarNews.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Employee\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Project\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Account\Login.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\ProjectDocument\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\News\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Employee\CreateDivisionPartial.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -223,3 +223,4 @@ D:\ActualPromotion\Brio-Lab\Brio-Lab\bin\System.Web.WebPages.Razor.xml
 D:\ActualPromotion\Brio-Lab\Brio-Lab\obj\Debug\BrioLab.csprojResolveAssemblyReference.cache
 D:\ActualPromotion\Brio-Lab\Brio-Lab\obj\Debug\BrioLab.dll
 D:\ActualPromotion\Brio-Lab\Brio-Lab\obj\Debug\BrioLab.pdb
+d:\ActualPromotion\Brio-Lab\Brio-Lab\bin\BrioLab.dll.config

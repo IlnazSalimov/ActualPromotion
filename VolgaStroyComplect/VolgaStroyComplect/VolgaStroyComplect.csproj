@@ -223,9 +223,6 @@
     <Content Include="Content\js\kendo.ru-RU.js" />
     <Content Include="Content\js\kendo.web.min.js" />
     <Content Include="Content\js\slider.js" />
-    <Content Include="Files\Documents\Brio.dll" />
-    <Content Include="Files\Documents\IMG_1562.jpg" />
-    <Content Include="Files\Documents\Безымянный-2.png" />
     <Content Include="Files\Photos\ava.png" />
     <Content Include="Global.asax" />
     <Content Include="Web.config">
@@ -241,17 +238,11 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Files\Documents\" />
+    <Folder Include="Files\PriceLists\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Files\Documents\Deadlineromanobupravleniiproektami_OZON.ru.pdf" />
-    <Content Include="Files\Documents\How_Full_is_your_Bucket.pdf" />
-    <Content Include="Files\Documents\ТЗ БРИО сайты структура.docx" />
-    <Content Include="Files\PriceLists\BrioLabPrice.pdf" />
-    <Content Include="Files\PriceLists\Deadlineromanobupravleniiproektami_OZON.ru.pdf" />
-    <Content Include="Files\PriceLists\How_Full_is_your_Bucket.pdf" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Account\Login.cshtml" />

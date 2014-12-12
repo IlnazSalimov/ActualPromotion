@@ -1,4 +1,5 @@
 ﻿
+using Brio;
 using Brio.Models;
 using System;
 using System.Collections.Generic;
@@ -55,6 +56,13 @@ namespace Brio
         public IQueryable<Document> GetCompanyDocuments(int currentCompany)
         {
             return documentRepository.GetAll().Where(doc => doc.CompanyId == currentCompany && doc.PageId == (int)PagesEnum.Documents);
+        }
+
+        public IQueryable<Document> GetProductDocuments(int productId, int currentCompany)
+        {
+            return documentRepository.GetAll().Where(doc => doc.CompanyId == currentCompany &&
+                                                     doc.PageId == (int)PagesEnum.Products &&
+                                                     doc.ProductId == productId);
         }
     }
 }

@@ -185,11 +185,14 @@
     <Content Include="Content\css\specific-styles.css" />
     <Content Include="Content\css\style.css" />
     <Content Include="Content\fonts\RussoOne.svg" />
+    <Content Include="Content\images\about_company.png" />
     <Content Include="Content\images\active_slide.png" />
     <Content Include="Content\images\arrow.png" />
+    <Content Include="Content\images\arrow_right.png" />
     <Content Include="Content\images\big_logo.png" />
     <Content Include="Content\images\bkg2.jpg" />
     <Content Include="Content\images\bkg3.jpg" />
+    <Content Include="Content\images\contacts.png" />
     <Content Include="Content\images\dolina.png" />
     <Content Include="Content\images\dolina_c.png" />
     <Content Include="Content\images\elvis.png" />
@@ -212,6 +215,9 @@
     <Content Include="Content\images\overlay.png" />
     <Content Include="Content\images\panel.png" />
     <Content Include="Content\images\panel_c.png" />
+    <Content Include="Content\images\partners.png" />
+    <Content Include="Content\images\prices.png" />
+    <Content Include="Content\images\reviews.png" />
     <Content Include="Content\images\rosjeldor.png" />
     <Content Include="Content\images\rosjeldor_c.png" />
     <Content Include="Content\images\text.png" />

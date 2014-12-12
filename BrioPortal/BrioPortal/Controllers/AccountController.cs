@@ -1,5 +1,4 @@
-﻿
-using Brio;
+﻿using Brio;
 using Brio.Models;
 using System;
 using System.Collections.Generic;
@@ -32,6 +31,7 @@ namespace BrioPortal.Controllers
         /// Может быть использован для доступа к текущему авторизованному пользователю
         /// </summary>
         private readonly IBrioContext _brioContext;
+
 
         /// <summary>
         /// Инициализирует новый экземпляр AccountController с внедрением зависемостей к хранилищу данных о пользователях и их сообщениях
@@ -68,10 +68,13 @@ namespace BrioPortal.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = _brioContext.Auth.Login(model.Email, model.Password, model.RememberMe);
+                var user = _userRepository.GetByEmail(model.Email);
+                var userInfo = _infoCardRepository.GetUserInfoCard(user.ID);
 
-                if (user != null)
+                if (user != null && userInfo != null)
                 {
+                    _brioContext.Auth.Login(model.Email, model.Password, model.RememberMe);
+
                     if (Url.IsLocalUrl(ReturnUrl))
                     {
                         return Redirect(ReturnUrl);
@@ -108,19 +111,13 @@ namespace BrioPortal.Controllers
         {
             if (ModelState.IsValid)
             {
-                var anyUser = _userRepository.GetAll().Any(p => p.Email.Equals(model.Email));
-                if (anyUser)
-                {
-                    return View();
-                }
-
                 Regex rgx = new Regex("^[a-z0-9_\\+-]+(\\.[a-z0-9_\\+-]+)*@[a-z0-9-]+(\\.[a-z0-9-]+)*\\.([a-z]{2,4})$");
                 if (!rgx.IsMatch(model.Email))
                 {
                     return View();
                 }
 
-                anyUser = _userRepository.GetAll().Any(p => p.Email.Equals(model.Email));
+                var anyUser = _userRepository.GetAll().Any(p => p.Email.Equals(model.Email)) && _infoCardRepository.GetAll().Any(p => p.Email.Equals(model.Email));
                 if (anyUser)
                 {
                     return View(model);
@@ -136,7 +133,11 @@ namespace BrioPortal.Controllers
 
                 _userRepository.SaveChanges();
             }
-            return View("Index", "Home");
+            if(model.RoleId == (int)Roles.Admin)
+                return RedirectToAction("Index", "Home");
+            else
+                return RedirectToAction("Index", "Project");
+
         }
 
         /// <summary>  

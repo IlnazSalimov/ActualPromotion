@@ -87,6 +87,7 @@ namespace Geodezist
                 newDoc.DocumentTitle = postDoc.DocumentTitle;
                 newDoc.UploadDate = DateTime.Now;
                 newDoc.CompanyId = AppSettings.CurrentCompany;
+                newDoc.PageId = (int)PagesEnum.Documents;
 
                 /*Сохранение фото*/
                 var fileName = Path.GetFileName(DocumentPath.FileName);

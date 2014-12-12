@@ -359,7 +359,7 @@ a.price::before {
     position: absolute;
     bottom: 115px;
     left: 50%;
-    margin-left: -32px;
+    margin-left: -18px;
 }
 
 .bottom-arrows {
@@ -794,4 +794,177 @@ div.price_container {
 
 .contact-container {
     padding: 15px 30px;
+}
+
+.partner_logo{
+    width: 22%;
+    height: 78%;
+    float: left;
+    margin: 0 1% 1%;
+}
+
+.partner_logo.rosjeldor{
+    background: url('../images/rosjeldor.png') no-repeat 0 0;
+    background-size: contain;
+}
+
+.partner_logo.rosjeldor:hover {
+    background: url('../images/rosjeldor_c.png') no-repeat 0 0;
+    background-size: contain;
+}
+
+.partner_logo.panel{
+    background: url('../images/panel.png') no-repeat 0 0;
+    background-size: contain;
+}
+
+.partner_logo.panel:hover {
+    background: url('../images/panel_c.png') no-repeat 0 0;
+    background-size: contain;
+}
+
+.partner_logo.kungur{
+    background: url('../images/kungur.png') no-repeat 0 0;
+    background-size: contain;
+}
+
+.partner_logo.kungur:hover {
+    background: url('../images/kungur_c.png') no-repeat 0 0;
+    background-size: contain;
+}
+
+.partner_logo.malan{
+    background: url('../images/malan.png') no-repeat 0 0;
+    background-size: contain;
+}
+
+.partner_logo.malan:hover {
+    background: url('../images/malan_c.png') no-repeat 0 0;
+    background-size: contain;
+}
+
+.partner_logo.dolina{
+    background: url('../images/dolina.png') no-repeat 0 0;
+    background-size: contain;
+}
+
+.partner_logo.dolina:hover{
+    background: url('../images/dolina_c.png') no-repeat 0 0;
+    background-size: contain;
+}
+
+.partner_logo.elvis{
+    background: url('../images/elvis.png') no-repeat 0 0;
+    background-size: contain;
+}
+
+.partner_logo.elvis:hover{
+    background: url('../images/elvis_c.png') no-repeat 0 0;
+    background-size: contain;
+}
+
+.partner_logo.vashbit{
+    background: url('../images/vashbit.png') no-repeat 0 0;
+    background-size: contain;
+}
+
+.partner_logo.vashbit:hover{
+    background: url('../images/vashbit_c.png') no-repeat 0 0;
+    background-size: contain;
+}
+
+.logo_cont {
+    width: 100%;
+    height: 50%;
+    margin: auto;
+    position: relative;
+}
+
+.logo_cont.line2{
+    position: relative;
+    width: 75%;
+    top: -75px;
+}
+
+.logo_inner_cont {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+@media screen and (max-width: 800px) {
+    .block_ins.partner {
+        width: 600px;
+        height: 400px;
+        margin-left: -300px;
+        top: 25%;
+    }
+}
+
+@media screen and (max-width: 1000px) and (min-width: 800px) {
+    .block_ins.partner {
+        width: 700px;
+        height: 455px;
+        margin-left: -335px;
+        top: 22%;
+    }
+}
+
+@media screen and (max-width: 1200px) and (min-width: 1000px)  {
+    .block_ins.partner {
+        width: 810px;
+        height: 540px;
+        margin-left: -390px;
+        top: 15%;
+    }
+}
+
+@media screen and (min-width: 1200px)  {
+    .block_ins.partner {
+        width: 1000px;
+        height: 575px;
+        margin-left: -464px;
+        top: 15%;
+    }
+}
+
+.logo_cont.line2 .partner_logo{
+    width: 29%;
+    margin: 0 1.3% 2%;
+}
+
+.content .block_ins.partner {
+        position: absolute;
+        bottom: 220px;
+        left: 50%;
+        top: 23%;
+        display: block;
+    }
+
+.page_logo {
+    position: absolute;
+    top: 13%;
+    width: 160px;
+    left: 50%;
+    margin-left: -80px;
+    height: 186px;
+}
+
+@media screen and (max-height: 750px) {
+    .page_logo_container {
+        display: none;
+    }
+}
+
+@media screen and (min-height: 751px) {
+    .page_logo_container {
+        display: inherit;
+    }
+}
+
+@media screen and (min-height: 1000px) {
+    .page_logo {
+        width: 205px;
+        height: 237px;
+        margin-left: -102.5px;
+    }
 }

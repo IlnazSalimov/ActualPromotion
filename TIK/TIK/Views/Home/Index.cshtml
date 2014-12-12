@@ -1,4 +1,6 @@
 ﻿@model IEnumerable<Brio.Models.Article>
+@using Brio.Models;
+
 @{
     ViewBag.Title = "ГЛАВНАЯ";
     Layout = "~/Views/Layouts/LayoutDefault.cshtml";
@@ -58,7 +60,7 @@
             <p>
                  Наш отдел занимается обследованием зданий и сооружений жилищного, общественного, производственного назначения с целью определения их технического состояния и пр.
             </p>
-            <button class="button-yelow pure-button login-button" style="width: 100%" onclick="location.href = '/Articles/GetExaminingDivisionPage'">ОТДЕЛ ЭКСПЕРТИЗ И<br /> УПРАВЛЕНИЕ ПРОЕКТАМИ</button>
+            @Html.ActionLink("ОТДЕЛ ЭКСПЕРТИЗ И УПРАВЛЕНИЕ ПРОЕКТАМИ", "GetPage", "Articles", new { pageId = (int)PagesEnum.ExaminingDivision }, new { @class = "button-yelow pure-button login-button white-space-normal" })
         </aside>
         </div>
         

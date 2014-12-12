@@ -1,4 +1,4 @@
-﻿using Brio.Models;
+﻿using Brio;
 using System;
 using System.Data.Entity;
 using System.Data.Entity.Validation;

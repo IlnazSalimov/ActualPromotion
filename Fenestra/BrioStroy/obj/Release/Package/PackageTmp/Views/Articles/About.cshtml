@@ -4,22 +4,27 @@
     Layout = "~/Views/Layouts/LayoutDefault.cshtml";
 }
 
+@section styles{
+    <style>
+        .page_logo {
+            background: url('../Content/images/about_company.png') no-repeat 0 0;
+            background-size: contain;
+        }
+        </style>
+    } 
+
 
 <script src="~/Content/js/jquery-ui.min.js"></script>
 <script src="~/Content/js/jquery.mousewheel.min.js"></script>
 <div class="container run1">
-    <div data-id="0" class="slider">
+    <div data-id="1" class="slider">
         <div class="units-nav-container">
-            @foreach (var item in Model)
-            {
-                <div class="unit_nav">
-                </div>
-            }
+
         </div>
     </div>
 </div>
 
-
+<div class="page_logo_container"><div class="page_logo"></div></div>
 
 @{var i = 0;}
 @foreach (var item in Model)
@@ -58,7 +63,7 @@
 
 @if (Model.Count() == 0)
 {
-    <div class='block_ins'>
+    <div class='block_ins current'>
         <div class="title">
             @ViewBag.Title
         </div>
@@ -68,6 +73,8 @@
                 {
                     <div class="add_button admin_buttons">@Html.ActionLink("Добавить запись", "Add")</div>
                 }
+                
+                <div class="empty_list">На данный момент не добавлено ни одной записи</div>
             </div>
             <div class="brio-tasks">
                 <div class="bottom-corner"></div>
@@ -75,17 +82,272 @@
         </article>
     </div>
 }
-<div class="bottom_arrows_container">
-    <div class="bottom-arrows">
+
+<div class='block_ins disp_none company_works' id="company_works">
+    <div class="title">
+        НАШИ РАБОТЫ
     </div>
+    <article class="page-content">
+        <div class="articles">
+            @if (User.Identity.IsAuthenticated)
+            {
+                <div class="add_button admin_buttons">@Html.ActionLink("Добавить работу", "AddCompanyWork")</div>
+            }
+
+            @if (User.Identity.IsAuthenticated)
+            {
+                <div class="delete_button admin_buttons works">
+                    <a href="" class="edit"><i class="fa fa-pencil-square-o"></i></a>
+                    <a class="delete" data-work-id=""><i class="fa fa-times"></i></a>
+                </div>
+            }
+
+            <div class="article_container disp_none">
+                <img src="" class="work_img" />
+            </div>
+        </div>
+        <div class="brio-tasks">
+            <div class="veil disp_none">
+                <div class="task-title">
+                </div>
+                <div class="task-container">
+
+                </div>
+                <div class="navigation">
+                    <div class="left">
+                        <div class="arrow"></div>
+                        <div class="text">Предыдущая</div>
+                    </div>
+
+                    <div class="right">
+                        <div class="arrow"></div>
+                        <div class="text">Слудующая</div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </article>
 </div>
 
+
+
+<div class='block_ins partner' style='display: none;'>
+    <div class="logo_cont">
+        <div class="partner_logo rosjeldor"></div>
+        <div class="partner_logo panel"></div>
+        <div class="partner_logo kungur"></div>
+        <div class="partner_logo malan"></div>
+    </div>
+    <div class="logo_cont line2">
+        <div class="logo_inner_cont">
+            <div class="partner_logo dolina"></div>
+            <div class="partner_logo elvis"></div>
+            <div class="partner_logo vashbit"></div>
+        </div>
+        
+        </div>
+    </div>
+
+    <div class="bottom_arrows_container">
+        <div class="bottom-arrows">
+        </div>
+    </div>
+
+
 <script>
+    function companyWorksNavigationPanel(works) {
+        var self = this;
+
+        var list = works;
+        var prevIndex = undefined;
+        var currentIndex = 0;
+        var nextIndex = 1;
+        var task = $(".brio-tasks");
+
+        function rerenderNavigationPanel() {
+            if (!self.isExistPrevElement())
+                task.find(".left").addClass("block");
+            else
+                task.find(".left").removeClass("block");
+
+            if (!self.isExistNextElement())
+                task.find(".right").addClass("block");
+            else
+                task.find(".right").removeClass("block");
+        };
+
+        function decIndexes() {
+            currentIndex--;
+            if (self.isExistPrevElement())
+                prevIndex--;
+            else
+                prevIndex = undefined;
+            nextIndex = currentIndex + 1;
+
+            rerenderNavigationPanel();
+        };
+
+        function incIndexes() {
+            currentIndex++;
+            prevIndex = currentIndex - 1;
+
+            if (self.isExistNextElement())
+                nextIndex++;
+            else
+                nextIndex = undefined;
+
+            rerenderNavigationPanel();
+        };
+
+        function appendCompanyWork(work) {
+            $("img.work_img").attr("src", work.ImagesUrl);
+            task.find(".task-title").text(work.Title);
+            task.find(".task-container").text(work.Description);
+            $(".admin_buttons").find(".delete").attr("data-work-id", work.Id);
+            $(".admin_buttons").find(".edit").attr("href", "/Articles/EditCompanyWork/" + work.Id);
+        }
+
+        self.isExistNextElement = function () {
+            if (currentIndex < list.length - 1 && list[currentIndex + 1] !== undefined)
+                return true;
+            else
+                return false;
+        };
+
+        self.isExistPrevElement = function () {
+            if (currentIndex > 0 && list[currentIndex - 1] !== undefined)
+                return true;
+            else
+                return false;
+        };
+
+        self.showPrevWork = function () {
+            if (self.isExistPrevElement()) {
+                appendCompanyWork(list[prevIndex]);
+                decIndexes();
+            }
+        };
+
+        self.showCurrentWork = function () {
+            if (list !== undefined && list.length > 0) {
+                $(".article_container").removeClass("disp_none");
+                $(".veil").removeClass("disp_none");
+
+                appendCompanyWork(list[currentIndex]);
+                rerenderNavigationPanel();
+            }
+            else {
+                console.log("list<0");
+                $(".article_container").addClass("disp_none");
+                $(".veil").addClass("disp_none");
+                $(".block_ins.company_works .articles").append('<div class="empty_list">На данный момент не добавлено ни одной работы</div>')
+            }
+        },
+
+        self.showNextWork = function () {
+            if (self.isExistNextElement()) {
+                appendCompanyWork(list[nextIndex]);
+                incIndexes();
+            }
+        };
+
+        self.showCurrentWork();
+
+        $(".brio-tasks .navigation .left").bind("click", function () {
+            self.showPrevWork();
+        });
+
+        $(".brio-tasks .navigation .right").bind("click", function () {
+            self.showNextWork();
+        });
+
+        $(".delete_button.works .delete").bind("click", function (e) {
+            console.log("work");
+            e.preventDefault();
+            var that = this;
+
+            if (!confirm("Вы действительно хотите удалить эту запись?")) {
+                return false;
+            }
+            $.ajax({
+                type: 'POST',
+                dataType: 'json',
+                url: "/Articles/DeleteCompanyWorks",
+                data: "id=" + $(that).attr("data-work-id"),
+                success: function (response) {
+                    if (response.success) {
+                        var indexToRemove = currentIndex;
+                        if (self.isExistPrevElement()) {
+                            cinsole.log();
+                            self.showPrevWork();
+                        }
+                        else if (self.isExistNextElement()) {
+                            self.showNextWork();
+                        }
+                        else {
+                            list.splice(currentIndex, 1);
+                            self.showCurrentWork();
+                            return;
+                        }
+
+                        list.splice(currentIndex, 1);
+                    }
+                    else {
+                        console.log(response.message);
+                    }
+                },
+                error: function (xhr, ajaxOptions, thrownError) {
+                    console.log("request failed");
+                },
+
+                processData: false,
+                async: false
+            });
+        });
+    }
+
     (function () {
+        for(var i = 0; i < $(".block_ins").length; i++){
+            if ($(".unit_nav").length == 0){
+                $(".units-nav-container").append('<div class="unit_nav"></div>');
+            }
+            else
+            {
+                $(".unit_nav").last().before('<div class="unit_nav"></div>');
+            }
+        }
+
+        $(window).resize(function () {
+            showOrHidePageLogo($(".block_ins.current"));
+        });
+        
+        
+        var _companyWorks;
+
+        getCompanyWorks(function (response) {
+            currentWorkIndex = 0;
+            nextWorkIndex = currentWorkIndex + 1;
+
+            if (response.success) {
+                if (response.works.length > 0) {
+                    _companyWorks = new companyWorksNavigationPanel(response.works);
+                }
+                else {
+                    $(".delete_button.works").hide();
+                    $(".block_ins.company_works .articles").append('<div class="empty_list">На данный момент не добавлено ни одной работы</div>')
+                }
+            }
+            else {
+                console.log(response.message);
+            }
+        });
+
         $(".unit_nav").css({ "height": (100 / $(".unit_nav").length) - 2 + "%" });
         $(".unit_nav").eq(0).addClass("active");
 
-        $(".delete").bind("click", function (e) {
+        $(".delete_button:not(.works) .delete").bind("click", function (e) {
+            console.log("notwork");
             e.preventDefault();
             var that = this;
 
@@ -106,7 +368,6 @@
 
                         if ($(".block_ins").length > 1) {
                             toogleBlock($(".block_ins").index(blockToShow), 350, function (activeElementIndex) {
-                                isBusy = false;
                                 if (activeElementIndex !== undefined) {
                                     $(".unit_nav").removeClass("active");
                                     $(".unit_nav").eq(activeElementIndex).addClass("active");
@@ -138,77 +399,19 @@
             });
         });
 
-        var isBusy = false;
-        $(document).mousewheel(function (event, delta) {
-            if (isBusy) {
-                return false;
-            }
-            isBusy = true;
-
-            if (delta < 0) {
-                var blockIndexToShow = $(".block_ins").index($(".block_ins.current").next());
-                toogleBlock(blockIndexToShow, 350, function (activeElementIndex) {
-                    isBusy = false;
-                    if (activeElementIndex !== undefined) {
-                        $(".unit_nav").removeClass("active");
-                        $(".unit_nav").eq(activeElementIndex).addClass("active");
-                    }
-                });
-            }
-
-            if (delta > 0) {
-                var blockIndexToShow = $(".block_ins").index($(".block_ins.current").prev());
-                toogleBlock(blockIndexToShow, 350, function (activeElementIndex) {
-                    isBusy = false;
-                    if (activeElementIndex !== undefined) {
-                        $(".unit_nav").removeClass("active");
-                        $(".unit_nav").eq(activeElementIndex).addClass("active");
-                    }
-                });
-            }
-        });
+        
 
         $(".unit_nav").bind("click", function () {
             toogleBlock($(this).index(), 350, function (activeElementIndex) {
-                isBusy = false;
                 if (activeElementIndex !== undefined) {
                     $(".unit_nav").removeClass("active");
                     $(".unit_nav").eq(activeElementIndex).addClass("active");
                 }
             });
         });
-
-        function toogleBlock(showingBlockIndex /*Индекс DOM элемента в коллекции $(".block_ins")*/, duration, onComplete, isRemove) {
-            var blocksCollection = $(".block_ins"),
-                currentBlock = $(".block_ins.current"),
-                currentBlockIndex = blocksCollection.index(currentBlock);
-
-            var isFirstElement = currentBlockIndex == 0;
-            var isLastElement = currentBlockIndex == blocksCollection.length - 1;
-
-            if (showingBlockIndex != -1 && showingBlockIndex > currentBlockIndex && !isLastElement) {
-                var showingBlock = showingBlockIndex === undefined ? currentBlock.next() : blocksCollection.eq(showingBlockIndex);
-
-                currentBlock.toggle("drop", { direction: (isRemove !== undefined && isRemove ? "right" : "up") }, duration, function () {
-                    currentBlock.removeClass("current");
-                    showingBlock.addClass("current").toggle("drop", { direction: "down" }, duration, function () {
-                        onComplete(blocksCollection.index(showingBlock));
-                    });
-                });
-            }
-            else if (showingBlockIndex != -1 && showingBlockIndex < currentBlockIndex && !isFirstElement) {
-                var showingBlock = showingBlockIndex === undefined ? currentBlock.prev() : blocksCollection.eq(showingBlockIndex);
-
-                currentBlock.toggle("drop", { direction: (isRemove !== undefined && isRemove ? "right" : "down") }, duration, function () {
-                    currentBlock.removeClass("current");
-                    showingBlock.addClass("current").toggle("drop", { direction: "up" }, duration, function () {
-                        onComplete(blocksCollection.index(showingBlock));
-                    });
-                });
-            }
-            else {
-                onComplete();
-            }
-        }
     })();
+
+    
+
+    
 </script>

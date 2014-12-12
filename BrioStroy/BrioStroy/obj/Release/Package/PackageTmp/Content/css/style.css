@@ -18,21 +18,21 @@ body {
     width: 100%;
     height: 100%;
     z-index: 10;
+    overflow: hidden;
 }
 
 #header {
-    position: fixed;
     background: white;
     width: 100%;
-    height: 35px;
     z-index: 100;
+    height: 35px;
+    position: relative;
 }
 
 .menu {
     position: absolute;
     left: 50%;
-    margin-left: -395px;
-    width: 850px;
+    margin-left: -374px;
     color: #313131;
     font-size: 13px;
     z-index: 1000;
@@ -131,18 +131,17 @@ a.price::before {
         -webkit-transition: 500ms;
         transition: 500ms;
         -webkit-transform: translate3d(0%, 0px, 0px);
-        margin-top: 35px;
     }
 
     .content .block_ins {
         position: absolute;
-        width: 70%;
+        width: 808px;
         height: 315px;
-        left: calc(15% - 32px);
-        bottom: 220px;
+        left: calc(50% - 420px);
+        bottom: 32%;
     }
 
-    .block_ins.disp_none {
+    .disp_none {
         display: none;
     }
 
@@ -186,10 +185,10 @@ a.price::before {
     }
 
         .content .page-content .articles {
-            width: -moz-calc(100% - 220px) !important;
-            width: -webkit-calc(100% - 220px) !important;
-            width: -o-calc(100% - 220px) !important;
-            width: calc(100% - 220px) !important;
+            width: -moz-calc(100% - 285px) !important;
+            width: -webkit-calc(100% - 285px) !important;
+            width: -o-calc(100% - 285px) !important;
+            width: calc(100% - 285px) !important;
             height: 100%;
             float: left;
             box-sizing: border-box;
@@ -198,7 +197,7 @@ a.price::before {
             color: #4E565A;
             position: relative;
             line-height: 20px;
-            overflow-x: auto;
+            overflow: hidden;
         }
 
         .content .page-content .contacts_container{
@@ -248,7 +247,9 @@ a.price::before {
         font-size: 17px;
         font-weight: 100;
     }
-
+    .company_works .article_container{
+        margin: 35px 28px 0;
+    }
 
 .articles .article_header h1::before {
     content: '';
@@ -263,7 +264,7 @@ a.price::before {
 }
 
 .content .block_ins .brio-tasks {
-    width: 220px;
+    width: 285px;
     height: 100%;
     float: right;
     position: relative;
@@ -291,7 +292,7 @@ a.price::before {
 .content .block_ins .bottom-corner {
     position: absolute;
     bottom: 0;
-    border-width: 0 220px 85px 0;
+    border-width: 0 285px 85px 0;
     border-style: solid;
     border-color: transparent transparent #fff transparent;
 }
@@ -309,11 +310,6 @@ a.price::before {
     left: 100px;
 }
 
-.content .nextButton {
-    right: 100px;
-    transform: rotateY(180deg);
-}
-
 .content .prevButton,
 .content .nextButton {
     background: url('../images/arrow.png') no-repeat 0 0;
@@ -323,6 +319,11 @@ a.price::before {
     z-index: 10;
     margin-top: -50px;
     cursor: pointer;
+}
+
+.content .nextButton {
+    right: 100px;
+    background: url('../images/arrow_right.png') no-repeat 0 0 !important;
 }
 
 .content .slider {
@@ -338,10 +339,11 @@ a.price::before {
 .bottom-logo {
     position: absolute;
     left: 50%;
-    color: rgb(131, 131, 131);
+    color: #fff;
     margin-top: 25px;
     font-family: 'Russo One', sans-serif;
     text-align: center;
+    margin-left: -57.5px !important;
 }
 
 .bottom-logo .company {
@@ -357,9 +359,9 @@ a.price::before {
 
 .bottom_arrows_container {
     position: absolute;
-    bottom: 115px;
+    bottom: 105px;
     left: 50%;
-    margin-left: -32px;
+    margin-left: -18px;
 }
 
 .bottom-arrows {
@@ -416,10 +418,10 @@ a.price::before {
     top: 50px;
     z-index: 1;
     right: 50%;
-    margin-right: -moz-calc(-35% - 32px);
-    margin-right: -webkit-calc(-35% - 32px);
-    margin-right: -o-calc(-35% - 32px);
-    margin-right: calc(-35% - 32px);
+    margin-right: -moz-calc(-32% - 32px);
+    margin-right: -webkit-calc(-32% - 32px);
+    margin-right: -o-calc(-32% - 32px);
+    margin-right: calc(-32% - 32px);
 }
 
 button a {
@@ -469,9 +471,11 @@ input.error, textarea.error {
 
 
 .price_buttons .pure-button {
-    margin-bottom: 15px;
     width: 100%;
-    height: 50px;
+    margin-bottom: 15px;
+    padding: 15px;
+    box-sizing: border-box;
+    color: #fff;
 }
 
 
@@ -578,16 +582,42 @@ div.price_container {
 }
 
 .price_buttons {
-    width: 82%;
-    height: 100%;
-    margin-left: 9%;
+    width: 90%;
 }
+.show_buttons {
+    width: 82%;
+    height: 230px;
+    margin-left: 9%;
+    color: #fff;
+}
+
+.del_prod_doc {
+    position: absolute;
+    right: 10px;
+    margin-top: -35px;
+}
+    .del_prod_doc a {
+        color: #fff;
+    }
+
+    .show_buttons .pure-button {
+        margin-bottom: 10px;
+        color: #fff;
+    }
+
+    .show_buttons .empty_list {
+        margin-left: 0;
+    }
 
 .price_buttons_head {
     position: relative;
-    margin: 30px 0 20px;
-    padding-left: 30px;
+    margin: 25px 0 20px;
     font-size: 16px;
+    text-align:center;
+}
+
+.price_buttons_head.prod {
+    color: #fff;
 }
 
     .price_buttons_head::before {
@@ -647,10 +677,15 @@ div.price_container {
     right: 0;
 }
 
+.delete_button.works {
+    top: 10px;
+    right: 35px;
+}
+
 .add_button {
     position: absolute;
     top: 8px;
-    left: 40px;
+    left: 30px;
     z-index: 1;
 }
 
@@ -704,6 +739,12 @@ div.price_container {
     .add_button_bot.doc {
         margin-left: -83px;
     }
+
+    .add_button_bot.prod_doc {
+        margin-left: -105px;
+        bottom: 10px;
+    }
+
 
 .empty_list {
     text-align: center;
@@ -779,6 +820,7 @@ div.price_container {
         background: url('../images/grey.png') no-repeat 0 0;
     }
 
+
 .marker_cont {
     background-color: rgb(255, 255, 255);
     height: 50px;
@@ -799,3 +841,370 @@ div.price_container {
 .contact-container {
     padding: 15px 30px;
 }
+
+.partner_logo{
+    width: 20%;
+    height: 220px;
+    float: left;
+    margin: 0 1% 1%;
+    cursor: pointer;
+}
+
+.partner_logo.rosjeldor{
+    background: url('../images/rosjeldor.png') no-repeat 0 0;
+    background-size: contain;
+}
+
+.partner_logo.rosjeldor:hover {
+    background: url('../images/rosjeldor_c.png') no-repeat 0 0;
+    background-size: contain;
+}
+
+.partner_logo.panel{
+    background: url('../images/panel.png') no-repeat 0 0;
+    background-size: contain;
+}
+
+.partner_logo.panel:hover {
+    background: url('../images/panel_c.png') no-repeat 0 0;
+    background-size: contain;
+}
+
+.partner_logo.kungur{
+    background: url('../images/kungur.png') no-repeat 0 0;
+    background-size: contain;
+}
+
+.partner_logo.kungur:hover {
+    background: url('../images/kungur_c.png') no-repeat 0 0;
+    background-size: contain;
+}
+
+.partner_logo.malan{
+    background: url('../images/malan.png') no-repeat 0 0;
+    background-size: contain;
+}
+
+.partner_logo.malan:hover {
+    background: url('../images/malan_c.png') no-repeat 0 0;
+    background-size: contain;
+}
+
+.partner_logo.dolina{
+    background: url('../images/dolina.png') no-repeat 0 0;
+    background-size: contain;
+}
+
+.partner_logo.dolina:hover{
+    background: url('../images/dolina_c.png') no-repeat 0 0;
+    background-size: contain;
+}
+
+.partner_logo.elvis{
+    background: url('../images/elvis.png') no-repeat 0 0;
+    background-size: contain;
+}
+
+.partner_logo.elvis:hover{
+    background: url('../images/elvis_c.png') no-repeat 0 0;
+    background-size: contain;
+}
+
+.partner_logo.vashbit{
+    background: url('../images/vashbit.png') no-repeat 0 0;
+    background-size: contain;
+}
+
+.partner_logo.vashbit:hover{
+    background: url('../images/vashbit_c.png') no-repeat 0 0;
+    background-size: contain;
+}
+
+.partner_logo.windows{
+    background: url('../images/1.png') no-repeat 0 0;
+    background-size: contain;
+}
+
+.partner_logo.windows:hover {
+    background: url('../images/1hover.png'), url('../images/1.png');
+    background-repeat: no-repeat;
+    background-position:0 0;
+    background-size: contain;
+}
+
+.partner_logo.facades{
+    background: url('../images/2.png') no-repeat 0 0;
+    background-size: contain;
+}
+
+.partner_logo.facades:hover {
+    background: url('../images/2hover.png'), url('../images/2.png');
+    background-repeat: no-repeat;
+    background-position:0 0;
+    background-size: contain;
+}
+
+ .partner_logo.balconies{
+    background: url('../images/3.png') no-repeat 0 0;
+    background-size: contain;
+}
+
+.partner_logo.balconies:hover {
+    background: url('../images/3hover.png'), url('../images/3.png');
+    background-repeat: no-repeat;
+    background-position:0 0;
+    background-size: contain;
+}
+
+.partner_logo.windows_system{
+    background: url('../images/4.png') no-repeat 0 0;
+    background-size: contain;
+}
+
+.partner_logo.windows_system:hover {
+    background: url('../images/4hover.png'), url('../images/4.png');
+    background-repeat: no-repeat;
+    background-position:0 0;
+    background-size: contain;
+}
+
+.partner_logo.doors{
+    background: url('../images/5.png') no-repeat 0 0;
+    background-size: contain;
+}
+
+.partner_logo.doors:hover {
+    background: url('../images/5hover.png'), url('../images/5.png');
+    background-repeat: no-repeat;
+    background-position:0 0;
+    background-size: contain;
+}
+.partner_logo.winter_gardens{
+    background: url('../images/6.png') no-repeat 0 0;
+    background-size: contain;
+}
+
+.partner_logo.winter_gardens:hover {
+    background: url('../images/6hover.png'), url('../images/6.png');
+    background-repeat: no-repeat;
+    background-position:0 0;
+    background-size: contain;
+}
+
+.partner_logo.pvh{
+    background: url('../images/7.png') no-repeat 0 0;
+    background-size: contain;
+}
+
+.partner_logo.pvh:hover {
+    background: url('../images/7hover.png'), url('../images/7.png');
+    background-repeat: no-repeat;
+    background-position:0 0;
+    background-size: contain;
+}
+
+
+.logo_cont {
+    width: 100%;
+    height: 40%;
+    position: relative;
+}
+
+.logo_cont.line2{
+    position: relative;
+    width: 77%;
+    top: 50px;
+    margin: auto;
+}
+
+.logo_inner_cont {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+@media screen and (max-width: 800px) {
+    .content .block_ins.partner.products {
+        width: 600px;
+        height: 160px;
+        margin-left: -265px;
+        top: 25%;
+    }
+}
+
+@media screen and (max-width: 1000px) and (min-width: 800px) {
+    .content .block_ins.partner.products {
+        width: 700px;
+        height: 210px;
+        margin-left: -310px;
+        top: 26%;
+    }
+}
+
+@media screen and (max-width: 1200px) and (min-width: 1000px)  {
+    .content .block_ins.partner.products {
+        width: 810px;
+        height: 260px;
+        margin-left: -358px;
+        top: 20%;
+    }
+}
+
+@media screen and (min-width: 1200px)  {
+    .content .block_ins.partner.products {
+        width: 1000px;
+        height: 325px;
+        margin-left: -435px;
+        top: 16%;
+    }
+}
+
+@media screen and (min-height: 800px)  {
+    .content .block_ins.partner.products {
+        top: 31%;
+    }
+}
+
+@media screen and (max-height: 860px)  {
+    .page_logo_container {
+        display: none;
+    }
+}
+
+.logo_cont.line2 .partner_logo{
+    width: 26%;
+    margin: 0 1.3% 2%;
+}
+
+.content .block_ins.partner {
+        position: absolute;
+        bottom: 220px;
+        left: 50%;
+        top: 23%;
+        display: block;
+    }
+
+.page_logo {
+    position: absolute;
+    top: 13%;
+    width: 160px;
+    left: 50%;
+    margin-left: -80px;
+    height: 186px;
+}
+
+.brio-tasks .task-container {
+    margin-left: 15%;
+    width: 70%;
+    color: #fff;
+}
+
+.brio-tasks .task-title {
+    margin: 25px 0 15px;
+    color: #fff;
+    padding: 0 25px 0 45px;
+    font-size: 20px;
+}
+
+    .brio-tasks .task-title::before {
+        content: '';
+        display: block;
+        top: 20px;
+        left: 20px;
+        width: 2px;
+        height: 25px;
+        background: #FFFFFF;
+        margin-left: 5px;
+        z-index: 1;
+        position: absolute;
+    }
+
+    .brio-tasks .navigation
+    {
+        width: 100%;
+        height: 75px;
+        position: absolute;
+        bottom: 0;
+    }
+
+    .brio-tasks .navigation .block {
+        cursor: inherit;
+        opacity: 0.5;
+    }
+
+    .brio-tasks .navigation .right .arrow,
+    .brio-tasks .navigation .left .arrow
+    {
+        width: 13px;
+        height: 35px;
+
+    }
+
+    .brio-tasks .navigation .right
+    {
+        float: right;
+        width: 50%;
+        height: 100%;
+        padding: 20px 30px 20px 0;
+        box-sizing: border-box;
+        cursor: pointer;
+    }
+
+    .brio-tasks .navigation .right .arrow {
+        background: url('../images/arrow_right.png') no-repeat 0 0;
+        background-size: contain;
+        float: right;
+    }
+
+    .brio-tasks .navigation .text{
+        padding: 10px;
+        font-size: 12px;
+        box-sizing: border-box;
+        color: #fff;
+    }
+    .brio-tasks .navigation .right .text
+    {
+        float: right;
+        padding: 12px 10px 12px 0;
+    }
+
+    .brio-tasks .navigation .left
+    {
+        float: left;
+        width: 50%;
+        height: 100%;
+        padding: 20px 0 20px 20px;
+        box-sizing: border-box;
+        cursor: pointer;
+    }
+
+    .brio-tasks .navigation .left .arrow {
+        background: url('../images/arrow.png') no-repeat 0 0;
+        background-size: contain;
+        float: left;
+    }
+
+    .brio-tasks .navigation .left .text
+    {
+        float: left;
+        padding: 12px 0 12px 10px;
+    }
+
+    img.work_img
+    {
+        max-width: 470px;
+        max-height: 260px;
+    }
+
+    .error-alert{
+        background-color: #f2dede;
+        padding: 20px;
+        text-align: center;
+        position: absolute;
+        top: 50%;
+        margin-top: -27.5px;
+        left: 50%;
+        margin-left: -271px;
+        color: #a94442;
+        border-radius: 5px;
+        border-color: #ebccd1;
+    }

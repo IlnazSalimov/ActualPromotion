@@ -119,3 +119,4 @@ d:\ActualPromotion\JelDorNiiProject\JelDorNiiProject\bin\System.Web.WebPages.Raz
 d:\ActualPromotion\JelDorNiiProject\JelDorNiiProject\obj\Debug\JelDorNiiProject.csprojResolveAssemblyReference.cache
 d:\ActualPromotion\JelDorNiiProject\JelDorNiiProject\obj\Debug\JelDorNiiProject.dll
 d:\ActualPromotion\JelDorNiiProject\JelDorNiiProject\obj\Debug\JelDorNiiProject.pdb
+d:\ActualPromotion\JelDorNiiProject\JelDorNiiProject\bin\JelDorNiiProject.dll.config

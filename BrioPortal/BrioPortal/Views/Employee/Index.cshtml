@@ -1,0 +1,72 @@
+﻿@model IEnumerable<Brio.Models.Division>
+@using Brio.Models
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Layouts/DefaultLayouts.cshtml";
+}
+
+<section>
+    @Html.Partial("RightBarNews")
+    <div class="content">
+        <form action="" method="post" name="serch">
+            <input name="name" type="text" placeholder="ВВЕДИТЕ НАЗВАНИЕ ДОКУМЕНТА">
+            <button type="submit"><h2 class="left"><span>Поиск</span></h2></button>
+        </form>
+        <div class="content-right-bar info-card">
+            <h2>Карточка сотрудника</h2>
+            <div class="staf">
+                <img src="photo/Tarasova_Ybilei.jpg" width="120" height="140" alt="staff">
+                <h3 class="names"></h3>
+
+                <ul class="staf-text">
+                    <li class="company">Компания: <span></span></li>
+                    <li>&nbsp;</li>
+                    <li>Личные данные:<span></span></li>
+                    <li class="phone">тел. <span></span></li>
+                    <li class="email">е-mail: <span></span></li>
+                </ul>
+            </div>
+        </div>
+        <div class="content-left-bar">
+            <h2 class="right white plus shadow"><span class="project-title">Сотрудники</span></h2>
+            <div class="wrapp news-page">
+                <div class="divisions-container">
+                    <ul>
+                        @foreach (var a in Model)
+                        {
+                            <li>
+                                <p class="dropdown">
+                                    <span>
+                                        @a.Name
+                                    </span>
+                                </p>
+                                <ul>
+                                    @foreach (var ic in a.InfoCards)
+                                    {
+                                        <li data-infocard-id="@ic.ID">@ic.Surname @ic.Name @ic.Patronymic</li>
+                                    }
+                                </ul>
+                            </li>
+                        }
+                    </ul>
+                </div>
+                <div class="division-create-form">
+                    @Html.Partial("CreateDivisionPartial", ViewBag.CreateDivision as CreateDivision)
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    $(document).ready(function () {
+        var _infoCardPanel = new infoCardPanel();
+        _infoCardPanel.init();
+
+        var firstInfoCardId = $(".news-page ul ul li[data-infocard-id]").first().attr("data-infocard-id");
+        _infoCardPanel.getInfoCard(firstInfoCardId, function (infocard) {
+            _infoCardPanel.show(infocard);
+        });
+    });
+</script>

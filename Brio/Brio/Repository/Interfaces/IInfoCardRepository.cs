@@ -1,4 +1,5 @@
-﻿using Brio.Models;
+﻿using Brio;
+using Brio.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,6 +16,7 @@ namespace Brio
         IQueryable<InfoCard> GetAll();
         InfoCard GetById(int id);
         void Insert(InfoCard model);
+        InfoCard GetUserInfoCard(int userId);
         void Update(InfoCard model);
         void Delete(InfoCard model);
         void SaveChanges();

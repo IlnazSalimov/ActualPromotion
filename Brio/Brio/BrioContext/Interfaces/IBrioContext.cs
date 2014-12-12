@@ -1,4 +1,5 @@
-﻿using Brio.Models;
+﻿using Brio;
+using Brio.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;

@@ -33,34 +33,64 @@ namespace TIK
 
         public ActionResult About()
         {
-            return View(articleRepository.GetByPage("About", AppSettings.CurrentCompany.ID));
-        }
-
-        public ActionResult GetExaminingDivisionPage()
-        {
-            return View(articleRepository.GetByPage("ExaminingDivision", AppSettings.CurrentCompany.ID).First());
+            return View(articleRepository.GetByPage(PagesEnum.About, AppSettings.CurrentCompany.ID));
         }
 
         [Authorize(Roles = "Admin")]
-        public ActionResult EditExaminingDivisionPage()
+        public ActionResult EditPage(int pageId)
         {
-            Article article = articleRepository.GetByPage("ExaminingDivision", AppSettings.CurrentCompany.ID).First();
+            Article article = articleRepository.GetByPage((PagesEnum)pageId, AppSettings.CurrentCompany.ID).First();
             EditArticle addArticle = new EditArticle
             {
                 ID = article.ID,
                 Title = article.Title,
-                Text = article.Text
+                Text = article.Text,
+                PageId = article.PageId
             };
             return View(addArticle);
         }
 
         [Authorize(Roles = "Admin")]
+        public ActionResult AddPage()
+        {
+            return View();
+        }
+
+        [Authorize(Roles = "Admin")]
         [HttpPost]
-        public ActionResult EditExaminingDivisionPage(EditArticle model)
+        public ActionResult AddPage(AddArticle model)
         {
             if (ModelState.IsValid)
             {
-                Article article = articleRepository.GetByPage("ExaminingDivision", AppSettings.CurrentCompany.ID).First();
+                Article newArticle = new Article
+                {
+                    CompanyId = AppSettings.CurrentCompany.ID,
+                    CreateDate = DateTime.Now,
+                    PageId = model.PageId,
+                    Text = model.Text,
+                    Title = model.Title,
+                    Author = brioContext.CurrentUser.ID
+                };
+                articleRepository.Insert(newArticle);
+                articleRepository.SaveChanges();
+                return RedirectToAction("Index", "Home");
+            }
+            else
+                return View(model);
+        }
+
+        public ActionResult GetPage(int pageId)
+        {
+            return View(articleRepository.GetByPage((PagesEnum)pageId, AppSettings.CurrentCompany.ID).First());
+        }
+
+        [Authorize(Roles = "Admin")]
+        [HttpPost]
+        public ActionResult EditPage(EditArticle model)
+        {
+            if (ModelState.IsValid)
+            {
+                Article article = articleRepository.GetByPage((PagesEnum)model.PageId, AppSettings.CurrentCompany.ID).First();
                 article.Title = model.Title;
                 article.Text = model.Text;
                 articleRepository.Update(article);
@@ -120,7 +150,7 @@ namespace TIK
                 {
                     CompanyId = AppSettings.CurrentCompany.ID,
                     CreateDate = DateTime.Now,
-                    Page = "About",
+                    PageId = model.PageId,
                     Text = model.Text,
                     Title = model.Title,
                     Author = brioContext.CurrentUser.ID

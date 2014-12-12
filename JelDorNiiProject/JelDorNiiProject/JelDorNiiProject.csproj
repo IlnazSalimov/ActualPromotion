@@ -176,6 +176,7 @@
     <Content Include="Content\images\about_company.png" />
     <Content Include="Content\images\active_slide.png" />
     <Content Include="Content\images\arrow.png" />
+    <Content Include="Content\images\arrow_right.png" />
     <Content Include="Content\images\big_logo.png" />
     <Content Include="Content\images\contacts.png" />
     <Content Include="Content\images\documents.png" />
@@ -224,7 +225,9 @@
     <Content Include="Content\js\slider.js" />
     <Content Include="Files\Photos\ava.png" />
     <Content Include="Global.asax" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -274,6 +277,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\PublishProfiles\JelDorPublish.pubxml" />
+    <Content Include="Views\Shared\Error.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

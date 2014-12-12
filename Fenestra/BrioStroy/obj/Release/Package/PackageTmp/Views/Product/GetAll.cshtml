@@ -1,0 +1,196 @@
+﻿@model IEnumerable<Brio.Models.Product>
+
+@using Brio.Models;
+@using BrioStroy;
+@using Brio;
+
+@{
+    ViewBag.Title = "ПРОДУКЦИЯ";
+    Layout = "~/Views/Layouts/LayoutDefault.cshtml";
+}
+
+@section styles{
+    <style>
+        .container {
+            width: 100% !important;
+        }
+
+        .page_logo {
+            background: url('../Content/images/products.png') no-repeat 0 0;
+            background-size: contain;
+        }
+    </style>
+}
+
+<script src="~/Content/js/jquery-ui.min.js"></script>
+<script src="~/Content/js/jquery.mousewheel.min.js"></script>
+<div class="container run1">
+    <div data-id="2" class="slider">
+        <div class="units-nav-container">
+
+        </div>
+    </div>
+</div>
+
+<div class="page_logo_container"><div class="page_logo"></div></div>
+
+@{var i = 0;}
+
+@{i++;}
+<div class='block_ins partner current products'>
+    <div class="logo_cont">
+        <div class="partner_logo windows" data-id="1"></div>
+        <div class="partner_logo facades" data-id="2"></div>
+        <div class="partner_logo balconies" data-id="3"></div>
+        <div class="partner_logo windows_system" data-id="4"></div>
+    </div>
+    <div class="logo_cont line2">
+        <div class="logo_inner_cont">
+            <div class="partner_logo doors" data-id="5"></div>
+            <div class="partner_logo winter_gardens" data-id="6"></div>
+            <div class="partner_logo pvh" data-id="7"></div>
+        </div>
+    </div>
+</div>
+
+@foreach (var item in Model)
+{
+    <div class='block_ins products @(@i != 0 ? "disp_none" : "current")' data-id="@item.ID">
+        @{i++;}
+        <div class="title">
+            @ViewBag.Title
+        </div>
+        <article class="page-content">
+            <div class="articles">
+
+                <div class="article_container">
+                    <div class="article_header"><h1>@item.Title</h1></div>
+                    <div class="article">@Html.Raw(HttpUtility.HtmlDecode(item.Description))</div>
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <div class="delete_button admin_buttons">
+                            <a href="/Product/Edit/@item.ID"><i class=" fa fa-pencil-square-o"></i></a>
+                            <!--<a class="delete" href="" data-id="@item.ID"><i class="fa fa-times"></i></a>-->
+                        </div>
+                    }
+                </div>
+            </div>
+            <div class="brio-tasks">
+                <div class="show_buttons">
+                    @{List<Document> productDocuments = ((IDocumentRepository)ViewBag.DocumentRepository).GetProductDocuments(item.ID, AppSettings.CurrentCompany).ToList();}
+                    @if (productDocuments.Count() > 0)
+                    {
+                        <div class="price_buttons_head prod">
+                            ПОДРОБНЕЕ:
+                        </div>
+                        foreach (var doc in productDocuments)
+                        {
+                            <button class="button-error pure-button" data-doc-id="@doc.ID">@Html.ActionLink(doc.DocumentTitle, "Show", "Document", new { id = doc.ID }, new { @class = "pdf-button show", target = "_blank" })</button>
+                            if (User.Identity.IsAuthenticated)
+                            {
+                                <div class="del_prod_doc"><a class="delete" href="" data-doc-id="@doc.ID"><i class="fa fa-times"></i></a></div>
+                            }
+                        }
+                    }
+                    else
+                    {
+                        <div class="empty_list">
+                            Список пуст
+                        </div>
+                    }
+                </div>
+                <div class="bottom-corner"></div>
+                @if (User.Identity.IsAuthenticated && productDocuments.Count < 4)
+                {
+                    <div class="add_button_bot prod_doc">@Html.ActionLink("Добавить документ", "AddProductDocument", "Document", new { productId = item.ID }, new { })</div>
+                }
+            </div>
+        </article>
+    </div>
+}
+
+<div class="bottom_arrows_container">
+    <div class="bottom-arrows">
+    </div>
+</div>
+
+<script>
+    (function () {
+        for (var i = 0; i < $(".block_ins").length; i++) {
+            if ($(".unit_nav").length == 0) {
+                $(".units-nav-container").append('<div class="unit_nav"></div>');
+            }
+            else {
+                $(".unit_nav").last().before('<div class="unit_nav"></div>');
+            }
+        }
+
+        $(".unit_nav").css({ "height": (100 / $(".unit_nav").length) - 2 + "%" });
+        $(".unit_nav").eq(0).addClass("active");
+
+        $(window).resize(function () {
+            showOrHidePageLogo($(".block_ins.current"));
+        });
+
+        $(".partner_logo").bind("click", function () {
+            toogleBlock($(".block_ins[data-id='" + $(this).attr("data-id") + "']").index(".block_ins"), 350, function () { }, false);
+        });
+        $(".delete").bind("click", function (e) {
+            e.preventDefault();
+            var that = this;
+
+            if (!confirm("Вы действительно хотите удалить эту запись?")) {
+                return false;
+            }
+            $.ajax({
+                type: 'POST',
+                dataType: 'json',
+                url: "/Document/Delete",
+                data: "id=" + $(that).attr("data-doc-id"),
+                success: function (response) {
+                    if (response.success) {
+                        $("button[data-doc-id='" + $(that).attr("data-doc-id") + "']").remove();
+                        $(that).parent(".del_prod_doc").remove();
+                        alert(response.message);
+                    }
+                    else {
+                        console.log(response.message);
+                    }
+                },
+                error: function (xhr, ajaxOptions, thrownError) {
+                    console.log("request failed");
+                },
+
+                processData: false,
+                async: false
+            });
+        });
+
+        var isBusy = false;
+        $(document).mousewheel(function (event, delta) {
+            if (isBusy) {
+                return false;
+            }
+            isBusy = true;
+            if (delta < 0) {
+                var blockIndexToShow = $(".block_ins").index($(".block_ins.current").next());
+                toogleBlock(blockIndexToShow, 350, function (activeElementIndex) {
+                    isBusy = false;
+                });
+            }
+
+            if (delta > 0) {
+                var blockIndexToShow = $(".block_ins").index($(".block_ins.current").prev());
+                toogleBlock(blockIndexToShow, 350, function (activeElementIndex) {
+                    isBusy = false;
+                });
+            }
+        });
+
+        $(".unit_nav").bind("click", function () {
+            toogleBlock($(this).index(), 350, function (activeElementIndex) {
+                isBusy = false;
+            });
+        });
+    })();
+</script>

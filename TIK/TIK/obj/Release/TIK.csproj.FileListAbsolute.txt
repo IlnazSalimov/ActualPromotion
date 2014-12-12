@@ -123,3 +123,5 @@ d:\ActualPromotion\TIK\TIK\bin\System.Web.WebPages.Razor.xml
 d:\ActualPromotion\TIK\TIK\obj\Release\TIK.csprojResolveAssemblyReference.cache
 d:\ActualPromotion\TIK\TIK\obj\Release\TIK.dll
 d:\ActualPromotion\TIK\TIK\obj\Release\TIK.pdb
+d:\ActualPromotion\TIK\TIK\bin\TIK.dll.config
+d:\ActualPromotion\TIK\TIK\bin\Newtonsoft.Json.dll

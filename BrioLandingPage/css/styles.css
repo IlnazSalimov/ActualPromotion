@@ -11,6 +11,10 @@
 }
 
 .content {
+    background: url('/images/overlay.png'), url('/images/bckg.jpg');
+    background-size: 256px 256px, cover;
+    background-position: top left, bottom center;
+    background-repeat: repeat, no-repeat;
     position: relative;
     min-width: 1200px;
     overflow:auto;
@@ -144,14 +148,15 @@
     font-family: Arial,sans-serif;
     font-size: 12px;
     line-height: 17px;
-    text-align: justify;
+    text-align: -webkit-center;
 }
 
 .short-description .title
 {
     text-align: center;
     font-size: 19px;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+    font-family: 'Russo One', sans-serif;
 }
 
 .top-logo-text {
@@ -162,4 +167,13 @@
 	top: -45px;
 	width: 190px;
 	height: 82px;
+}
+
+.top-phone-container {
+    position: absolute;
+    right: 6%;
+    top: -20px;
+    font-family: 'Segoe UI Light', sans-serif;
+    font-size: 30px;
+    color: #fff;
 }

@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Brio.Models
+namespace Brio
 {
     /// <summary>
     /// Интерфейс, используемый для взаимодействия с конкретной реализации ORM

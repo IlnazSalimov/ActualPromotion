@@ -7,7 +7,8 @@ $(document).ready(function ()
 	
 //Загрузка файлов
 
-function upload (){
+    function upload() {
+        console.log('321');
 	var btnUpload = $('#upload');
 new AjaxUpload(btnUpload, {
         action: '',//Путь к обработчику
@@ -37,7 +38,8 @@ new AjaxUpload(btnUpload, {
     })
 	}
 
-if($("button").is("#upload")){
+if ($("button").is("#upload")) {
+    console.log("123");
 	upload();
 };
 	//Календарь

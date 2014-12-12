@@ -20,6 +20,7 @@ namespace BrioStroy
 
         public ActionResult GetAll()
         {
+            ViewBag.DocumentRepository = DependencyResolver.Current.GetService(typeof(IDocumentRepository));
             return View(productRepository.GetCompanyProducts(AppSettings.CurrentCompany));
         }
 

@@ -20,6 +20,10 @@ audio:not([controls]) {
 [hidden] {
 display: none;
 }
+
+.disp_none{
+    display: none;
+}
 body {
 	line-height: 1;
 }
@@ -159,6 +163,7 @@ h2.left span:before {
 	border-radius:3px;
 	padding:5px;
 	margin-right: -8px;
+    cursor: pointer;
 }
 .main-nav {
 	padding-top:30px;
@@ -339,6 +344,7 @@ h2.white span {
 	border-top:none !important;
 }
 .content-left-bar h2 {
+    z-index:1;
 	margin-left: 13px;
 	background-color: #FFF;
 	box-shadow: 0 -3px 6px 0px rgba(0, 0, 0, 0.15);
@@ -629,6 +635,12 @@ ul.acc-open li {
 	margin-bottom: 8px;
 	cursor:pointer;
 }
+
+ul.acc-open li.active {
+	background-image:url(../img/dark_gray.png);
+	background-repeat:no-repeat;
+    background-size: contain;
+}
 .acc-form textarea {
 	margin-bottom:25px !important;
 }
@@ -659,6 +671,7 @@ ul.acc-open li {
 	font-size:13px !important;
 }
 .wrapp.news-page {
+    position: relative;
 	height:380px;
 }
 .content-left-bar.doks-page {
@@ -791,4 +804,48 @@ ul.staf-text li {
 	width:150px;
 	padding-left:15px;
 	margin-left:-18px;
-	}
+}
+
+input[name='files']{
+    position: absolute;
+    right: -20px;
+    z-index: 2147483583;
+    opacity: 0;
+}
+
+.division-create-form{
+    bottom: 0;
+    position: absolute;
+    width: 100%;
+}
+
+form.division-create .controls-container {
+    margin-bottom: 5px;
+    padding: 0 15px;
+}
+
+form.division-create .controls-container input,
+form.division-create .controls-container select {
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+form.division-create .controls-container .title {
+    text-align: center;
+    font-size: 15px;
+    margin-bottom: 5px;
+}
+
+.division-create-form .alert
+{
+    margin-bottom: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
+    text-align: center;
+}
+
+.wrapp.news-page .divisions-container
+{
+    overflow: auto;
+    max-height: 200px;
+}

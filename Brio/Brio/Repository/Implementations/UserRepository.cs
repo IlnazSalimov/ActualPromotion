@@ -5,6 +5,7 @@ using System.Text;
 using System.Data.Entity;
 using System.Threading.Tasks;
 using System.Linq.Expressions;
+using Brio;
 using Brio.Models;
 
 namespace Brio

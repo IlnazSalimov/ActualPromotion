@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Brio.Models
 {
-    public partial class Project
+    public partial class Project : IEntity
     {
         public int ID
         {

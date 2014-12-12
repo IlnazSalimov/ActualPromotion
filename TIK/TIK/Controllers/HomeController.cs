@@ -1,4 +1,5 @@
 ﻿using Brio;
+using Brio.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,7 +29,7 @@ namespace TIK
 
         public ActionResult Index()
         {
-            return View(articleRepository.GetByPage("About", AppSettings.CurrentCompany.ID));
+            return View(articleRepository.GetByPage(PagesEnum.About, AppSettings.CurrentCompany.ID));
         }
 
     }

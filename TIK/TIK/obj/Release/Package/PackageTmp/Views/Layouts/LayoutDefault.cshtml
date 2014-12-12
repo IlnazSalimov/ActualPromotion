@@ -1,4 +1,5 @@
 ﻿@using TIK;
+@using Brio.Models;
 <!doctype html>
 <html>
 <head>
@@ -15,8 +16,10 @@
     <div class="wrapper">
         <header class="pure-g">
             <div class="pure-u-4-24">
-                <div class="logo">
-                </div>
+                <a href="/">
+                    <div class="logo">
+                    </div>
+                </a>
             </div>
             <div class="pure-u-20-24">
                 <address>
@@ -29,8 +32,14 @@
                 </address>
                 <div style="clear:both"></div>
                 <nav>
-                    <ul>
-                        <li>@Html.ActionLink("О КОМПАНИИ", "Index", "Home", new { }, new { @class = @Html.IsSelected("Home", "Index") })</li>
+                    <ul id="menu">
+                        <li>@Html.ActionLink("О КОМПАНИИ", "Index", "Home", new { }, new { @class = @Html.IsSelected("Home", "Index") })
+                            <ul>
+                                <li>@Html.ActionLink("ПРОЕКТИРОВАНИЕ", "GetPage", "Articles", new { pageId = (int)PagesEnum.Engineering }, new { })</li>
+                                <li>@Html.ActionLink("ЭКСПЕРТИЗА", "GetPage", "Articles", new { pageId = (int)PagesEnum.ExaminingDivision }, new { })</li>
+                                <li>@Html.ActionLink("ОБСЛЕДОВАНИЕ", "GetPage", "Articles", new { pageId = (int)PagesEnum.Examination }, new { })</li>
+                            </ul>
+                        </li>
                         <li>@Html.ActionLink("ПОРТФОЛИО", "Index", "Portfolio", new { }, new { @class = @Html.IsSelected("Portfolio", "Index") })</li>
                         <li>@Html.ActionLink("ДОКУМЕНТЫ", "GetAll", "Document", new { }, new { @class = @Html.IsSelected("Document", "GetAll") })</li>
                         <li>@Html.ActionLink("ОТЗЫВЫ", "GetAll", "Review", new { }, new { @class = @Html.IsSelected("Review", "GetAll") })</li>

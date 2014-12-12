@@ -1,4 +1,5 @@
-﻿using Brio.Models;
+﻿using Brio;
+using Brio.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,6 +19,10 @@ namespace Brio
         public IQueryable<InfoCard> GetAll()
         {
             return infoCardRepository.GetAll();
+        }
+        public InfoCard GetUserInfoCard(int userId)
+        {
+            return infoCardRepository.GetAll().Where(i => i.UserId == userId).FirstOrDefault();
         }
 
         public InfoCard GetById(int id)

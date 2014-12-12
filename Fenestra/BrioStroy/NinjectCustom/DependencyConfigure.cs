@@ -37,6 +37,7 @@ namespace BrioStroy
             kernel.Bind<IReviewRepository>().To<ReviewRepository>();
             kernel.Bind<IDocumentRepository>().To<DocumentRepository>();
             kernel.Bind<IProductRepository>().To<ProductRepository>();
+            kernel.Bind<ICompanyWorkRepository>().To<CompanyWorkRepository>();
 
             DependencyResolver.SetResolver(new CustomDependencyResolver(kernel));
             GlobalConfiguration.Configuration.DependencyResolver =

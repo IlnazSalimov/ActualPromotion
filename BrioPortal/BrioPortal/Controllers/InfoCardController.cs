@@ -8,6 +8,7 @@ using System.Web.Mvc;
 
 namespace BrioPortal.Controllers
 {
+    [Authorize]
     public class InfoCardController : Controller
     {
         //
@@ -18,6 +19,17 @@ namespace BrioPortal.Controllers
         /// </summary>
         private readonly IInfoCardRepository infoCardRepository;
 
+        /// <summary>
+        /// Предоставляет доступ к хранилищу данных о компаниях
+        /// </summary>
+        private readonly ICompanyRepository companyRepository;
+
+        public InfoCardController(IInfoCardRepository _infoCardRepository, ICompanyRepository _companyRepository)
+        {
+            this.infoCardRepository = _infoCardRepository;
+            this.companyRepository = _companyRepository;
+        }
+
         public ActionResult Index()
         {
             return View();
@@ -25,22 +37,24 @@ namespace BrioPortal.Controllers
 
         public JsonResult GetInfoCard(int id)
         {
-            InfoCard review = infoCardRepository.GetById(id);
+            InfoCard infoCard = infoCardRepository.GetById(id);
             InfoCardDTO response = new InfoCardDTO
             {
-                Id = review.ID,
-                Adress = review.Adress,
-                BirthDay = review.BirthDay.Value,
-                CompanyId = review.CompanyId,
-                Email = review.Email,
-                GetJobDate = review.GetJobDate.Value,
-                Name = review.Name,
-                Patronymic = review.Patronymic,
-                Phone = review.Phone,
-                Post = review.Post,
-                Surname = review.Surname,
-                UserId = review.UserId
+                Id = infoCard.ID,
+                Adress = infoCard.Adress,
+                BirthDay = infoCard.BirthDay.HasValue ? infoCard.BirthDay.Value : DateTime.MinValue,
+                CompanyId = infoCard.CompanyId,
+                Email = infoCard.Email,
+                GetJobDate = infoCard.GetJobDate.HasValue ? infoCard.GetJobDate.Value : DateTime.MinValue,
+                Name = infoCard.Name,
+                Patronymic = infoCard.Patronymic,
+                Phone = infoCard.Phone,
+                Post = infoCard.Post,
+                Surname = infoCard.Surname,
+                UserId = infoCard.UserId,
+                CompanyName = companyRepository.GetById(infoCard.CompanyId).CompanyName
             };
+
             return Json(response);
         }
 

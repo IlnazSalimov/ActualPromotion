@@ -33,7 +33,7 @@ namespace VolgaStroyComplect
 
         public ActionResult About()
         {
-            return View(articleRepository.GetByPage("About", AppSettings.CurrentCompany));
+            return View(articleRepository.GetByPage(PagesEnum.About, AppSettings.CurrentCompany));
         }
 
         [Authorize (Roles="Admin")]
@@ -83,7 +83,7 @@ namespace VolgaStroyComplect
                 {
                     CompanyId = AppSettings.CurrentCompany,
                     CreateDate = DateTime.Now,
-                    Page = "About",
+                    PageId = (int)PagesEnum.About,
                     Text = model.Text,
                     Title = model.Title,
                     Author = brioContext.CurrentUser.ID

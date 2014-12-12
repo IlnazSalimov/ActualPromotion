@@ -1,4 +1,7 @@
 ﻿@model Brio.Models.CreatePortalAccount
+@using Brio
+@using Brio.Models
+
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Layouts/DefaultLayouts.cshtml";
@@ -14,7 +17,7 @@
             </button>
         </form>
 
-        <div class="content-right-bar account-create-form">
+        <div class="content-right-bar account-create-form" style="display: none">
             <h2>Создание аккаунта</h2>
             @using (Html.BeginForm("SignUp", "Account", FormMethod.Post, new { @class = "acc-form" }))
             {
@@ -47,6 +50,10 @@
                     @Html.TextBoxFor(a => a.Phone)
                 </p>
                 <p>
+                    @Html.LabelFor(a => a.Post):
+                    @Html.TextBoxFor(a => a.Post)
+                </p>
+                <p>
                     @Html.LabelFor(a => a.CompanyId):
                     @Html.DropDownListFor(a => a.CompanyId, ViewBag.Companies as SelectList, "Выберите компанию")
                 </p>
@@ -61,25 +68,19 @@
                 </button>
             }
         </div>
-        <div class="content-right-bar" ng-controller="infoCardController">
+        <div class="content-right-bar info-card" style="display: none">
             <h2>Карточка сотрудника</h2>
             <div class="staf">
                 <img src="photo/Tarasova_Ybilei.jpg" width="120" height="140" alt="staff">
-                <h3>Aникеенко Людмила
-                    <br>
-                    Федоровна</h3>
+                <h3 class="names">
+                </h3>
 
                 <ul class="staf-text">
-                    <li>Отдел: </li>
-                    <li>Должность: Начальник </li>
-                    <li>Стаж работы: 3 года</li>
-                    <li>Зачислена в штат с: 2.02.2011 </li>
+                    <li class="company">Компания: <span></span></li>
                     <li>&nbsp;</li>
-                    <li>Личные данные:</li>
-                    <li>Дата рождения: 10.05.1970</li>
-                    <li>Адрес: ул. Бородинская 10</li>
-                    <li>тел. +7 (917) 456-34-78</li>
-                    <li>е-mail: ani@ya.ru</li>
+                    <li>Личные данные:<span></span></li>
+                    <li class="phone">тел. <span></span></li>
+                    <li class="email">е-mail: <span></span></li>
                 </ul>
             </div>
         </div>
@@ -90,70 +91,62 @@
                     <li>
                         <p><span>Администратор</span></p>
                         <ul>
-                            <li>ФИО</li>
-                            <li>ФИО</li>
-                            <li>ФИО</li>
+                            @foreach (var a in (IEnumerable<InfoCard>)ViewBag.Admins)
+                            {
+                                <li data-infocard-id="@a.ID">@a.Surname @a.Name @a.Patronymic</li>
+                            }
                         </ul>
-
                     </li>
                     <li>
                         <p><span>Проект-менеджер</span></p>
+                        <ul>
+                            @foreach (var a in (IEnumerable<InfoCard>)ViewBag.ProjectManager)
+                            {
+                                <li data-infocard-id="@a.ID">@a.Surname @a.Name @a.Patronymic</li>
+                            }
+                        </ul>
                     </li>
                     <li>
                         <p><span>Клиент</span></p>
+                        <ul>
+                            @foreach (var a in (IEnumerable<InfoCard>)ViewBag.Clients)
+                            {
+                                <li data-infocard-id="@a.ID">@a.Surname @a.Name @a.Patronymic</li>
+                            }
+                        </ul>
                     </li>
                     <li>
                         <p><span>Сотрудник</span></p>
-                    </li>
-                    <li>
-                        <p><span>Проект-менеджер</span></p>
-                    </li>
-                    <li>
-                        <p><span>Клиент</span></p>
-                    </li>
-                    <li>
-                        <p><span>Сотрудник</span></p>
+                        <ul>
+                            @foreach (var a in (IEnumerable<InfoCard>)ViewBag.Employees)
+                            {
+                                <li data-infocard-id="@a.ID">@a.Surname @a.Name @a.Patronymic</li>
+                            }
+                        </ul>
                     </li>
                 </ul>
             </div>
             <h2 class="right white no-shadow"><span class="project-title">Создать аккаунт</span></h2>
             <ul class="acc-open">
-                @foreach(var r in (ViewBag.Roles as List<Brio.Models.Role>)){
+                @foreach (var r in (ViewBag.Roles as List<Brio.Models.Role>))
+                {
                     <li data-role-id="@r.ID">@r.CyrillicName</li>
                 }
-                
             </ul>
+            
 
             <script>
-                $(function () {
-                    $("ul.acc-open li").bind("click", function () {
-                        $("ul.acc-open li").removeClass("active");
-                        $(this).addClass("active");
-                        $("input[name='RoleId']").val($(this).attr("data-role-id"));
-                    });
-                });
-                angular.module('ngAppDemo', []).controller('infoCardController', function ($scope) {
-                    $scope.a = 1;
-                    $scope.b = 2;
-                });
+                $(document).ready(function () {
+                    var _infoCardPanel = new infoCardPanel();
+                    _infoCardPanel.init();
 
-                function getInfoCard() {
-                    $.ajax({
-                        type: 'POST',
-                        dataType: 'json',
-                        url: "/Review/GetReviewContent",
-                        data: "reviewId=" + reviewId,
-                        success: function (review) {
-                            callBack(review);
-                        },
-                        error: function (xhr, ajaxOptions, thrownError) {
-                            console.log("request failed");
-                        },
-                        processData: false,
-                        async: false
+                    var firstInfoCardId = $(".accaunt-page ul ul li").first().attr("data-infocard-id");
+                    _infoCardPanel.getInfoCard(firstInfoCardId, function (infocard) {
+                        _infoCardPanel.show(infocard);
                     });
-                }
+                });
             </script>
         </div>
     </div>
+
 </section>

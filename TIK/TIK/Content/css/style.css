@@ -10,7 +10,9 @@
     color: #CA2728;
 }
 
-
+.pure-button.white-space-normal{
+    white-space: normal;
+}
 
 .pure-form {
     margin-left: 20%;
@@ -28,7 +30,6 @@ table.k-editor {
     color: #fff;
     background: #4D4948;
     box-sizing: border-box;
-    margin: 0 15px;
 }
 
 .relative {
@@ -512,6 +513,7 @@ footer .footer_wrapper {
     max-width:1000px;
     height: 100px;
     margin: auto;
+    padding: 0 15px;
 }
 
 footer section.logo {
@@ -594,4 +596,30 @@ footer .logo {
     float: right;
     position: relative;
     height: 100%;
+}
+
+/*Обнуляем отступы*/
+ul, li {
+    margin:0;
+    padding:0;
+    list-style-type:none;   
+}
+ 
+/*Задаём стили для разделов нашего меню*/
+#menu > li {
+    position:relative;
+}
+ 
+/*Стили для скрытого выпадающего меню*/
+#menu > li > ul {
+    position: absolute;
+    top: 60px;
+    background-color: #4D4948;
+    display: none;
+    z-index: 1;  
+}
+ 
+/*Делаем скрытую часть видимой*/
+#menu > li:hover > ul {
+    display:block;  
 }

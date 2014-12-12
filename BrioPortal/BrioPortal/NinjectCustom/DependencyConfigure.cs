@@ -7,8 +7,8 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Http.WebHost;
 using System.Web.Http;
-using Brio.Models;
 using Brio;
+using Brio.Models;
 
 
 
@@ -36,6 +36,11 @@ namespace BrioPortal
             kernel.Bind<IFeedbackRepository>().To<FeedbackRepository>();
             kernel.Bind<IPriceListRepository>().To<PriceListRepository>();
             kernel.Bind<IInfoCardRepository>().To<InfoCardRepository>();
+            kernel.Bind<IProjectRepository>().To<ProjectRepository>();
+            kernel.Bind<IProjectStepRepository>().To<ProjectStepRepository>();
+            kernel.Bind<IProjectDocumentRepository>().To<ProjectDocumentRepository>();
+            kernel.Bind<INewsRepository>().To<NewsRepository>();
+            kernel.Bind<IDivisionRepository>().To<DivisionRepository>();
 
             DependencyResolver.SetResolver(new CustomDependencyResolver(kernel));
             GlobalConfiguration.Configuration.DependencyResolver =

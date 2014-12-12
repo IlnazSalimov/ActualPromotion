@@ -1,4 +1,5 @@
 ﻿@model Brio.Models.AddArticle
+@using Brio.Models
 
 @{
     ViewBag.Title = "ДОБАВИТЬ";
@@ -25,6 +26,8 @@
                 @Html.TextAreaFor(model => model.Text, 5, 40, new { @class = "pure-input-2-3", placeholder = "Текст" })
                 @Html.ValidationMessageFor(model => model.Text)
             </div>
+
+            @Html.Hidden("pageId", (int)PagesEnum.About)
             <div class="pure-controls">
                 <button type="submit" class="pure-button pure-button-primary">ДОБАВИТЬ</button>
             </div>

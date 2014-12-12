@@ -1,6 +1,8 @@
-﻿using Brio.Models;
+﻿using Brio;
+using Brio.Models;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
@@ -12,6 +14,8 @@ namespace TIK
 {
     public static class HtmlExtensions
     {
+        public static IBrioContext context = DependencyResolver.Current.GetService<IBrioContext>();
+
         public static string IsSelected(this HtmlHelper html, string controller = null, string action = null)
         {
             string cssClass = "active";
@@ -84,7 +88,10 @@ namespace TIK
 
             TagBuilder docBckg = new TagBuilder("div");
             docBckg.AddCssClass("doc-bckg");
-            docBckg.InnerHtml += adminButtons.ToString();
+            if (System.Web.HttpContext.Current.User.Identity.IsAuthenticated)
+            {
+                docBckg.InnerHtml += adminButtons.ToString();
+            }
             docBckg.InnerHtml += titleContainer.ToString();
             docBckg.InnerHtml += buttonContainer.ToString();
 
@@ -100,5 +107,54 @@ namespace TIK
 
             return displayName;
         }
+
+        public static SelectList GetSelectedItemList<T>(this HtmlHelper html) where T : struct
+        {
+            T t = default(T);
+
+            if (!t.GetType().IsEnum) 
+            { 
+                throw new ArgumentNullException("Пожалуйста убедитесь, что Т это перечисление"); 
+            }
+
+            var nameList = t.GetType().GetEnumNames();
+            int counter = 1;
+            Dictionary<int, String> myDictionary = new Dictionary<int, string>();
+
+            if (nameList != null && nameList.Length > 0)
+            {
+                foreach (var name in nameList)
+                {
+                    T newEnum = (T) Enum.Parse(t.GetType(), name);
+                    string description = getDescriptionFromEnumValue(newEnum as Enum);
+
+                    if(!myDictionary.ContainsKey(counter))
+                    {
+                        myDictionary.Add(counter, description);
+                    }
+                    counter++;
+
+                }
+                counter = 0;
+
+                return new SelectList(myDictionary, "Key", "Value");
+
+            }
+
+            return null;
+        }
+
+        private static string getDescriptionFromEnumValue(Enum value)
+        {
+            DescriptionAttribute descriptionAttribute =
+            value.GetType()
+            .GetField(value.ToString())
+            .GetCustomAttributes(typeof(DescriptionAttribute), false)
+            .SingleOrDefault() as DescriptionAttribute;
+
+            return descriptionAttribute == null ? value.ToString() : descriptionAttribute.Description;
+        }
     }
+
+
 }

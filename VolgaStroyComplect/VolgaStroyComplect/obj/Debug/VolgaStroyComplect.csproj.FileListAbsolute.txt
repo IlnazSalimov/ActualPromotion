@@ -119,3 +119,4 @@ d:\ActualPromotion\VolgaStroyComplect\VolgaStroyComplect\bin\System.Web.WebPages
 d:\ActualPromotion\VolgaStroyComplect\VolgaStroyComplect\obj\Debug\VolgaStroyComplect.csprojResolveAssemblyReference.cache
 d:\ActualPromotion\VolgaStroyComplect\VolgaStroyComplect\obj\Debug\VolgaStroyComplect.dll
 d:\ActualPromotion\VolgaStroyComplect\VolgaStroyComplect\obj\Debug\VolgaStroyComplect.pdb
+d:\ActualPromotion\VolgaStroyComplect\VolgaStroyComplect\bin\VolgaStroyComplect.dll.config

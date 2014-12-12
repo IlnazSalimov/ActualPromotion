@@ -4,6 +4,7 @@ using System.Linq;
 using System.Security.Principal;
 using System.Web;
 using Ninject;
+using Brio;
 using Brio.Models;
 
 namespace Brio
@@ -23,6 +24,7 @@ namespace Brio
         /// </summary>
         [Inject]
         public IAuthentication Auth { get; set; }
+
 
         /// <summary>
         /// Текущий аутентифицированный пользователь

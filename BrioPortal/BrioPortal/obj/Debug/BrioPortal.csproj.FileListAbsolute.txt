@@ -75,3 +75,4 @@ d:\ActualPromotion\BrioPortal\BrioPortal\bin\System.Web.WebPages.xml
 d:\ActualPromotion\BrioPortal\BrioPortal\bin\System.Web.WebPages.Deployment.xml
 d:\ActualPromotion\BrioPortal\BrioPortal\bin\System.Web.WebPages.Razor.xml
 d:\ActualPromotion\BrioPortal\BrioPortal\obj\Debug\BrioPortal.pdb
+D:\ActualPromotion\BrioPortal\BrioPortal\bin\BrioPortal.dll.config

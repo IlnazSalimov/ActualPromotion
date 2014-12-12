@@ -1,0 +1,64 @@
+﻿@model IEnumerable<Brio.Models.News>
+@using BrioPortal
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Layouts/DefaultLayouts.cshtml";
+}
+
+<section>
+    @Html.Partial("RightBarNews")
+    <div class="content">
+        <form action="" method="post" name="serch">
+            <input name="name" type="text" placeholder="ВВЕДИТЕ НАЗВАНИЕ ДОКУМЕНТА">
+            <button type="submit"><h2 class="left"><span>Поиск</span></h2></button>
+        </form>
+        <div class="content-right-bar">
+            <h2>Название новости</h2>
+            <div class="news-block">
+                <img src="photo/Tarasova_Ybilei.jpg" width="120" height="140" alt="staff">
+                <p class="news-text">Сегодня в нашу компанию устроилась на работу замечательная женщина. Она поможет нам в наших делах и разбавит серые будни своим присутствием. Поздравим нашу компанию с прибавлением в рядах «армии» строителей!</p>
+
+
+                <p>
+                    Автор новости: Миронов<br>
+                    Владимир Николаевич
+                </p>
+
+                <p class="news-date">10/05/2014</p>
+            </div>
+        </div>
+        <div class="content-right-bar news-form" style="display: none">
+            <h2>Создание этапа</h2>
+            @using (Html.BeginForm("Add", "News", FormMethod.Post, new { }))
+            {
+                <p>Название: @Html.TextBox("Title")</p>
+                <p>Описание:</p>@Html.TextArea("Description", new { placeholder = "Поле ввода текста..." })
+                @Html.Hidden("ProjectId");
+
+                <button type="submit"><h2 class="right creat-title"><span>Создать</span></h2></button>
+            }
+        </div>
+
+        <div class="content-left-bar">
+            <h2 class="right white plus shadow"><span class="project-title">Новости</span></h2>
+            <div class="wrapp news-page">
+                <ul>
+                    @foreach(var n in Model) {
+                        <li>
+                            <p>
+                                <span>
+                                    @n.Title
+                                </span>
+                            </p>
+                            <ul>
+                                    <li>Название новости</li>
+                            </ul>
+
+                        </li>
+                    }
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>

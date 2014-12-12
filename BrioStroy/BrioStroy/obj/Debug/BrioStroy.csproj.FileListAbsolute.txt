@@ -119,3 +119,4 @@ d:\ActualPromotion\BrioStroy\BrioStroy\bin\System.Web.WebPages.Razor.xml
 d:\ActualPromotion\BrioStroy\BrioStroy\obj\Debug\BrioStroy.csprojResolveAssemblyReference.cache
 d:\ActualPromotion\BrioStroy\BrioStroy\obj\Debug\BrioStroy.dll
 d:\ActualPromotion\BrioStroy\BrioStroy\obj\Debug\BrioStroy.pdb
+d:\ActualPromotion\BrioStroy\BrioStroy\bin\BrioStroy.dll.config

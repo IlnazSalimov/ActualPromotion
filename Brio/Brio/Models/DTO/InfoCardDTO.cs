@@ -4,13 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Brio.Models
+namespace Brio
 {
     public class InfoCardDTO
     {
         public int Id { get; set; }
         public int UserId { get; set; }
         public int CompanyId { get; set; }
+        public string CompanyName { get; set; }
         public string Post { get; set; }
         public DateTime GetJobDate { get; set; }
         public DateTime BirthDay { get; set; }

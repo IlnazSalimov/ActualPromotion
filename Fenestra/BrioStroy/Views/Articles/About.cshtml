@@ -17,7 +17,7 @@
 <script src="~/Content/js/jquery-ui.min.js"></script>
 <script src="~/Content/js/jquery.mousewheel.min.js"></script>
 <div class="container run1">
-    <div data-id="0" class="slider">
+    <div data-id="1" class="slider">
         <div class="units-nav-container">
 
         </div>
@@ -73,6 +73,7 @@
                 {
                     <div class="add_button admin_buttons">@Html.ActionLink("Добавить запись", "Add")</div>
                 }
+                
                 <div class="empty_list">На данный момент не добавлено ни одной записи</div>
             </div>
             <div class="brio-tasks">
@@ -82,8 +83,58 @@
     </div>
 }
 
-@{i++;}
-<div class='block_ins partner' style='display: none;'>
+<div class='block_ins disp_none company_works' id="company_works">
+    <div class="title">
+        НАШИ РАБОТЫ
+    </div>
+    <article class="page-content">
+        <div></div>
+        <div class="articles">
+            @if (User.Identity.IsAuthenticated)
+            {
+                <div class="add_button admin_buttons">@Html.ActionLink("Добавить работу", "AddCompanyWork")</div>
+            }
+
+            @if (User.Identity.IsAuthenticated)
+            {
+                <div class="delete_button admin_buttons works">
+                    <a href="" class="edit"><i class="fa fa-pencil-square-o"></i></a>
+                    <a class="delete" data-work-id=""><i class="fa fa-times"></i></a>
+                </div>
+            }
+
+            <div class="article_container disp_none">
+                <img src="" class="work_img disp_none current" />
+                <img src="" class="work_img disp_none" />
+            </div>
+        </div>
+        <div class="brio-tasks">
+            <div class="veil disp_none">
+                <div class="task-title">
+                </div>
+                <div class="task-container">
+
+                </div>
+                <div class="navigation">
+                    <div class="left">
+                        <div class="arrow"></div>
+                        <div class="text">Предыдущая</div>
+                    </div>
+
+                    <div class="right">
+                        <div class="arrow"></div>
+                        <div class="text">Слудующая</div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </article>
+</div>
+
+
+
+<div class='block_ins partner products' style='display: none;'>
     <div class="logo_cont">
         <div class="partner_logo rosjeldor"></div>
         <div class="partner_logo panel"></div>
@@ -107,6 +158,179 @@
 
 
 <script>
+    function companyWorksNavigationPanel(works) {
+        var self = this;
+
+        var list = works;
+        var prevIndex = -1;
+        var currentIndex = 0;
+        var nextIndex = 1;
+        var task = $(".brio-tasks");
+        var RIGHT = "right",
+            LEFT = "left";
+        var isBusy = false;
+
+        function rerenderNavigationPanel() {
+            console.log("prevIndex: " + prevIndex);
+            console.log("currentIndex: " + currentIndex);
+            console.log("nextIndex: " + nextIndex);
+
+            if (!self.isExistPrevElement())
+                task.find(".left").addClass("block");
+            else
+                task.find(".left").removeClass("block");
+
+            if (!self.isExistNextElement())
+                task.find(".right").addClass("block");
+            else
+                task.find(".right").removeClass("block");
+        };
+
+        function decIndexes() {
+            prevIndex--;
+            currentIndex--;
+            nextIndex--;
+
+            rerenderNavigationPanel();
+        };
+
+        function incIndexes() {
+            prevIndex++;
+            currentIndex++;
+            nextIndex++;
+
+            rerenderNavigationPanel();
+        };
+
+        function appendCompanyWork(work, _direction) {
+            if (_direction == "right") {
+                $(".article_container img.work_img:not(.current)").attr("src", work.ImagesUrl);
+                $(".article_container img.work_img.current").toggle("drop", { direction: _direction }, 500, function () {
+                    var currentImg = this;
+                    $(".article_container img.work_img:not(.current)").toggle("drop", { direction: "left" }, 500, function () {
+                        $(currentImg).removeClass("current");
+                        $(this).addClass("current");
+                        isBusy = false;
+                    });
+                });
+            }
+            else if (_direction == "left") {
+                $(".article_container img.work_img:not(.current)").attr("src", work.ImagesUrl);
+                $(".article_container img.work_img.current").toggle("drop", { direction: _direction }, 500, function () {
+                    var currentImg = this;
+                    $(".article_container img.work_img:not(.current)").toggle("drop", { direction: "right" }, 500, function () {
+                        $(currentImg).removeClass("current");
+                        $(this).addClass("current");
+                        isBusy = false;
+                    });
+                });
+            }
+            else
+                $("img.work_img.current").attr("src", work.ImagesUrl).show();
+
+            task.find(".task-title").text(work.Title);
+            task.find(".task-container").text(work.Description);
+            $(".admin_buttons").find(".delete").attr("data-work-id", work.Id);
+            $(".admin_buttons").find(".edit").attr("href", "/Articles/EditCompanyWork/" + work.Id);
+        };
+
+        self.isExistNextElement = function () {
+            if (list[nextIndex] !== undefined)
+                return true;
+            else
+                return false;
+        };
+
+        self.isExistPrevElement = function () {
+            if (list[prevIndex] !== undefined)
+                return true;
+            else
+                return false;
+        };
+
+        self.showPrevWork = function () {
+            if (self.isExistPrevElement() && !isBusy) {
+                isBusy = true;
+                appendCompanyWork(list[prevIndex], RIGHT);
+                decIndexes();
+            }
+        };
+
+        self.showCurrentWork = function () {
+            if (list !== undefined && list.length > 0) {
+                $(".article_container").removeClass("disp_none");
+                $(".veil").removeClass("disp_none");
+
+                appendCompanyWork(list[currentIndex]);
+                rerenderNavigationPanel();
+            }
+            else {
+                $(".delete_button.works").hide();
+                $(".article_container").addClass("disp_none");
+                $(".veil").addClass("disp_none");
+                $(".block_ins.company_works .articles").append('<div class="empty_list">На данный момент не добавлено ни одной работы</div>')
+            }
+        };
+
+        self.showNextWork = function () {
+            if (self.isExistNextElement() && !isBusy) {
+                isBusy = true;
+                appendCompanyWork(list[nextIndex], LEFT);
+                incIndexes();
+            }
+        };
+
+        self.showCurrentWork();
+
+        $(".brio-tasks .navigation .left").bind("click", function () {
+            self.showPrevWork();
+        });
+
+        $(".brio-tasks .navigation .right").bind("click", function () {
+            self.showNextWork();
+        });
+
+        $(".delete_button.works .delete").bind("click", function (e) {
+            console.log("work");
+            e.preventDefault();
+            var that = this;
+
+            if (!confirm("Вы действительно хотите удалить эту запись?")) {
+                return false;
+            }
+            $.ajax({
+                type: 'POST',
+                dataType: 'json',
+                url: "/Articles/DeleteCompanyWorks",
+                data: "id=" + $(that).attr("data-work-id"),
+                success: function (response) {
+                    if (response.success) {
+                        list.splice(currentIndex, 1);
+
+                        if (self.isExistPrevElement()) {
+                            self.showPrevWork();
+                        }
+                        else if (self.isExistNextElement()) {
+                            self.showNextWork();
+                        }
+                        else {
+                            self.showCurrentWork();
+                        }
+                    }
+                    else {
+                        console.log(response.message);
+                    }
+                },
+                error: function (xhr, ajaxOptions, thrownError) {
+                    console.log("request failed");
+                },
+
+                processData: false,
+                async: false
+            });
+        });
+    }
+
     (function () {
         for(var i = 0; i < $(".block_ins").length; i++){
             if ($(".unit_nav").length == 0){
@@ -117,12 +341,37 @@
                 $(".unit_nav").last().before('<div class="unit_nav"></div>');
             }
         }
+
+        $(window).resize(function () {
+            showOrHidePageLogo($(".block_ins.current"));
+        });
         
+        
+        var _companyWorks;
+
+        getCompanyWorks(function (response) {
+            currentWorkIndex = 0;
+            nextWorkIndex = currentWorkIndex + 1;
+
+            if (response.success) {
+                if (response.works.length > 0) {
+                    _companyWorks = new companyWorksNavigationPanel(response.works);
+                }
+                else {
+                    $(".delete_button.works").hide();
+                    $(".block_ins.company_works .articles").append('<div class="empty_list">На данный момент не добавлено ни одной работы</div>')
+                }
+            }
+            else {
+                console.log(response.message);
+            }
+        });
 
         $(".unit_nav").css({ "height": (100 / $(".unit_nav").length) - 2 + "%" });
         $(".unit_nav").eq(0).addClass("active");
 
-        $(".delete").bind("click", function (e) {
+        $(".delete_button:not(.works) .delete").bind("click", function (e) {
+            console.log("notwork");
             e.preventDefault();
             var that = this;
 
@@ -143,7 +392,6 @@
 
                         if ($(".block_ins").length > 1) {
                             toogleBlock($(".block_ins").index(blockToShow), 350, function (activeElementIndex) {
-                                isBusy = false;
                                 if (activeElementIndex !== undefined) {
                                     $(".unit_nav").removeClass("active");
                                     $(".unit_nav").eq(activeElementIndex).addClass("active");
@@ -175,115 +423,19 @@
             });
         });
 
-        var isBusy = false;
-        $(document).mousewheel(function (event, delta) {
-            if (isBusy) {
-                return false;
-            }
-            isBusy = true;
-            if (delta < 0) {
-                var blockIndexToShow = $(".block_ins").index($(".block_ins.current").next());
-                toogleBlock(blockIndexToShow, 350, function (activeElementIndex) {
-                    isBusy = false;
-                    if (activeElementIndex !== undefined) {
-                        $(".unit_nav").removeClass("active");
-                        $(".unit_nav").eq(activeElementIndex).addClass("active");
-                    }
-                });
-            }
-
-            if (delta > 0) {
-                var blockIndexToShow = $(".block_ins").index($(".block_ins.current").prev());
-                toogleBlock(blockIndexToShow, 350, function (activeElementIndex) {
-                    isBusy = false;
-                    if (activeElementIndex !== undefined) {
-                        $(".unit_nav").removeClass("active");
-                        $(".unit_nav").eq(activeElementIndex).addClass("active");
-                    }
-                });
-            }
-        });
+        
 
         $(".unit_nav").bind("click", function () {
             toogleBlock($(this).index(), 350, function (activeElementIndex) {
-                isBusy = false;
                 if (activeElementIndex !== undefined) {
                     $(".unit_nav").removeClass("active");
                     $(".unit_nav").eq(activeElementIndex).addClass("active");
                 }
             });
         });
-
-        function toogleBlock(showingBlockIndex /*Индекс DOM элемента в коллекции $(".block_ins")*/, duration, onComplete, isRemove) {
-            var blocksCollection = $(".block_ins"),
-                currentBlock = $(".block_ins.current"),
-                currentBlockIndex = blocksCollection.index(currentBlock);
-
-            var isFirstElement = currentBlockIndex == 0;
-            var isLastElement = currentBlockIndex == blocksCollection.length - 1;
-            if (showingBlockIndex != -1 && showingBlockIndex > currentBlockIndex && !isLastElement) {
-                var showingBlock = showingBlockIndex === undefined ? currentBlock.next() : blocksCollection.eq(showingBlockIndex);
-
-                currentBlock.toggle("drop", { direction: (isRemove !== undefined && isRemove ? "right" : "up") }, duration, function () {
-                    currentBlock.removeClass("current");
-                    if (showingBlock.hasClass("partner")) {
-                        $(".bottom_arrows_container").hide();
-                        if ($(window).height() >= 1000) {
-                            $(".page_logo").css("background-image", "url('../Content/images/partners.png')");
-                            $(".page_logo_container").css("display", "inherit");
-                        }
-                        else {
-                            $(".page_logo_container").hide();
-                        }
-                    }
-                    else {
-                        $(".bottom_arrows_container").show();
-                        if ($(window).height() >= 751) {
-                            $(".page_logo").css("background-image", "url('../Content/images/about_company.png')");
-                            $(".page_logo_container").show();
-                        }
-                        else {
-                            $(".page_logo_container").hide();
-                        }
-                    }
-                    showingBlock.addClass("current").toggle("drop", { direction: "down" }, duration, function () {
-                        onComplete(blocksCollection.index(showingBlock));
-                    });
-                });
-            }
-            else if (showingBlockIndex != -1 && showingBlockIndex < currentBlockIndex && !isFirstElement) {
-                var showingBlock = showingBlockIndex === undefined ? currentBlock.prev() : blocksCollection.eq(showingBlockIndex);
-
-                currentBlock.toggle("drop", { direction: (isRemove !== undefined && isRemove ? "right" : "down") }, duration, function () {
-                    currentBlock.removeClass("current");
-                    if (showingBlock.hasClass("partner")) {
-                        $(".bottom_arrows_container").hide();
-                        if ($(window).height() >= 1000) {
-                            $(".page_logo").css("background-image","url('../Content/images/partners.png')");
-                            $(".page_logo_container").css("display", "inherit");
-                        }
-                        else {
-                            $(".page_logo_container").hide();
-                        }
-                    }
-                    else {
-                        $(".bottom_arrows_container").show();
-                        if ($(window).height() >= 751) {
-                            $(".page_logo").css("background-image", "url('../Content/images/about_company.png')");
-                            $(".page_logo_container").show();
-                        }
-                        else {
-                            $(".page_logo_container").hide();
-                        }
-                    }
-                    showingBlock.addClass("current").toggle("drop", { direction: "up" }, duration, function () {
-                        onComplete(blocksCollection.index(showingBlock));
-                    });
-                });
-            }
-            else {
-                onComplete();
-            }
-        }
     })();
+
+    
+
+    
 </script>

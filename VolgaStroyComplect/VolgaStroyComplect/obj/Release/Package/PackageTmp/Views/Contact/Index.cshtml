@@ -4,11 +4,20 @@
     Layout = "~/Views/Layouts/LayoutDefault.cshtml";
 }
 
-
+@section styles{
+    <style>
+        .page_logo {
+            background: url('../Content/images/contacts.png') no-repeat 0 0;
+            background-size: contain;
+        }
+        </style>
+    } 
 
 <div class="container run1">
     <div data-id="0" class="slider"></div>
 </div>
+<div class="page_logo_container"><div class="page_logo"></div></div>
+
 <div class="block_ins">
     <div class="title">
         @ViewBag.Title
@@ -27,7 +36,7 @@
                         @contacts.Phone2
                     </div>
                 </div>
-                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2241.8748528257734!2d37.647777999999995!3d55.812773!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b535dcfe89da29%3A0x7d0a122acbdd646c!2z0JzQsNC70L7QvNC-0YHQutC-0LLRgdC60LDRjyDRg9C7LiwgMTYsINCc0L7RgdC60LLQsCwgMTI5MTY0!5e0!3m2!1sru!2sru!4v1412837099872" height="220" frameborder="0" style="border:0; width:100%"></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2243.6622345521087!2d49.1254735!3d55.78173789999989!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x415ead060b262e81%3A0xabf4994e2a66837f!2z0KHQv9Cw0YDRgtCw0LrQvtCy0YHQutCw0Y8g0YPQuy4sIDIsINCa0LDQt9Cw0L3RjCwg0KDQtdGB0L_Rg9Cx0LvQuNC60LAg0KLQsNGC0LDRgNGB0YLQsNC9LCA0MjAwMDA!5e0!3m2!1sru!2sru!4v1410433593720" height="220" frameborder="0" style="border:0; width:100%"></iframe>
             </div>
         </div>
         <div class="brio-tasks">

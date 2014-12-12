@@ -19,6 +19,10 @@ namespace Brio.Models
         public string Password { get; set; }
 
         [Required]
+        [Display(Name = "Должность")]
+        public string Post { get; set; }
+
+        [Required]
         [Display(Name = "Подтвердите пароль")]
         public string ConfirmPassword { get; set; }
 

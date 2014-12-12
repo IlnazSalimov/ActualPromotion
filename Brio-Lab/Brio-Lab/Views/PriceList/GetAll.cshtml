@@ -18,12 +18,20 @@
         .jspPane {
             width:100% !important;
         }
+
+        .page_logo {
+            background: url('../Content/images/prices.png') no-repeat 0 0;
+            background-size: contain;
+        }
     </style>
 }
 
 <div class="container run1">
     <div data-id="0" class="slider"></div>
 </div>
+
+<div class="page_logo_container"><div class="page_logo"></div></div>
+
 <div class="block_ins">
     <div class="title">
         @ViewBag.Title
@@ -66,8 +74,8 @@
                     ВЫ МОЖЕТЕ:
                 </div>
                 
-                    <button class="button-blue pure-button">@Html.ActionLink("Просмотреть файл", "Show", new { }, new { @class = "pdf-button show" })</button>
-                    <button class="button-blue pure-button">@Html.ActionLink("Скачать файлы в PDF", "Download", new { }, new { @class = "pdf-button download" })</button>
+                    @Html.ActionLink("Просмотреть файл", "Show", new { }, new { @class = "pdf-button show button-blue pure-button" })
+                    @Html.ActionLink("Скачать файлы в PDF", "Download", new { }, new { @class = "pdf-button download button-blue pure-button" })
                 }
                 else
                 {

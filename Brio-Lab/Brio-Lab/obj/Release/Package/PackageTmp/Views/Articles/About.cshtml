@@ -4,22 +4,27 @@
     Layout = "~/Views/Layouts/LayoutDefault.cshtml";
 }
 
+@section styles{
+    <style>
+        .page_logo {
+            background: url('../Content/images/about_company.png') no-repeat 0 0;
+            background-size: contain;
+        }
+        </style>
+    } 
+
 
 <script src="~/Content/js/jquery-ui.min.js"></script>
 <script src="~/Content/js/jquery.mousewheel.min.js"></script>
 <div class="container run1">
     <div data-id="0" class="slider">
         <div class="units-nav-container">
-            @foreach (var item in Model)
-            {
-                <div class="unit_nav">
-                </div>
-            }
+
         </div>
     </div>
 </div>
 
-
+<div class="page_logo_container"><div class="page_logo"></div></div>
 
 @{var i = 0;}
 @foreach (var item in Model)
@@ -58,7 +63,7 @@
 
 @if (Model.Count() == 0)
 {
-    <div class='block_ins'>
+    <div class='block_ins current'>
         <div class="title">
             @ViewBag.Title
         </div>
@@ -68,6 +73,7 @@
                 {
                     <div class="add_button admin_buttons">@Html.ActionLink("Добавить запись", "Add")</div>
                 }
+                <div class="empty_list">На данный момент не добавлено ни одной записи</div>
             </div>
             <div class="brio-tasks">
                 <div class="bottom-corner"></div>
@@ -75,13 +81,44 @@
         </article>
     </div>
 }
-<div class="bottom_arrows_container">
-    <div class="bottom-arrows">
+
+@{i++;}
+<div class='block_ins partner products' style='display: none;'>
+    <div class="logo_cont">
+        <div class="partner_logo rosjeldor"></div>
+        <div class="partner_logo panel"></div>
+        <div class="partner_logo kungur"></div>
+        <div class="partner_logo malan"></div>
     </div>
-</div>
+    <div class="logo_cont line2">
+        <div class="logo_inner_cont">
+            <div class="partner_logo dolina"></div>
+            <div class="partner_logo elvis"></div>
+            <div class="partner_logo vashbit"></div>
+        </div>
+        
+        </div>
+    </div>
+
+    <div class="bottom_arrows_container">
+        <div class="bottom-arrows">
+        </div>
+    </div>
+
 
 <script>
     (function () {
+        for(var i = 0; i < $(".block_ins").length; i++){
+            if ($(".unit_nav").length == 0){
+                $(".units-nav-container").append('<div class="unit_nav"></div>');
+            }
+            else
+            {
+                $(".unit_nav").last().before('<div class="unit_nav"></div>');
+            }
+        }
+        
+
         $(".unit_nav").css({ "height": (100 / $(".unit_nav").length) - 2 + "%" });
         $(".unit_nav").eq(0).addClass("active");
 
@@ -138,35 +175,7 @@
             });
         });
 
-        var isBusy = false;
-        $(document).mousewheel(function (event, delta) {
-            if (isBusy) {
-                return false;
-            }
-            isBusy = true;
-
-            if (delta < 0) {
-                var blockIndexToShow = $(".block_ins").index($(".block_ins.current").next());
-                toogleBlock(blockIndexToShow, 350, function (activeElementIndex) {
-                    isBusy = false;
-                    if (activeElementIndex !== undefined) {
-                        $(".unit_nav").removeClass("active");
-                        $(".unit_nav").eq(activeElementIndex).addClass("active");
-                    }
-                });
-            }
-
-            if (delta > 0) {
-                var blockIndexToShow = $(".block_ins").index($(".block_ins.current").prev());
-                toogleBlock(blockIndexToShow, 350, function (activeElementIndex) {
-                    isBusy = false;
-                    if (activeElementIndex !== undefined) {
-                        $(".unit_nav").removeClass("active");
-                        $(".unit_nav").eq(activeElementIndex).addClass("active");
-                    }
-                });
-            }
-        });
+        
 
         $(".unit_nav").bind("click", function () {
             toogleBlock($(this).index(), 350, function (activeElementIndex) {
@@ -178,37 +187,6 @@
             });
         });
 
-        function toogleBlock(showingBlockIndex /*Индекс DOM элемента в коллекции $(".block_ins")*/, duration, onComplete, isRemove) {
-            var blocksCollection = $(".block_ins"),
-                currentBlock = $(".block_ins.current"),
-                currentBlockIndex = blocksCollection.index(currentBlock);
-
-            var isFirstElement = currentBlockIndex == 0;
-            var isLastElement = currentBlockIndex == blocksCollection.length - 1;
-
-            if (showingBlockIndex != -1 && showingBlockIndex > currentBlockIndex && !isLastElement) {
-                var showingBlock = showingBlockIndex === undefined ? currentBlock.next() : blocksCollection.eq(showingBlockIndex);
-
-                currentBlock.toggle("drop", { direction: (isRemove !== undefined && isRemove ? "right" : "up") }, duration, function () {
-                    currentBlock.removeClass("current");
-                    showingBlock.addClass("current").toggle("drop", { direction: "down" }, duration, function () {
-                        onComplete(blocksCollection.index(showingBlock));
-                    });
-                });
-            }
-            else if (showingBlockIndex != -1 && showingBlockIndex < currentBlockIndex && !isFirstElement) {
-                var showingBlock = showingBlockIndex === undefined ? currentBlock.prev() : blocksCollection.eq(showingBlockIndex);
-
-                currentBlock.toggle("drop", { direction: (isRemove !== undefined && isRemove ? "right" : "down") }, duration, function () {
-                    currentBlock.removeClass("current");
-                    showingBlock.addClass("current").toggle("drop", { direction: "up" }, duration, function () {
-                        onComplete(blocksCollection.index(showingBlock));
-                    });
-                });
-            }
-            else {
-                onComplete();
-            }
-        }
+        
     })();
 </script>

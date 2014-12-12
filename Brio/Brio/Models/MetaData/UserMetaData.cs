@@ -5,7 +5,7 @@ using System.Linq;
 using System.Security.Principal;
 using System.Web;
 
-namespace Brio.Models
+namespace Brio
 {
     /// <summary>
     /// Класс для установки мета-данных соответствующей модели

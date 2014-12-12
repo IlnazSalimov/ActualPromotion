@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
-namespace Brio.Models.Entity
+namespace Brio
 {
     public abstract class BaseEntity<T>
     {

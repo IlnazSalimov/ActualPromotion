@@ -25,14 +25,21 @@
 </figure>
 
 <div class="content documents relative">
-    <div class="add admin-buttons">@Html.ActionLink("Добавить запись", "Add")</div>
-        @Html.RenderDocumentUnit(Model)
 
-        @if (Model.Count() == 0)
-        {
-            <div class="warning-msg-container pure-u-1">Доступных документов нет</div>
-        }
-    </div>
+    @if (User.Identity.IsAuthenticated)
+    {
+        <div class="add admin-buttons">
+
+            @Html.ActionLink("Добавить запись", "Add")
+        </div>
+    }
+
+    @Html.RenderDocumentUnit(Model)
+
+    @if (Model.Count() == 0)
+    {
+        <div class="warning-msg-container pure-u-1">Доступных документов нет</div>
+    }
 </div>
 
 

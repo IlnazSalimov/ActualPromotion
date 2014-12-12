@@ -41,7 +41,7 @@
                         @Html.ActionLink("О КОМПАНИИ", "About", "Articles", new { }, new { @class = @Html.IsSelected("Articles", "About") })
                     </li>
                     <li>
-                        @Html.ActionLink("ПРАЙС-ЛИСТ", "GetAll", "PriceList", new { }, new { @class = "price " + @Html.IsSelected("GetAll", "PriceList") })
+                        @Html.ActionLink("ПРАЙС-ЛИСТ", "GetAll", "PriceList", new { }, new { @class = "price " + @Html.IsSelected("PriceList", "GetAll") })
                     </li>
                     <li>
                         <a href="/" class="logo">
@@ -72,12 +72,14 @@
             @RenderBody()
         </section>
         <footer id="footer">
-            <div class="bottom-logo">
-                БРИО
-                <div class="company">
-                    БРИО-ЛАБ
+            <a class="" href="http://actual-test.ru">
+                <div class="bottom-logo">
+                    БРИО
+                    <div class="company">
+                        группа компаний
+                    </div>
                 </div>
-            </div>
+            </a>
         </footer>
     </div>
 </body>
