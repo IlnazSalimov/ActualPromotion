@@ -18,8 +18,8 @@ namespace Brio.Models
         {
             this.Articles = new HashSet<Article>();
             this.InfoCards = new HashSet<InfoCard>();
-            this.News = new HashSet<News>();
             this.Projects = new HashSet<Project>();
+            this.News = new HashSet<News>();
         }
     
         public int Id { get; set; }
@@ -29,8 +29,8 @@ namespace Brio.Models
     
         public virtual ICollection<Article> Articles { get; set; }
         public virtual ICollection<InfoCard> InfoCards { get; set; }
-        public virtual ICollection<News> News { get; set; }
         public virtual ICollection<Project> Projects { get; set; }
         public virtual Role Role { get; set; }
+        public virtual ICollection<News> News { get; set; }
     }
 }

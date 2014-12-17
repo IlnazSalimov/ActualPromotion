@@ -13,23 +13,37 @@
             <input name="name" type="text" placeholder="ВВЕДИТЕ НАЗВАНИЕ ДОКУМЕНТА">
             <button type="submit"><h2 class="left"><span>Поиск</span></h2></button>
         </form>
-        <div class="content-right-bar info-card">
-            <h2>Карточка сотрудника</h2>
-            <div class="staf">
-                <img src="photo/Tarasova_Ybilei.jpg" width="120" height="140" alt="staff">
-                <h3 class="names"></h3>
+        @if (ViewBag.IsSuccess != null && ViewBag.Message != null)
+        {
+            if ((bool)ViewBag.IsSuccess)
+            {
+                <div class="alert alert-success" role="alert">@ViewBag.Message</div>
+            }
+            else
+            {
+                <div class="alert alert-danger" role="alert">@ViewBag.Message</div>
+            }
+        }
+        <div class="content-right-bar info-card active" style="display:none">
+            <div class="cont">
+                <h2>Карточка сотрудника</h2>
+                <div class="staf">
+                    <img src="photo/Tarasova_Ybilei.jpg" width="120" height="140" alt="staff">
+                    <h3 class="names"></h3>
 
-                <ul class="staf-text">
-                    <li class="company">Компания: <span></span></li>
-                    <li>&nbsp;</li>
-                    <li>Личные данные:<span></span></li>
-                    <li class="phone">тел. <span></span></li>
-                    <li class="email">е-mail: <span></span></li>
-                </ul>
+                    <ul class="staf-text">
+                        <li class="company">Компания: <span></span></li>
+                        <li>&nbsp;</li>
+                        <li>Личные данные:<span></span></li>
+                        <li class="phone">тел. <span></span></li>
+                        <li class="email">е-mail: <span></span></li>
+                    </ul>
+                </div>
+                
             </div>
         </div>
         <div class="content-left-bar">
-            <h2 class="right white plus shadow"><span class="project-title">Сотрудники</span></h2>
+            <h2 class="right white shadow"><span class="project-title">Сотрудники</span></h2>
             <div class="wrapp news-page">
                 <div class="divisions-container">
                     <ul>
@@ -45,6 +59,10 @@
                                     @foreach (var ic in a.InfoCards)
                                     {
                                         <li data-infocard-id="@ic.ID">@ic.Surname @ic.Name @ic.Patronymic</li>
+                                    }
+                                    @if (a.InfoCards.Count < 1)
+                                    {
+                                        <li>В этом отделе сотрудников нет</li>
                                     }
                                 </ul>
                             </li>
@@ -63,10 +81,5 @@
     $(document).ready(function () {
         var _infoCardPanel = new infoCardPanel();
         _infoCardPanel.init();
-
-        var firstInfoCardId = $(".news-page ul ul li[data-infocard-id]").first().attr("data-infocard-id");
-        _infoCardPanel.getInfoCard(firstInfoCardId, function (infocard) {
-            _infoCardPanel.show(infocard);
-        });
     });
 </script>

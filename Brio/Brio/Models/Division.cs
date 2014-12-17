@@ -16,8 +16,8 @@ namespace Brio.Models
     {
         public Division()
         {
-            this.News = new HashSet<News>();
             this.InfoCards = new HashSet<InfoCard>();
+            this.News = new HashSet<News>();
         }
     
         public int Id { get; set; }
@@ -26,7 +26,7 @@ namespace Brio.Models
         public int CompanyId { get; set; }
     
         public virtual Company Company { get; set; }
-        public virtual ICollection<News> News { get; set; }
         public virtual ICollection<InfoCard> InfoCards { get; set; }
+        public virtual ICollection<News> News { get; set; }
     }
 }

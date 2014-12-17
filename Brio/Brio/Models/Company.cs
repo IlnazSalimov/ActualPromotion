@@ -22,11 +22,11 @@ namespace Brio.Models
             this.Documents = new HashSet<Document>();
             this.Feedbacks = new HashSet<Feedback>();
             this.InfoCards = new HashSet<InfoCard>();
-            this.News = new HashSet<News>();
             this.PriceLists = new HashSet<PriceList>();
             this.Products = new HashSet<Product>();
             this.Projects = new HashSet<Project>();
             this.Reviews = new HashSet<Review>();
+            this.News = new HashSet<News>();
         }
     
         public int Id { get; set; }
@@ -45,10 +45,10 @@ namespace Brio.Models
         public virtual ICollection<Document> Documents { get; set; }
         public virtual ICollection<Feedback> Feedbacks { get; set; }
         public virtual ICollection<InfoCard> InfoCards { get; set; }
-        public virtual ICollection<News> News { get; set; }
         public virtual ICollection<PriceList> PriceLists { get; set; }
         public virtual ICollection<Product> Products { get; set; }
         public virtual ICollection<Project> Projects { get; set; }
         public virtual ICollection<Review> Reviews { get; set; }
+        public virtual ICollection<News> News { get; set; }
     }
 }

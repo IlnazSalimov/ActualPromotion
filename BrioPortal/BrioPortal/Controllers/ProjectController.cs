@@ -67,6 +67,12 @@ namespace BrioPortal.Controllers
             List<Project> projects = projectRepository.GetAll().Where(p => p.CompanyId == currentUserCompanyId).ToList();
             ViewBag.Users = new SelectList(userRepository.GetAll().ToList(), "ID", "FullName");
 
+            ViewBag.IsSuccess = TempData["IsSuccess"];
+            ViewBag.Message = TempData["Message"];
+
+            ViewBag.Project = TempData["Project"] != null ? TempData["Project"] : new CreateProject();
+            ViewBag.ProjectStep = TempData["ProjectStep"] != null ? TempData["ProjectStep"] : new CreateProjectStep();
+
             return View(projects);
         }
 
@@ -172,11 +178,23 @@ namespace BrioPortal.Controllers
                 }
 
                 projectRepository.SaveChanges();
+
+                TempData["IsSuccess"] = true;
+                TempData["Message"] = "Проект успешно создан!";
             }
             else
-                return View(createProject);
+            {
+                TempData["IsSuccess"] = false;
+                TempData["Message"] = "Проект не был создан, т.к. не заполнены все поля. Пожалуйста повторите попытку заполнив все поля.";
+                TempData["Project"] = createProject;
+                
+                
 
+                return RedirectToAction("Index");
+            }
             return RedirectToAction("Index");
+
+            
         }
         [HttpPost]
         public ActionResult CreateProjectStep(CreateProjectStep createProjectStep)
@@ -193,7 +211,17 @@ namespace BrioPortal.Controllers
                 projectStepRepository.Insert(projectStep);
                 projectStepRepository.SaveChanges();
 
+                TempData["IsSuccess"] = true;
+                TempData["Message"] = "Этап проекта успешно создан!";
+                TempData["ProjectStep"] = createProjectStep;
             }
+            else
+            {
+                TempData["IsSuccess"] = false;
+                TempData["Message"] = "Этап проекта не был создан, т.к. не заполнены все поля. Пожалуйста повторите попытку заполнив все поля.";
+                TempData["ProjectStep"] = createProjectStep;
+            }
+            
             return RedirectToAction("Index");
         }
 

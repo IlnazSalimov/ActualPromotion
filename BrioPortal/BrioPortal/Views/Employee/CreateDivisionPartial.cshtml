@@ -1,26 +1,15 @@
 ﻿@model Brio.Models.CreateDivision
 
-@if (ViewBag.CreateDivision != null && ViewBag.IsSuccess != null && ViewBag.Message != null)
-{
-    if ((bool)ViewBag.IsSuccess)
+@if (User.IsInRole("Admin")) { 
+    using (Html.BeginForm("AddDivision", "Employee", FormMethod.Post, new { @class = "division-create" }))
     {
-        <div class="alert alert-success" role="alert">@ViewBag.Message</div>
+        <div class="controls-container">
+            <div class="title">Добавить отдел</div>
+            <p>@Html.TextBoxFor(d => d.Name, new { placeholder = Html.DisplayNameFor(d => d.Name) })</p>
+            <p>@Html.TextBoxFor(d => d.Head, new { placeholder = Html.DisplayNameFor(d => d.Head) })</p>
+        </div>
+        <button type="submit">
+            <h2 class="right creat-title"><span>Создать</span></h2>
+        </button>
     }
-    else
-    {
-        <div class="alert alert-danger" role="alert">@ViewBag.Message</div>
-    }
-}
-
-@using (Html.BeginForm("AddDivision", "Employee", FormMethod.Post, new { @class = "division-create" }))
-{
-    <div class="controls-container">
-        <div class="title">Добавить отдел</div>
-        <p>@Html.TextBoxFor(d => d.Name, new { placeholder = Html.DisplayNameFor(d => d.Name) })</p>
-        <p>@Html.TextBoxFor(d => d.Head, new { placeholder = Html.DisplayNameFor(d => d.Head) })</p>
-        <p>@Html.DropDownListFor(d => d.CompanyId, ViewBag.Companies as SelectList, "Выберите компанию")</p>
-    </div>
-    <button type="submit">
-        <h2 class="right creat-title"><span>Создать</span></h2>
-    </button>
 }

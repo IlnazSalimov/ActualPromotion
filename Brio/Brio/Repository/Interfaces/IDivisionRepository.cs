@@ -10,6 +10,7 @@ namespace Brio
     public interface IDivisionRepository
     {
         IQueryable<Division> GetAll();
+        IQueryable<Division> GetCompanyDivisions(int companyId);
         Division GetById(int id);
 
         int Insert(Division model);

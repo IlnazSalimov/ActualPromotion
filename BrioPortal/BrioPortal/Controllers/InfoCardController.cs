@@ -38,24 +38,32 @@ namespace BrioPortal.Controllers
         public JsonResult GetInfoCard(int id)
         {
             InfoCard infoCard = infoCardRepository.GetById(id);
-            InfoCardDTO response = new InfoCardDTO
+            if (infoCard != null)
             {
-                Id = infoCard.ID,
-                Adress = infoCard.Adress,
-                BirthDay = infoCard.BirthDay.HasValue ? infoCard.BirthDay.Value : DateTime.MinValue,
-                CompanyId = infoCard.CompanyId,
-                Email = infoCard.Email,
-                GetJobDate = infoCard.GetJobDate.HasValue ? infoCard.GetJobDate.Value : DateTime.MinValue,
-                Name = infoCard.Name,
-                Patronymic = infoCard.Patronymic,
-                Phone = infoCard.Phone,
-                Post = infoCard.Post,
-                Surname = infoCard.Surname,
-                UserId = infoCard.UserId,
-                CompanyName = companyRepository.GetById(infoCard.CompanyId).CompanyName
-            };
+                InfoCardDTO response = new InfoCardDTO
+                {
+                    Id = infoCard.ID,
+                    Adress = infoCard.Adress,
+                    BirthDay = infoCard.BirthDay.HasValue ? infoCard.BirthDay.Value : DateTime.MinValue,
+                    CompanyId = infoCard.CompanyId,
+                    Email = infoCard.Email,
+                    GetJobDate = infoCard.GetJobDate.HasValue ? infoCard.GetJobDate.Value : DateTime.MinValue,
+                    Name = infoCard.Name,
+                    Patronymic = infoCard.Patronymic,
+                    Phone = infoCard.Phone,
+                    Post = infoCard.Post,
+                    Surname = infoCard.Surname,
+                    UserId = infoCard.UserId,
+                    CompanyName = companyRepository.GetById(infoCard.CompanyId).CompanyName
+                };
 
-            return Json(response);
+                return Json(ResponseProcessing.Success(response));
+            }
+            else
+            {
+                return Json(ResponseProcessing.Error("Невозможно извлечь данные о сотруднике. Обновите страницу и повторите попытку."));
+            }
+            
         }
 
     }

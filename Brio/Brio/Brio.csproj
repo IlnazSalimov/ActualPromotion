@@ -114,6 +114,7 @@
     <Compile Include="Models\DTO\CompanyWorkDTO.cs" />
     <Compile Include="Models\DTO\DocumentDTO.cs" />
     <Compile Include="Models\DTO\InfoCardDTO.cs" />
+    <Compile Include="Models\DTO\NewsDTO.cs" />
     <Compile Include="Models\DTO\ProjectDocumentDTO.cs" />
     <Compile Include="Models\DTO\ProjectStepDTO.cs" />
     <Compile Include="Models\DTO\ResponseDTO.cs" />
@@ -180,6 +181,7 @@
     <Compile Include="Models\Showcases\Document\AddDocument.cs" />
     <Compile Include="Models\Showcases\Document\AddProductDocument.cs" />
     <Compile Include="Models\Showcases\Document\EditDocument.cs" />
+    <Compile Include="Models\Showcases\News\EditNews.cs" />
     <Compile Include="Models\Showcases\News\CreateNews.cs" />
     <Compile Include="Models\Showcases\PriceList\AddPriceList.cs" />
     <Compile Include="Models\Showcases\PriceList\EditPriceList.cs" />

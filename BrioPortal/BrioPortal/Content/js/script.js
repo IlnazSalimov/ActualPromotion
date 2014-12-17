@@ -1,7 +1,115 @@
+var news = function () {
+    var self = this;
+    var isBusy = false;
+    var newsBlock = $('.news-block');
+    var newsForm = $('.news-form');
+    var newsPage = $('.news-page');
+    var newsCont = $('.news-cont')
+    var newsLi = newsPage.find('li[data-news-id]');
+    var newsEditForm = $('.news-edit-form');
+
+    self.getNews = function (newsId, callBack, errorCallBack) {
+        if (isBusy) {
+            return false;
+        }
+        isBusy = true;
+        $.ajax({
+            type: 'POST',
+            dataType: 'json',
+            url: "/News/GetNews",
+            data: "id=" + newsId,
+            success: function (response) {
+                if (response.IsSuccess) {
+                    console.log(response.Object);
+                    callBack(response.Object);
+                }
+                else {
+                    showResultMessage($('form[name="serch"]'), response.Message, false);
+                    if (errorCallBack) {
+                        errorCallBack();
+                    }
+                }
+                setTimeout(function () {
+                    isBusy = false;
+                }, 1000);
+
+            },
+            error: function (xhr, ajaxOptions, thrownError) {
+                console.log("request failed");
+                showResultMessage($('form[name="serch"]'), 'Невозможно извлечь новость. Обновите страницу и повторите поытку.', false);
+                if (errorCallBack) {
+                    errorCallBack();
+                }
+                setTimeout(function () {
+                    isBusy = false;
+                }, 1000);
+            },
+            processData: false,
+            async: false
+        });
+    };
+
+    self.show = function (news) {
+        newsCont.find('.edit_pen').attr('data-news-id', news.Id);
+        newsCont.find(".title").html(news.Title);
+        newsBlock.find(".news-text").html(news.Text);
+        newsBlock.find(".news-author").html(news.AuthorUserFullName);
+        newsBlock.find(".news-date").html(ToJavaScriptDate(news.CreateDate));
+        newsBlock.find("img.news-photo").attr('src', news.PhotoPath);
+
+        showRightBlock(newsCont);
+    };
+
+    self.init = function () {
+        var callBack = function(news) {
+            self.show(news);
+            hideLoader();
+        }
+
+        var errorCallback = function(){
+            hideLoader();
+        }
+
+        $('.plus_').bind('click', function () {
+            showRightBlock(newsForm);
+        });
+
+        newsLi.bind('click', function () {
+            var that = this;
+            showLoader();
+
+            var newsId = $(that).attr('data-news-id');
+            self.getNews(newsId, callBack, errorCallback);
+        });
+
+        if (newsPage.find('ul li').length > 0) {
+            var firstNewsId = newsPage.find('ul li').first().attr('data-news-id');
+            self.getNews(firstNewsId, callBack, errorCallback);
+        }
+
+        newsCont.find('.edit_pen').bind('click', function () {
+            console.log(newsEditForm);
+            var that = this;
+
+            var _callBack = function(news) {
+                newsEditForm.find('input[name="Title"]').val(news.Title);
+                newsEditForm.find('textarea[name="Text"]').val(news.Text);
+                newsEditForm.find('input[name="Id"]').val(news.Id);
+            }
+            self.getNews($(that).attr('data-news-id'), _callBack, errorCallback);
+            showRightBlock(newsEditForm);
+        });
+    }
+
+    return self;
+};
+
+
 function infoCardPanel(app) {
     var self = this;
     var createForm = $(".content-right-bar.account-create-form");
     var mappingForm = $(".content-right-bar.info-card");
+    var isBusy = false;
 
     self.show = function (infoCard) {
         mappingForm.find(".names").html(infoCard.Surname + " " + infoCard.Name + " " + infoCard.Patronymic);
@@ -9,32 +117,44 @@ function infoCardPanel(app) {
         mappingForm.find(".phone span").html(infoCard.Phone);
         mappingForm.find(".email span").html(infoCard.Email);
 
-        /*_app.controller("infoCardController", function ($scope) {
-            $scope.Adress = infocard.Adress;
-            $scope.Email = infocard.Email;
-            $scope.Name = infocard.Name;
-            $scope.Patronymic = infocard.Patronymic;
-            $scope.Phone = infocard.Phone;
-            $scope.Post = infocard.Post;
-            $scope.Surname = infocard.Surname;
-            $scope.CompanyName = infocard.CompanyName;
-            console.log($scope);
-        });*/
         createForm.hide();
         mappingForm.show();
     };
 
-    self.getInfoCard = function (infocardId, callBack) {
+    self.getInfoCard = function (infocardId, callBack, errorCallBack) {
+        if (isBusy) {
+            return false;
+        }
+        isBusy = true;
         $.ajax({
             type: 'POST',
             dataType: 'json',
             url: "/InfoCard/GetInfoCard",
             data: "id=" + infocardId,
-            success: function (infocard) {
-                callBack(infocard);
+            success: function (response) {
+                if (response.IsSuccess) {
+                    callBack(response.Object);
+                }
+                else {
+                    showResultMessage($('form[name="serch"]'), response.Message, false);
+                    if (errorCallBack) {
+                        errorCallBack();
+                    }
+                }
+                setTimeout(function () {
+                    isBusy = false;
+                }, 1000);
+                
             },
             error: function (xhr, ajaxOptions, thrownError) {
                 console.log("request failed");
+                showResultMessage($('form[name="serch"]'), 'Невозможно извлечь карточку сотрудника. Обновите страницу и повторите поытку.', false);
+                if (errorCallBack) {
+                    errorCallBack();
+                }
+                setTimeout(function () {
+                    isBusy = false;
+                }, 1000);
             },
             processData: false,
             async: false
@@ -44,8 +164,14 @@ function infoCardPanel(app) {
     self.init = function () {
         $(".accaunt-page ul ul li, .news-page ul ul li").bind("click", function () {
             var infoCardId = $(this).attr("data-infocard-id");
+
+            //начинается загрузка данных, показываем лоадер
+            showLoader();
             self.getInfoCard(infoCardId, function (infocard) {
                 self.show(infocard);
+                hideLoader();
+            }, function () {
+                hideLoader();
             });
         });
 
@@ -59,12 +185,29 @@ function infoCardPanel(app) {
             mappingForm.hide();
         });
 
-        /*$(".news-page ul ul li").bind("click", function () {
-            var infoCardId = $(this).attr("data-infocard-id");
-            self.getInfoCard(infoCardId, function (infocard) {
+        if ($(".news-page ul ul li[data-infocard-id]").length > 0) {
+            var firstInfoCardId = $(".news-page ul ul li[data-infocard-id]").first().attr("data-infocard-id");
+            //начинается загрузка данных, показываем лоадер
+            showLoader();
+            self.getInfoCard(firstInfoCardId, function (infocard) {
                 self.show(infocard);
+                hideLoader();
+            }, function () {
+                hideLoader();
             });
-        });*/
+        }
+
+        if ($(".accaunt-page ul ul li").length > 0) {
+            var firstInfoCardId = $(".accaunt-page ul ul li").first().attr("data-infocard-id");
+            //начинается загрузка данных, показываем лоадер
+            showLoader();
+            self.getInfoCard(firstInfoCardId, function (infocard) {
+                self.show(infocard);
+                hideLoader();
+            }, function () {
+                hideLoader();
+            });
+        }
     }
 }
 
@@ -85,6 +228,7 @@ function ToJavaScriptDate(value) {
 // Project object
 
 function Project() {
+    var projectPage = $(".progect-page");
     var projectLi = $(".progect-page p.proj_title");
     var projectStepLi = $(".progect-page li[data-step-id]:not(.add)");
     var projectStepAddButton = $(".progect-page li.add");
@@ -92,14 +236,16 @@ function Project() {
     var projectStepsContainer = $(".project-steps");
     var projectViewingForm = $(".project");
     var projectCreateForm = $(".project-crate-form");
+    var isBusy = false;
     var self = this;
 
     function renderDocuments(docs) {
         projectViewingForm.find(".docs").empty();
 
-        var documentLi = $("<li>");
+        
         for (var i = 0; i < docs.length; i++) {
-            var documentLink = $("<a>").attr("href", "#").text(docs[i].DocumentTitle);
+            var documentLi = $("<li>");
+            var documentLink = $("<a>").attr("href", "/ProjectDocument/Download/" + docs[i].Id).text(docs[i].DocumentTitle);
             projectViewingForm.find(".docs").append(documentLi.append(documentLink));
         }
     }
@@ -112,7 +258,6 @@ function Project() {
         projectViewingForm.find(".end span").html(project.EndDate);
 
         renderDocuments(project.Documents);
-
         showRightBlock(projectViewingForm);
     },
 
@@ -123,7 +268,11 @@ function Project() {
         showRightBlock(projectStepsContainer);
     },
 
-    self.getProject = function (id, callBack) {
+    self.getProject = function (id, successCallBack, errorCallBack) {
+        if (isBusy) {
+            return false;
+        }
+        isBusy = true;
         $.ajax({
             type: 'POST',
             dataType: 'json',
@@ -135,23 +284,40 @@ function Project() {
                     project.StartDate = ToJavaScriptDate(project.StartDate);
                     project.EndDate = ToJavaScriptDate(project.EndDate);
                     project.CreateDate = ToJavaScriptDate(project.CreateDate);
-                    callBack(project);
+                    successCallBack(project);
 
                 }
                 else {
                     var beforElement = $("form[name='serch']");
                     showResultMessage(beforElement, response.Message, false);
+                    if (errorCallBack) {
+                        errorCallBack();
+                    }
                 }
+                setTimeout(function () {
+                    isBusy = false;
+                }, 1000);
             },
             error: function (xhr, ajaxOptions, thrownError) {
+                showResultMessage($('form[name="serch"]'), 'Произошла непредвиденная ситуация до отправки запроса. Проект не был получен', false);
+                if (errorCallBack) {
+                    errorCallBack();
+                }
                 console.log("request failed");
+                setTimeout(function () {
+                    isBusy = false;
+                }, 1000);
             },
             processData: false,
             async: false
         });
     },
 
-    self.getProjectSteps = function (id, callBack) {
+    self.getProjectSteps = function (id, successCallBack, errorCallBack) {
+        if (isBusy) {
+            return false;
+        }
+        isBusy = true;
         $.ajax({
             type: 'POST',
             dataType: 'json',
@@ -159,17 +325,28 @@ function Project() {
             data: "id=" + id,
             success: function (response) {
                 if (response.IsSuccess) {
-                    var projectSteps = response.Object;
-                    callBack(projectSteps);
+                    successCallBack(response.Object);
                 }
                 else {
                     var beforElement = $("form[name='serch']");
                     showResultMessage(beforElement, response.Message, false);
+                    if(errorCallBack){
+                        errorCallBack();
+                    }
                 }
-                callBack(response);
+                setTimeout(function () {
+                    isBusy = false;
+                }, 1000);
             },
             error: function (xhr, ajaxOptions, thrownError) {
+                if(errorCallBack){
+                    errorCallBack();
+                }
+                showResultMessage($('form[name="serch"]'), 'Произошла непредвиденная ситуация до отправки запроса. Этап проект не был получен', false);
                 console.log("request failed");
+                setTimeout(function () {
+                    isBusy = false;
+                }, 1000);
             },
             processData: false,
             async: false
@@ -178,16 +355,36 @@ function Project() {
 
     self.init = function () {
         projectLi.bind("click", function () {
+            console.log('projectLi');
             var that = this;
+            //начинается загрузка данных, показываем лоадер
+            showLoader();
+
             self.getProject($(that).parents("li[data-project-id]").attr("data-project-id"), function (project) {
                 self.showProject(project);
+                
+                //Загрузка данных завершена, убираем лоадер
+                hideLoader();
+            }, function () {
+                //Загрузка данных завершена, убираем лоадер
+                hideLoader();
             });
         });
 
         projectStepLi.bind("click", function () {
+            console.log('projectStepLi');
             var that = this;
+            //начинается загрузка данных, показываем лоадер
+            showLoader();
+
             self.getProjectSteps($(that).attr("data-step-id"), function (projectStep) {
                 self.showProjectSteps(projectStep);
+
+                //Загрузка данных завершена, убираем лоадер
+                hideLoader();
+            }, function () {
+                //Загрузка данных завершена, убираем лоадер
+                hideLoader();
             });
         });
 
@@ -197,19 +394,34 @@ function Project() {
             showRightBlock(projectStepForm);
         });
 
+        $('.plus_').bind('click', function () {
+            showRightBlock(projectCreateForm);
+            hideLoader();
+        });
 
-    }
-
-    function showRightBlock(block) {
-        if ($(block).hasClass("content-right-bar")) {
-            $(".content-right-bar").hide();
-            $(block).show();
+        if (projectPage.find("li[data-project-id]").length > 0) {
+            var firstProjectId = projectPage.find("li[data-project-id]").first().attr("data-project-id");
+            //начинается загрузка данных, показываем лоадер
+            showLoader();
+            self.getProject(firstProjectId, function (project) {
+                self.showProject(project);
+                hideLoader();
+            }, function () {
+                hideLoader();
+            });
         }
     }
 }
 
+function showRightBlock(block) {
+    if ($(block).hasClass("content-right-bar")) {
+        $(".content-right-bar").removeClass('active').hide();
+        $(block).addClass('active').show();
+    }
+}
+
 function showResultMessage(element, message, isSuccess) { //element - элемент после которого будет добавлено сообщение
-    var alert = $("div").addClass("alert").attr("role", "alert");
+    var alert = $("<div>").addClass("alert").attr("role", "alert");
     if (message && message != "") {
         alert.text(message);
         if (isSuccess) {
@@ -218,8 +430,23 @@ function showResultMessage(element, message, isSuccess) { //element - элеме
         else {
             alert.addClass("alert-danger");
         }
+        if (element.parents().find('.alert') !== undefined) {
+            element.parents().find('.alert').remove();
+        }
         element.after(alert);
     }
+}
+
+function showLoader() {
+    $(".content-right-bar.active").addClass('block').append('<div class="loader"></div>');
+}
+
+function hideLoader() {
+    setTimeout(function () {
+        $(".content-right-bar").removeClass('block').
+            find('.loader').
+            remove();
+    }, 650);
 }
 
 $(document).ready(function () {
@@ -238,7 +465,7 @@ $(document).ready(function () {
         $(that).addClass('select');
         var parrentLi = $(that).parents("li");
 
-        parrentLi.children('ul').slideToggle(600, function () {
+        parrentLi.children('ul').slideToggle(400, function () {
             if ($(this).css('display') == 'none') {
                 $(that).removeClass('select');
             }

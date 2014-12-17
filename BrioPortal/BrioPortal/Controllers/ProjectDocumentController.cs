@@ -65,5 +65,23 @@ namespace BrioPortal
             }
             return RedirectToAction("Index");
         }
+
+        public FileResult Download(int id)
+        {
+            ProjectDocument doc = projectDocumentRepository.GetById(id);
+            string path = HttpContext.Server.MapPath(doc.DocumentPath);
+            string mime = MimeMapping.GetMimeMapping(doc.DocumentPath);
+            var cd = new System.Net.Mime.ContentDisposition
+            {
+                // for example foo.bak
+                FileName = doc.DocumentTitle,
+
+                // always prompt the user for downloading, set to true if you want 
+                // the browser to try to show the file inline
+                Inline = false,
+            };
+            Response.AppendHeader("Content-Disposition", cd.ToString());
+            return File(path, mime);
+        }
     }
 }

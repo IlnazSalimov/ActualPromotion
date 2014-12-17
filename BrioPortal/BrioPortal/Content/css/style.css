@@ -76,6 +76,19 @@ h2.plus:after {
 	right: 57px;
 	top: 13px;
 }
+
+.plus_ {
+	position: absolute;
+	width:14px;
+	height:14px;
+	background-repeat:no-repeat;
+	background-image:url(../img/plus.gif);
+	z-index:10;
+	right: 57px;
+	top: 13px;
+    cursor: pointer;
+}
+
 h2 span {
 	background-color:#FF6600;
 	color:#EBEBEB;
@@ -238,13 +251,16 @@ span.news-title:after {
 	margin-bottom: 11px;
 }
 hr {
-	margin:0;
+    border: inherit;
+    border-top: inherit;
+	margin: 0;
 }
 form[name="serch"] {
 	position:relative;
 	margin-bottom: 23px;
 }
-input[type="text"], textarea {
+input[type="text"],
+input[type="file"], textarea {
 	padding:0;
 	margin:0;
 	border:1px solid #D8D9D9;
@@ -252,6 +268,8 @@ input[type="text"], textarea {
 	padding-left: 10px;
 	font-size: 11px;
 	outline:none;
+    width: 100%;
+    margin: 5px 0;
 }
 
 form[name="serch"] input[type="text"] {
@@ -320,14 +338,15 @@ form[name="serch"] button span {
 .content-right-bar form textarea {
 	width: 220px;
 	min-height: 90px;
-	margin-top: -4px;
-margin-bottom: -2px;
+    margin-bottom: -2px;
 	padding-left:0;
 }
 .content-right-bar h2 {
 	color:#ff6600;
 	font-size:18px;
 	text-align:center;
+    width: 75%;
+    margin: auto;
 }
 .project-title {
 	width: 288px;
@@ -646,6 +665,7 @@ ul.acc-open li.active {
 }
 .news-page ul li {
 	font-family:Arial, Helvetica, sans-serif;
+    padding: 0 10px;
 }
 .news-block {
 	padding:15px;
@@ -696,6 +716,11 @@ ul.acc-open li.active {
 .list-none {
 	list-style:none !important;
 }
+
+form[name="add"] {
+    padding: 10px 15px;
+}
+
 form[name="add"] p:hover, .list-none:hover {
 	background-color:transparent !important;
 }
@@ -712,8 +737,8 @@ form[name="add"] div p:last-child {
 }
 form[name="add"] .upload-wrapp {
 	float:right;
-	margin-right: 27px;
-	width: 528px;
+	margin-right: 20px;
+	width: 561px;
 }
 form[name="add"] button[type="submit"] {
 	margin-top: 5px;
@@ -764,11 +789,9 @@ form[name="enter"] input[type="text"] {
 	font-size: 12px;
 }
 form[name="enter"] button {
-	margin-top:53px;
-	
-	width:290px;
-	padding-left:15px;
-}
+	margin-top: 10px;
+    margin-right: 20px;
+    }
 form[name="enter"] button h2.creat-title span {
 	line-height:40px !important;
 	width:230px;
@@ -802,8 +825,9 @@ ul.staf-text li {
 }
 .content-right-bar form button[type="submit"]{
 	width:150px;
-	padding-left:15px;
+	padding-left:17px;
 	margin-left:-18px;
+    margin-top: 15px;
 }
 
 input[name='files']{
@@ -847,5 +871,42 @@ form.division-create .controls-container .title {
 .wrapp.news-page .divisions-container
 {
     overflow: auto;
-    max-height: 200px;
+    max-height: 240px;
+}
+
+.content-right-bar {
+    position: relative;
+}
+
+.content-right-bar.block .cont{
+    opacity: 0.2;
+}
+
+
+.content-right-bar .loader{
+    background-image: url(../img/ajax-loader.gif);
+    background-repeat: no-repeat;
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    top: 50%;
+    margin-top: -16px;
+    left: 50%;
+    margin-left: -16px;
+}
+
+.edit_pen {
+    background-image: url(../img/pen.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.content-right-bar .edit_pen
+{
+    cursor: pointer;
+    width: 20px;
+    height: 21px;
+    top: 5px;
+    right: 5px;
+    position: absolute;
 }

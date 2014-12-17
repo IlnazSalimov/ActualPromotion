@@ -1,5 +1,5 @@
-﻿@model IEnumerable<Brio.Models.News>
-@using BrioPortal
+﻿@using Brio.Models
+@model IEnumerable<News>
 
 @{
     ViewBag.Title = "Index";
@@ -13,48 +13,56 @@
             <input name="name" type="text" placeholder="ВВЕДИТЕ НАЗВАНИЕ ДОКУМЕНТА">
             <button type="submit"><h2 class="left"><span>Поиск</span></h2></button>
         </form>
-        <div class="content-right-bar">
-            <h2>Название новости</h2>
-            <div class="news-block">
-                <img src="photo/Tarasova_Ybilei.jpg" width="120" height="140" alt="staff">
-                <p class="news-text">Сегодня в нашу компанию устроилась на работу замечательная женщина. Она поможет нам в наших делах и разбавит серые будни своим присутствием. Поздравим нашу компанию с прибавлением в рядах «армии» строителей!</p>
 
-
-                <p>
-                    Автор новости: Миронов<br>
-                    Владимир Николаевич
-                </p>
-
-                <p class="news-date">10/05/2014</p>
-            </div>
-        </div>
-        <div class="content-right-bar news-form" style="display: none">
-            <h2>Создание этапа</h2>
-            @using (Html.BeginForm("Add", "News", FormMethod.Post, new { }))
+        @if (ViewBag.IsSuccess != null && ViewBag.Message != null)
+        {
+            if ((bool)ViewBag.IsSuccess)
             {
-                <p>Название: @Html.TextBox("Title")</p>
-                <p>Описание:</p>@Html.TextArea("Description", new { placeholder = "Поле ввода текста..." })
-                @Html.Hidden("ProjectId");
-
-                <button type="submit"><h2 class="right creat-title"><span>Создать</span></h2></button>
+                <div class="alert alert-success" role="alert">@ViewBag.Message</div>
             }
+            else
+            {
+                <div class="alert alert-danger" role="alert">@ViewBag.Message</div>
+            }
+        }
+
+        <div class="content-right-bar news-cont" style="display: none">
+            <div class="cont">
+                <h2 class="title"></h2>
+                <div class="news-block">
+                    <img class="news-photo" src="" width="120" height="140" alt="Фото новости">
+                    <p class="news-text"></p>
+                    <p>
+                        Автор новости:<span class="news-author"></span>
+                    </p>
+
+                    <p class="news-date"></p>
+                </div>
+                <div class="edit_pen" data-news-id=""></div>
+            </div>
+            
         </div>
 
+        @Html.Partial("CreateNewsPartial", ViewBag.News as CreateNews)
+        @Html.Partial("EditNewsPartial", ViewBag.EditNews as EditNews)
         <div class="content-left-bar">
-            <h2 class="right white plus shadow"><span class="project-title">Новости</span></h2>
+            <h2 class="right white shadow">
+                @if (User.IsInRole("Admin"))
+                {
+                    <div class="plus_"></div>
+                }
+                <span class="project-title">Новости</span>
+            </h2>
             <div class="wrapp news-page">
                 <ul>
-                    @foreach(var n in Model) {
-                        <li>
+                    @foreach (var n in Model)
+                    {
+                        <li data-news-id="@n.ID">
                             <p>
                                 <span>
                                     @n.Title
                                 </span>
                             </p>
-                            <ul>
-                                    <li>Название новости</li>
-                            </ul>
-
                         </li>
                     }
                 </ul>
@@ -62,3 +70,11 @@
         </div>
     </div>
 </section>
+
+<script>
+    (function () {
+        var _news = news();
+        console.log(_news);
+        _news.init();
+    })();
+</script>

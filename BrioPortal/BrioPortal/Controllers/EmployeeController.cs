@@ -34,13 +34,22 @@ namespace BrioPortal.Controllers
         /// </summary>
         private readonly IDivisionRepository divisionRepository;
 
+        /// <summary>
+        /// Экземпляр класса BrioContext, предоставляет доступ к системным данным приложения.
+        /// Может быть использован для доступа к текущему авторизованному пользователю
+        /// </summary>
+        private readonly IBrioContext brioContext;
+
+
         public EmployeeController(ICompanyRepository _companyRepository, IRoleRepository _roleRepository,
-            IInfoCardRepository _infoCardRepository, IDivisionRepository _divisionRepository)
+            IInfoCardRepository _infoCardRepository, IDivisionRepository _divisionRepository,
+            IBrioContext _brioContext)
         {
             this.companyRepository = _companyRepository;
             this.roleRepository = _roleRepository;
             this.infoCardRepository = _infoCardRepository;
             this.divisionRepository = _divisionRepository;
+            this.brioContext = _brioContext;
         }
         public ActionResult Index()
         {
@@ -52,7 +61,7 @@ namespace BrioPortal.Controllers
             ViewBag.Message = TempData["Message"];
             ViewBag.CreateDivision = TempData["CreateDivision"] != null ? TempData["CreateDivision"] : new CreateDivision();
 
-            return View(companyRepository.GetAll().ToList());
+            return View(divisionRepository.GetCompanyDivisions(brioContext.CurrentUser.CompanyId).ToList());
         }
 
         [HttpPost]
@@ -64,7 +73,7 @@ namespace BrioPortal.Controllers
                 {
                     Name = model.Name,
                     Head = model.Head,
-                    CompanyId = model.CompanyId
+                    CompanyId = brioContext.CurrentUser.CompanyId
                 };
 
                 try
@@ -90,7 +99,6 @@ namespace BrioPortal.Controllers
 
             TempData["IsSuccess"] = true;
             TempData["Message"] = "Отдел успешно создан!";
-            TempData["CreateDivision"] = model;
             return RedirectToAction("Index");
         }
 

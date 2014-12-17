@@ -1,0 +1,15 @@
+﻿@model Brio.Models.CreateProjectStep
+
+<div class="content-right-bar project-step-form" style="display: none">
+    <div class="cont">
+        <h2>Создание этапа</h2>
+        @using (Html.BeginForm("CreateProjectStep", "Project", FormMethod.Post, new { }))
+        {
+            <p>@Html.TextBoxFor(ps => ps.Title, new { placeholder = Html.DisplayNameFor(ps => ps.Title) })</p>
+            <p>@Html.TextAreaFor(ps => ps.Description, new { placeholder = Html.DisplayNameFor(ps => ps.Description) })</p>
+            @Html.HiddenFor(ps => ps.ProjectId)
+
+            <button type="submit"><h2 class="right creat-title"><span>Создать</span></h2></button>
+        }
+    </div>
+</div>

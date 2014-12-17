@@ -14,7 +14,7 @@ namespace Brio.Models
         /// <summary>
         /// Хранилище данных о информационных картах
         /// </summary>
-        private IInfoCardRepository infoCardRepository { get; set; }
+        private IInfoCardRepository infoCardRepository = (IInfoCardRepository)DependencyResolver.Current.GetService(typeof(IInfoCardRepository));
 
         public bool InRoles(string roles)
         {
@@ -44,7 +44,6 @@ namespace Brio.Models
         {
             get 
             {
-                infoCardRepository = (IInfoCardRepository)DependencyResolver.Current.GetService(typeof(IInfoCardRepository));
                 InfoCard infoCard = infoCardRepository.GetUserInfoCard(this.ID);
                 if (infoCard != null){
                     return infoCard.FullName;
@@ -55,5 +54,37 @@ namespace Brio.Models
                 }
             }
         }
+
+        public int CompanyId
+        {
+            get
+            {
+                InfoCard infoCard = infoCardRepository.GetUserInfoCard(this.ID);
+                if (infoCard != null)
+                {
+                    return infoCard.CompanyId;
+                }
+                else
+                {
+                    return 0;
+                }
+            }
+        }
+        public int DivisionId
+        {
+            get
+            {
+                InfoCard infoCard = infoCardRepository.GetUserInfoCard(this.ID);
+                if (infoCard != null)
+                {
+                    return infoCard.DivisionId;
+                }
+                else
+                {
+                    return 0;
+                }
+            }
+        }
+
     }
 }

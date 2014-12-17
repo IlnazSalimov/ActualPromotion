@@ -21,6 +21,11 @@ namespace Brio
             return divisionRepository.GetAll();
         }
 
+        public IQueryable<Division> GetCompanyDivisions(int companyId)
+        {
+            return divisionRepository.GetAll().Where(d => d.CompanyId == companyId);
+        }
+
         public Division GetById(int id)
         {
             return divisionRepository.GetById(id);

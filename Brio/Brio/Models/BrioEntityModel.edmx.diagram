@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="f2a340b1f43740c8bdea0d2782e6053e" Name="Diagram1">
+      <Diagram DiagramId="f2a340b1f43740c8bdea0d2782e6053e" Name="Diagram1" ZoomLevel="94">
         <EntityTypeShape EntityType="actual98_brioDbModel.Article" Width="1.5" PointX="3" PointY="21" IsExpanded="true" />
         <EntityTypeShape EntityType="actual98_brioDbModel.Company" Width="1.5" PointX="0.75" PointY="18" IsExpanded="true" />
         <EntityTypeShape EntityType="actual98_brioDbModel.CompanyWork" Width="1.5" PointX="3" PointY="15.125" IsExpanded="true" />
@@ -12,14 +12,13 @@
         <EntityTypeShape EntityType="actual98_brioDbModel.Document" Width="1.5" PointX="5.25" PointY="26.25" IsExpanded="true" />
         <EntityTypeShape EntityType="actual98_brioDbModel.Feedback" Width="1.5" PointX="3" PointY="24.625" IsExpanded="true" />
         <EntityTypeShape EntityType="actual98_brioDbModel.InfoCard" Width="1.5" PointX="8" PointY="18.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="actual98_brioDbModel.News" Width="1.5" PointX="5.25" PointY="19" IsExpanded="true" />
         <EntityTypeShape EntityType="actual98_brioDbModel.Page" Width="1.5" PointX="3" PointY="27.875" IsExpanded="true" />
         <EntityTypeShape EntityType="actual98_brioDbModel.PriceList" Width="1.5" PointX="3" PointY="32.25" IsExpanded="true" />
         <EntityTypeShape EntityType="actual98_brioDbModel.Product" Width="1.5" PointX="3" PointY="35.125" IsExpanded="true" />
         <EntityTypeShape EntityType="actual98_brioDbModel.ProjectDocument" Width="1.5" PointX="8.25" PointY="13" IsExpanded="true" />
         <EntityTypeShape EntityType="actual98_brioDbModel.Project" Width="1.5" PointX="6" PointY="13.75" IsExpanded="true" />
         <EntityTypeShape EntityType="actual98_brioDbModel.ProjectStep" Width="1.5" PointX="8.25" PointY="9.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="actual98_brioDbModel.Review" Width="1.5" PointX="3" PointY="43.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="actual98_brioDbModel.Review" Width="1.5" PointX="3" PointY="38.375" IsExpanded="true" />
         <EntityTypeShape EntityType="actual98_brioDbModel.Role" Width="1.5" PointX="1.5" PointY="11.5" IsExpanded="true" />
         <EntityTypeShape EntityType="actual98_brioDbModel.User" Width="1.5" PointX="3.75" PointY="11" IsExpanded="true" />
         <AssociationConnector Association="actual98_brioDbModel.FK__Articles__Author__1ED998B2" ManuallyRouted="false" />
@@ -29,21 +28,22 @@
         <AssociationConnector Association="actual98_brioDbModel.FK__Documents__Compa__3F466844" ManuallyRouted="false" />
         <AssociationConnector Association="actual98_brioDbModel.FK__Feedbacks__Compa__440B1D61" ManuallyRouted="false" />
         <AssociationConnector Association="actual98_brioDbModel.FK__InfoCards__Divis__6383C8BA" ManuallyRouted="false" />
-        <AssociationConnector Association="actual98_brioDbModel.FK__News__CompanyId__66603565" ManuallyRouted="false" />
         <AssociationConnector Association="actual98_brioDbModel.FK__PriceList__Compa__5441852A" ManuallyRouted="false" />
         <AssociationConnector Association="actual98_brioDbModel.FK__Products__Compan__4316F928" ManuallyRouted="false" />
         <AssociationConnector Association="actual98_brioDbModel.FK__Projects__Compan__6B24EA82" ManuallyRouted="false" />
         <AssociationConnector Association="actual98_brioDbModel.FK__Reviews__Company__46E78A0C" ManuallyRouted="false" />
-        <AssociationConnector Association="actual98_brioDbModel.FK__News__DivisionId__6754599E" ManuallyRouted="false" />
         <AssociationConnector Association="actual98_brioDbModel.FK__Documents__PageI__3D5E1FD2" ManuallyRouted="false" />
         <AssociationConnector Association="actual98_brioDbModel.FK__Documents__Produ__403A8C7D" ManuallyRouted="false" />
         <AssociationConnector Association="actual98_brioDbModel.FK__InfoCards__UserI__628FA481" ManuallyRouted="false" />
-        <AssociationConnector Association="actual98_brioDbModel.FK__News__AuthorUser__68487DD7" ManuallyRouted="false" />
         <AssociationConnector Association="actual98_brioDbModel.FK__ProjectDo__Proje__49C3F6B7" ManuallyRouted="false" />
         <AssociationConnector Association="actual98_brioDbModel.FK__Projects__Respon__6C190EBB" ManuallyRouted="false" />
         <AssociationConnector Association="actual98_brioDbModel.FK__ProjectSt__Proje__4BAC3F29" ManuallyRouted="false" />
         <AssociationConnector Association="actual98_brioDbModel.FK__Users__RoleId__1BFD2C07" ManuallyRouted="false" />
         <AssociationConnector Association="actual98_brioDbModel.FK__InfoCards__Divis__5812160E" />
+        <EntityTypeShape EntityType="actual98_brioDbModel.News" Width="1.5" PointX="11" PointY="15.375" />
+        <AssociationConnector Association="actual98_brioDbModel.FK__News__CompanyId__66603565" />
+        <AssociationConnector Association="actual98_brioDbModel.FK__News__DivisionId__6754599E" />
+        <AssociationConnector Association="actual98_brioDbModel.FK__News__AuthorUser__68487DD7" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

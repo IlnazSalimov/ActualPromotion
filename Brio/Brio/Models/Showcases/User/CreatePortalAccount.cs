@@ -18,7 +18,6 @@ namespace Brio.Models
         [Display(Name = "Пароль")]
         public string Password { get; set; }
 
-        [Required]
         [Display(Name = "Должность")]
         public string Post { get; set; }
 
@@ -42,8 +41,8 @@ namespace Brio.Models
         public string Phone { get; set; }
 
         [Required]
-        [Display(Name = "Компания")]
-        public int CompanyId { get; set; }
+        [Display(Name = "Отдел")]
+        public int DivisionId { get; set; }
 
         [Required]
         public int RoleId { get; set; }

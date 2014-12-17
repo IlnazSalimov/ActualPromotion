@@ -16,8 +16,18 @@
                 <h2 class="left"><span>Поиск</span></h2>
             </button>
         </form>
-
-        <div class="content-right-bar account-create-form" style="display: none">
+        @if (ViewBag.IsSuccess != null && ViewBag.Message != null)
+        {
+            if ((bool)ViewBag.IsSuccess)
+            {
+                <div class="alert alert-success" role="alert">@ViewBag.Message</div>
+            }
+            else
+            {
+                <div class="alert alert-danger" role="alert">@ViewBag.Message</div>
+            }
+        }
+        <div class="content-right-bar account-create-form">
             <h2>Создание аккаунта</h2>
             @using (Html.BeginForm("SignUp", "Account", FormMethod.Post, new { @class = "acc-form" }))
             {
@@ -54,8 +64,8 @@
                     @Html.TextBoxFor(a => a.Post)
                 </p>
                 <p>
-                    @Html.LabelFor(a => a.CompanyId):
-                    @Html.DropDownListFor(a => a.CompanyId, ViewBag.Companies as SelectList, "Выберите компанию")
+                    @Html.LabelFor(a => a.DivisionId):
+                    @Html.DropDownListFor(a => a.DivisionId, ViewBag.Divisions as SelectList, "Выберите отдел")
                 </p>
                 <p>
                     @Html.LabelFor(a => a.RememberMe):
@@ -68,20 +78,21 @@
                 </button>
             }
         </div>
-        <div class="content-right-bar info-card" style="display: none">
-            <h2>Карточка сотрудника</h2>
-            <div class="staf">
-                <img src="photo/Tarasova_Ybilei.jpg" width="120" height="140" alt="staff">
-                <h3 class="names">
-                </h3>
+        <div class="content-right-bar info-card active" style="display: none">
+            <div class="cont">
+                <h2>Карточка сотрудника</h2>
+                <div class="staf">
+                    <img src="photo/Tarasova_Ybilei.jpg" width="120" height="140" alt="staff">
+                    <h3 class="names"></h3>
 
-                <ul class="staf-text">
-                    <li class="company">Компания: <span></span></li>
-                    <li>&nbsp;</li>
-                    <li>Личные данные:<span></span></li>
-                    <li class="phone">тел. <span></span></li>
-                    <li class="email">е-mail: <span></span></li>
-                </ul>
+                    <ul class="staf-text">
+                        <li class="company">Компания: <span></span></li>
+                        <li>&nbsp;</li>
+                        <li>Личные данные:<span></span></li>
+                        <li class="phone">тел. <span></span></li>
+                        <li class="email">е-mail: <span></span></li>
+                    </ul>
+                </div>
             </div>
         </div>
         <div class="content-left-bar">
@@ -89,7 +100,7 @@
             <div class="wrapp accaunt-page">
                 <ul>
                     <li>
-                        <p><span>Администратор</span></p>
+                        <p class="dropdown"><span>Администратор</span></p>
                         <ul>
                             @foreach (var a in (IEnumerable<InfoCard>)ViewBag.Admins)
                             {
@@ -98,7 +109,7 @@
                         </ul>
                     </li>
                     <li>
-                        <p><span>Проект-менеджер</span></p>
+                        <p class="dropdown"><span>Проект-менеджер</span></p>
                         <ul>
                             @foreach (var a in (IEnumerable<InfoCard>)ViewBag.ProjectManager)
                             {
@@ -107,7 +118,7 @@
                         </ul>
                     </li>
                     <li>
-                        <p><span>Клиент</span></p>
+                        <p class="dropdown"><span>Клиент</span></p>
                         <ul>
                             @foreach (var a in (IEnumerable<InfoCard>)ViewBag.Clients)
                             {
@@ -116,7 +127,7 @@
                         </ul>
                     </li>
                     <li>
-                        <p><span>Сотрудник</span></p>
+                        <p class="dropdown"><span>Сотрудник</span></p>
                         <ul>
                             @foreach (var a in (IEnumerable<InfoCard>)ViewBag.Employees)
                             {
@@ -139,11 +150,6 @@
                 $(document).ready(function () {
                     var _infoCardPanel = new infoCardPanel();
                     _infoCardPanel.init();
-
-                    var firstInfoCardId = $(".accaunt-page ul ul li").first().attr("data-infocard-id");
-                    _infoCardPanel.getInfoCard(firstInfoCardId, function (infocard) {
-                        _infoCardPanel.show(infocard);
-                    });
                 });
             </script>
         </div>

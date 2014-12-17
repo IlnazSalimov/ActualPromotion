@@ -10,8 +10,10 @@ namespace Brio.Models
     public class CreateProjectStep
     {
         [Required]
+        [Display(Name = "Название")]
         public string Title { get; set; }
         [Required]
+        [Display(Name = "Описание")]
         public string Description { get; set; }
         [Required]
         public int ProjectId { get; set; }

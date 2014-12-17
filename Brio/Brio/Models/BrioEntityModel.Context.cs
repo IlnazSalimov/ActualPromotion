@@ -32,7 +32,6 @@ namespace Brio.Models
         public virtual DbSet<Document> Documents { get; set; }
         public virtual DbSet<Feedback> Feedbacks { get; set; }
         public virtual DbSet<InfoCard> InfoCards { get; set; }
-        public virtual DbSet<News> News { get; set; }
         public virtual DbSet<Page> Pages { get; set; }
         public virtual DbSet<PriceList> PriceLists { get; set; }
         public virtual DbSet<Product> Products { get; set; }
@@ -42,5 +41,6 @@ namespace Brio.Models
         public virtual DbSet<Review> Reviews { get; set; }
         public virtual DbSet<Role> Roles { get; set; }
         public virtual DbSet<User> Users { get; set; }
+        public virtual DbSet<News> News { get; set; }
     }
 }

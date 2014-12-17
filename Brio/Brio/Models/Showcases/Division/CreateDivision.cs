@@ -15,8 +15,5 @@ namespace Brio.Models
         [Required]
         [Display(Name = "Руководство")]
         public string Head { get; set; }
-        [Required]
-        [Display(Name = "Компания")]
-        public int CompanyId { get; set; }
     }
 }

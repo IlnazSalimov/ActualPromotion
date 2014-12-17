@@ -20,7 +20,7 @@
                     @foreach (var p in Model)
                     {
                         <li>
-                            <p class="proj_title">
+                            <p class="proj_title dropdown">
                                 <span>
                                     Проект: @p.Tile
                                 </span>
@@ -28,24 +28,22 @@
                             <ul>
                                 @foreach (var d in p.ProjectDocuments)
                                 {
-                                    <li>@d.DocumentTitle</li>
+                                    <li>@Html.ActionLink(d.DocumentTitle, "Download", new { id = d.ID})</li>
                                 }
                                 <li class="list-none">
                                     <p class="add">Добавить файл</p>
                                     @using (Html.BeginForm("Add", "ProjectDocument", FormMethod.Post, new { enctype = "multipart/form-data", name = "add" }))
                                     {
                                         <p>
-                                            Название:
-                                            <input id="Title" name="Title" type="text">
+                                            @Html.TextBox("Title", "", new { placeholder = "Название" })
                                             @Html.Hidden("ProjectId", p.ID)
                                         </p>
-                                        <div>
+                                        <p>
                                             <p class="upload-wrapp">
                                                 <button onclick="return false;" id="upload" class="open-file">Открыть</button>
-                                                <input id="files" type="file" name="files" />
+                                                @Html.TextBox("files", "", new { type = "file" })
                                             </p>
-                                            <p>Файл:</p>
-                                        </div>
+                                        </p>
                                         <button type="submit">
                                             <h2 class="right creat-title"><span>Добавить</span></h2>
                                         </button>

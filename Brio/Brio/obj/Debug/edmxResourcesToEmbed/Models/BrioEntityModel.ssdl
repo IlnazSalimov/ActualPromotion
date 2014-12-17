@@ -97,6 +97,7 @@
     <Property Name="CreateDate" Type="datetime" Nullable="false" />
     <Property Name="Title" Type="varchar" MaxLength="255" Nullable="false" />
     <Property Name="Text" Type="varchar(max)" Nullable="false" />
+    <Property Name="PhotoPath" Type="varchar" MaxLength="255" Nullable="false" />
   </EntityType>
   <EntityType Name="Pages">
     <Key>

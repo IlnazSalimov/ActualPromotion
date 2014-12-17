@@ -155,6 +155,7 @@
     <Content Include="Content\css\style.css" />
     <Content Include="Content\img\add-file.png" />
     <Content Include="Content\img\add.gif" />
+    <Content Include="Content\img\ajax-loader.gif" />
     <Content Include="Content\img\arrow.png" />
     <Content Include="Content\img\big-plus.png" />
     <Content Include="Content\img\dark_gray.png" />
@@ -164,6 +165,7 @@
     <Content Include="Content\img\left-side.gif" />
     <Content Include="Content\img\main-bg.png" />
     <Content Include="Content\img\open.png" />
+    <Content Include="Content\img\pen.png" />
     <Content Include="Content\img\plus.gif" />
     <Content Include="Content\img\right-side-rot.gif" />
     <Content Include="Content\img\right-side.gif" />
@@ -191,6 +193,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Files\NewsPhoto\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -238,6 +241,18 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Employee\CreateDivisionPartial.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Project\CreateProjectStepPartial.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Project\CreateProjectPartial.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\News\CreateNewsPartial.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\News\EditNewsPartial.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

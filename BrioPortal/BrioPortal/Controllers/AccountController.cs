@@ -66,29 +66,44 @@ namespace BrioPortal.Controllers
         [HttpPost]
         public ActionResult Login(LoginUser model, string ReturnUrl)
         {
+            string message;
             if (ModelState.IsValid)
             {
                 var user = _userRepository.GetByEmail(model.Email);
-                var userInfo = _infoCardRepository.GetUserInfoCard(user.ID);
 
-                if (user != null && userInfo != null)
+                if (user != null)
                 {
-                    _brioContext.Auth.Login(model.Email, model.Password, model.RememberMe);
-
-                    if (Url.IsLocalUrl(ReturnUrl))
+                    var userInfo = _infoCardRepository.GetUserInfoCard(user.ID);
+                    if (userInfo != null)
                     {
-                        return Redirect(ReturnUrl);
+                        _brioContext.Auth.Login(model.Email, model.Password, model.RememberMe);
+
+                        if (Url.IsLocalUrl(ReturnUrl))
+                        {
+                            return Redirect(ReturnUrl);
+                        }
+                        else
+                        {
+                            return RedirectToAction("Index", "Home");
+                        }
                     }
                     else
                     {
-                        return RedirectToAction("Index", "Home");
+                        message = "Имя пользователя или пароль является не корректным";
                     }
                 }
                 else
                 {
-                    ModelState.AddModelError("", "Имя пользователя или пароль является не корректным.");
+                    message = "Имя пользователя или пароль является не корректным";
                 }
             }
+            else
+            {
+                message = "Не заполнены все поля. Пожалуйста заполните все поля и повторите попытку";
+            }
+
+            ViewBag.IsSuccess = false;
+            ViewBag.Message = message;
 
             return View(model);
         }
@@ -114,25 +129,59 @@ namespace BrioPortal.Controllers
                 Regex rgx = new Regex("^[a-z0-9_\\+-]+(\\.[a-z0-9_\\+-]+)*@[a-z0-9-]+(\\.[a-z0-9-]+)*\\.([a-z]{2,4})$");
                 if (!rgx.IsMatch(model.Email))
                 {
-                    return View();
+                    TempData["IsSuccess"] = false;
+                    TempData["Message"] = "Введен некорректный e-mail.";
+                    TempData["Account"] = model;
+                    return RedirectToAction("Index", "Home");
                 }
 
                 var anyUser = _userRepository.GetAll().Any(p => p.Email.Equals(model.Email)) && _infoCardRepository.GetAll().Any(p => p.Email.Equals(model.Email));
                 if (anyUser)
                 {
-                    return View(model);
+                    TempData["IsSuccess"] = false;
+                    TempData["Message"] = "Аккаунт с этим e-mail уже существует. Аккаунт не был создан.";
+                    TempData["Account"] = model;
+                    return RedirectToAction("Index", "Home");
                 }
 
                 if (!model.Password.Equals(model.ConfirmPassword))
                 {
-                    return View(model);
+                    TempData["IsSuccess"] = false;
+                    TempData["Message"] = "Пароли не совпадают.";
+                    TempData["Account"] = model;
+                    return RedirectToAction("Index", "Home");
                 }
 
-                int userId = _userRepository.Insert(new User { Email = model.Email, Password = model.Password, RoleId = model.RoleId });
-                _infoCardRepository.Insert(new InfoCard { CompanyId = model.CompanyId, Email = model.Email, Name = model.Name, Surname = model.Surname, Patronymic = model.Patronymic, Phone = model.Phone, UserId = userId });
+                int userId = _userRepository.Insert(new User {
+                    Email = model.Email,
+                    Password = model.Password,
+                    RoleId = model.RoleId
+                });
+                _infoCardRepository.Insert(new InfoCard { 
+                    CompanyId = _brioContext.CurrentUser.CompanyId,
+                    Email = model.Email,
+                    Name = model.Name,
+                    Surname = model.Surname,
+                    Patronymic = model.Patronymic,
+                    Phone = model.Phone,
+                    UserId = userId,
+                    DivisionId = model.DivisionId,
+                });
 
                 _userRepository.SaveChanges();
             }
+            else
+            {
+                TempData["IsSuccess"] = false;
+                TempData["Message"] = "Не заполнены все поля. Пожалуйста повторите попытку заполнив все поля.";
+                TempData["Account"] = model;
+                return RedirectToAction("Index", "Home");
+            }
+
+            TempData["IsSuccess"] = true;
+            TempData["Message"] = "Аккаунт успешно создан!";
+            return RedirectToAction("Index", "Home");
+
             if(model.RoleId == (int)Roles.Admin)
                 return RedirectToAction("Index", "Home");
             else
