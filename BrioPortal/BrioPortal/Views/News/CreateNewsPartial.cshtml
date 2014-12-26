@@ -3,7 +3,7 @@
 @if(User.IsInRole("Admin"))
 { 
     <div class="content-right-bar news-form">
-        <h2>Создание этапа</h2>
+        <h2>Создание новости</h2>
         @using (Html.BeginForm("Add", "News", FormMethod.Post, new { enctype = "multipart/form-data" }))
         {
             <p>@Html.TextBoxFor(n => n.Title, new { placeholder = Html.DisplayNameFor(n => n.Title) })</p>

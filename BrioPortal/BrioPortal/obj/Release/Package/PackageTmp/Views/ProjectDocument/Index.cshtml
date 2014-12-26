@@ -1,0 +1,75 @@
+﻿@model IEnumerable<Brio.Models.Project>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Layouts/DefaultLayouts.cshtml";
+}
+<section>
+    @Html.Partial("RightBarNews")
+    <div class="content">
+        <form action="" method="post" name="serch">
+            <input name="name" type="text" placeholder="ВВЕДИТЕ НАЗВАНИЕ ДОКУМЕНТА">
+            <button type="submit"><h2 class="left"><span>Поиск</span></h2></button>
+        </form>
+
+        @if (ViewBag.IsSuccess != null && ViewBag.Message != null)
+        {
+            if ((bool)ViewBag.IsSuccess)
+            {
+                <div class="alert alert-success" role="alert">@ViewBag.Message</div>
+            }
+            else
+            {
+                <div class="alert alert-danger" role="alert">@ViewBag.Message</div>
+            }
+        }
+
+        <div class="content-left-bar doks-page">
+            <h2 class="right white shadow"><span class="project-title">Документы</span></h2>
+            <div class="wrapp">
+
+                <ul>
+                    @foreach (var p in Model)
+                    {
+                        <li>
+                            <p class="proj_title dropdown">
+                                <span>
+                                    Проект: @p.Tile
+                                </span>
+                            </p>
+                            <ul>
+                                @foreach (var d in p.ProjectDocuments)
+                                {
+                                    <li>@Html.ActionLink(d.DocumentTitle, "Download", new { id = d.ID})
+                                        @if(User.IsInRole("Admin")){
+                                             <a href="ProjectDocument/Delete/@d.ID" onclick="return confirm('Удалить этот документ?')"><i class="fa fa-times"></i></a>
+                                        }
+                                    </li>
+                                }
+                                <li class="list-none">
+                                    <p class="add">Добавить файл</p>
+                                    @using (Html.BeginForm("Add", "ProjectDocument", FormMethod.Post, new { enctype = "multipart/form-data", name = "add" }))
+                                    {
+                                        <p>
+                                            @Html.TextBox("Title", "", new { placeholder = "Название" })
+                                            @Html.Hidden("ProjectId", p.ID)
+                                        </p>
+                                        <p>
+                                            <p class="upload-wrapp">
+                                                <button onclick="return false;" id="upload" class="open-file">Открыть</button>
+                                                @Html.TextBox("files", "", new { type = "file" })
+                                            </p>
+                                        </p>
+                                        <button type="submit">
+                                            <h2 class="right creat-title"><span>Добавить</span></h2>
+                                        </button>
+                                    }
+                                </li>
+                            </ul>
+                        </li>
+                    }
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>

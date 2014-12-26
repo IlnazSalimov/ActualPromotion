@@ -72,6 +72,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BrioAppSetting.cs" />
     <Compile Include="BrioContext\BrioContext.cs" />
     <Compile Include="BrioContext\CustomAuthentication.cs" />
     <Compile Include="BrioContext\HttpModules\AuthHttpModule.cs" />
@@ -189,10 +190,12 @@
     <Compile Include="Models\Showcases\ProjectDocument\CreateProjectDocument.cs" />
     <Compile Include="Models\Showcases\ProjectStep\CreateProjectStep.cs" />
     <Compile Include="Models\Showcases\Project\CreateProject.cs" />
+    <Compile Include="Models\Showcases\Project\EditProject.cs" />
     <Compile Include="Models\Showcases\Review\EditReviewContent.cs" />
     <Compile Include="Models\Showcases\Review\ReviewContent.cs" />
     <Compile Include="Models\Showcases\SendFeedback.cs" />
     <Compile Include="Models\Showcases\User\CreatePortalAccount.cs" />
+    <Compile Include="Models\Showcases\User\EditPortalAccount.cs" />
     <Compile Include="Models\Showcases\User\LoginUser.cs" />
     <Compile Include="Models\Showcases\User\SignupUser.cs" />
     <Compile Include="Models\User.cs">
@@ -203,7 +206,7 @@
     <Compile Include="Repository\Implementations\CompanyRepository.cs" />
     <Compile Include="Repository\Implementations\CompanyWorkRepository.cs" />
     <Compile Include="Repository\Implementations\DivisionRepository.cs" />
-    <Compile Include="Repository\Implementations\INewsRepository.cs" />
+    <Compile Include="Repository\Implementations\NewsRepository.cs" />
     <Compile Include="Repository\Implementations\ProjectStepRepository.cs" />
     <Compile Include="Repository\Interfaces\IDivisionRepository.cs" />
     <Compile Include="Repository\Interfaces\INewsRepository.cs" />

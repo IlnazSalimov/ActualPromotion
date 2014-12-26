@@ -21,6 +21,11 @@ namespace Brio
             return _projectRepository.GetAll();
         }
 
+        public IQueryable<Project> GetCompanyProjects()
+        {
+            return _projectRepository.GetAll().Where(p => p.CompanyId == BrioAppSettings.CurrentUserCompany);
+        }
+
         public Project GetById(int id)
         {
             if (id == 0)

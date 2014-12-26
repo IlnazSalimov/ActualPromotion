@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="actual98_brioDbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="BrioEntityModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Articles">
           <Key>
             <PropertyRef Name="ArticleID" />
@@ -85,11 +85,12 @@
           <Property Name="BirthDay" Type="datetime" />
           <Property Name="Name" Type="varchar" MaxLength="255" Nullable="false" />
           <Property Name="Surname" Type="varchar" MaxLength="255" Nullable="false" />
-          <Property Name="Patronymic" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="Patronymic" Type="varchar" MaxLength="255" />
           <Property Name="Adress" Type="varchar" MaxLength="255" />
-          <Property Name="Phone" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="Phone" Type="varchar" MaxLength="255" />
           <Property Name="Email" Type="varchar" MaxLength="255" Nullable="false" />
-          <Property Name="DivisionId" Type="int" Nullable="false" />
+          <Property Name="DivisionId" Type="int" />
+          <Property Name="AvatarUrl" Type="varchar" MaxLength="255" />
         </EntityType>
         <EntityType Name="News">
           <Key>
@@ -97,7 +98,6 @@
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="CompanyId" Type="int" Nullable="false" />
-          <Property Name="DivisionId" Type="int" Nullable="false" />
           <Property Name="AuthorUserId" Type="int" Nullable="false" />
           <Property Name="CreateDate" Type="datetime" Nullable="false" />
           <Property Name="Title" Type="varchar" MaxLength="255" Nullable="false" />
@@ -288,18 +288,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__InfoCards__Divis__5812160E">
-          <End Role="Divisions" Type="Self.Divisions" Multiplicity="1" />
-          <End Role="InfoCards" Type="Self.InfoCards" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Divisions">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="InfoCards">
-              <PropertyRef Name="DivisionId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK__InfoCards__Divis__6383C8BA">
           <End Role="Companies" Type="Self.Companies" Multiplicity="1" />
           <End Role="InfoCards" Type="Self.InfoCards" Multiplicity="*" />
@@ -345,18 +333,6 @@
             </Principal>
             <Dependent Role="News">
               <PropertyRef Name="CompanyId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__News__DivisionId__6754599E">
-          <End Role="Divisions" Type="Self.Divisions" Multiplicity="1" />
-          <End Role="News" Type="Self.News" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Divisions">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="News">
-              <PropertyRef Name="DivisionId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -456,7 +432,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="actual98_brioDbModelStoreContainer">
+        <EntityContainer Name="BrioEntityModelStoreContainer">
           <EntitySet Name="Articles" EntityType="Self.Articles" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Companies" EntityType="Self.Companies" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CompanyWorks" EntityType="Self.CompanyWorks" Schema="dbo" store:Type="Tables" />
@@ -506,10 +482,6 @@
             <End Role="Companies" EntitySet="Companies" />
             <End Role="Feedbacks" EntitySet="Feedbacks" />
           </AssociationSet>
-          <AssociationSet Name="FK__InfoCards__Divis__5812160E" Association="Self.FK__InfoCards__Divis__5812160E">
-            <End Role="Divisions" EntitySet="Divisions" />
-            <End Role="InfoCards" EntitySet="InfoCards" />
-          </AssociationSet>
           <AssociationSet Name="FK__InfoCards__Divis__6383C8BA" Association="Self.FK__InfoCards__Divis__6383C8BA">
             <End Role="Companies" EntitySet="Companies" />
             <End Role="InfoCards" EntitySet="InfoCards" />
@@ -524,10 +496,6 @@
           </AssociationSet>
           <AssociationSet Name="FK__News__CompanyId__66603565" Association="Self.FK__News__CompanyId__66603565">
             <End Role="Companies" EntitySet="Companies" />
-            <End Role="News" EntitySet="News" />
-          </AssociationSet>
-          <AssociationSet Name="FK__News__DivisionId__6754599E" Association="Self.FK__News__DivisionId__6754599E">
-            <End Role="Divisions" EntitySet="Divisions" />
             <End Role="News" EntitySet="News" />
           </AssociationSet>
           <AssociationSet Name="FK__PriceList__Compa__5441852A" Association="Self.FK__PriceList__Compa__5441852A">
@@ -566,7 +534,7 @@
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="actual98_brioDbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="BrioEntityModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="Article">
           <Key>
             <PropertyRef Name="ArticleID" />
@@ -604,7 +572,7 @@
           <NavigationProperty Name="Products" Relationship="Self.FK__Products__Compan__4316F928" FromRole="Companies" ToRole="Products" />
           <NavigationProperty Name="Projects" Relationship="Self.FK__Projects__Compan__6B24EA82" FromRole="Companies" ToRole="Projects" />
           <NavigationProperty Name="Reviews" Relationship="Self.FK__Reviews__Company__46E78A0C" FromRole="Companies" ToRole="Reviews" />
-          <NavigationProperty Name="News" Relationship="actual98_brioDbModel.FK__News__CompanyId__66603565" FromRole="Company" ToRole="News" />
+          <NavigationProperty Name="News" Relationship="BrioEntityModel.FK__News__CompanyId__66603565" FromRole="Company" ToRole="News" />
         </EntityType>
         <EntityType Name="CompanyWork">
           <Key>
@@ -626,8 +594,6 @@
           <Property Name="Head" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="CompanyId" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Company" Relationship="Self.FK__Divisions__Compa__5CD6CB2B" FromRole="Divisions" ToRole="Companies" />
-          <NavigationProperty Name="InfoCards" Relationship="actual98_brioDbModel.FK__InfoCards__Divis__5812160E" FromRole="Division" ToRole="InfoCard" />
-          <NavigationProperty Name="News" Relationship="actual98_brioDbModel.FK__News__DivisionId__6754599E" FromRole="Division" ToRole="News" />
         </EntityType>
         <EntityType Name="Document">
           <Key>
@@ -668,14 +634,14 @@
           <Property Name="BirthDay" Type="DateTime" Precision="3" />
           <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Surname" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Patronymic" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Patronymic" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
           <Property Name="Adress" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="Phone" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Phone" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
           <Property Name="Email" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DivisionId" Type="Int32" />
+          <Property Name="AvatarUrl" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Company" Relationship="Self.FK__InfoCards__Divis__6383C8BA" FromRole="InfoCards" ToRole="Companies" />
           <NavigationProperty Name="User" Relationship="Self.FK__InfoCards__UserI__628FA481" FromRole="InfoCards" ToRole="Users" />
-          <Property Name="DivisionId" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Division" Relationship="actual98_brioDbModel.FK__InfoCards__Divis__5812160E" FromRole="InfoCard" ToRole="Division" />
         </EntityType>
         <EntityType Name="Page">
           <Key>
@@ -780,7 +746,7 @@
           <NavigationProperty Name="InfoCards" Relationship="Self.FK__InfoCards__UserI__628FA481" FromRole="Users" ToRole="InfoCards" />
           <NavigationProperty Name="Projects" Relationship="Self.FK__Projects__Respon__6C190EBB" FromRole="Users" ToRole="Projects" />
           <NavigationProperty Name="Role" Relationship="Self.FK__Users__RoleId__1BFD2C07" FromRole="Users" ToRole="Roles" />
-          <NavigationProperty Name="News" Relationship="actual98_brioDbModel.FK__News__AuthorUser__68487DD7" FromRole="User" ToRole="News" />
+          <NavigationProperty Name="News" Relationship="BrioEntityModel.FK__News__AuthorUser__68487DD7" FromRole="User" ToRole="News" />
         </EntityType>
         <Association Name="FK__Articles__Author__1ED998B2">
           <End Role="Users" Type="Self.User" Multiplicity="1" />
@@ -1087,55 +1053,33 @@
             <End Role="Roles" EntitySet="Roles" />
             <End Role="Users" EntitySet="Users" />
           </AssociationSet>
-          <AssociationSet Name="FK__InfoCards__Divis__5812160E" Association="actual98_brioDbModel.FK__InfoCards__Divis__5812160E">
-            <End Role="Division" EntitySet="Divisions" />
-            <End Role="InfoCard" EntitySet="InfoCards" />
-          </AssociationSet>
-          <EntitySet Name="News" EntityType="actual98_brioDbModel.News" />
-          <AssociationSet Name="FK__News__CompanyId__66603565" Association="actual98_brioDbModel.FK__News__CompanyId__66603565">
+          <EntitySet Name="News" EntityType="BrioEntityModel.News" />
+          <AssociationSet Name="FK__News__CompanyId__66603565" Association="BrioEntityModel.FK__News__CompanyId__66603565">
             <End Role="Company" EntitySet="Companies" />
             <End Role="News" EntitySet="News" />
           </AssociationSet>
-          <AssociationSet Name="FK__News__DivisionId__6754599E" Association="actual98_brioDbModel.FK__News__DivisionId__6754599E">
-            <End Role="Division" EntitySet="Divisions" />
-            <End Role="News" EntitySet="News" />
-          </AssociationSet>
-          <AssociationSet Name="FK__News__AuthorUser__68487DD7" Association="actual98_brioDbModel.FK__News__AuthorUser__68487DD7">
+          <AssociationSet Name="FK__News__AuthorUser__68487DD7" Association="BrioEntityModel.FK__News__AuthorUser__68487DD7">
             <End Role="User" EntitySet="Users" />
             <End Role="News" EntitySet="News" />
           </AssociationSet>
         </EntityContainer>
-        <Association Name="FK__InfoCards__Divis__5812160E">
-          <End Type="actual98_brioDbModel.Division" Role="Division" Multiplicity="1" />
-          <End Type="actual98_brioDbModel.InfoCard" Role="InfoCard" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Division">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="InfoCard">
-              <PropertyRef Name="DivisionId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityType Name="News">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="CompanyId" Type="Int32" Nullable="false" />
-          <Property Name="DivisionId" Type="Int32" Nullable="false" />
           <Property Name="AuthorUserId" Type="Int32" Nullable="false" />
           <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="Title" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
           <Property Name="Text" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="PhotoPath" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="Company" Relationship="actual98_brioDbModel.FK__News__CompanyId__66603565" FromRole="News" ToRole="Company" />
-          <NavigationProperty Name="Division" Relationship="actual98_brioDbModel.FK__News__DivisionId__6754599E" FromRole="News" ToRole="Division" />
-          <NavigationProperty Name="User" Relationship="actual98_brioDbModel.FK__News__AuthorUser__68487DD7" FromRole="News" ToRole="User" />
+          <NavigationProperty Name="Company" Relationship="BrioEntityModel.FK__News__CompanyId__66603565" FromRole="News" ToRole="Company" />
+          <NavigationProperty Name="User" Relationship="BrioEntityModel.FK__News__AuthorUser__68487DD7" FromRole="News" ToRole="User" />
         </EntityType>
         <Association Name="FK__News__CompanyId__66603565">
-          <End Type="actual98_brioDbModel.Company" Role="Company" Multiplicity="1" />
-          <End Type="actual98_brioDbModel.News" Role="News" Multiplicity="*" />
+          <End Type="BrioEntityModel.Company" Role="Company" Multiplicity="1" />
+          <End Type="BrioEntityModel.News" Role="News" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Company">
               <PropertyRef Name="Id" />
@@ -1145,21 +1089,9 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__News__DivisionId__6754599E">
-          <End Type="actual98_brioDbModel.Division" Role="Division" Multiplicity="1" />
-          <End Type="actual98_brioDbModel.News" Role="News" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Division">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="News">
-              <PropertyRef Name="DivisionId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK__News__AuthorUser__68487DD7">
-          <End Type="actual98_brioDbModel.User" Role="User" Multiplicity="1" />
-          <End Type="actual98_brioDbModel.News" Role="News" Multiplicity="*" />
+          <End Type="BrioEntityModel.User" Role="User" Multiplicity="1" />
+          <End Type="BrioEntityModel.News" Role="News" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="User">
               <PropertyRef Name="Id" />
@@ -1174,9 +1106,9 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="actual98_brioDbModelStoreContainer" CdmEntityContainer="Entities">
+        <EntityContainerMapping StorageEntityContainer="BrioEntityModelStoreContainer" CdmEntityContainer="Entities">
           <EntitySetMapping Name="Articles">
-            <EntityTypeMapping TypeName="actual98_brioDbModel.Article">
+            <EntityTypeMapping TypeName="BrioEntityModel.Article">
               <MappingFragment StoreEntitySet="Articles">
                 <ScalarProperty Name="ArticleID" ColumnName="ArticleID" />
                 <ScalarProperty Name="Title" ColumnName="Title" />
@@ -1189,7 +1121,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Companies">
-            <EntityTypeMapping TypeName="actual98_brioDbModel.Company">
+            <EntityTypeMapping TypeName="BrioEntityModel.Company">
               <MappingFragment StoreEntitySet="Companies">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
@@ -1204,7 +1136,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="CompanyWorks">
-            <EntityTypeMapping TypeName="actual98_brioDbModel.CompanyWork">
+            <EntityTypeMapping TypeName="BrioEntityModel.CompanyWork">
               <MappingFragment StoreEntitySet="CompanyWorks">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
@@ -1215,7 +1147,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Divisions">
-            <EntityTypeMapping TypeName="actual98_brioDbModel.Division">
+            <EntityTypeMapping TypeName="BrioEntityModel.Division">
               <MappingFragment StoreEntitySet="Divisions">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -1225,7 +1157,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Documents">
-            <EntityTypeMapping TypeName="actual98_brioDbModel.Document">
+            <EntityTypeMapping TypeName="BrioEntityModel.Document">
               <MappingFragment StoreEntitySet="Documents">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
@@ -1238,7 +1170,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Feedbacks">
-            <EntityTypeMapping TypeName="actual98_brioDbModel.Feedback">
+            <EntityTypeMapping TypeName="BrioEntityModel.Feedback">
               <MappingFragment StoreEntitySet="Feedbacks">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -1250,9 +1182,8 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="InfoCards">
-            <EntityTypeMapping TypeName="actual98_brioDbModel.InfoCard">
+            <EntityTypeMapping TypeName="BrioEntityModel.InfoCard">
               <MappingFragment StoreEntitySet="InfoCards">
-                <ScalarProperty Name="DivisionId" ColumnName="DivisionId" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="UserId" ColumnName="UserId" />
                 <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
@@ -1265,11 +1196,13 @@
                 <ScalarProperty Name="Adress" ColumnName="Adress" />
                 <ScalarProperty Name="Phone" ColumnName="Phone" />
                 <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="DivisionId" ColumnName="DivisionId" />
+                <ScalarProperty Name="AvatarUrl" ColumnName="AvatarUrl" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Pages">
-            <EntityTypeMapping TypeName="actual98_brioDbModel.Page">
+            <EntityTypeMapping TypeName="BrioEntityModel.Page">
               <MappingFragment StoreEntitySet="Pages">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="PageName" ColumnName="PageName" />
@@ -1277,7 +1210,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="PriceLists">
-            <EntityTypeMapping TypeName="actual98_brioDbModel.PriceList">
+            <EntityTypeMapping TypeName="BrioEntityModel.PriceList">
               <MappingFragment StoreEntitySet="PriceLists">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
@@ -1288,7 +1221,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Products">
-            <EntityTypeMapping TypeName="actual98_brioDbModel.Product">
+            <EntityTypeMapping TypeName="BrioEntityModel.Product">
               <MappingFragment StoreEntitySet="Products">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Title" ColumnName="Title" />
@@ -1298,7 +1231,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="ProjectDocuments">
-            <EntityTypeMapping TypeName="actual98_brioDbModel.ProjectDocument">
+            <EntityTypeMapping TypeName="BrioEntityModel.ProjectDocument">
               <MappingFragment StoreEntitySet="ProjectDocuments">
                 <ScalarProperty Name="DocumentPath" ColumnName="DocumentPath" />
                 <ScalarProperty Name="DocumentTitle" ColumnName="DocumentTitle" />
@@ -1309,7 +1242,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Projects">
-            <EntityTypeMapping TypeName="actual98_brioDbModel.Project">
+            <EntityTypeMapping TypeName="BrioEntityModel.Project">
               <MappingFragment StoreEntitySet="Projects">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
@@ -1323,7 +1256,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="ProjectSteps">
-            <EntityTypeMapping TypeName="actual98_brioDbModel.ProjectStep">
+            <EntityTypeMapping TypeName="BrioEntityModel.ProjectStep">
               <MappingFragment StoreEntitySet="ProjectSteps">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Title" ColumnName="Title" />
@@ -1333,7 +1266,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Reviews">
-            <EntityTypeMapping TypeName="actual98_brioDbModel.Review">
+            <EntityTypeMapping TypeName="BrioEntityModel.Review">
               <MappingFragment StoreEntitySet="Reviews">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Date" ColumnName="Date" />
@@ -1347,7 +1280,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Roles">
-            <EntityTypeMapping TypeName="actual98_brioDbModel.Role">
+            <EntityTypeMapping TypeName="BrioEntityModel.Role">
               <MappingFragment StoreEntitySet="Roles">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="RoleName" ColumnName="RoleName" />
@@ -1356,7 +1289,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Users">
-            <EntityTypeMapping TypeName="actual98_brioDbModel.User">
+            <EntityTypeMapping TypeName="BrioEntityModel.User">
               <MappingFragment StoreEntitySet="Users">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Email" ColumnName="Email" />
@@ -1366,14 +1299,13 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="News">
-            <EntityTypeMapping TypeName="actual98_brioDbModel.News">
+            <EntityTypeMapping TypeName="BrioEntityModel.News">
               <MappingFragment StoreEntitySet="News">
                 <ScalarProperty Name="PhotoPath" ColumnName="PhotoPath" />
                 <ScalarProperty Name="Text" ColumnName="Text" />
                 <ScalarProperty Name="Title" ColumnName="Title" />
                 <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
                 <ScalarProperty Name="AuthorUserId" ColumnName="AuthorUserId" />
-                <ScalarProperty Name="DivisionId" ColumnName="DivisionId" />
                 <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>

@@ -1,0 +1,19 @@
+﻿@using Brio
+@using Brio.Models
+
+<div class="right-bar index">
+    <h2 class="right"><span class="news-title">Новости</span></h2>
+    @{
+        INewsRepository newsRepository = (INewsRepository)DependencyResolver.Current.GetService(typeof(INewsRepository));
+        List<News> news = newsRepository.GetAll().Take(3).ToList();
+    }
+    @foreach (var n in news)
+    {
+        <article class="">
+            <p class="date">@n.CreateDate.ToString("dd/MM/yyyy")</p>
+            <p>@n.Title</p>
+        </article>
+        <hr color="#AEAFB0" size="1">
+    }
+    <div id="datepicker"></div>
+</div>

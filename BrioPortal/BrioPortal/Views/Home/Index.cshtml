@@ -27,71 +27,82 @@
                 <div class="alert alert-danger" role="alert">@ViewBag.Message</div>
             }
         }
-        <div class="content-right-bar account-create-form">
-            <h2>Создание аккаунта</h2>
-            @using (Html.BeginForm("SignUp", "Account", FormMethod.Post, new { @class = "acc-form" }))
-            {
-                <p>
-                    @Html.LabelFor(a => a.Name):
-                    @Html.TextBoxFor(a => a.Name)
-                </p>
-                <p>
-                    @Html.LabelFor(a => a.Surname):
-                    @Html.TextBoxFor(a => a.Surname)
-                </p>
-                <p>
-                    @Html.LabelFor(a => a.Patronymic):
-                    @Html.TextBoxFor(a => a.Patronymic)
-                </p>
-                <p>
-                    @Html.LabelFor(a => a.Email):
-                    @Html.TextBoxFor(a => a.Email)
-                </p>
-                <p>
-                    @Html.LabelFor(a => a.Password):
-                    @Html.TextBoxFor(a => a.Password)
-                </p>
-                <p>
-                    @Html.LabelFor(a => a.ConfirmPassword):
-                    @Html.TextBoxFor(a => a.ConfirmPassword)
-                </p>
-                <p>
-                    @Html.LabelFor(a => a.Phone):
-                    @Html.TextBoxFor(a => a.Phone)
-                </p>
-                <p>
-                    @Html.LabelFor(a => a.Post):
-                    @Html.TextBoxFor(a => a.Post)
-                </p>
-                <p>
-                    @Html.LabelFor(a => a.DivisionId):
-                    @Html.DropDownListFor(a => a.DivisionId, ViewBag.Divisions as SelectList, "Выберите отдел")
-                </p>
-                <p>
-                    @Html.LabelFor(a => a.RememberMe):
-                    @Html.CheckBoxFor(a => a.RememberMe)
-                </p>
-                @Html.HiddenFor(a => a.RoleId)
 
-                <button type="submit">
-                    <h2 class="right creat-title"><span>Создать</span></h2>
-                </button>
-            }
-        </div>
-        <div class="content-right-bar info-card active" style="display: none">
+        <div class="right-bar-container">
             <div class="cont">
-                <h2>Карточка сотрудника</h2>
-                <div class="staf">
-                    <img src="photo/Tarasova_Ybilei.jpg" width="120" height="140" alt="staff">
-                    <h3 class="names"></h3>
+                <div class="content-right-bar account-create-form">
+                    <h2>Создание аккаунта</h2>
+                    @using (Html.BeginForm("SignUp", "Account", FormMethod.Post, new { @class = "acc-form", enctype = "multipart/form-data" }))
+                    {
+                        <p>
+                            @Html.LabelFor(a => a.Name):
+                            @Html.TextBoxFor(a => a.Name)
+                        </p>
+                        <p>
+                            @Html.LabelFor(a => a.Surname):
+                            @Html.TextBoxFor(a => a.Surname)
+                        </p>
+                        <p>
+                            @Html.LabelFor(a => a.Patronymic):
+                            @Html.TextBoxFor(a => a.Patronymic)
+                        </p>
+                        <p>
+                            @Html.LabelFor(a => a.Email):
+                            @Html.TextBoxFor(a => a.Email)
+                        </p>
+                        <p>
+                            @Html.LabelFor(a => a.Password):
+                            @Html.TextBoxFor(a => a.Password)
+                        </p>
+                        <p>
+                            @Html.LabelFor(a => a.ConfirmPassword):
+                            @Html.TextBoxFor(a => a.ConfirmPassword)
+                        </p>
+                        <p>
+                            @Html.LabelFor(a => a.Phone):
+                            @Html.TextBoxFor(a => a.Phone)
+                        </p>
+                        <p>
+                            @Html.LabelFor(a => a.Post):
+                            @Html.TextBoxFor(a => a.Post)
+                        </p>
+                        <p>
+                            @Html.LabelFor(a => a.AvatarUrl):
+                            @Html.TextBoxFor(a => a.AvatarUrl, new { type = "file" })
+                        </p>
+                        <p>
+                            @Html.LabelFor(a => a.DivisionId):
+                            @Html.DropDownListFor(a => a.DivisionId, ViewBag.Divisions as SelectList, "Выберите отдел")
+                        </p>
+                        <p>
+                            @Html.LabelFor(a => a.RememberMe):
+                            @Html.CheckBoxFor(a => a.RememberMe)
+                        </p>
+                        @Html.HiddenFor(a => a.RoleId)
 
-                    <ul class="staf-text">
-                        <li class="company">Компания: <span></span></li>
-                        <li>&nbsp;</li>
-                        <li>Личные данные:<span></span></li>
-                        <li class="phone">тел. <span></span></li>
-                        <li class="email">е-mail: <span></span></li>
-                    </ul>
+                        <button type="submit">
+                            <h2 class="right creat-title"><span>Создать</span></h2>
+                        </button>
+                    }
+                </div>
+
+                @Html.Partial("EditAccountPartial", ViewBag.UpdateAccount as EditPortalAccount)
+
+                <div class="content-right-bar info-card active" style="display: none">
+                    <h2>Карточка сотрудника</h2>
+                    <div class="staf">
+                        <img src="" width="120" height="140" alt="staff" class="userImg">
+                        <h3 class="names"></h3>
+
+                        <ul class="staf-text">
+                            <li class="company">Компания: <span></span></li>
+                            <li>&nbsp;</li>
+                            <li>Личные данные:<span></span></li>
+                            <li class="phone">тел. <span></span></li>
+                            <li class="email">е-mail: <span></span></li>
+                        </ul>
+                    </div>
+                    <div class="edit_pen" data-infocard-id=""></div>
                 </div>
             </div>
         </div>
@@ -104,7 +115,9 @@
                         <ul>
                             @foreach (var a in (IEnumerable<InfoCard>)ViewBag.Admins)
                             {
-                                <li data-infocard-id="@a.ID">@a.Surname @a.Name @a.Patronymic</li>
+                                <li data-infocard-id="@a.ID">@a.Surname @a.Name @a.Patronymic
+                                </li>
+                                
                             }
                         </ul>
                     </li>
@@ -113,7 +126,11 @@
                         <ul>
                             @foreach (var a in (IEnumerable<InfoCard>)ViewBag.ProjectManager)
                             {
-                                <li data-infocard-id="@a.ID">@a.Surname @a.Name @a.Patronymic</li>
+                                <li data-infocard-id="@a.ID">@a.Surname @a.Name @a.Patronymic
+                                    @if (User.IsInRole("Admin")) { 
+                                        <a href="Home/DeleteAccount/@a.ID" onclick="return confirm('Удалить этого пользователя?')"><i class="fa fa-times"></i></a>
+                                    }
+                                </li>
                             }
                         </ul>
                     </li>
@@ -122,7 +139,12 @@
                         <ul>
                             @foreach (var a in (IEnumerable<InfoCard>)ViewBag.Clients)
                             {
-                                <li data-infocard-id="@a.ID">@a.Surname @a.Name @a.Patronymic</li>
+                                <li data-infocard-id="@a.ID">@a.Surname @a.Name @a.Patronymic
+                                    @if (User.IsInRole("Admin"))
+                                    {
+                                        <a href="Home/DeleteAccount/@a.ID" onclick="return confirm('Удалить этого пользователя?')"><i class="fa fa-times"></i></a>
+                                    }
+                                </li>
                             }
                         </ul>
                     </li>
@@ -131,7 +153,12 @@
                         <ul>
                             @foreach (var a in (IEnumerable<InfoCard>)ViewBag.Employees)
                             {
-                                <li data-infocard-id="@a.ID">@a.Surname @a.Name @a.Patronymic</li>
+                                <li data-infocard-id="@a.ID">@a.Surname @a.Name @a.Patronymic
+                                    @if (User.IsInRole("Admin"))
+                                    {
+                                        <a href="Home/DeleteAccount/@a.ID" onclick="return confirm('Удалить этого пользователя?')"><i class="fa fa-times"></i></a>
+                                    }
+                                </li>
                             }
                         </ul>
                     </li>
@@ -144,7 +171,7 @@
                     <li data-role-id="@r.ID">@r.CyrillicName</li>
                 }
             </ul>
-            
+
 
             <script>
                 $(document).ready(function () {

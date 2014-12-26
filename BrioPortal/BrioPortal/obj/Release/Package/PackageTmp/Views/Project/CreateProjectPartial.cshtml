@@ -1,0 +1,19 @@
+﻿@model Brio.Models.CreateProject
+
+@if (User.IsInRole("Admin")) { 
+    <div class="content-right-bar project-crate-form active">
+            <h2>Создание проекта</h2>
+            @using (Html.BeginForm("Create", "Project", FormMethod.Post, new { enctype = "multipart/form-data" }))
+            {
+                <p>@Html.TextBoxFor(p => p.Tile, new { placeholder = Html.DisplayNameFor(p => p.Tile) })</p>
+                <p>@Html.DropDownListFor(p => p.ResponsibleUserId, (SelectList)ViewBag.Users, "-- Выберите пользователя --", new { style = "width: 100%" })</p>
+                <p>@Html.TextAreaFor(p => p.Description, new { placeholder = Html.DisplayNameFor(p => p.Description) })</p>
+                <p>@Html.TextBoxFor(p => p.StartDate, new { placeholder = Html.DisplayNameFor(p => p.StartDate), value = "" })</p>
+                <p>@Html.TextBoxFor(p => p.EndDate, new { placeholder = Html.DisplayNameFor(p => p.EndDate), value = "" })</p>
+                <p class="add-file-title">Добавить файлы</p>
+                <p><input id="projectDocuments" type="file" name="projectDocuments" multiple /></p>
+            <!--<ol><li>img -добавлен</li></ol>-->
+                <button type="submit"><h2 class="right creat-title"><span>Создать</span></h2></button>
+            }
+    </div>
+}

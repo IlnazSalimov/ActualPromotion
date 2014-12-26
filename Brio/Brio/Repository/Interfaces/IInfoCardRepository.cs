@@ -15,6 +15,8 @@ namespace Brio
     {
         IQueryable<InfoCard> GetAll();
         InfoCard GetById(int id);
+        InfoCard GetByEmail(string email);
+        IQueryable<InfoCard> GetInfoCardsByRole(Roles role);
         void Insert(InfoCard model);
         InfoCard GetUserInfoCard(int userId);
         void Update(InfoCard model);

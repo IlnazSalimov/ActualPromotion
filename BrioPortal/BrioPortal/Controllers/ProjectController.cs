@@ -63,8 +63,6 @@ namespace BrioPortal.Controllers
 
         public ActionResult Index()
         {
-            int currentUserCompanyId = infoCardRepository.GetUserInfoCard(brioContext.CurrentUser.ID).CompanyId;
-            List<Project> projects = projectRepository.GetAll().Where(p => p.CompanyId == currentUserCompanyId).ToList();
             ViewBag.Users = new SelectList(userRepository.GetAll().ToList(), "ID", "FullName");
 
             ViewBag.IsSuccess = TempData["IsSuccess"];
@@ -73,7 +71,7 @@ namespace BrioPortal.Controllers
             ViewBag.Project = TempData["Project"] != null ? TempData["Project"] : new CreateProject();
             ViewBag.ProjectStep = TempData["ProjectStep"] != null ? TempData["ProjectStep"] : new CreateProjectStep();
 
-            return View(projects);
+            return View(projectRepository.GetCompanyProjects());
         }
 
         [HttpPost]
@@ -225,5 +223,41 @@ namespace BrioPortal.Controllers
             return RedirectToAction("Index");
         }
 
+        public ActionResult Edit(EditProject model)
+        {
+            if (ModelState.IsValid)
+            {
+                Project project = projectRepository.GetById(model.Id);
+
+                project.Description = model.Description;
+                project.EndDate = model.EndDate;
+                project.ResponsibleUserId = model.ResponsibleUserId;
+                project.StartDate = model.StartDate;
+                project.Tile = model.Tile;
+
+                try
+                {
+                    projectRepository.Update(project);
+                    projectRepository.SaveChanges();
+                }
+                catch(Exception e)
+                {
+                    TempData["IsSuccess"] = false;
+                    TempData["Message"] = "Что-то пошло не так и проект не был сохранен.";
+                    return RedirectToAction("Index");
+                }
+                
+
+                TempData["IsSuccess"] = true;
+                TempData["Message"] = "Проект успешно сохранен!";
+            }
+            else
+            {
+                TempData["IsSuccess"] = false;
+                TempData["Message"] = "Этап проекта не был создан, т.к. не заполнены все поля. Пожалуйста повторите попытку заполнив все поля.";
+            }
+
+            return RedirectToAction("Index");
+        }
     }
 }

@@ -290,7 +290,7 @@ button {
 }
 form[name="serch"] button {
 	position:absolute;
-	top: 0;
+	top: 4px;
 	right: -25px;
 	width: 160px;
 	
@@ -301,7 +301,6 @@ form[name="serch"] button span {
 }
 .content-right-bar {
 	display:inline-block;
-	float:right;
 	border:1px solid #D8D9D9;
 	width:252px;
 	padding-top: 10px;
@@ -379,7 +378,7 @@ h2.white span {
 .content-right-bar form p {
 	font-size: 14px;
 	position:relative;
-	 margin: 4px 0;
+    padding: 5px 0;
 }
 .wrapp {
 	padding-top:5px;
@@ -403,10 +402,19 @@ h2.white span {
 	font-size: 14px;
 	font-weight:bold;
 	line-height: 23px;
-	cursor:pointer;
+}
+.wrapp ul li[data-infocard-id],
+.wrapp ul li[data-step-id] {
+    cursor: pointer;
 }
 .wrapp ul li p {
 	padding-left:2px;
+    cursor:pointer;
+}
+.wrapp ul li p.empty {
+    font-weight: 100;
+    font-size: 0.9em;
+    margin-left: 10px;
 }
 .wrapp ul li p span {
 	display:block;
@@ -425,7 +433,7 @@ h2.white span {
 	font-size:12px;
 	list-style: decimal;
 	list-style-position:inside;
-	line-height: 12px;
+	line-height: 20px;
 	padding-left:9px;
 }
 .wrapp ul li ul .add {
@@ -435,6 +443,7 @@ h2.white span {
 	background-image:url(../img/add.gif);
 	background-repeat:no-repeat;
 	background-position:83% center;
+    cursor: pointer;
 }
 .wrapp ul li ul li:hover {
 	background-color:#ebebeb;
@@ -632,15 +641,14 @@ width: 185px;
 	height:35px;
 	line-height:23px;
 }
-.acc-form input[type="text"] {
+.acc-form input[type="text"],
+.acc-form select {
 	position:absolute;
 	right:0;
 	top:-2px;
 	width: 145px;
 }
-.content-right-bar form.acc-form p {
-	margin-bottom:5px;
-}
+
 ul.acc-open {
 	padding-top:18px;
 }
@@ -680,6 +688,10 @@ ul.acc-open li.active {
 	font-size:14px;
 	line-height: 19px;
 }
+.news-block p.author{
+    clear:left;
+}
+
 .news-text {
 	text-indent:10px;
 	margin-bottom: 40px;
@@ -874,27 +886,6 @@ form.division-create .controls-container .title {
     max-height: 240px;
 }
 
-.content-right-bar {
-    position: relative;
-}
-
-.content-right-bar.block .cont{
-    opacity: 0.2;
-}
-
-
-.content-right-bar .loader{
-    background-image: url(../img/ajax-loader.gif);
-    background-repeat: no-repeat;
-    position: absolute;
-    width: 32px;
-    height: 32px;
-    top: 50%;
-    margin-top: -16px;
-    left: 50%;
-    margin-left: -16px;
-}
-
 .edit_pen {
     background-image: url(../img/pen.png);
     background-repeat: no-repeat;
@@ -909,4 +900,31 @@ form.division-create .controls-container .title {
     top: 5px;
     right: 5px;
     position: absolute;
+}
+
+.right-bar-container
+{
+    float: right;
+    position: relative;
+}
+
+.right-bar-container.block .cont {
+    float: right;
+    opacity: 0.2;
+}
+
+.right-bar-container .loader{
+    background-image: url(../img/ajax-loader.gif);
+    background-repeat: no-repeat;
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    top: 50%;
+    margin-top: -16px;
+    left: 50%;
+    margin-left: -16px;
+}
+
+button.save-account {
+    margin-top: 20px;
 }

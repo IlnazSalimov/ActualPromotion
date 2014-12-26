@@ -96,7 +96,6 @@ namespace BrioPortal.Controllers
                     CreateDate = DateTime.Now,
                     AuthorUserId = brioContext.CurrentUser.ID,
                     CompanyId = brioContext.CurrentUser.CompanyId,
-                    DivisionId = brioContext.CurrentUser.DivisionId,
                     Text = model.Text
                 };
 
@@ -132,7 +131,6 @@ namespace BrioPortal.Controllers
                     AuthorUserId = news.AuthorUserId,
                     CompanyId = news.CompanyId,
                     CreateDate = news.CreateDate,
-                    DivisionId = news.DivisionId,
                     Id = news.ID,
                     Text = news.Text,
                     Title = news.Title,
@@ -145,6 +143,26 @@ namespace BrioPortal.Controllers
             {
                 return Json(ResponseProcessing.Error("Невозможно извлечь новость. Обновите страницу и повторите попытку."));
             }
+        }
+
+        public ActionResult Delete(int id)
+        {
+            if (id > 0)
+            {
+                News doc = newsRepository.GetById(id);
+                newsRepository.Delete(doc);
+                newsRepository.SaveChanges();
+
+                TempData["IsSuccess"] = true;
+                TempData["Message"] = "Новость успешно удален!";
+            }
+            else
+            {
+                TempData["IsSuccess"] = false;
+                TempData["Message"] = "Произошла ошибка, пожалуйста повторите попытку!";
+            }
+
+            return RedirectToAction("Index");
         }
     }
 }

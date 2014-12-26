@@ -26,10 +26,10 @@ namespace Brio.Models
         public string Adress { get; set; }
         public string Phone { get; set; }
         public string Email { get; set; }
-        public int DivisionId { get; set; }
+        public Nullable<int> DivisionId { get; set; }
+        public string AvatarUrl { get; set; }
     
         public virtual Company Company { get; set; }
         public virtual User User { get; set; }
-        public virtual Division Division { get; set; }
     }
 }

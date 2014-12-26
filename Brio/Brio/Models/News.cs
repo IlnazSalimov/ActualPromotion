@@ -16,7 +16,6 @@ namespace Brio.Models
     {
         public int Id { get; set; }
         public int CompanyId { get; set; }
-        public int DivisionId { get; set; }
         public int AuthorUserId { get; set; }
         public System.DateTime CreateDate { get; set; }
         public string Title { get; set; }
@@ -24,7 +23,6 @@ namespace Brio.Models
         public string PhotoPath { get; set; }
     
         public virtual Company Company { get; set; }
-        public virtual Division Division { get; set; }
         public virtual User User { get; set; }
     }
 }

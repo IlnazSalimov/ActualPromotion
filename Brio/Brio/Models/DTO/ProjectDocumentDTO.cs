@@ -19,7 +19,8 @@ namespace Brio
             get
             {
                 IInfoCardRepository infoCardRepository = (IInfoCardRepository)DependencyResolver.Current.GetService(typeof(IInfoCardRepository));
-                return infoCardRepository.GetUserInfoCard(this.ResponsibleUserId).FullName;
+                InfoCard ic = infoCardRepository.GetUserInfoCard(this.ResponsibleUserId);
+                return ic != null ? ic.FullName : "..пользователь удален..";
             }
         }
         public string Description { get; set; }

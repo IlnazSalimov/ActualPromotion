@@ -14,19 +14,11 @@ namespace Brio.Models
     
     public partial class Division
     {
-        public Division()
-        {
-            this.InfoCards = new HashSet<InfoCard>();
-            this.News = new HashSet<News>();
-        }
-    
         public int Id { get; set; }
         public string Name { get; set; }
         public string Head { get; set; }
         public int CompanyId { get; set; }
     
         public virtual Company Company { get; set; }
-        public virtual ICollection<InfoCard> InfoCards { get; set; }
-        public virtual ICollection<News> News { get; set; }
     }
 }

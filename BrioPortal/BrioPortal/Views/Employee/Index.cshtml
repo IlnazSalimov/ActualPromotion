@@ -1,5 +1,7 @@
-﻿@model IEnumerable<Brio.Models.Division>
+﻿@using Brio
 @using Brio.Models
+@model IEnumerable<Division>
+
 
 @{
     ViewBag.Title = "Index";
@@ -24,57 +26,62 @@
                 <div class="alert alert-danger" role="alert">@ViewBag.Message</div>
             }
         }
-        <div class="content-right-bar info-card active" style="display:none">
+        <div class="right-bar-container">
             <div class="cont">
-                <h2>Карточка сотрудника</h2>
-                <div class="staf">
-                    <img src="photo/Tarasova_Ybilei.jpg" width="120" height="140" alt="staff">
-                    <h3 class="names"></h3>
+                <div class="content-right-bar info-card active" style="display:none">
+                    <h2>Карточка сотрудника</h2>
+                    <div class="staf">
+                        <img src="" width="120" height="140" alt="staff" class="userImg">
+                        <h3 class="names"></h3>
 
-                    <ul class="staf-text">
-                        <li class="company">Компания: <span></span></li>
-                        <li>&nbsp;</li>
-                        <li>Личные данные:<span></span></li>
-                        <li class="phone">тел. <span></span></li>
-                        <li class="email">е-mail: <span></span></li>
-                    </ul>
-                </div>
-                
-            </div>
-        </div>
-        <div class="content-left-bar">
-            <h2 class="right white shadow"><span class="project-title">Сотрудники</span></h2>
-            <div class="wrapp news-page">
-                <div class="divisions-container">
-                    <ul>
-                        @foreach (var a in Model)
-                        {
-                            <li>
-                                <p class="dropdown">
-                                    <span>
-                                        @a.Name
-                                    </span>
-                                </p>
-                                <ul>
-                                    @foreach (var ic in a.InfoCards)
-                                    {
-                                        <li data-infocard-id="@ic.ID">@ic.Surname @ic.Name @ic.Patronymic</li>
-                                    }
-                                    @if (a.InfoCards.Count < 1)
-                                    {
-                                        <li>В этом отделе сотрудников нет</li>
-                                    }
-                                </ul>
-                            </li>
-                        }
-                    </ul>
-                </div>
-                <div class="division-create-form">
-                    @Html.Partial("CreateDivisionPartial", ViewBag.CreateDivision as CreateDivision)
+                        <ul class="staf-text">
+                            <li class="company">Компания: <span></span></li>
+                            <li>&nbsp;</li>
+                            <li>Личные данные:<span></span></li>
+                            <li class="phone">тел. <span></span></li>
+                            <li class="email">е-mail: <span></span></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
+            </div>
+            <div class="content-left-bar">
+                <h2 class="right white shadow"><span class="project-title">Сотрудники</span></h2>
+                <div class="wrapp news-page">
+                    <div class="divisions-container">
+                        <ul>
+                            @foreach (var d in Model)
+                            {
+                                <li>
+                                    <p class="dropdown">
+                                        <span>
+                                            @d.Name
+                                        </span>
+                                    </p>
+                                    <ul>
+                                        @{
+                                            IInfoCardRepository infoCardRepository = (DependencyResolver.Current.GetService(typeof(IInfoCardRepository)) as IInfoCardRepository);
+                                            IQueryable<InfoCard> infoCards = infoCardRepository.GetAll().Where(ic => ic.DivisionId == d.ID);
+                                        }
+
+                                        @foreach (var ic in infoCards)
+                                        {
+                                            <li data-infocard-id="@ic.ID">@ic.Surname @ic.Name @ic.Patronymic</li>
+                                        }
+                                        @if (infoCards.Count() < 1)
+                                        {
+                                            @:<p class="empty">В этом отделе сотрудников нет</p>
+                                        }
+                                    </ul>
+                                </li>
+                            }
+                        </ul>
+                    </div>
+                    <div class="division-create-form">
+                        @Html.Partial("CreateDivisionPartial", ViewBag.CreateDivision as CreateDivision)
+                    </div>
+                </div>
+            </div>
 </section>
 
 <script>

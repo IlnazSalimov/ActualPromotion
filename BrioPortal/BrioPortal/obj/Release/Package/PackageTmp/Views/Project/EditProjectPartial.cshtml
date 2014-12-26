@@ -1,0 +1,15 @@
+﻿@model Brio.Models.EditProject
+
+<div class="content-right-bar project-edit-form active" style="display:none">
+    <h2>Создание проекта</h2>
+    @using (Html.BeginForm("Edit", "Project", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        <p>@Html.TextBoxFor(p => p.Tile, new { placeholder = Html.DisplayNameFor(p => p.Tile) })</p>
+        <p>@Html.DropDownListFor(p => p.ResponsibleUserId, (SelectList)ViewBag.Users, "-- Выберите пользователя --", new { style = "width: 100%" })</p>
+        <p>@Html.TextAreaFor(p => p.Description, new { placeholder = Html.DisplayNameFor(p => p.Description) })</p>
+        <p>@Html.TextBoxFor(p => p.StartDate, new { placeholder = Html.DisplayNameFor(p => p.StartDate), value = "" })</p>
+        <p>@Html.TextBoxFor(p => p.EndDate, new { placeholder = Html.DisplayNameFor(p => p.EndDate), value = "" })</p>
+
+        <button type="submit"><h2 class="right creat-title"><span>Создать</span></h2></button>
+    }
+</div>

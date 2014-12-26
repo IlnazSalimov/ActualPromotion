@@ -21,6 +21,11 @@ namespace BrioPortal
         private readonly IProjectRepository projectRepository;
 
         /// <summary>
+        /// 
+        /// </summary>
+        private readonly IBrioContext brioContext;
+
+        /// <summary>
         /// Предоставляет доступ к хранилищу данных документах проектов
         /// </summary>
         private readonly IProjectDocumentRepository projectDocumentRepository;
@@ -28,15 +33,20 @@ namespace BrioPortal
 
         private string uploadDirectory = "//Files//Documents//";
 
-        public ProjectDocumentController(IProjectRepository _projectRepository, IProjectDocumentRepository _projectDocumentRepository)
+        public ProjectDocumentController(IProjectRepository _projectRepository, IProjectDocumentRepository _projectDocumentRepository,
+            IBrioContext _brioContext)
         {
             this.projectRepository = _projectRepository;
             this.projectDocumentRepository = _projectDocumentRepository;
+            this.brioContext = _brioContext;
         }
 
         public ActionResult Index()
         {
-            return View(projectRepository.GetAll().ToList());
+            ViewBag.IsSuccess = TempData["IsSuccess"];
+            ViewBag.Message = TempData["Message"];
+
+            return View(projectRepository.GetCompanyProjects());
         }
 
         public ActionResult GetProjectDocument()
@@ -82,6 +92,26 @@ namespace BrioPortal
             };
             Response.AppendHeader("Content-Disposition", cd.ToString());
             return File(path, mime);
+        }
+
+        public ActionResult Delete(int id)
+        {
+            if (id > 0)
+            {
+                ProjectDocument doc = projectDocumentRepository.GetById(id);
+                projectDocumentRepository.Delete(doc);
+                projectDocumentRepository.SaveChanges();
+
+                TempData["IsSuccess"] = true;
+                TempData["Message"] = "Документ успешно удален!";
+            }
+            else
+            {
+                TempData["IsSuccess"] = false;
+                TempData["Message"] = "Произошла ошибка, пожалуйста повторите попытку!";
+            }
+
+            return RedirectToAction("Index");
         }
     }
 }

@@ -12,6 +12,18 @@
             <button type="submit"><h2 class="left"><span>Поиск</span></h2></button>
         </form>
 
+        @if (ViewBag.IsSuccess != null && ViewBag.Message != null)
+        {
+            if ((bool)ViewBag.IsSuccess)
+            {
+                <div class="alert alert-success" role="alert">@ViewBag.Message</div>
+            }
+            else
+            {
+                <div class="alert alert-danger" role="alert">@ViewBag.Message</div>
+            }
+        }
+
         <div class="content-left-bar doks-page">
             <h2 class="right white shadow"><span class="project-title">Документы</span></h2>
             <div class="wrapp">
@@ -28,7 +40,11 @@
                             <ul>
                                 @foreach (var d in p.ProjectDocuments)
                                 {
-                                    <li>@Html.ActionLink(d.DocumentTitle, "Download", new { id = d.ID})</li>
+                                    <li>@Html.ActionLink(d.DocumentTitle, "Download", new { id = d.ID})
+                                        @if(User.IsInRole("Admin")){
+                                             <a href="ProjectDocument/Delete/@d.ID" onclick="return confirm('Удалить этот документ?')"><i class="fa fa-times"></i></a>
+                                        }
+                                    </li>
                                 }
                                 <li class="list-none">
                                     <p class="add">Добавить файл</p>

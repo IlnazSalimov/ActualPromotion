@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="actual98_brioDbModelStoreContainer" CdmEntityContainer="Entities">
+  <EntityContainerMapping StorageEntityContainer="BrioEntityModelStoreContainer" CdmEntityContainer="Entities">
     <EntitySetMapping Name="Articles">
-      <EntityTypeMapping TypeName="actual98_brioDbModel.Article">
+      <EntityTypeMapping TypeName="BrioEntityModel.Article">
         <MappingFragment StoreEntitySet="Articles">
           <ScalarProperty Name="ArticleID" ColumnName="ArticleID" />
           <ScalarProperty Name="Title" ColumnName="Title" />
@@ -15,7 +15,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Companies">
-      <EntityTypeMapping TypeName="actual98_brioDbModel.Company">
+      <EntityTypeMapping TypeName="BrioEntityModel.Company">
         <MappingFragment StoreEntitySet="Companies">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
@@ -30,7 +30,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="CompanyWorks">
-      <EntityTypeMapping TypeName="actual98_brioDbModel.CompanyWork">
+      <EntityTypeMapping TypeName="BrioEntityModel.CompanyWork">
         <MappingFragment StoreEntitySet="CompanyWorks">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
@@ -41,7 +41,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Divisions">
-      <EntityTypeMapping TypeName="actual98_brioDbModel.Division">
+      <EntityTypeMapping TypeName="BrioEntityModel.Division">
         <MappingFragment StoreEntitySet="Divisions">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Name" ColumnName="Name" />
@@ -51,7 +51,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Documents">
-      <EntityTypeMapping TypeName="actual98_brioDbModel.Document">
+      <EntityTypeMapping TypeName="BrioEntityModel.Document">
         <MappingFragment StoreEntitySet="Documents">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
@@ -64,7 +64,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Feedbacks">
-      <EntityTypeMapping TypeName="actual98_brioDbModel.Feedback">
+      <EntityTypeMapping TypeName="BrioEntityModel.Feedback">
         <MappingFragment StoreEntitySet="Feedbacks">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Name" ColumnName="Name" />
@@ -76,9 +76,8 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="InfoCards">
-      <EntityTypeMapping TypeName="actual98_brioDbModel.InfoCard">
+      <EntityTypeMapping TypeName="BrioEntityModel.InfoCard">
         <MappingFragment StoreEntitySet="InfoCards">
-          <ScalarProperty Name="DivisionId" ColumnName="DivisionId" />
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="UserId" ColumnName="UserId" />
           <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
@@ -91,11 +90,13 @@
           <ScalarProperty Name="Adress" ColumnName="Adress" />
           <ScalarProperty Name="Phone" ColumnName="Phone" />
           <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="DivisionId" ColumnName="DivisionId" />
+          <ScalarProperty Name="AvatarUrl" ColumnName="AvatarUrl" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Pages">
-      <EntityTypeMapping TypeName="actual98_brioDbModel.Page">
+      <EntityTypeMapping TypeName="BrioEntityModel.Page">
         <MappingFragment StoreEntitySet="Pages">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="PageName" ColumnName="PageName" />
@@ -103,7 +104,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="PriceLists">
-      <EntityTypeMapping TypeName="actual98_brioDbModel.PriceList">
+      <EntityTypeMapping TypeName="BrioEntityModel.PriceList">
         <MappingFragment StoreEntitySet="PriceLists">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
@@ -114,7 +115,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Products">
-      <EntityTypeMapping TypeName="actual98_brioDbModel.Product">
+      <EntityTypeMapping TypeName="BrioEntityModel.Product">
         <MappingFragment StoreEntitySet="Products">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Title" ColumnName="Title" />
@@ -124,7 +125,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="ProjectDocuments">
-      <EntityTypeMapping TypeName="actual98_brioDbModel.ProjectDocument">
+      <EntityTypeMapping TypeName="BrioEntityModel.ProjectDocument">
         <MappingFragment StoreEntitySet="ProjectDocuments">
           <ScalarProperty Name="DocumentPath" ColumnName="DocumentPath" />
           <ScalarProperty Name="DocumentTitle" ColumnName="DocumentTitle" />
@@ -135,7 +136,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Projects">
-      <EntityTypeMapping TypeName="actual98_brioDbModel.Project">
+      <EntityTypeMapping TypeName="BrioEntityModel.Project">
         <MappingFragment StoreEntitySet="Projects">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
@@ -149,7 +150,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="ProjectSteps">
-      <EntityTypeMapping TypeName="actual98_brioDbModel.ProjectStep">
+      <EntityTypeMapping TypeName="BrioEntityModel.ProjectStep">
         <MappingFragment StoreEntitySet="ProjectSteps">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Title" ColumnName="Title" />
@@ -159,7 +160,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Reviews">
-      <EntityTypeMapping TypeName="actual98_brioDbModel.Review">
+      <EntityTypeMapping TypeName="BrioEntityModel.Review">
         <MappingFragment StoreEntitySet="Reviews">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Date" ColumnName="Date" />
@@ -173,7 +174,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Roles">
-      <EntityTypeMapping TypeName="actual98_brioDbModel.Role">
+      <EntityTypeMapping TypeName="BrioEntityModel.Role">
         <MappingFragment StoreEntitySet="Roles">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="RoleName" ColumnName="RoleName" />
@@ -182,7 +183,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Users">
-      <EntityTypeMapping TypeName="actual98_brioDbModel.User">
+      <EntityTypeMapping TypeName="BrioEntityModel.User">
         <MappingFragment StoreEntitySet="Users">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Email" ColumnName="Email" />
@@ -192,14 +193,13 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="News">
-      <EntityTypeMapping TypeName="actual98_brioDbModel.News">
+      <EntityTypeMapping TypeName="BrioEntityModel.News">
         <MappingFragment StoreEntitySet="News">
           <ScalarProperty Name="PhotoPath" ColumnName="PhotoPath" />
           <ScalarProperty Name="Text" ColumnName="Text" />
           <ScalarProperty Name="Title" ColumnName="Title" />
           <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
           <ScalarProperty Name="AuthorUserId" ColumnName="AuthorUserId" />
-          <ScalarProperty Name="DivisionId" ColumnName="DivisionId" />
           <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
           <ScalarProperty Name="Id" ColumnName="Id" />
         </MappingFragment>

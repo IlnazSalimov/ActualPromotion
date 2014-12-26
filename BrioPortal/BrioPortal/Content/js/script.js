@@ -108,17 +108,19 @@ var news = function () {
 function infoCardPanel(app) {
     var self = this;
     var createForm = $(".content-right-bar.account-create-form");
+    var editForm = $(".content-right-bar.account-edit-form");
     var mappingForm = $(".content-right-bar.info-card");
     var isBusy = false;
 
     self.show = function (infoCard) {
+        mappingForm.find(".userImg").attr('src', infoCard.AvatarUrl);
         mappingForm.find(".names").html(infoCard.Surname + " " + infoCard.Name + " " + infoCard.Patronymic);
         mappingForm.find(".company span").html(infoCard.CompanyName);
         mappingForm.find(".phone span").html(infoCard.Phone);
         mappingForm.find(".email span").html(infoCard.Email);
+        mappingForm.find(".edit_pen").attr('data-infocard-id', infoCard.Id);
 
-        createForm.hide();
-        mappingForm.show();
+        showRightBlock(mappingForm);
     };
 
     self.getInfoCard = function (infocardId, callBack, errorCallBack) {
@@ -181,8 +183,7 @@ function infoCardPanel(app) {
             $(that).addClass("active");
             $("input[name='RoleId']").val($(that).attr("data-role-id"));
 
-            createForm.show();
-            mappingForm.hide();
+            showRightBlock(createForm);
         });
 
         if ($(".news-page ul ul li[data-infocard-id]").length > 0) {
@@ -207,7 +208,28 @@ function infoCardPanel(app) {
             }, function () {
                 hideLoader();
             });
+            showRightBlock(mappingForm);
         }
+
+        mappingForm.find('.edit_pen').bind('click', function () {
+            var infoCardId = $(this).attr("data-infocard-id");
+            //начинается загрузка данных, показываем лоадер
+            showLoader();
+            self.getInfoCard(infoCardId, function (infocard) {
+                editForm.find('[name="Name"]').val(infocard.Name);
+                editForm.find('[name="Surname"]').val(infocard.Surname);
+                editForm.find('[name="Patronymic"]').val(infocard.Patronymic);
+                editForm.find('[name="Email"]').val(infocard.Email);
+                editForm.find('[name="Phone"]').val(infocard.Phone);
+                editForm.find('[name="Post"]').val(infocard.Post);
+                editForm.find('[name="DivisionId"]').val(infocard.DivisionId);
+                hideLoader();
+            }, function () {
+                hideLoader();
+            });
+
+            showRightBlock(editForm);
+        });
     }
 }
 
@@ -236,6 +258,7 @@ function Project() {
     var projectStepsContainer = $(".project-steps");
     var projectViewingForm = $(".project");
     var projectCreateForm = $(".project-crate-form");
+    var projectEditForm = $(".project-edit-form");
     var isBusy = false;
     var self = this;
 
@@ -256,6 +279,7 @@ function Project() {
         projectViewingForm.find(".responsible span").html(project.ResponsibleUserFullName);
         projectViewingForm.find(".start span").html(project.StartDate);
         projectViewingForm.find(".end span").html(project.EndDate);
+        projectViewingForm.find(".edit_pen[data-project-id]").attr('data-project-id', project.Id);
 
         renderDocuments(project.Documents);
         showRightBlock(projectViewingForm);
@@ -285,7 +309,6 @@ function Project() {
                     project.EndDate = ToJavaScriptDate(project.EndDate);
                     project.CreateDate = ToJavaScriptDate(project.CreateDate);
                     successCallBack(project);
-
                 }
                 else {
                     var beforElement = $("form[name='serch']");
@@ -410,6 +433,25 @@ function Project() {
                 hideLoader();
             });
         }
+
+        projectViewingForm.find('.edit_pen[data-project-id]').bind('click', function () {
+            var projectId = $(this).attr("data-project-id");
+            //начинается загрузка данных, показываем лоадер
+            showLoader();
+            self.getProject(projectId, function (project) {
+                projectEditForm.find('[name="Tile"]').val(project.Tile);
+                projectEditForm.find('[name="ResponsibleUserId"]').val(project.ResponsibleUserId);
+                projectEditForm.find('[name="Description"]').val(project.Description);
+                projectEditForm.find('[name="StartDate"]').datepicker("setDate", project.StartDate);
+                projectEditForm.find('[name="EndDate"]').datepicker("setDate", project.EndDate);
+
+                hideLoader();
+            }, function () {
+                hideLoader();
+            });
+
+            showRightBlock(projectEditForm);
+        });
     }
 }
 
@@ -438,12 +480,12 @@ function showResultMessage(element, message, isSuccess) { //element - элеме
 }
 
 function showLoader() {
-    $(".content-right-bar.active").addClass('block').append('<div class="loader"></div>');
+    $(".right-bar-container").addClass('block').append('<div class="loader"></div>');
 }
 
 function hideLoader() {
     setTimeout(function () {
-        $(".content-right-bar").removeClass('block').
+        $(".right-bar-container").removeClass('block').
             find('.loader').
             remove();
     }, 650);

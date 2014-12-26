@@ -1,0 +1,89 @@
+﻿@using Brio.Models
+@model IEnumerable<News>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Layouts/DefaultLayouts.cshtml";
+}
+
+<section>
+    @Html.Partial("RightBarNews")
+    <div class="content">
+        <form action="" method="post" name="serch">
+            <input name="name" type="text" placeholder="ВВЕДИТЕ НАЗВАНИЕ ДОКУМЕНТА">
+            <button type="submit"><h2 class="left"><span>Поиск</span></h2></button>
+        </form>
+
+        @if (ViewBag.IsSuccess != null && ViewBag.Message != null)
+        {
+            if ((bool)ViewBag.IsSuccess)
+            {
+                <div class="alert alert-success" role="alert">@ViewBag.Message</div>
+            }
+            else
+            {
+                <div class="alert alert-danger" role="alert">@ViewBag.Message</div>
+            }
+        }
+
+        <div class="right-bar-container">
+            <div class="cont">
+                <div class="content-right-bar news-cont" style="display: none">
+                    <h2 class="title"></h2>
+                    <div class="news-block">
+                        <img class="news-photo" src="" width="120" height="140" alt="Фото новости">
+                        <p class="news-text"></p>
+                        <p class="author">
+                            Автор новости:<span class="news-author"></span>
+                        </p>
+
+                        <p class="news-date"></p>
+                    </div>
+                    @if (User.IsInRole("Admin"))
+                    {
+                        <div class="edit_pen" data-news-id=""></div>
+                    }
+                </div>
+
+                @Html.Partial("CreateNewsPartial", ViewBag.News as CreateNews)
+                @Html.Partial("EditNewsPartial", ViewBag.EditNews as EditNews)
+            </div>
+        </div>
+        <div class="content-left-bar">
+            <h2 class="right white shadow">
+                @if (User.IsInRole("Admin"))
+                {
+                    <div class="plus_"></div>
+                }
+                <span class="project-title">Новости</span>
+            </h2>
+            <div class="wrapp news-page">
+                <ul>
+                    @foreach (var n in Model)
+                    {
+                        <li data-news-id="@n.ID">
+                            <p>
+                                <span>
+                                    @n.Title
+                                    @if (User.IsInRole("Admin"))
+                                    {
+                                        <a href="News/Delete/@n.ID" onclick="return confirm('Удалить эту новость?')"><i class="fa fa-times"></i></a>
+                                    }
+                                </span>
+                                
+                            </p>
+                        </li>
+                    }
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    (function () {
+        var _news = news();
+        console.log(_news);
+        _news.init();
+    })();
+</script>

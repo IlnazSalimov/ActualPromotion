@@ -77,7 +77,7 @@ namespace Brio.Models
                 InfoCard infoCard = infoCardRepository.GetUserInfoCard(this.ID);
                 if (infoCard != null)
                 {
-                    return infoCard.DivisionId;
+                    return infoCard.DivisionId.HasValue ? infoCard.DivisionId.Value : 0;
                 }
                 else
                 {

@@ -2,7 +2,6 @@
 
 @if (User.IsInRole("Admin")) { 
     <div class="content-right-bar project-crate-form active">
-        <div class="cont">
             <h2>Создание проекта</h2>
             @using (Html.BeginForm("Create", "Project", FormMethod.Post, new { enctype = "multipart/form-data" }))
             {
@@ -16,6 +15,5 @@
             <!--<ol><li>img -добавлен</li></ol>-->
                 <button type="submit"><h2 class="right creat-title"><span>Создать</span></h2></button>
             }
-        </div>
     </div>
 }

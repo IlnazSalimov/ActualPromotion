@@ -1,0 +1,107 @@
+﻿@using Brio.Models
+@model IEnumerable<Project>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Layouts/DefaultLayouts.cshtml";
+}
+
+<section>
+    @Html.Partial("RightBarNews")
+    <div class="content">
+        <form action="" method="post" name="serch">
+            <input name="name" type="text" placeholder="ВВЕДИТЕ НАЗВАНИЕ ДОКУМЕНТА">
+            <button type="submit"><h2 class="left"><span>Поиск</span></h2></button>
+        </form>
+
+        @if (ViewBag.IsSuccess != null && ViewBag.Message != null)
+        {
+            if ((bool)ViewBag.IsSuccess)
+            {
+                <div class="alert alert-success" role="alert">@ViewBag.Message</div>
+            }
+            else
+            {
+                <div class="alert alert-danger" role="alert">@ViewBag.Message</div>
+            }
+        }
+
+        <div class="right-bar-container">
+            <div class="cont">
+                @Html.Partial("CreateProjectPartial", ViewBag.Project as CreateProject)
+
+                <div class="content-right-bar project" style="display: none">
+                    <h2 class="title"></h2>
+                    <div class="staf">
+                        <ul class="staf-text">
+                            <li class="description">Описание: <span></span></li>
+                            <li class="responsible">Ответственный: <span></span></li>
+                            <li class="start">Начало: <span></span></li>
+                            <li class="end">Конец: <span></span></li>
+                            <li>Прикрепленные файлы:</li>
+                            <ul class="docs"></ul>
+                        </ul>
+                    </div>
+
+                    @if (User.IsInRole("Admin"))
+                    {
+                        <div class="edit_pen" data-project-id=""></div>
+                    }
+                </div>
+
+                @Html.Partial("CreateProjectStepPartial", ViewBag.ProjectStep as CreateProjectStep)
+                @Html.Partial("EditProjectPartial", new EditProject())
+
+                <div class="content-right-bar project-steps" style="display: none">
+                    <h2 class="title"></h2>
+                    <div class="staf">
+                        <ul class="staf-text">
+                            <li class="description">Описание: <span></span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="content-left-bar">
+            <h2 class="right white shadow">
+                @if (User.IsInRole("Admin"))
+                {
+                    <div class="plus_"></div>
+                }
+                <span class="project-title">Проекты</span>
+            </h2>
+            <div class="wrapp progect-page">
+                <ul>
+                    @foreach (var p in Model)
+                    {
+                        <li data-project-id="@p.ID">
+                            <p class="proj_title dropdown"><span>@p.Tile</span></p>
+                            <ul>
+                                @foreach (var step in p.ProjectSteps)
+                                {
+                                    <li data-step-id="@step.ID">@step.Title</li>
+                                }
+                                @if(User.IsInRole("Admin"))
+                                {
+                                    <li class="add">Добавить этап</li>
+                                }
+                            </ul>
+                        </li>
+                    }
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    (function () {
+        $("#StartDate").datepicker();
+        $("#EndDate").datepicker();
+        $("#StartDate").val('');
+        $("#EndDate").val('')
+
+        var _project = new Project();
+        _project.init();
+    })();
+</script>

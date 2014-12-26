@@ -1,0 +1,29 @@
+﻿@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Layouts/DefaultLayouts.cshtml";
+}
+
+<div id="pop-up">
+    
+    @using (Html.BeginForm("Login", "Account", FormMethod.Post, new { name = "enter" }))
+    {
+        <h1>
+            Добро <br>
+            пожаловать
+        </h1>
+        if (ViewBag.IsSuccess != null && ViewBag.Message != null)
+        {
+            if ((bool)ViewBag.IsSuccess)
+            {
+                <div class="alert alert-success" role="alert">@ViewBag.Message</div>
+            }
+            else
+            {
+                <div class="alert alert-danger" role="alert">@ViewBag.Message</div>
+            }
+        }
+        <p><input name="Email" type="text" placeholder="E-mail"></p>
+        <p><input name="Password" type="text" placeholder="Пароль"></p>
+        <button type="submit"><h2 class="right creat-title"><span>Войти</span></h2></button>
+    }
+</div>

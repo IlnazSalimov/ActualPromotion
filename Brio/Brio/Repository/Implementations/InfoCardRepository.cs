@@ -20,6 +20,12 @@ namespace Brio
         {
             return infoCardRepository.GetAll();
         }
+
+        public IQueryable<InfoCard> GetInfoCardsByRole(Roles role)
+        {
+            return infoCardRepository.GetAll().Where(u => u.User.RoleId == (int)role && u.CompanyId == BrioAppSettings.CurrentUserCompany);
+        }
+
         public InfoCard GetUserInfoCard(int userId)
         {
             return infoCardRepository.GetAll().Where(i => i.UserId == userId).FirstOrDefault();
@@ -30,6 +36,13 @@ namespace Brio
             if (id == 0)
                 return null;
             return infoCardRepository.GetById(id);
+        }
+
+        public InfoCard GetByEmail(string email)
+        {
+            if (email == "")
+                return null;
+            return infoCardRepository.GetAll().Where(i => i.Email == email).FirstOrDefault();
         }
 
         public void Insert(InfoCard model)

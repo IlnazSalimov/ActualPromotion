@@ -67,13 +67,13 @@ namespace Brio
         /// <param name="userName">Имя пользователя, связанное с билетом. </param>
         /// <param name="isPersistent">true , если билет будет храниться с постоянным файлом Cookie (сохраняемым между сеансами браузера);
         /// в противном случае — false. Если билет хранится в URL-адресе, это значение игнорируется.</param>
-        private void CreateCookie(string userName, bool isPersistent = false)
+        private void CreateCookie(string userName, bool isPersistent = true)
         {
             var ticket = new FormsAuthenticationTicket(
                   1,
                   userName,
                   DateTime.Now,
-                  DateTime.Now.AddHours(20),
+                  DateTime.Now.AddDays(2),   
                   isPersistent,
                   string.Empty,
                   FormsAuthentication.FormsCookiePath);

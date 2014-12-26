@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.IO;
 
 namespace BrioPortal.Controllers
 {
@@ -36,19 +37,25 @@ namespace BrioPortal.Controllers
         /// <summary>
         /// Предоставляет доступ к хранилищу данных о пользователях
         /// </summary>
+        private readonly IUserRepository userRepository;
+
+        /// <summary>
+        /// Предоставляет доступ к хранилищу данных о пользователях
+        /// </summary>
         private readonly IBrioContext brioContext;
+
+        private string avatarDirectory = "//Files//Documents//";
 
         public HomeController(ICompanyRepository _companyRepository, IRoleRepository _roleRepository, 
             IInfoCardRepository _infoCardRepository, IBrioContext _brioContext,
-            IDivisionRepository _divisionRepository)
+            IDivisionRepository _divisionRepository, IUserRepository _userRepository)
         {
             this.brioContext = _brioContext;
             this.companyRepository = _companyRepository;
             this.roleRepository = _roleRepository;
             this.infoCardRepository = _infoCardRepository;
             this.divisionRepository = _divisionRepository;
-
-            
+            this.userRepository = _userRepository;
         }
 
         public ActionResult Index()
@@ -73,22 +80,120 @@ namespace BrioPortal.Controllers
 
             ViewBag.Roles = roleRepository.GetAll().ToList();
 
-            ViewBag.Admins = infoCardRepository.GetAll().Where(u => u.User.RoleId == (int)Roles.Admin).ToList();
-            ViewBag.Clients = infoCardRepository.GetAll().Where(u => u.User.RoleId == (int)Roles.Client).ToList();
-            ViewBag.Employees = infoCardRepository.GetAll().Where(u => u.User.RoleId == (int)Roles.Employee).ToList();
-            ViewBag.ProjectManager = infoCardRepository.GetAll().Where(u => u.User.RoleId == (int)Roles.ProjectManager).ToList();
+
+            ViewBag.Admins = infoCardRepository.GetInfoCardsByRole(Roles.Admin);
+            ViewBag.Clients = infoCardRepository.GetInfoCardsByRole(Roles.Client);
+            ViewBag.Employees = infoCardRepository.GetInfoCardsByRole(Roles.Employee);
+            ViewBag.ProjectManager = infoCardRepository.GetInfoCardsByRole(Roles.ProjectManager);
 
             ViewBag.IsSuccess = TempData["IsSuccess"];
             ViewBag.Message = TempData["Message"];
-            if (TempData["Account"] != null)
+            ViewBag.UpdateAccount = TempData["UpdateAccount"] != null ? TempData["UpdateAccount"] : new EditPortalAccount();
+
+            if (TempData["Account"] != null) 
             {
                 return View(TempData["Account"] as CreatePortalAccount);
             }
+            return View();
+        }
+
+        public ActionResult EditAccount(EditPortalAccount model, HttpPostedFileBase AvatarUrl)
+        {
+            if (model != null)
+            {
+                InfoCard infoCard = infoCardRepository.GetByEmail(model.Email);
+
+                if (infoCard != null)
+                {
+                    infoCard.Email = model.Email;
+                    infoCard.Post = model.Post;
+                    infoCard.Name = model.Name;
+                    infoCard.Surname = model.Surname;
+                    infoCard.Patronymic = model.Patronymic;
+                    infoCard.Phone = model.Phone;
+                    infoCard.DivisionId = model.DivisionId;
+
+                    if (AvatarUrl != null && AvatarUrl.ContentLength > 0)
+                    {
+                        var fileName = Path.GetFileName(AvatarUrl.FileName);
+
+                        var savingPath = Path.Combine(HttpContext.Server.MapPath(avatarDirectory), fileName);
+                        AvatarUrl.SaveAs(savingPath);
+                        infoCard.AvatarUrl = VirtualPathUtility.ToAbsolute(Path.Combine(avatarDirectory, fileName));
+                    }
+
+
+                    try
+                    {
+                        infoCardRepository.Update(infoCard);
+                        infoCardRepository.SaveChanges();
+                    }
+                    catch (Exception e)
+                    {
+                        TempData["IsSuccess"] = false;
+                        TempData["Message"] = "Сохранение аккаунта закончилось неудачей. Попробуйте повторить попытку.";
+                        TempData["UpdateAccount"] = model;
+                        return RedirectToAction("Index");
+                    }
+
+                    TempData["IsSuccess"] = true;
+                    TempData["Message"] = "Успех.";
+                }
+                else
+                {
+                    TempData["IsSuccess"] = false;
+                    TempData["Message"] = "Сохранение аккаунта закончилось неудачей. Попробуйте повторить попытку.";
+                    TempData["UpdateAccount"] = model;
+                }
+            }
             else
             {
-                return View();
+                TempData["IsSuccess"] = false;
+                TempData["Message"] = "Сохранение аккаунта закончилось неудачей. Попробуйте повторить попытку.";
+                TempData["UpdateAccount"] = model;
             }
-            
+
+            return RedirectToAction("Index");
+        }
+
+        public ActionResult DeleteAccount(int id)
+        {
+            if (id > 0)
+            {
+                InfoCard infoCard = infoCardRepository.GetById(id);
+                if (infoCard != null)
+                {
+                    try
+                    {
+                        infoCardRepository.Delete(infoCard);
+                        infoCardRepository.SaveChanges();
+
+                        userRepository.Delete(userRepository.GetById(infoCard.UserId));
+                        userRepository.SaveChanges();
+                    }
+                    catch (Exception e)
+                    {
+                        TempData["IsSuccess"] = false;
+                        TempData["Message"] = "Произошла ошибка при сохранении изменений";
+                        return RedirectToAction("Index");
+                    }
+
+                    TempData["IsSuccess"] = true;
+                    TempData["Message"] = "Пользователь успешно удален!";
+                }
+                else
+                {
+                    TempData["IsSuccess"] = false;
+                    TempData["Message"] = "Произошла ошибка, данного пользователя не уществует в базе или отправлен неверный идентификатор.";
+                }
+            }
+            else
+            {
+                TempData["IsSuccess"] = false;
+                TempData["Message"] = "Произошла ошибка, неверный идентификатор пользовтеля";
+            }
+
+            return RedirectToAction("Index");
         }
     }
 }

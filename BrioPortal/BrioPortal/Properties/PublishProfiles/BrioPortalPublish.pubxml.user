@@ -1,0 +1,227 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword />
+    <_PublishTargetUrl>ftp://actual-testru.708.com1.ru/brioportal.actual-test.ru</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="bin/Brio.dll">
+      <publishTime>12/25/2014 10:02:48</publishTime>
+    </File>
+    <File Include="bin/BrioPortal.dll">
+      <publishTime>12/25/2014 10:02:50</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.dll">
+      <publishTime>11/19/2014 10:13:28</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.SqlServer.dll">
+      <publishTime>11/19/2014 10:13:28</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Web.Infrastructure.dll">
+      <publishTime>11/19/2014 10:13:29</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Web.Mvc.FixedDisplayModes.dll">
+      <publishTime>11/19/2014 10:13:28</publishTime>
+    </File>
+    <File Include="bin/Newtonsoft.Json.dll">
+      <publishTime>11/19/2014 10:13:29</publishTime>
+    </File>
+    <File Include="bin/Ninject.dll">
+      <publishTime>11/19/2014 10:13:30</publishTime>
+    </File>
+    <File Include="bin/Ninject.Web.Common.dll">
+      <publishTime>11/19/2014 10:13:30</publishTime>
+    </File>
+    <File Include="bin/Ninject.Web.Mvc.dll">
+      <publishTime>11/19/2014 10:13:30</publishTime>
+    </File>
+    <File Include="bin/System.Net.Http.Formatting.dll">
+      <publishTime>11/19/2014 10:13:28</publishTime>
+    </File>
+    <File Include="bin/System.Web.Helpers.dll">
+      <publishTime>11/19/2014 10:13:29</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.dll">
+      <publishTime>11/19/2014 10:13:28</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.WebHost.dll">
+      <publishTime>11/19/2014 10:13:28</publishTime>
+    </File>
+    <File Include="bin/System.Web.Mvc.dll">
+      <publishTime>11/19/2014 10:13:28</publishTime>
+    </File>
+    <File Include="bin/System.Web.Razor.dll">
+      <publishTime>11/19/2014 10:13:28</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Deployment.dll">
+      <publishTime>11/19/2014 10:13:29</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.dll">
+      <publishTime>11/19/2014 10:13:29</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Razor.dll">
+      <publishTime>11/19/2014 10:13:29</publishTime>
+    </File>
+    <File Include="bin/WebActivatorEx.dll">
+      <publishTime>11/19/2014 10:13:30</publishTime>
+    </File>
+    <File Include="Content/css/bootstrap.min.css">
+      <publishTime>12/09/2014 11:15:42</publishTime>
+    </File>
+    <File Include="Content/css/fonts/corbel.eot">
+      <publishTime>11/19/2014 10:13:23</publishTime>
+    </File>
+    <File Include="Content/css/fonts/corbel.ttf">
+      <publishTime>11/19/2014 10:13:23</publishTime>
+    </File>
+    <File Include="Content/css/fonts/corbel.woff">
+      <publishTime>11/19/2014 10:13:23</publishTime>
+    </File>
+    <File Include="Content/css/jquery-ui-1.8.21.custom.css">
+      <publishTime>11/19/2014 10:13:23</publishTime>
+    </File>
+    <File Include="Content/css/style.css">
+      <publishTime>12/24/2014 18:59:04</publishTime>
+    </File>
+    <File Include="Content/img/add-file.png">
+      <publishTime>11/19/2014 10:13:23</publishTime>
+    </File>
+    <File Include="Content/img/add.gif">
+      <publishTime>11/19/2014 10:13:23</publishTime>
+    </File>
+    <File Include="Content/img/ajax-loader.gif">
+      <publishTime>12/15/2014 09:44:42</publishTime>
+    </File>
+    <File Include="Content/img/arrow.png">
+      <publishTime>11/19/2014 10:13:23</publishTime>
+    </File>
+    <File Include="Content/img/big-plus.png">
+      <publishTime>11/19/2014 10:13:23</publishTime>
+    </File>
+    <File Include="Content/img/dark_gray.png">
+      <publishTime>11/19/2014 10:14:20</publishTime>
+    </File>
+    <File Include="Content/img/gray.png">
+      <publishTime>11/19/2014 10:13:23</publishTime>
+    </File>
+    <File Include="Content/img/left-shadow.png">
+      <publishTime>11/19/2014 10:13:23</publishTime>
+    </File>
+    <File Include="Content/img/left-side-rot.gif">
+      <publishTime>11/19/2014 10:13:23</publishTime>
+    </File>
+    <File Include="Content/img/left-side.gif">
+      <publishTime>11/19/2014 10:13:23</publishTime>
+    </File>
+    <File Include="Content/img/main-bg.png">
+      <publishTime>11/19/2014 10:13:23</publishTime>
+    </File>
+    <File Include="Content/img/open.png">
+      <publishTime>11/19/2014 10:13:23</publishTime>
+    </File>
+    <File Include="Content/img/pen.png">
+      <publishTime>12/17/2014 13:16:59</publishTime>
+    </File>
+    <File Include="Content/img/plus.gif">
+      <publishTime>11/19/2014 10:13:23</publishTime>
+    </File>
+    <File Include="Content/img/right-side-rot.gif">
+      <publishTime>11/19/2014 10:13:23</publishTime>
+    </File>
+    <File Include="Content/img/right-side.gif">
+      <publishTime>11/19/2014 10:13:23</publishTime>
+    </File>
+    <File Include="Content/img/toltip.png">
+      <publishTime>11/19/2014 10:13:23</publishTime>
+    </File>
+    <File Include="Content/js/ajaxupload.3.5.js">
+      <publishTime>11/19/2014 10:13:23</publishTime>
+    </File>
+    <File Include="Content/js/angular.min.js">
+      <publishTime>11/19/2014 10:13:23</publishTime>
+    </File>
+    <File Include="Content/js/jquery-1.7.1.min.js">
+      <publishTime>11/19/2014 10:13:23</publishTime>
+    </File>
+    <File Include="Content/js/jquery-ui-1.8.21.custom.min.js">
+      <publishTime>11/19/2014 10:13:23</publishTime>
+    </File>
+    <File Include="Content/js/jquery.ui.datepicker-ru.js">
+      <publishTime>11/19/2014 10:13:23</publishTime>
+    </File>
+    <File Include="Content/js/script.js">
+      <publishTime>12/24/2014 12:38:46</publishTime>
+    </File>
+    <File Include="Files/Documents/logo.png">
+      <publishTime>12/08/2014 15:15:49</publishTime>
+    </File>
+    <File Include="Files/Documents/script.sql">
+      <publishTime>12/09/2014 17:09:36</publishTime>
+    </File>
+    <File Include="Files/Documents/Фото0424.jpg">
+      <publishTime>12/24/2014 17:10:01</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>11/19/2014 10:13:23</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>12/24/2014 09:50:30</publishTime>
+    </File>
+    <File Include="Views/Account/Login.cshtml">
+      <publishTime>12/17/2014 10:04:15</publishTime>
+    </File>
+    <File Include="Views/Employee/CreateDivisionPartial.cshtml">
+      <publishTime>12/17/2014 09:03:13</publishTime>
+    </File>
+    <File Include="Views/Employee/Index.cshtml">
+      <publishTime>12/24/2014 18:38:00</publishTime>
+    </File>
+    <File Include="Views/Home/EditAccountPartial.cshtml">
+      <publishTime>12/24/2014 12:45:30</publishTime>
+    </File>
+    <File Include="Views/Home/Index.cshtml">
+      <publishTime>12/24/2014 16:57:25</publishTime>
+    </File>
+    <File Include="Views/Layouts/DefaultLayouts.cshtml">
+      <publishTime>12/19/2014 18:00:26</publishTime>
+    </File>
+    <File Include="Views/News/CreateNewsPartial.cshtml">
+      <publishTime>12/24/2014 18:44:45</publishTime>
+    </File>
+    <File Include="Views/News/EditNewsPartial.cshtml">
+      <publishTime>12/17/2014 15:21:33</publishTime>
+    </File>
+    <File Include="Views/News/Index.cshtml">
+      <publishTime>12/24/2014 18:59:04</publishTime>
+    </File>
+    <File Include="Views/Project/CreateProjectPartial.cshtml">
+      <publishTime>12/23/2014 12:19:03</publishTime>
+    </File>
+    <File Include="Views/Project/CreateProjectStepPartial.cshtml">
+      <publishTime>12/23/2014 12:19:04</publishTime>
+    </File>
+    <File Include="Views/Project/EditProjectPartial.cshtml">
+      <publishTime>12/24/2014 14:10:15</publishTime>
+    </File>
+    <File Include="Views/Project/Index.cshtml">
+      <publishTime>12/24/2014 13:54:11</publishTime>
+    </File>
+    <File Include="Views/ProjectDocument/Index.cshtml">
+      <publishTime>12/22/2014 09:36:22</publishTime>
+    </File>
+    <File Include="Views/Shared/RightBarNews.cshtml">
+      <publishTime>12/17/2014 12:46:47</publishTime>
+    </File>
+    <File Include="Views/Web.config">
+      <publishTime>11/19/2014 10:13:23</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>12/24/2014 19:05:51</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

@@ -54,7 +54,9 @@ namespace BrioPortal.Controllers
                     Post = infoCard.Post,
                     Surname = infoCard.Surname,
                     UserId = infoCard.UserId,
-                    CompanyName = companyRepository.GetById(infoCard.CompanyId).CompanyName
+                    CompanyName = companyRepository.GetById(infoCard.CompanyId).CompanyName,
+                    DivisionId = infoCard.DivisionId.HasValue ? infoCard.DivisionId.Value : 0,
+                    AvatarUrl = infoCard.AvatarUrl
                 };
 
                 return Json(ResponseProcessing.Success(response));

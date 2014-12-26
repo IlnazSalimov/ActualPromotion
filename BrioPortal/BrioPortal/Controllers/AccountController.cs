@@ -2,6 +2,7 @@
 using Brio.Models;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Web;
@@ -122,9 +123,11 @@ namespace BrioPortal.Controllers
         /// <param name="model">Модель регистрации</param>
         /// <returns>Экземпляр ViewResult, который выполняет визуализацию представления.</returns>
         [HttpPost]
-        public ActionResult SignUp(CreatePortalAccount model)
+        public ActionResult SignUp(CreatePortalAccount model, HttpPostedFileBase AvatarUrl)
         {
-            if (ModelState.IsValid)
+            string avatarDirectory = "//Files//Documents//";
+
+            if (ModelState.IsValid && (AvatarUrl != null && AvatarUrl.ContentLength > 0))
             {
                 Regex rgx = new Regex("^[a-z0-9_\\+-]+(\\.[a-z0-9_\\+-]+)*@[a-z0-9-]+(\\.[a-z0-9-]+)*\\.([a-z]{2,4})$");
                 if (!rgx.IsMatch(model.Email))
@@ -157,7 +160,9 @@ namespace BrioPortal.Controllers
                     Password = model.Password,
                     RoleId = model.RoleId
                 });
-                _infoCardRepository.Insert(new InfoCard { 
+
+                InfoCard infoCard = new InfoCard
+                {
                     CompanyId = _brioContext.CurrentUser.CompanyId,
                     Email = model.Email,
                     Name = model.Name,
@@ -166,7 +171,16 @@ namespace BrioPortal.Controllers
                     Phone = model.Phone,
                     UserId = userId,
                     DivisionId = model.DivisionId,
-                });
+
+                };
+
+                var fileName = Path.GetFileName(AvatarUrl.FileName);
+
+                var savingPath = Path.Combine(HttpContext.Server.MapPath(avatarDirectory), fileName);
+                AvatarUrl.SaveAs(savingPath);
+                infoCard.AvatarUrl = VirtualPathUtility.ToAbsolute(Path.Combine(avatarDirectory, fileName));
+
+                _infoCardRepository.Insert(infoCard);
 
                 _userRepository.SaveChanges();
             }

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="actual98_brioDbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+<Schema Namespace="BrioEntityModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
   <EntityType Name="Articles">
     <Key>
       <PropertyRef Name="ArticleID" />
@@ -80,10 +80,12 @@
     <Property Name="BirthDay" Type="datetime" />
     <Property Name="Name" Type="varchar" MaxLength="255" Nullable="false" />
     <Property Name="Surname" Type="varchar" MaxLength="255" Nullable="false" />
-    <Property Name="Patronymic" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Patronymic" Type="varchar" MaxLength="255" />
     <Property Name="Adress" Type="varchar" MaxLength="255" />
-    <Property Name="Phone" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Phone" Type="varchar" MaxLength="255" />
     <Property Name="Email" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="DivisionId" Type="int" />
+    <Property Name="AvatarUrl" Type="varchar" MaxLength="255" />
   </EntityType>
   <EntityType Name="News">
     <Key>
@@ -91,11 +93,11 @@
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="CompanyId" Type="int" Nullable="false" />
-    <Property Name="DivisionId" Type="int" Nullable="false" />
     <Property Name="AuthorUserId" Type="int" Nullable="false" />
     <Property Name="CreateDate" Type="datetime" Nullable="false" />
     <Property Name="Title" Type="varchar" MaxLength="255" Nullable="false" />
     <Property Name="Text" Type="varchar(max)" Nullable="false" />
+    <Property Name="PhotoPath" Type="varchar" MaxLength="255" Nullable="false" />
   </EntityType>
   <EntityType Name="Pages">
     <Key>
@@ -329,18 +331,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__News__DivisionId__6754599E">
-    <End Role="Divisions" Type="Self.Divisions" Multiplicity="1" />
-    <End Role="News" Type="Self.News" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Divisions">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="News">
-        <PropertyRef Name="DivisionId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK__PriceList__Compa__5441852A">
     <End Role="Companies" Type="Self.Companies" Multiplicity="1" />
     <End Role="PriceLists" Type="Self.PriceLists" Multiplicity="*" />
@@ -437,7 +427,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="actual98_brioDbModelStoreContainer">
+  <EntityContainer Name="BrioEntityModelStoreContainer">
     <EntitySet Name="Articles" EntityType="Self.Articles" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Companies" EntityType="Self.Companies" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="CompanyWorks" EntityType="Self.CompanyWorks" Schema="dbo" store:Type="Tables" />
@@ -501,10 +491,6 @@
     </AssociationSet>
     <AssociationSet Name="FK__News__CompanyId__66603565" Association="Self.FK__News__CompanyId__66603565">
       <End Role="Companies" EntitySet="Companies" />
-      <End Role="News" EntitySet="News" />
-    </AssociationSet>
-    <AssociationSet Name="FK__News__DivisionId__6754599E" Association="Self.FK__News__DivisionId__6754599E">
-      <End Role="Divisions" EntitySet="Divisions" />
       <End Role="News" EntitySet="News" />
     </AssociationSet>
     <AssociationSet Name="FK__PriceList__Compa__5441852A" Association="Self.FK__PriceList__Compa__5441852A">

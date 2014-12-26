@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="actual98_brioDbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+<Schema Namespace="BrioEntityModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
   <EntityType Name="Article">
     <Key>
       <PropertyRef Name="ArticleID" />
@@ -33,11 +33,11 @@
     <NavigationProperty Name="Documents" Relationship="Self.FK__Documents__Compa__3F466844" FromRole="Companies" ToRole="Documents" />
     <NavigationProperty Name="Feedbacks" Relationship="Self.FK__Feedbacks__Compa__440B1D61" FromRole="Companies" ToRole="Feedbacks" />
     <NavigationProperty Name="InfoCards" Relationship="Self.FK__InfoCards__Divis__6383C8BA" FromRole="Companies" ToRole="InfoCards" />
-    <NavigationProperty Name="News" Relationship="Self.FK__News__CompanyId__66603565" FromRole="Companies" ToRole="News" />
     <NavigationProperty Name="PriceLists" Relationship="Self.FK__PriceList__Compa__5441852A" FromRole="Companies" ToRole="PriceLists" />
     <NavigationProperty Name="Products" Relationship="Self.FK__Products__Compan__4316F928" FromRole="Companies" ToRole="Products" />
     <NavigationProperty Name="Projects" Relationship="Self.FK__Projects__Compan__6B24EA82" FromRole="Companies" ToRole="Projects" />
     <NavigationProperty Name="Reviews" Relationship="Self.FK__Reviews__Company__46E78A0C" FromRole="Companies" ToRole="Reviews" />
+    <NavigationProperty Name="News" Relationship="BrioEntityModel.FK__News__CompanyId__66603565" FromRole="Company" ToRole="News" />
   </EntityType>
   <EntityType Name="CompanyWork">
     <Key>
@@ -59,7 +59,6 @@
     <Property Name="Head" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="CompanyId" Type="Int32" Nullable="false" />
     <NavigationProperty Name="Company" Relationship="Self.FK__Divisions__Compa__5CD6CB2B" FromRole="Divisions" ToRole="Companies" />
-    <NavigationProperty Name="News" Relationship="Self.FK__News__DivisionId__6754599E" FromRole="Divisions" ToRole="News" />
   </EntityType>
   <EntityType Name="Document">
     <Key>
@@ -100,27 +99,14 @@
     <Property Name="BirthDay" Type="DateTime" Precision="3" />
     <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="Surname" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="Patronymic" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Patronymic" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
     <Property Name="Adress" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-    <Property Name="Phone" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Phone" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
     <Property Name="Email" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DivisionId" Type="Int32" />
+    <Property Name="AvatarUrl" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="Company" Relationship="Self.FK__InfoCards__Divis__6383C8BA" FromRole="InfoCards" ToRole="Companies" />
     <NavigationProperty Name="User" Relationship="Self.FK__InfoCards__UserI__628FA481" FromRole="InfoCards" ToRole="Users" />
-  </EntityType>
-  <EntityType Name="News">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="CompanyId" Type="Int32" Nullable="false" />
-    <Property Name="DivisionId" Type="Int32" Nullable="false" />
-    <Property Name="AuthorUserId" Type="Int32" Nullable="false" />
-    <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
-    <Property Name="Text" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
-    <NavigationProperty Name="Company" Relationship="Self.FK__News__CompanyId__66603565" FromRole="News" ToRole="Companies" />
-    <NavigationProperty Name="Division" Relationship="Self.FK__News__DivisionId__6754599E" FromRole="News" ToRole="Divisions" />
-    <NavigationProperty Name="User" Relationship="Self.FK__News__AuthorUser__68487DD7" FromRole="News" ToRole="Users" />
-    <Property Name="Title" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
   </EntityType>
   <EntityType Name="Page">
     <Key>
@@ -223,9 +209,9 @@
     <Property Name="RoleId" Type="Int32" Nullable="false" />
     <NavigationProperty Name="Articles" Relationship="Self.FK__Articles__Author__1ED998B2" FromRole="Users" ToRole="Articles" />
     <NavigationProperty Name="InfoCards" Relationship="Self.FK__InfoCards__UserI__628FA481" FromRole="Users" ToRole="InfoCards" />
-    <NavigationProperty Name="News" Relationship="Self.FK__News__AuthorUser__68487DD7" FromRole="Users" ToRole="News" />
     <NavigationProperty Name="Projects" Relationship="Self.FK__Projects__Respon__6C190EBB" FromRole="Users" ToRole="Projects" />
     <NavigationProperty Name="Role" Relationship="Self.FK__Users__RoleId__1BFD2C07" FromRole="Users" ToRole="Roles" />
+    <NavigationProperty Name="News" Relationship="BrioEntityModel.FK__News__AuthorUser__68487DD7" FromRole="User" ToRole="News" />
   </EntityType>
   <Association Name="FK__Articles__Author__1ED998B2">
     <End Role="Users" Type="Self.User" Multiplicity="1" />
@@ -311,18 +297,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__News__CompanyId__66603565">
-    <End Role="Companies" Type="Self.Company" Multiplicity="1" />
-    <End Role="News" Type="Self.News" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Companies">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="News">
-        <PropertyRef Name="CompanyId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK__PriceList__Compa__5441852A">
     <End Role="Companies" Type="Self.Company" Multiplicity="1" />
     <End Role="PriceLists" Type="Self.PriceList" Multiplicity="*" />
@@ -371,18 +345,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__News__DivisionId__6754599E">
-    <End Role="Divisions" Type="Self.Division" Multiplicity="1" />
-    <End Role="News" Type="Self.News" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Divisions">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="News">
-        <PropertyRef Name="DivisionId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK__Documents__PageI__3D5E1FD2">
     <End Role="Pages" Type="Self.Page" Multiplicity="1" />
     <End Role="Documents" Type="Self.Document" Multiplicity="*" />
@@ -416,18 +378,6 @@
       </Principal>
       <Dependent Role="InfoCards">
         <PropertyRef Name="UserId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK__News__AuthorUser__68487DD7">
-    <End Role="Users" Type="Self.User" Multiplicity="1" />
-    <End Role="News" Type="Self.News" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Users">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="News">
-        <PropertyRef Name="AuthorUserId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -487,7 +437,6 @@
     <EntitySet Name="Documents" EntityType="Self.Document" />
     <EntitySet Name="Feedbacks" EntityType="Self.Feedback" />
     <EntitySet Name="InfoCards" EntityType="Self.InfoCard" />
-    <EntitySet Name="News" EntityType="Self.News" />
     <EntitySet Name="Pages" EntityType="Self.Page" />
     <EntitySet Name="PriceLists" EntityType="Self.PriceList" />
     <EntitySet Name="Products" EntityType="Self.Product" />
@@ -525,10 +474,6 @@
       <End Role="Companies" EntitySet="Companies" />
       <End Role="InfoCards" EntitySet="InfoCards" />
     </AssociationSet>
-    <AssociationSet Name="FK__News__CompanyId__66603565" Association="Self.FK__News__CompanyId__66603565">
-      <End Role="Companies" EntitySet="Companies" />
-      <End Role="News" EntitySet="News" />
-    </AssociationSet>
     <AssociationSet Name="FK__PriceList__Compa__5441852A" Association="Self.FK__PriceList__Compa__5441852A">
       <End Role="Companies" EntitySet="Companies" />
       <End Role="PriceLists" EntitySet="PriceLists" />
@@ -545,10 +490,6 @@
       <End Role="Companies" EntitySet="Companies" />
       <End Role="Reviews" EntitySet="Reviews" />
     </AssociationSet>
-    <AssociationSet Name="FK__News__DivisionId__6754599E" Association="Self.FK__News__DivisionId__6754599E">
-      <End Role="Divisions" EntitySet="Divisions" />
-      <End Role="News" EntitySet="News" />
-    </AssociationSet>
     <AssociationSet Name="FK__Documents__PageI__3D5E1FD2" Association="Self.FK__Documents__PageI__3D5E1FD2">
       <End Role="Pages" EntitySet="Pages" />
       <End Role="Documents" EntitySet="Documents" />
@@ -560,10 +501,6 @@
     <AssociationSet Name="FK__InfoCards__UserI__628FA481" Association="Self.FK__InfoCards__UserI__628FA481">
       <End Role="Users" EntitySet="Users" />
       <End Role="InfoCards" EntitySet="InfoCards" />
-    </AssociationSet>
-    <AssociationSet Name="FK__News__AuthorUser__68487DD7" Association="Self.FK__News__AuthorUser__68487DD7">
-      <End Role="Users" EntitySet="Users" />
-      <End Role="News" EntitySet="News" />
     </AssociationSet>
     <AssociationSet Name="FK__ProjectDo__Proje__49C3F6B7" Association="Self.FK__ProjectDo__Proje__49C3F6B7">
       <End Role="Projects" EntitySet="Projects" />
@@ -581,5 +518,52 @@
       <End Role="Roles" EntitySet="Roles" />
       <End Role="Users" EntitySet="Users" />
     </AssociationSet>
+    <EntitySet Name="News" EntityType="BrioEntityModel.News" />
+    <AssociationSet Name="FK__News__CompanyId__66603565" Association="BrioEntityModel.FK__News__CompanyId__66603565">
+      <End Role="Company" EntitySet="Companies" />
+      <End Role="News" EntitySet="News" />
+    </AssociationSet>
+    <AssociationSet Name="FK__News__AuthorUser__68487DD7" Association="BrioEntityModel.FK__News__AuthorUser__68487DD7">
+      <End Role="User" EntitySet="Users" />
+      <End Role="News" EntitySet="News" />
+    </AssociationSet>
   </EntityContainer>
+  <EntityType Name="News">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CompanyId" Type="Int32" Nullable="false" />
+    <Property Name="AuthorUserId" Type="Int32" Nullable="false" />
+    <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Title" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Text" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="PhotoPath" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Company" Relationship="BrioEntityModel.FK__News__CompanyId__66603565" FromRole="News" ToRole="Company" />
+    <NavigationProperty Name="User" Relationship="BrioEntityModel.FK__News__AuthorUser__68487DD7" FromRole="News" ToRole="User" />
+  </EntityType>
+  <Association Name="FK__News__CompanyId__66603565">
+    <End Type="BrioEntityModel.Company" Role="Company" Multiplicity="1" />
+    <End Type="BrioEntityModel.News" Role="News" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Company">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="News">
+        <PropertyRef Name="CompanyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__News__AuthorUser__68487DD7">
+    <End Type="BrioEntityModel.User" Role="User" Multiplicity="1" />
+    <End Type="BrioEntityModel.News" Role="News" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="News">
+        <PropertyRef Name="AuthorUserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

@@ -1,0 +1,66 @@
+﻿@using BrioPortal
+@using Brio
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Документ без названия</title>
+    
+
+    <link href="../Content/css/jquery-ui-1.8.21.custom.css" rel="stylesheet" type="text/css">
+    
+
+    <script src="../Content/js/jquery-1.7.1.min.js"></script>
+    <script src="../Content/js/jquery-ui-1.8.21.custom.min.js"></script>
+    <script src="../Content/js/jquery.ui.datepicker-ru.js"></script>
+    <script src="../Content/js/script.js"></script>
+    <script src="../Content/js/jquery.ui.datepicker-ru.js"></script>
+
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="../Content/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../Content/css/style.css" rel="stylesheet" type="text/css">
+    
+</head>
+
+<body>
+
+    <div class="main-wrapp">
+        @if (User.Identity.IsAuthenticated)
+        { 
+            <div class="enter">
+                <ul>
+                    @{
+                        IBrioContext context = (IBrioContext)DependencyResolver.Current.GetService(typeof(IBrioContext));
+                    }
+                    <li>@context.CurrentUser.FullName</li>
+                    <li>@Html.ActionLink("ВЫХОД", "Logout", "Account", new { }, new { })</li>
+                </ul>
+                @if (context.CurrentUser.RoleId == (int)Brio.Models.Roles.Admin)
+                {
+                    <p class="lk"><span>@Html.ActionLink("ЛИЧНЫЙ КАБИНЕТ", "Index", "Home", new { }, new { })</span></p>
+                }
+                
+            </div>
+            <script>
+                $(".lk span").bind("click", function () {
+
+                });
+            </script>
+            <nav class="main-nav">
+                <ul>
+                    <li class="@Html.IsSelected("Employee", "Index")">@Html.ActionLink("СОТРУДНИКИ", "Index", "Employee", new { }, new { }) </li>
+                    <li class="@Html.IsSelected("News", "Index")">@Html.ActionLink("НОВОСТИ", "Index", "News", new { }, new { })</li>
+                    <li class="@Html.IsSelected("ProjectDocument", "Index")">@Html.ActionLink("ДОКУМЕНТЫ", "Index", "ProjectDocument", new { }, new { })</li>
+                    <li class="@Html.IsSelected("Project", "Index")">@Html.ActionLink("ПРОЕКТЫ", "Index", "Project", new { }, new { })</li>
+                </ul>
+            </nav>
+        }
+        @RenderBody()
+    </div>
+</body>
+</html>

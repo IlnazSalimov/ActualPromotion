@@ -11,14 +11,14 @@ namespace Brio.Models
     {
         public int Id { get; set; }
         public int CompanyId { get; set; }
-        public int DivisionId { get; set; }
         public int AuthorUserId { get; set; }
         public string AuthorUserFullName
         {
             get
             {
                 IInfoCardRepository infoCardRepository = (IInfoCardRepository)DependencyResolver.Current.GetService(typeof(IInfoCardRepository));
-                return infoCardRepository.GetUserInfoCard(this.AuthorUserId).FullName;
+                InfoCard ic = infoCardRepository.GetUserInfoCard(this.AuthorUserId);
+                return ic != null ? ic.FullName : "..пользователь удален..";
             }
         }
         public DateTime CreateDate { get; set; }

@@ -36,11 +36,12 @@ namespace Brio.Models
         [Display(Name = "Отчество")]
         public string Patronymic { get; set; }
 
-        [Required]
+        [Display(Name = "Фото")]
+        public string AvatarUrl { get; set; }
+
         [Display(Name = "Телефон")]
         public string Phone { get; set; }
 
-        [Required]
         [Display(Name = "Отдел")]
         public int DivisionId { get; set; }
 

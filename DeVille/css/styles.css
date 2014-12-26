@@ -1,0 +1,322 @@
+﻿@font-face {
+    font-family: 'TexgyReadVentor';
+    src: url('fonts/texgyreadventor.eot');
+    src: local('TexgyReadVentor'), url('fonts/texgyreadventor.woff') format('woff'), url('fonts/texgyreadventor.ttf') format('truetype'), url('fonts/texgyreadventor.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: "TexgyReadVentor", sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+.page-wraper {
+    width: 900px;
+    margin: 0 auto;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+/*--  Header [  --*/
+.header {
+    color: #fff;
+    position: relative;
+    height: 100px;
+    background: url(../img/header_left_bottom_bckg.png), url(../img/header_up_right_bckg.png), #434242;
+    background-repeat: no-repeat, no-repeat;
+    background-position: 0 22px, 808px 0;
+}
+
+    .header .phone {
+        font-size: 1.4em;
+        margin-bottom: 10px;
+    }
+
+    .header .address {
+        font-size: 1.11em;
+        margin-bottom: 7px;
+    }
+
+.header-logo {
+    margin: 0;
+}
+
+    .header-logo a {
+        display: block;
+        position: absolute;
+        top: 50%;
+        margin-top: -28px;
+        left: 60px;
+        width: 170px;
+        height: 56px;
+        background-image: url(../img/logo.png);
+        background-repeat: no-repeat;
+        background-size: contain;
+        text-indent: -9000px;
+    }
+
+.right-block {
+    float: right;
+    margin: 10px 60px;
+}
+
+.serch-text {
+    background: #434242;
+    border: 1px solid #FFFFFF;
+    width: 150px;
+    color: #fff;
+}
+
+.serch-submit {
+    position: relative;
+    left: -5px;
+    border: 1px solid #FFFFFF;
+    color: #fafafa;
+    width: 25px;
+    bottom: -3px;
+}
+
+.serch-submit {
+    background: url(img/search_icon.png), #fff;
+    background-repeat: no-repeat;
+    background-position: 4px 1px;
+}
+/*--  ] Header  --*/
+
+/*------------------------------------------------------------------*/
+
+/*--  Main menu [  --*/
+.main-menu {
+    z-index: 7;
+    position: relative;
+}
+
+    .main-menu ul {
+        margin: 0 30px;
+    }
+
+    .main-menu li {
+        display: block;
+        float: left;
+    }
+
+    .main-menu .visible li {
+    }
+
+    .main-menu .hidden li {
+        padding: 0 30px;
+    }
+
+    .main-menu .visible {
+        height: 50px;
+        background: rgba(222, 52, 138, 0.8);
+    }
+
+    .main-menu .hidden {
+        position: absolute;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.9);
+        padding: 10px 0;
+        display: none;
+    }
+
+    .main-menu li.button {
+        float: right;
+        margin-right: 50px;
+    }
+
+    .main-menu li .pure-button {
+        margin: 8.5px 0;
+        background-color: #fff;
+        padding: .35em 1em;
+    }
+
+    .main-menu .hidden li a {
+        display: block;
+        color: #2B2A29;
+        font: 100 0.9em/0 "TexgyReadVentor", sans-serif;
+        padding: 10px 0;
+    }
+
+    .main-menu .visible li a {
+        display: block;
+        height: 100%;
+        font: 300 16px/50px "TexgyReadVentor", sans-serif;
+        color: #fff;
+        padding: 0 24px;
+    }
+
+        .main-menu .visible li a:hover,
+        .main-menu .visible li a.active {
+            background-color: #fff;
+            color: #2B2A29;
+            border-bottom: 1px solid #DE348A;
+            box-sizing: border-box;
+        }
+/*--  ] Main menu  --*/
+
+/*------------------------------------------------------------------*/
+
+/*--  Main content [  --*/
+.main-content {
+    z-index: 6;
+    position: relative;
+    width: 90%;
+    margin: auto;
+    margin-top: -50px;
+}
+
+.content {
+    color: #2B2A29;
+    padding: 30px 0;
+}
+
+/*--  table style [  --*/
+.pure-table {
+    width: 100%;
+    border-color: #DE348A;
+    font-size: 17px;
+}
+
+    .pure-table thead {
+        background: #DE348A;
+        color: #fff;
+    }
+
+    .pure-table th {
+        border-left-color: #fff;
+        padding: 1em 1em;
+    }
+
+    .pure-table td {
+        border-left-color: #DE348A;
+        padding: .5em 1em;
+    }
+
+.pure-table-bordered td {
+    border-bottom-color: #DE348A;
+}
+/*--  ] table style  --*/
+
+.articles {
+    line-height: 29px;
+    font-size: 1.1em;
+}
+
+    .articles p:first-letter {
+        font-size: 18px;
+        color: #DE348A;
+    }
+
+
+
+.b-wrap {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+    .b-wrap:first-child {
+        padding-right: 16px;
+    }
+
+    .b-wrap:not(:first-child):not(:last-child) {
+        padding: 0 8px;
+    }
+
+    .b-wrap:last-child {
+        padding-left: 16px;
+    }
+
+.services .pure-g:not(:last-child),
+.photo-gallery .pure-g:not(:last-child) {
+    margin-bottom: 35px;
+}
+
+
+
+.b-title {
+    padding: 1.2em;
+    background-color: #434242;
+    color: #fff;
+    text-align: center;
+}
+
+    .b-title.pink {
+        background-color: #DE348A;
+    }
+
+.services .b-img img {
+    height: 165px;
+}
+
+.photo-gallery .b-img img {
+    height: 400px;
+}
+/*--  ] Main content  --*/
+
+/*------------------------------------------------------------------*/
+
+/*--  Footer [  --*/
+.footer {
+    background: url(../img/footer_right_bckg.png), #434242;
+    background-repeat: no-repeat;
+    background-position: 305px 0;
+    color: #fff;
+}
+
+    .footer .top {
+        width: 70%;
+        margin: auto;
+    }
+
+    .footer .nav li {
+        line-height: 18px;
+        font-size: .9rem;
+    }
+
+        .footer .nav li.cap {
+            line-height: 25px;
+            font-size: 1em;
+        }
+
+            .footer .nav li.cap:first-letter {
+                color: #DE348A;
+            }
+
+    .footer .nav a {
+        text-decoration: none;
+        color: #fff;
+    }
+
+    .footer .bottom {
+        height: 110px;
+        background: url(../img/footer_logo.png) no-repeat 50px 65px;
+        position: relative;
+        border-top: 1px solid rgb(114, 114, 113);
+    }
+
+.web-studio {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 10px 20px;
+    font-size: 11px;
+    letter-spacing: 1px;
+}
+
+.social-but {
+    position: absolute;
+    left: 50%;
+    margin-left: -44px;
+    margin-top: 15px;
+}
+
+    .social-but img {
+        width: 30px;
+        margin-right: 12px;
+    }
+/*--  ] Footer  --*/
