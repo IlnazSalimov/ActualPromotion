@@ -31,8 +31,6 @@ namespace BrioPortal.Controllers
         /// </summary>
         private readonly IBrioContext brioContext;
 
-        private string newsPhotoUploadDirectory = "//Files//NewsPhoto//";
-
         public NewsController(INewsRepository _newsRepository, IBrioContext _brioContext, IInfoCardRepository _infoCardRepository)
         {
             this.newsRepository = _newsRepository;
@@ -48,7 +46,7 @@ namespace BrioPortal.Controllers
             ViewBag.News = TempData["CreateNews"] != null ? TempData["CreateNews"] : new CreateNews();
             ViewBag.EditNews = TempData["EditNews"] != null ? TempData["EditNews"] : new EditNews();
 
-            return View(newsRepository.GetAll());
+            return View(newsRepository.GetAll(brioContext.CurrentUser.CompanyId));
         }
 
         [HttpPost]
@@ -64,9 +62,9 @@ namespace BrioPortal.Controllers
 
                 var fileName = Path.GetFileName(PhotoPath.FileName);
 
-                var savingPath = Path.Combine(HttpContext.Server.MapPath(newsPhotoUploadDirectory), fileName);
+                var savingPath = Path.Combine(HttpContext.Server.MapPath(AppSettings.NEWS_PHOTO_SAVING_PATH), fileName);
                 PhotoPath.SaveAs(savingPath);
-                news.PhotoPath = VirtualPathUtility.ToAbsolute(Path.Combine(newsPhotoUploadDirectory, fileName));
+                news.PhotoPath = VirtualPathUtility.ToAbsolute(Path.Combine(AppSettings.NEWS_PHOTO_SAVING_PATH, fileName));
 
                 newsRepository.Update(news);
                 newsRepository.SaveChanges();
@@ -90,6 +88,17 @@ namespace BrioPortal.Controllers
         {
             if (ModelState.IsValid && (PhotoPath != null && PhotoPath.ContentLength > 0))
             {
+                foreach (string word in model.Text.Split(' '))
+                {
+                    if (word.Length > 50)
+                    {
+                        TempData["IsSuccess"] = false;
+                        TempData["Message"] = "Длинна одного слова не может быть больше 50 символов";
+                        TempData["CreateNews"] = model;
+                        return RedirectToAction("Index");
+                    }
+                }
+
                 News news = new News
                 {
                     Title = model.Title,
@@ -101,9 +110,9 @@ namespace BrioPortal.Controllers
 
                 var fileName = Path.GetFileName(PhotoPath.FileName);
 
-                var savingPath = Path.Combine(HttpContext.Server.MapPath(newsPhotoUploadDirectory), fileName);
+                var savingPath = Path.Combine(HttpContext.Server.MapPath(AppSettings.NEWS_PHOTO_SAVING_PATH), fileName);
                 PhotoPath.SaveAs(savingPath);
-                news.PhotoPath = VirtualPathUtility.ToAbsolute(Path.Combine(newsPhotoUploadDirectory, fileName));
+                news.PhotoPath = VirtualPathUtility.ToAbsolute(Path.Combine(AppSettings.NEWS_PHOTO_SAVING_PATH, fileName));
 
                 newsRepository.Insert(news);
                 newsRepository.SaveChanges();

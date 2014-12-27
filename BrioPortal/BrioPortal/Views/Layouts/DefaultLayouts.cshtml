@@ -9,7 +9,7 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Документ без названия</title>
+    <title>@ViewBag.Title</title>
     
 
     <link href="../Content/css/jquery-ui-1.8.21.custom.css" rel="stylesheet" type="text/css">
@@ -31,7 +31,7 @@
 
     <div class="main-wrapp">
         @if (User.Identity.IsAuthenticated)
-        { 
+        {
             <div class="enter">
                 <ul>
                     @{
@@ -44,7 +44,7 @@
                 {
                     <p class="lk"><span>@Html.ActionLink("ЛИЧНЫЙ КАБИНЕТ", "Index", "Home", new { }, new { })</span></p>
                 }
-                
+
             </div>
             <script>
                 $(".lk span").bind("click", function () {
@@ -59,8 +59,36 @@
                     <li class="@Html.IsSelected("Project", "Index")">@Html.ActionLink("ПРОЕКТЫ", "Index", "Project", new { }, new { })</li>
                 </ul>
             </nav>
+        
+        <section>
+            @Html.Partial("RightBarNews")
+            <div class="content">
+                @using (Html.BeginForm("Serch", "ProjectDocument", new { }, FormMethod.Get, new { enctype = "multipart/form-data", name="serch" }))
+                {
+                    <input id="q" name="q" type="text" placeholder="ВВЕДИТЕ НАЗВАНИЕ ДОКУМЕНТА">
+                    <button type="submit">
+                        <h2 class="left"><span>Поиск</span></h2>
+                    </button>
+                }
+                @if (ViewBag.IsSuccess != null && ViewBag.Message != null)
+                {
+                    if ((bool)ViewBag.IsSuccess)
+                    {
+                        <div class="alert alert-success" role="alert">@ViewBag.Message</div>
+                    }
+                    else
+                    {
+                        <div class="alert alert-danger" role="alert">@ViewBag.Message</div>
+                    }
+                }
+                @RenderBody()
+            </div>
+        </section>
         }
-        @RenderBody()
+        else
+        {
+            @RenderBody()
+        }
     </div>
 </body>
 </html>

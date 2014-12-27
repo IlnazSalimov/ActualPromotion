@@ -131,6 +131,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AppSettings.cs" />
     <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\EmployeeController.cs" />
@@ -182,6 +183,7 @@
     <Content Include="Files\Documents\logo.png" />
     <Content Include="Files\Documents\script.sql" />
     <Content Include="Files\Documents\Фото0424.jpg" />
+    <Content Include="Files\UserPhotos\default-avatar.png" />
     <Content Include="Global.asax" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -265,6 +267,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\PublishProfiles\BrioPortalPublish.pubxml" />
+    <Content Include="Views\ProjectDocument\Serch.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

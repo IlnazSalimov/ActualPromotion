@@ -11,7 +11,7 @@ namespace Brio
     public interface IProjectRepository
     {
         IQueryable<Project> GetAll();
-        IQueryable<Project> GetCompanyProjects();
+        IQueryable<Project> GetCompanyProjects(int companyId);
         Project GetById(int id);
         int Insert(Project model);
         void Update(Project model);

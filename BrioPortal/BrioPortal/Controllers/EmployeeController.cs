@@ -102,5 +102,24 @@ namespace BrioPortal.Controllers
             return RedirectToAction("Index");
         }
 
+        public ActionResult DeleteDivision(int id)
+        {
+            if (id > 0)
+            {
+                Division d = divisionRepository.GetById(id);
+                divisionRepository.Delete(d);
+                divisionRepository.SaveChanges();
+
+                TempData["IsSuccess"] = true;
+                TempData["Message"] = "Отдел успешно удален!";
+            }
+            else
+            {
+                TempData["IsSuccess"] = false;
+                TempData["Message"] = "Произошла ошибка, пожалуйста повторите попытку!";
+            }
+
+            return RedirectToAction("Index");
+        }
     }
 }

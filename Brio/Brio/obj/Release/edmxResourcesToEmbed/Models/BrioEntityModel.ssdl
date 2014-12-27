@@ -44,6 +44,7 @@
     <Property Name="Name" Type="varchar" MaxLength="255" Nullable="false" />
     <Property Name="Head" Type="varchar" MaxLength="255" Nullable="false" />
     <Property Name="CompanyId" Type="int" Nullable="false" />
+    <Property Name="State" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="Documents">
     <Key>
@@ -147,6 +148,15 @@
     <Property Name="StartDate" Type="datetime" />
     <Property Name="EndDate" Type="datetime" />
     <Property Name="CreateDate" Type="datetime" Nullable="false" />
+    <Property Name="StateId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProjectStates">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="State" Type="nchar" MaxLength="128" Nullable="false" />
+    <Property Name="Code" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="ProjectSteps">
     <Key>
@@ -391,6 +401,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK__Projects__StateI__5FB337D6">
+    <End Role="ProjectStates" Type="Self.ProjectStates" Multiplicity="1" />
+    <End Role="Projects" Type="Self.Projects" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProjectStates">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Projects">
+        <PropertyRef Name="StateId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK__ProjectSt__Proje__4BAC3F29">
     <End Role="Projects" Type="Self.Projects" Multiplicity="1" />
     <End Role="ProjectSteps" Type="Self.ProjectSteps" Multiplicity="*" />
@@ -441,6 +463,7 @@
     <EntitySet Name="Products" EntityType="Self.Products" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ProjectDocuments" EntityType="Self.ProjectDocuments" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Projects" EntityType="Self.Projects" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProjectStates" EntityType="Self.ProjectStates" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ProjectSteps" EntityType="Self.ProjectSteps" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Reviews" EntityType="Self.Reviews" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Roles" EntityType="Self.Roles" Schema="dbo" store:Type="Tables" />
@@ -511,6 +534,10 @@
     </AssociationSet>
     <AssociationSet Name="FK__Projects__Respon__6C190EBB" Association="Self.FK__Projects__Respon__6C190EBB">
       <End Role="Users" EntitySet="Users" />
+      <End Role="Projects" EntitySet="Projects" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Projects__StateI__5FB337D6" Association="Self.FK__Projects__StateI__5FB337D6">
+      <End Role="ProjectStates" EntitySet="ProjectStates" />
       <End Role="Projects" EntitySet="Projects" />
     </AssociationSet>
     <AssociationSet Name="FK__ProjectSt__Proje__4BAC3F29" Association="Self.FK__ProjectSt__Proje__4BAC3F29">

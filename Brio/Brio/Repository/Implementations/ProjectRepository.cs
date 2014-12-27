@@ -18,12 +18,13 @@ namespace Brio
         }
         public IQueryable<Project> GetAll()
         {
-            return _projectRepository.GetAll();
+            return _projectRepository.GetAll().Where(p => p.StateId == (int)ProjectStates.Active);
         }
 
-        public IQueryable<Project> GetCompanyProjects()
+        public IQueryable<Project> GetCompanyProjects(int companyId)
         {
-            return _projectRepository.GetAll().Where(p => p.CompanyId == BrioAppSettings.CurrentUserCompany);
+            return _projectRepository.GetAll().Where(p => p.CompanyId == companyId &&
+                p.StateId == (int)ProjectStates.Active);
         }
 
         public Project GetById(int id)
@@ -52,7 +53,9 @@ namespace Brio
         {
             if (model == null)
                 throw new ArgumentNullException("Project");
-            _projectRepository.Delete(model);
+            model.StateId = (int)ProjectStates.Deleted;
+            _projectRepository.Update(model);
+            //_projectRepository.Delete(model);
         }
 
         public void SaveChanges()

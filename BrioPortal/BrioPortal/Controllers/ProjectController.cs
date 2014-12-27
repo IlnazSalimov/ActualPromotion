@@ -46,9 +46,6 @@ namespace BrioPortal.Controllers
         /// </summary>
         private readonly IUserRepository userRepository;
 
-        private string priceUploadDirectory = "//Files//Documents//";
-
-
         public ProjectController(IProjectRepository _projectRepository, IProjectDocumentRepository _projectDocumentRepository,
             IBrioContext _brioContext, IInfoCardRepository _infoCardRepository, IUserRepository _userRepository,
             IProjectStepRepository _projectStepRepository)
@@ -71,7 +68,7 @@ namespace BrioPortal.Controllers
             ViewBag.Project = TempData["Project"] != null ? TempData["Project"] : new CreateProject();
             ViewBag.ProjectStep = TempData["ProjectStep"] != null ? TempData["ProjectStep"] : new CreateProjectStep();
 
-            return View(projectRepository.GetCompanyProjects());
+            return View(projectRepository.GetCompanyProjects(brioContext.CurrentUser.CompanyId));
         }
 
         [HttpPost]
@@ -143,9 +140,9 @@ namespace BrioPortal.Controllers
         }
 
         [HttpPost]
-        public ActionResult Create(CreateProject createProject, IEnumerable<HttpPostedFileBase> projectDocuments)
+        public ActionResult Create(CreateProject createProject, HttpPostedFileBase projectDocument)
         {
-            if (ModelState.IsValid && (projectDocuments != null && projectDocuments.Count() > 0))
+            if (ModelState.IsValid)
             {
                 Project project = new Project();
 
@@ -156,23 +153,24 @@ namespace BrioPortal.Controllers
                 project.ResponsibleUserId = createProject.ResponsibleUserId;
                 project.StartDate = createProject.StartDate;
                 project.Tile = createProject.Tile;
+                project.StateId = (int)ProjectStates.Active;
 
                 int insertedProjectId = projectRepository.Insert(project);
 
-                foreach (var f in projectDocuments)
+                if (projectDocument != null && projectDocument.ContentLength > 0)
                 {
-                    ProjectDocument projectDocument = new ProjectDocument();
+                    ProjectDocument doc = new ProjectDocument();
 
-                    var fileName = Path.GetFileName(f.FileName);
-                    projectDocument.DocumentTitle = fileName;
-                    projectDocument.UploadDate = DateTime.Now;
-                    projectDocument.ProjectId = insertedProjectId;
-                    
-                    var savingPath = Path.Combine(HttpContext.Server.MapPath(priceUploadDirectory), fileName);
-                    f.SaveAs(savingPath);
-                    projectDocument.DocumentPath = VirtualPathUtility.ToAbsolute(Path.Combine(priceUploadDirectory, fileName));
+                    var fileName = Path.GetFileName(projectDocument.FileName);
+                    doc.DocumentTitle = createProject.DocumentTitle != String.Empty ? createProject.DocumentTitle : fileName;
+                    doc.UploadDate = DateTime.Now;
+                    doc.ProjectId = insertedProjectId;
 
-                    projectDocumentRepository.Insert(projectDocument);
+                    var savingPath = Path.Combine(HttpContext.Server.MapPath(AppSettings.PROJECT_DOC_SAVING_PATH), fileName);
+                    projectDocument.SaveAs(savingPath);
+                    doc.DocumentPath = VirtualPathUtility.ToAbsolute(Path.Combine(AppSettings.PROJECT_DOC_SAVING_PATH, fileName));
+
+                    projectDocumentRepository.Insert(doc);
                 }
 
                 projectRepository.SaveChanges();
@@ -255,6 +253,46 @@ namespace BrioPortal.Controllers
             {
                 TempData["IsSuccess"] = false;
                 TempData["Message"] = "Этап проекта не был создан, т.к. не заполнены все поля. Пожалуйста повторите попытку заполнив все поля.";
+            }
+
+            return RedirectToAction("Index");
+        }
+
+        public ActionResult Delete(int id)
+        {
+            if (id > 0)
+            {
+                Project p = projectRepository.GetById(id);
+                projectRepository.Delete(p);
+                projectRepository.SaveChanges();
+
+                TempData["IsSuccess"] = true;
+                TempData["Message"] = "Проект успешно удален!";
+            }
+            else
+            {
+                TempData["IsSuccess"] = false;
+                TempData["Message"] = "Произошла ошибка, пожалуйста повторите попытку!";
+            }
+
+            return RedirectToAction("Index");
+        }
+
+        public ActionResult DeleteStep(int id)
+        {
+            if (id > 0)
+            {
+                ProjectStep ps = projectStepRepository.GetById(id);
+                projectStepRepository.Delete(ps);
+                projectStepRepository.SaveChanges();
+
+                TempData["IsSuccess"] = true;
+                TempData["Message"] = "Этап успешно удален!";
+            }
+            else
+            {
+                TempData["IsSuccess"] = false;
+                TempData["Message"] = "Произошла ошибка, пожалуйста повторите попытку!";
             }
 
             return RedirectToAction("Index");

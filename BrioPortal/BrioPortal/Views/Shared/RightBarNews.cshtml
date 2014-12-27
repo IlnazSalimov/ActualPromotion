@@ -5,7 +5,8 @@
     <h2 class="right"><span class="news-title">Новости</span></h2>
     @{
         INewsRepository newsRepository = (INewsRepository)DependencyResolver.Current.GetService(typeof(INewsRepository));
-        List<News> news = newsRepository.GetAll().Take(3).ToList();
+        IBrioContext brioContext = DependencyResolver.Current.GetService(typeof(IBrioContext)) as IBrioContext;
+        List<News> news = newsRepository.GetAll(brioContext.CurrentUser != null ? brioContext.CurrentUser.CompanyId : 0).OrderByDescending(n => n.CreateDate).Take(3).ToList();
     }
     @foreach (var n in news)
     {

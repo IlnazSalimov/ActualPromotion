@@ -59,6 +59,7 @@
     <Property Name="Head" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="CompanyId" Type="Int32" Nullable="false" />
     <NavigationProperty Name="Company" Relationship="Self.FK__Divisions__Compa__5CD6CB2B" FromRole="Divisions" ToRole="Companies" />
+    <Property Name="State" Type="Int32" Nullable="false" />
   </EntityType>
   <EntityType Name="Document">
     <Key>
@@ -165,6 +166,8 @@
     <NavigationProperty Name="ProjectDocuments" Relationship="Self.FK__ProjectDo__Proje__49C3F6B7" FromRole="Projects" ToRole="ProjectDocuments" />
     <NavigationProperty Name="User" Relationship="Self.FK__Projects__Respon__6C190EBB" FromRole="Projects" ToRole="Users" />
     <NavigationProperty Name="ProjectSteps" Relationship="Self.FK__ProjectSt__Proje__4BAC3F29" FromRole="Projects" ToRole="ProjectSteps" />
+    <Property Name="StateId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="ProjectState" Relationship="BrioEntityModel.FK__Projects__StateI__5FB337D6" FromRole="Project" ToRole="ProjectState" />
   </EntityType>
   <EntityType Name="ProjectStep">
     <Key>
@@ -527,6 +530,11 @@
       <End Role="User" EntitySet="Users" />
       <End Role="News" EntitySet="News" />
     </AssociationSet>
+    <EntitySet Name="ProjectStates" EntityType="BrioEntityModel.ProjectState" />
+    <AssociationSet Name="FK__Projects__StateI__5FB337D6" Association="BrioEntityModel.FK__Projects__StateI__5FB337D6">
+      <End Role="ProjectState" EntitySet="ProjectStates" />
+      <End Role="Project" EntitySet="Projects" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType Name="News">
     <Key>
@@ -563,6 +571,27 @@
       </Principal>
       <Dependent Role="News">
         <PropertyRef Name="AuthorUserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="ProjectState">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="State" Type="String" Nullable="false" MaxLength="128" FixedLength="true" Unicode="true" />
+    <Property Name="Code" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Projects" Relationship="BrioEntityModel.FK__Projects__StateI__5FB337D6" FromRole="ProjectState" ToRole="Project" />
+  </EntityType>
+  <Association Name="FK__Projects__StateI__5FB337D6">
+    <End Type="BrioEntityModel.ProjectState" Role="ProjectState" Multiplicity="1" />
+    <End Type="BrioEntityModel.Project" Role="Project" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProjectState">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Project">
+        <PropertyRef Name="StateId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

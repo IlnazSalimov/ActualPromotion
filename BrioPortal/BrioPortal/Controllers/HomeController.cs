@@ -69,22 +69,16 @@ namespace BrioPortal.Controllers
             InfoCard currentUserInfoCard = infoCardRepository.GetUserInfoCard(brioContext.CurrentUser.ID);
             List<Division> divisions = divisionRepository.GetCompanyDivisions(currentUserInfoCard.CompanyId).ToList();
 
-            if (divisions.Count < 1)
-            {
-                TempData["IsSuccess"] = false;
-                TempData["Message"] = "Не существует ни одного отдела, для создания аккаунта необходимо создать отдел. Создайте отдел в разделе \"Сотрудники\"";
-            }
-
             SelectList divisions_sel = new SelectList(divisions, "ID", "Name");
             ViewBag.Divisions = divisions_sel;
 
             ViewBag.Roles = roleRepository.GetAll().ToList();
 
 
-            ViewBag.Admins = infoCardRepository.GetInfoCardsByRole(Roles.Admin);
-            ViewBag.Clients = infoCardRepository.GetInfoCardsByRole(Roles.Client);
-            ViewBag.Employees = infoCardRepository.GetInfoCardsByRole(Roles.Employee);
-            ViewBag.ProjectManager = infoCardRepository.GetInfoCardsByRole(Roles.ProjectManager);
+            ViewBag.Admins = infoCardRepository.GetInfoCardsByRole(Roles.Admin, brioContext.CurrentUser.CompanyId);
+            ViewBag.Clients = infoCardRepository.GetInfoCardsByRole(Roles.Client, brioContext.CurrentUser.CompanyId);
+            ViewBag.Employees = infoCardRepository.GetInfoCardsByRole(Roles.Employee, brioContext.CurrentUser.CompanyId);
+            ViewBag.ProjectManager = infoCardRepository.GetInfoCardsByRole(Roles.ProjectManager, brioContext.CurrentUser.CompanyId);
 
             ViewBag.IsSuccess = TempData["IsSuccess"];
             ViewBag.Message = TempData["Message"];

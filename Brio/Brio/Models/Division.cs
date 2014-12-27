@@ -18,6 +18,7 @@ namespace Brio.Models
         public string Name { get; set; }
         public string Head { get; set; }
         public int CompanyId { get; set; }
+        public int State { get; set; }
     
         public virtual Company Company { get; set; }
     }

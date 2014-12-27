@@ -125,9 +125,7 @@ namespace BrioPortal.Controllers
         [HttpPost]
         public ActionResult SignUp(CreatePortalAccount model, HttpPostedFileBase AvatarUrl)
         {
-            string avatarDirectory = "//Files//Documents//";
-
-            if (ModelState.IsValid && (AvatarUrl != null && AvatarUrl.ContentLength > 0))
+            if (ModelState.IsValid)
             {
                 Regex rgx = new Regex("^[a-z0-9_\\+-]+(\\.[a-z0-9_\\+-]+)*@[a-z0-9-]+(\\.[a-z0-9-]+)*\\.([a-z]{2,4})$");
                 if (!rgx.IsMatch(model.Email))
@@ -174,11 +172,18 @@ namespace BrioPortal.Controllers
 
                 };
 
-                var fileName = Path.GetFileName(AvatarUrl.FileName);
+                if (AvatarUrl != null && AvatarUrl.ContentLength > 0)
+                {
+                    var fileName = Path.GetFileName(AvatarUrl.FileName);
 
-                var savingPath = Path.Combine(HttpContext.Server.MapPath(avatarDirectory), fileName);
-                AvatarUrl.SaveAs(savingPath);
-                infoCard.AvatarUrl = VirtualPathUtility.ToAbsolute(Path.Combine(avatarDirectory, fileName));
+                    var savingPath = Path.Combine(HttpContext.Server.MapPath(AppSettings.AVATAR_SAVING_PATH), fileName);
+                    AvatarUrl.SaveAs(savingPath);
+                    infoCard.AvatarUrl = VirtualPathUtility.ToAbsolute(Path.Combine(AppSettings.AVATAR_SAVING_PATH, fileName));
+                }
+                else
+                {
+                    infoCard.AvatarUrl = VirtualPathUtility.ToAbsolute(AppSettings.DEFAULT_USER_AVATAR);
+                }
 
                 _infoCardRepository.Insert(infoCard);
 

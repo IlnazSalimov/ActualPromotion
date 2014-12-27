@@ -42,6 +42,8 @@
         <EntityTypeShape EntityType="BrioEntityModel.News" Width="1.5" PointX="11" PointY="15.875" />
         <AssociationConnector Association="BrioEntityModel.FK__News__CompanyId__66603565" />
         <AssociationConnector Association="BrioEntityModel.FK__News__AuthorUser__68487DD7" />
+        <EntityTypeShape EntityType="BrioEntityModel.ProjectState" Width="1.5" PointX="0.75" PointY="0.875" />
+        <AssociationConnector Association="BrioEntityModel.FK__Projects__StateI__5FB337D6" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

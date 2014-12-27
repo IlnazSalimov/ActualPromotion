@@ -16,9 +16,9 @@ namespace Brio
             this.newsRepository = _newsRepository;
         }
 
-        public IQueryable<News> GetAll()
+        public IQueryable<News> GetAll(int companyId)
         {
-            return newsRepository.GetAll().Where(p => p.CompanyId == BrioAppSettings.CurrentUserCompany);
+            return newsRepository.GetAll().Where(p => p.CompanyId == companyId);
         }
 
         public News GetById(int id)
