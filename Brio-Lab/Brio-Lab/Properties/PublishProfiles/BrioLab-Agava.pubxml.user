@@ -16,10 +16,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/19/2014 10:13:14</publishTime>
     </File>
     <File Include="bin/Brio.dll">
-      <publishTime>12/11/2014 13:10:24</publishTime>
+      <publishTime>01/14/2015 12:00:18</publishTime>
     </File>
     <File Include="bin/BrioLab.dll">
-      <publishTime>12/11/2014 13:10:29</publishTime>
+      <publishTime>01/14/2015 12:39:58</publishTime>
     </File>
     <File Include="bin/EntityFramework.dll">
       <publishTime>11/19/2014 10:13:14</publishTime>
@@ -162,6 +162,12 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Content/css/kendo.default.min.css">
       <publishTime>11/19/2014 10:13:04</publishTime>
     </File>
+    <File Include="Content/css/owl.carousel.css">
+      <publishTime>05/13/2014 00:56:20</publishTime>
+    </File>
+    <File Include="Content/css/owl.theme.css">
+      <publishTime>05/13/2014 00:56:24</publishTime>
+    </File>
     <File Include="Content/css/reset.css">
       <publishTime>11/19/2014 10:13:04</publishTime>
     </File>
@@ -169,7 +175,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/19/2014 10:13:04</publishTime>
     </File>
     <File Include="Content/css/style.css">
-      <publishTime>12/11/2014 13:03:25</publishTime>
+      <publishTime>01/14/2015 13:33:59</publishTime>
     </File>
     <File Include="Content/fonts/RussoOne.eot">
       <publishTime>11/19/2014 10:13:04</publishTime>
@@ -304,7 +310,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/19/2014 10:13:04</publishTime>
     </File>
     <File Include="Content/js/init.js">
-      <publishTime>11/26/2014 10:23:04</publishTime>
+      <publishTime>01/14/2015 14:42:08</publishTime>
     </File>
     <File Include="Content/js/jquery-1.10.2.min.js">
       <publishTime>11/19/2014 10:13:04</publishTime>
@@ -333,6 +339,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Content/js/kendo.web.min.js">
       <publishTime>11/19/2014 10:13:05</publishTime>
     </File>
+    <File Include="Content/js/owl.carousel.min.js">
+      <publishTime>05/13/2014 00:48:58</publishTime>
+    </File>
     <File Include="Content/js/slider.js">
       <publishTime>11/19/2014 10:13:05</publishTime>
     </File>
@@ -352,7 +361,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/19/2014 10:13:05</publishTime>
     </File>
     <File Include="Views/Articles/About.cshtml">
-      <publishTime>12/11/2014 13:06:36</publishTime>
+      <publishTime>01/14/2015 11:58:23</publishTime>
     </File>
     <File Include="Views/Articles/Add.cshtml">
       <publishTime>11/19/2014 10:13:05</publishTime>
@@ -373,10 +382,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/19/2014 10:13:05</publishTime>
     </File>
     <File Include="Views/Home/Index.cshtml">
-      <publishTime>11/19/2014 10:13:05</publishTime>
+      <publishTime>01/14/2015 09:07:03</publishTime>
     </File>
     <File Include="Views/Layouts/LayoutDefault.cshtml">
-      <publishTime>11/27/2014 14:24:04</publishTime>
+      <publishTime>01/14/2015 16:59:12</publishTime>
     </File>
     <File Include="Views/PriceList/Add.cshtml">
       <publishTime>11/19/2014 10:13:05</publishTime>

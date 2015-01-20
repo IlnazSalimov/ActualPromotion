@@ -1,0 +1,37 @@
+﻿@model IEnumerable<Brio.Models.ProjectDocument>
+
+@{
+    ViewBag.Title = "Serch";
+    Layout = "~/Views/Layouts/DefaultLayouts.cshtml";
+}
+
+@if (ViewBag.IsSuccess != null && ViewBag.Message != null)
+{
+    if ((bool)ViewBag.IsSuccess)
+    {
+        <div class="alert alert-success" role="alert">@ViewBag.Message</div>
+    }
+    else
+    {
+        <div class="alert alert-danger" role="alert">@ViewBag.Message</div>
+    }
+}
+
+<div class="content-left-bar doks-page">
+    <h2 class="right white shadow"><span class="project-title">Документы</span></h2>
+    <div class="wrapp">
+        <ol class="serch">
+            @foreach (var d in Model)
+            {
+                <li>
+                    @Html.ActionLink(d.DocumentTitle, "Download", new { id = d.ID })
+                </li>
+            }
+
+            @if(Model.Count() < 1)
+            {
+                @:По данному запосу документы не найдены.
+            }
+        </ol>
+    </div>
+</div>

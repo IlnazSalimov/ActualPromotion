@@ -26,7 +26,6 @@
     <link rel="stylesheet" href="@Url.Content("~/Content/css/style.css")">
     <link rel="stylesheet" href="@Url.Content("~/Content/css/specific-styles.css")">
 
-    <script src="@Url.Content("~/Content/js/slider.js")"></script>
     <script src="@Url.Content("~/Content/js/init.js")"></script>
 </head>
 <body>
@@ -61,18 +60,11 @@
             </div>
         </div>
         <section class="content">
-            @if (!User.Identity.IsAuthenticated)
-            {
-                <button class="button-error pure-button login-button" onclick="location.href = '/Account/Login'">ВОЙТИ</button>
-            }
-            else
-            {
-                <button class="button-error pure-button login-button" onclick="location.href = '/Account/Logout'">ВЫЙТИ</button>
-            }
+            <button class="button-error pure-button login-button" onclick="location.href = 'http://brioportal.actual-test.ru'">Вход для клиентов</button>
             @RenderBody()
         </section>
         <footer id="footer">
-            <a class="" href="http://actual-test.ru">
+            <a href="http://briogroup.ru">
                 <div class="bottom-logo">
                     БРИО
                     <div class="company">

@@ -22,6 +22,11 @@ namespace Brio
             return projectDocumentRepository.GetAll();
         }
 
+        public IQueryable<ProjectDocument> GetCompanyDocuments(int companyId)
+        {
+            return projectDocumentRepository.GetAll().Where(d => d.Project.CompanyId == companyId);
+        }
+
         public int Insert(ProjectDocument model)
         {
             if (model == null)

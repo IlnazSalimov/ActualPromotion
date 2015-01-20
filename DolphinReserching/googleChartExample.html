@@ -1,0 +1,51 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load("visualization", "1", {packages:["corechart"]});
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+          ['Task', 'Hours per Day'],
+          ['Зеленый', 17],
+          ['Черный', 6],
+          ['Коричневый', 17],
+          ['Серый', 3],
+          ['Белый', 35],
+          ['Желтый', 3],
+          ['Оранжевый', 3],
+          ['Красный', 3],
+          ['Фиолетовый', 3],
+          ['Синий', 9]
+        ]);
+
+        var options = {
+          title: 'My Daily Activities',
+		  slices: {
+            0: { color: '#f56f51' },
+            1: { color: '#0ccff0' },
+			2: { color: '#7f8f18' },
+			3: { color: '#fff8dc' },
+			4: { color: '#f5e6cb' },
+			5: { color: '#f56f51' },
+            6: { color: '#0ccff0' },
+			7: { color: '#7f8f18' },
+			8: { color: '#fff8dc' },
+			9: { color: '#f5e6cb' }
+          }
+		  tooltip: {
+			text: 'percentage'
+		  }
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="piechart" style="width: 900px; height: 500px;"></div>
+  </body>
+</html>

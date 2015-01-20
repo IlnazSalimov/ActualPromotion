@@ -7,7 +7,8 @@ namespace Brio
     public interface IProjectDocumentRepository
     {
         void Delete(ProjectDocument model);
-        System.Linq.IQueryable<ProjectDocument> GetAll();
+        IQueryable<ProjectDocument> GetAll();
+        IQueryable<ProjectDocument> GetCompanyDocuments(int companyId);
         ProjectDocument GetById(int id);
         IQueryable<ProjectDocument> GetProjectDocuments(int projectId);
         int Insert(ProjectDocument model);

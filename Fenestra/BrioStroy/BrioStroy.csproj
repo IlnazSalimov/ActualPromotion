@@ -168,6 +168,8 @@
     <Content Include="Content\css\jquery.jscrollpane.css" />
     <Content Include="Content\css\kendo.common.min.css" />
     <Content Include="Content\css\kendo.default.min.css" />
+    <Content Include="Content\css\owl.carousel.css" />
+    <Content Include="Content\css\owl.theme.css" />
     <Content Include="Content\css\reset.css" />
     <Content Include="Content\css\specific-styles.css" />
     <Content Include="Content\css\style.css" />
@@ -201,8 +203,14 @@
     <Content Include="Content\images\elvis.png" />
     <Content Include="Content\images\elvis_c.png" />
     <Content Include="Content\images\figure.png" />
+    <Content Include="Content\images\glass.png" />
+    <Content Include="Content\images\glass_c.png" />
+    <Content Include="Content\images\glass_ru.png" />
+    <Content Include="Content\images\glass_ru_c.png" />
     <Content Include="Content\images\grey.png" />
     <Content Include="Content\images\inactive_slide.png" />
+    <Content Include="Content\images\kraspan.png" />
+    <Content Include="Content\images\kraspan_c.png" />
     <Content Include="Content\images\kungur.png" />
     <Content Include="Content\images\kungur_c.png" />
     <Content Include="Content\images\left_arrow.png" />
@@ -221,6 +229,10 @@
     <Content Include="Content\images\reviews.png" />
     <Content Include="Content\images\rosjeldor.png" />
     <Content Include="Content\images\rosjeldor_c.png" />
+    <Content Include="Content\images\schuco.png" />
+    <Content Include="Content\images\schuco_c.png" />
+    <Content Include="Content\images\tec.png" />
+    <Content Include="Content\images\tec_c.png" />
     <Content Include="Content\images\text.png" />
     <Content Include="Content\images\title_background.png" />
     <Content Include="Content\images\triple_arrow.png" />
@@ -236,7 +248,8 @@
     <Content Include="Content\js\jquery.mousewheel.min.js" />
     <Content Include="Content\js\kendo.ru-RU.js" />
     <Content Include="Content\js\kendo.web.min.js" />
-    <Content Include="Content\js\slider.js" />
+    <Content Include="Content\js\knockout-3.2.0.js" />
+    <Content Include="Content\js\owl.carousel.min.js" />
     <Content Include="Files\Photos\ava.png" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />

@@ -31,7 +31,7 @@ namespace BrioPortal
             kernel.Bind<IArticleRepository>().To<ArticleRepository>();
             kernel.Bind<IRoleRepository>().To<RoleRepository>();
             kernel.Bind<IAuthentication>().To<CustomAuthentication>().InRequestScope();
-            kernel.Bind<IBrioContext>().To<BrioContext>();
+            kernel.Bind<IBrioContext>().To<BrioContext>().InRequestScope();
             kernel.Bind<ICompanyRepository>().To<CompanyRepository>();
             kernel.Bind<IFeedbackRepository>().To<FeedbackRepository>();
             kernel.Bind<IPriceListRepository>().To<PriceListRepository>();

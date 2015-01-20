@@ -21,9 +21,9 @@ namespace Brio
             return infoCardRepository.GetAll();
         }
 
-        public IQueryable<InfoCard> GetInfoCardsByRole(Roles role)
+        public IQueryable<InfoCard> GetInfoCardsByRole(Roles role, int companyId)
         {
-            return infoCardRepository.GetAll().Where(u => u.User.RoleId == (int)role && u.CompanyId == BrioAppSettings.CurrentUserCompany);
+            return infoCardRepository.GetAll().Where(u => u.User.RoleId == (int)role && u.CompanyId == companyId);
         }
 
         public InfoCard GetUserInfoCard(int userId)

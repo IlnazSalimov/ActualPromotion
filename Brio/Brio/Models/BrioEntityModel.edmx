@@ -49,6 +49,7 @@
           <Property Name="Name" Type="varchar" MaxLength="255" Nullable="false" />
           <Property Name="Head" Type="varchar" MaxLength="255" Nullable="false" />
           <Property Name="CompanyId" Type="int" Nullable="false" />
+          <Property Name="State" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Documents">
           <Key>
@@ -152,6 +153,15 @@
           <Property Name="StartDate" Type="datetime" />
           <Property Name="EndDate" Type="datetime" />
           <Property Name="CreateDate" Type="datetime" Nullable="false" />
+          <Property Name="StateId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ProjectStates">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="State" Type="nchar" MaxLength="128" Nullable="false" />
+          <Property Name="Code" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="ProjectSteps">
           <Key>
@@ -396,6 +406,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK__Projects__StateI__5FB337D6">
+          <End Role="ProjectStates" Type="Self.ProjectStates" Multiplicity="1" />
+          <End Role="Projects" Type="Self.Projects" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProjectStates">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Projects">
+              <PropertyRef Name="StateId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK__ProjectSt__Proje__4BAC3F29">
           <End Role="Projects" Type="Self.Projects" Multiplicity="1" />
           <End Role="ProjectSteps" Type="Self.ProjectSteps" Multiplicity="*" />
@@ -446,6 +468,7 @@
           <EntitySet Name="Products" EntityType="Self.Products" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ProjectDocuments" EntityType="Self.ProjectDocuments" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Projects" EntityType="Self.Projects" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ProjectStates" EntityType="Self.ProjectStates" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ProjectSteps" EntityType="Self.ProjectSteps" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Reviews" EntityType="Self.Reviews" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Roles" EntityType="Self.Roles" Schema="dbo" store:Type="Tables" />
@@ -516,6 +539,10 @@
           </AssociationSet>
           <AssociationSet Name="FK__Projects__Respon__6C190EBB" Association="Self.FK__Projects__Respon__6C190EBB">
             <End Role="Users" EntitySet="Users" />
+            <End Role="Projects" EntitySet="Projects" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Projects__StateI__5FB337D6" Association="Self.FK__Projects__StateI__5FB337D6">
+            <End Role="ProjectStates" EntitySet="ProjectStates" />
             <End Role="Projects" EntitySet="Projects" />
           </AssociationSet>
           <AssociationSet Name="FK__ProjectSt__Proje__4BAC3F29" Association="Self.FK__ProjectSt__Proje__4BAC3F29">
@@ -594,6 +621,7 @@
           <Property Name="Head" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="CompanyId" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Company" Relationship="Self.FK__Divisions__Compa__5CD6CB2B" FromRole="Divisions" ToRole="Companies" />
+          <Property Name="State" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="Document">
           <Key>
@@ -700,6 +728,8 @@
           <NavigationProperty Name="ProjectDocuments" Relationship="Self.FK__ProjectDo__Proje__49C3F6B7" FromRole="Projects" ToRole="ProjectDocuments" />
           <NavigationProperty Name="User" Relationship="Self.FK__Projects__Respon__6C190EBB" FromRole="Projects" ToRole="Users" />
           <NavigationProperty Name="ProjectSteps" Relationship="Self.FK__ProjectSt__Proje__4BAC3F29" FromRole="Projects" ToRole="ProjectSteps" />
+          <Property Name="StateId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="ProjectState" Relationship="BrioEntityModel.FK__Projects__StateI__5FB337D6" FromRole="Project" ToRole="ProjectState" />
         </EntityType>
         <EntityType Name="ProjectStep">
           <Key>
@@ -1062,6 +1092,11 @@
             <End Role="User" EntitySet="Users" />
             <End Role="News" EntitySet="News" />
           </AssociationSet>
+          <EntitySet Name="ProjectStates" EntityType="BrioEntityModel.ProjectState" />
+          <AssociationSet Name="FK__Projects__StateI__5FB337D6" Association="BrioEntityModel.FK__Projects__StateI__5FB337D6">
+            <End Role="ProjectState" EntitySet="ProjectStates" />
+            <End Role="Project" EntitySet="Projects" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="News">
           <Key>
@@ -1098,6 +1133,27 @@
             </Principal>
             <Dependent Role="News">
               <PropertyRef Name="AuthorUserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="ProjectState">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="State" Type="String" Nullable="false" MaxLength="128" FixedLength="true" Unicode="true" />
+          <Property Name="Code" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Projects" Relationship="BrioEntityModel.FK__Projects__StateI__5FB337D6" FromRole="ProjectState" ToRole="Project" />
+        </EntityType>
+        <Association Name="FK__Projects__StateI__5FB337D6">
+          <End Type="BrioEntityModel.ProjectState" Role="ProjectState" Multiplicity="1" />
+          <End Type="BrioEntityModel.Project" Role="Project" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProjectState">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Project">
+              <PropertyRef Name="StateId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1149,6 +1205,7 @@
           <EntitySetMapping Name="Divisions">
             <EntityTypeMapping TypeName="BrioEntityModel.Division">
               <MappingFragment StoreEntitySet="Divisions">
+                <ScalarProperty Name="State" ColumnName="State" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="Head" ColumnName="Head" />
@@ -1244,6 +1301,7 @@
           <EntitySetMapping Name="Projects">
             <EntityTypeMapping TypeName="BrioEntityModel.Project">
               <MappingFragment StoreEntitySet="Projects">
+                <ScalarProperty Name="StateId" ColumnName="StateId" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
                 <ScalarProperty Name="Tile" ColumnName="Tile" />
@@ -1307,6 +1365,15 @@
                 <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
                 <ScalarProperty Name="AuthorUserId" ColumnName="AuthorUserId" />
                 <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProjectStates">
+            <EntityTypeMapping TypeName="BrioEntityModel.ProjectState">
+              <MappingFragment StoreEntitySet="ProjectStates">
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="State" ColumnName="State" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>

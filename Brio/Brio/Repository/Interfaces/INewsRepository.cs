@@ -9,7 +9,7 @@ namespace Brio
 {
     public interface INewsRepository
     {
-        IQueryable<News> GetAll();
+        IQueryable<News> GetAll(int companyId);
         News GetById(int id);
         int Insert(News model);
         void Update(News model);

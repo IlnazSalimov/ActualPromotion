@@ -26,9 +26,7 @@
 </div>
 <div class="page_logo_container"><div class="page_logo"></div></div>
 
-
-
-<div class="block_ins current">
+<div class="block_ins disp_none">
     <div class="title">
         @ViewBag.Title
     </div>
@@ -37,16 +35,13 @@
             <div class="contact-container">
                 <div class="adress">
                     <div class="adress1">
-                        @{var contacts = ViewBag.Contacts as Brio.Models.Company;}
-                        @contacts.Adress,<br />
-                        @contacts.Postcode, а/я @contacts.POBox
+                        г. Казань, ул Калинина, 60
                     </div>
                     <div class="telephone">
-                        тел./факс: @contacts.Phone,<br />
-                        @contacts.Phone2
+                        тел.: (843)500-00-82, (843)500-00-69, (843) 500-00-68
                     </div>
                 </div>
-                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2241.8748528257765!2d37.647777999999995!3d55.812773!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b535dcfe89da29%3A0x7d0a122acbdd646c!2z0JzQsNC70L7QvNC-0YHQutC-0LLRgdC60LDRjyDRg9C7LiwgMTYsINCc0L7RgdC60LLQsCwgMTI5MTY0!5e0!3m2!1sru!2sru!4v1419341600660" height="220" frameborder="0" style="border:0; width:100%"></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2243.6177813046556!2d49.14739460000001!3d55.782509900000015!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x415ead0a78c21fa5%3A0x4f8776ec25b77746!2z0YPQuy4g0JrQsNC70LjQvdC40L3QsCwgNjAsINCa0LDQt9Cw0L3RjCwg0KDQtdGB0L8uINCi0LDRgtCw0YDRgdGC0LDQvSwgNDIwMDQz!5e0!3m2!1sru!2sru!4v1419341499505" height="220" frameborder="0" style="border:0; width:100%"></iframe>
             </div>
         </div>
         <div class="brio-tasks">
@@ -67,7 +62,7 @@
     </article>
 </div>
 
-<div class="block_ins disp_none">
+<div class="block_ins current">
     <div class="title">
         @ViewBag.Title
     </div>
@@ -76,13 +71,16 @@
             <div class="contact-container">
                 <div class="adress">
                     <div class="adress1">
-                        г. Казань, ул Калинина, 60
+                        @{var contacts = ViewBag.Contacts as Brio.Models.Company;}
+                        @contacts.Adress,<br />
+                        @contacts.Postcode, а/я @contacts.POBox
                     </div>
                     <div class="telephone">
-                        тел.: (843)500-00-82, (843)500-00-69, (843) 500-00-68
+                        тел./факс: @contacts.Phone,<br />
+                        @contacts.Phone2
                     </div>
                 </div>
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2243.6177813046556!2d49.14739460000001!3d55.782509900000015!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x415ead0a78c21fa5%3A0x4f8776ec25b77746!2z0YPQuy4g0JrQsNC70LjQvdC40L3QsCwgNjAsINCa0LDQt9Cw0L3RjCwg0KDQtdGB0L8uINCi0LDRgtCw0YDRgdGC0LDQvSwgNDIwMDQz!5e0!3m2!1sru!2sru!4v1419341499505" height="220" frameborder="0" style="border:0; width:100%"></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2241.8748528257765!2d37.647777999999995!3d55.812773!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b535dcfe89da29%3A0x7d0a122acbdd646c!2z0JzQsNC70L7QvNC-0YHQutC-0LLRgdC60LDRjyDRg9C7LiwgMTYsINCc0L7RgdC60LLQsCwgMTI5MTY0!5e0!3m2!1sru!2sru!4v1419341600660" height="220" frameborder="0" style="border:0; width:100%"></iframe>
             </div>
         </div>
         <div class="brio-tasks">

@@ -72,7 +72,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BrioAppSetting.cs" />
     <Compile Include="BrioContext\BrioContext.cs" />
     <Compile Include="BrioContext\CustomAuthentication.cs" />
     <Compile Include="BrioContext\HttpModules\AuthHttpModule.cs" />
@@ -163,6 +162,9 @@
       <DependentUpon>BrioEntityModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ProjectDocument.cs">
+      <DependentUpon>BrioEntityModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ProjectState.cs">
       <DependentUpon>BrioEntityModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ProjectStep.cs">

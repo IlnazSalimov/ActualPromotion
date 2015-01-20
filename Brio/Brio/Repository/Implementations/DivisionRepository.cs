@@ -18,12 +18,13 @@ namespace Brio
 
         public IQueryable<Division> GetAll()
         {
-            return divisionRepository.GetAll();
+            return divisionRepository.GetAll().Where(d => d.State == (int)States.Active);
         }
 
         public IQueryable<Division> GetCompanyDivisions(int companyId)
         {
-            return divisionRepository.GetAll().Where(d => d.CompanyId == companyId);
+            return divisionRepository.GetAll().Where(d => d.CompanyId == companyId &&
+                d.State == (int)States.Active);
         }
 
         public Division GetById(int id)
@@ -49,7 +50,9 @@ namespace Brio
         {
             if (model == null)
                 throw new ArgumentNullException("Division");
-            divisionRepository.Delete(model);
+            //divisionRepository.Delete(model);
+            model.State = (int)States.Deleted;
+            divisionRepository.Update(model);
         }
 
         public void SaveChanges()

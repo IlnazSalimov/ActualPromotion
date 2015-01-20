@@ -74,8 +74,8 @@
                         ВЫ МОЖЕТЕ:
                     </div>
 
-                    <button class="button-blue pure-button">@Html.ActionLink("Просмотреть файл", "Show", new { }, new { @class = "pdf-button show", target = "_blank" })</button>
-                    <button class="button-blue pure-button">@Html.ActionLink("Скачать файлы в PDF", "Download", new { }, new { @class = "pdf-button download" })</button>
+                    @Html.ActionLink("Просмотреть файл", "Show", new { }, new { @class = "pdf-button show button-blue pure-button", target = "_blank" })
+                    @Html.ActionLink("Скачать файлы в PDF", "Download", new { }, new { @class = "pdf-button download button-blue pure-button" })
                 }
                 else
                 {

@@ -30,6 +30,12 @@ body {
 ol, ul {
 	list-style: none;
 }
+.wrapp ol.serch,
+ol.docs{
+    padding: 10px 35px;
+    list-style: decimal;
+    font-size: 13px;
+}
 blockquote, q {
 	quotes: none;
 }
@@ -264,7 +270,7 @@ input[type="file"], textarea {
 	padding:0;
 	margin:0;
 	border:1px solid #D8D9D9;
-	color:#AEAFB0;
+	color: #212e42;
 	padding-left: 10px;
 	font-size: 11px;
 	outline:none;
@@ -302,8 +308,10 @@ form[name="serch"] button span {
 .content-right-bar {
 	display:inline-block;
 	border:1px solid #D8D9D9;
-	width:252px;
+	width:265px;
 	padding-top: 10px;
+    max-height: 420px;
+    overflow: auto;
 	box-shadow: 0px 1px 13px 0px rgba(0, 0, 0, 0.24);
 }
 .content-right-bar form {
@@ -335,7 +343,7 @@ form[name="serch"] button span {
 	float:right;
 }
 .content-right-bar form textarea {
-	width: 220px;
+	width: 100%;
 	min-height: 90px;
     margin-bottom: -2px;
 	padding-left:0;
@@ -378,7 +386,6 @@ h2.white span {
 .content-right-bar form p {
 	font-size: 14px;
 	position:relative;
-    padding: 5px 0;
 }
 .wrapp {
 	padding-top:5px;
@@ -457,17 +464,18 @@ h2.white span {
 	margin-bottom: 7px !important;
 }
 .open-file {
-	background-image:url(../img/open.png);
-	background-repeat:no-repeat;
-	padding-left: 30px;
-	color:#fff;
-	height: 16px;
-	line-height: 12px;
-	width:117px;
-	padding-right: 4px;
-	position:absolute;
-	z-index:10;
-	right:-20px;
+	background-image: url(../img/open.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-left: 30px;
+    color: #fff;
+    height: 21px;
+    line-height: 12px;
+    width: 155px;
+    padding-right: 4px;
+    position: absolute;
+    z-index: 10;
+    right: -20px;
 }
 .add-file {
 	background-repeat:no-repeat;
@@ -495,7 +503,7 @@ h2.creat-title span:after {
 	position:relative;
 	border: 1px solid #D8D9D9;
 	color: #AEAFB0;
-	height: 16px;
+	height: 22px;
 	width: 200px;
 }
 /*Календарь*/
@@ -641,12 +649,15 @@ width: 185px;
 	height:35px;
 	line-height:23px;
 }
-.acc-form input[type="text"],
+/*.acc-form input[type="text"],
 .acc-form select {
 	position:absolute;
 	right:0;
 	top:-2px;
 	width: 145px;
+}*/
+.acc-form select {
+    width: 100%;
 }
 
 ul.acc-open {
@@ -683,6 +694,7 @@ ul.acc-open li.active {
 	display:inline-block;
 	float:left;
 	margin-right: 10px;
+    max-width: 120px;
 }
 .news-block p {
 	font-size:14px;
@@ -822,6 +834,8 @@ form[name="enter"] button h2.creat-title span:after {
 .staf img {
 	margin:15px auto;
 	display:block;
+    max-width:215px;
+    max-height:170px;
 }
 .staf h3 {
 	text-align:center;
@@ -833,7 +847,7 @@ ul.staf-text {
 }
 ul.staf-text li {
 	font-size: 14px;
-	line-height: 13px;
+	line-height: 17px;
 }
 .content-right-bar form button[type="submit"]{
 	width:150px;
@@ -880,6 +894,11 @@ form.division-create .controls-container .title {
     text-align: center;
 }
 
+.alert {
+    font-size: 17px;
+    margin: 10px;
+}
+
 .wrapp.news-page .divisions-container
 {
     overflow: auto;
@@ -897,8 +916,8 @@ form.division-create .controls-container .title {
     cursor: pointer;
     width: 20px;
     height: 21px;
-    top: 5px;
-    right: 5px;
+    top: 8px;
+    left: 10px;
     position: absolute;
 }
 
@@ -927,4 +946,20 @@ form.division-create .controls-container .title {
 
 button.save-account {
     margin-top: 20px;
+}
+
+.f-name {
+    padding: 0 8px;
+    color: #212e42;
+    border: 0 !important;
+}
+
+.p-container {
+    position: relative;
+}
+
+.p-container a.lnk-delete {
+    position: absolute;
+    top: 0;
+    right: 10px;
 }

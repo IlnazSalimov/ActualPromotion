@@ -42,5 +42,6 @@ namespace Brio.Models
         public virtual DbSet<Role> Roles { get; set; }
         public virtual DbSet<User> Users { get; set; }
         public virtual DbSet<News> News { get; set; }
+        public virtual DbSet<ProjectState> ProjectStates { get; set; }
     }
 }

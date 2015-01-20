@@ -6,15 +6,15 @@ by editing this MSBuild file. In order to learn more about this please visit htt
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <TimeStampOfAssociatedLegacyPublishXmlFile />
-    <EncryptedPassword />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA8A4j5r83MUWvXEtPhwAGmgAAAAACAAAAAAAQZgAAAAEAACAAAAAAxtnGrTY5MZ2WNOReg6LponEgf6zoCZs4kdZvcVqNCgAAAAAOgAAAAAIAACAAAAA1h4fvpH1z0g9QaYYGpgb9nfkM+aSAqolp8cqoM7+0aSAAAADqnhf7kRugsXg1GrYfJGFfQx8TGBK7AepmRBVR83OgCUAAAACNoylcfRnfPDcWqbEz45qwGz1AAOCD/JC9gpblSDIU9wN8X4KUwNNDtHC6vG6GtU1fnfA28zNP21mmvyrf1dK1</EncryptedPassword>
     <_PublishTargetUrl>ftp://actual-testru.708.com1.ru/brioportal.actual-test.ru</_PublishTargetUrl>
   </PropertyGroup>
   <ItemGroup>
     <File Include="bin/Brio.dll">
-      <publishTime>12/25/2014 10:02:48</publishTime>
+      <publishTime>12/27/2014 12:51:51</publishTime>
     </File>
     <File Include="bin/BrioPortal.dll">
-      <publishTime>12/25/2014 10:02:50</publishTime>
+      <publishTime>12/27/2014 13:10:59</publishTime>
     </File>
     <File Include="bin/EntityFramework.dll">
       <publishTime>11/19/2014 10:13:28</publishTime>
@@ -86,7 +86,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/19/2014 10:13:23</publishTime>
     </File>
     <File Include="Content/css/style.css">
-      <publishTime>12/24/2014 18:59:04</publishTime>
+      <publishTime>12/27/2014 13:05:00</publishTime>
     </File>
     <File Include="Content/img/add-file.png">
       <publishTime>11/19/2014 10:13:23</publishTime>
@@ -166,6 +166,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Files/Documents/Фото0424.jpg">
       <publishTime>12/24/2014 17:10:01</publishTime>
     </File>
+    <File Include="Files/UserPhotos/default-avatar.png">
+      <publishTime>12/26/2014 10:45:39</publishTime>
+    </File>
     <File Include="Global.asax">
       <publishTime>11/19/2014 10:13:23</publishTime>
     </File>
@@ -173,22 +176,22 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/24/2014 09:50:30</publishTime>
     </File>
     <File Include="Views/Account/Login.cshtml">
-      <publishTime>12/17/2014 10:04:15</publishTime>
+      <publishTime>12/26/2014 15:32:57</publishTime>
     </File>
     <File Include="Views/Employee/CreateDivisionPartial.cshtml">
       <publishTime>12/17/2014 09:03:13</publishTime>
     </File>
     <File Include="Views/Employee/Index.cshtml">
-      <publishTime>12/24/2014 18:38:00</publishTime>
+      <publishTime>12/27/2014 12:30:00</publishTime>
     </File>
     <File Include="Views/Home/EditAccountPartial.cshtml">
       <publishTime>12/24/2014 12:45:30</publishTime>
     </File>
     <File Include="Views/Home/Index.cshtml">
-      <publishTime>12/24/2014 16:57:25</publishTime>
+      <publishTime>12/27/2014 12:46:25</publishTime>
     </File>
     <File Include="Views/Layouts/DefaultLayouts.cshtml">
-      <publishTime>12/19/2014 18:00:26</publishTime>
+      <publishTime>12/27/2014 10:18:05</publishTime>
     </File>
     <File Include="Views/News/CreateNewsPartial.cshtml">
       <publishTime>12/24/2014 18:44:45</publishTime>
@@ -197,10 +200,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/17/2014 15:21:33</publishTime>
     </File>
     <File Include="Views/News/Index.cshtml">
-      <publishTime>12/24/2014 18:59:04</publishTime>
+      <publishTime>12/27/2014 12:04:28</publishTime>
     </File>
     <File Include="Views/Project/CreateProjectPartial.cshtml">
-      <publishTime>12/23/2014 12:19:03</publishTime>
+      <publishTime>12/26/2014 16:09:38</publishTime>
     </File>
     <File Include="Views/Project/CreateProjectStepPartial.cshtml">
       <publishTime>12/23/2014 12:19:04</publishTime>
@@ -209,19 +212,22 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/24/2014 14:10:15</publishTime>
     </File>
     <File Include="Views/Project/Index.cshtml">
-      <publishTime>12/24/2014 13:54:11</publishTime>
+      <publishTime>12/27/2014 12:04:00</publishTime>
     </File>
     <File Include="Views/ProjectDocument/Index.cshtml">
-      <publishTime>12/22/2014 09:36:22</publishTime>
+      <publishTime>12/27/2014 10:34:16</publishTime>
+    </File>
+    <File Include="Views/ProjectDocument/Serch.cshtml">
+      <publishTime>12/27/2014 13:03:37</publishTime>
     </File>
     <File Include="Views/Shared/RightBarNews.cshtml">
-      <publishTime>12/17/2014 12:46:47</publishTime>
+      <publishTime>12/26/2014 17:26:19</publishTime>
     </File>
     <File Include="Views/Web.config">
       <publishTime>11/19/2014 10:13:23</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>12/24/2014 19:05:51</publishTime>
+      <publishTime>12/27/2014 13:11:03</publishTime>
     </File>
   </ItemGroup>
 </Project>

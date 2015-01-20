@@ -30,9 +30,6 @@ namespace BrioPortal
         /// </summary>
         private readonly IProjectDocumentRepository projectDocumentRepository;
 
-
-        private string uploadDirectory = "//Files//Documents//";
-
         public ProjectDocumentController(IProjectRepository _projectRepository, IProjectDocumentRepository _projectDocumentRepository,
             IBrioContext _brioContext)
         {
@@ -46,7 +43,7 @@ namespace BrioPortal
             ViewBag.IsSuccess = TempData["IsSuccess"];
             ViewBag.Message = TempData["Message"];
 
-            return View(projectRepository.GetCompanyProjects());
+            return View(projectRepository.GetCompanyProjects(brioContext.CurrentUser.CompanyId));
         }
 
         public ActionResult GetProjectDocument()
@@ -65,14 +62,23 @@ namespace BrioPortal
                 projectDocument.UploadDate = DateTime.Now;
                 projectDocument.ProjectId = projDoc.ProjectId;
 
-                var savingPath = Path.Combine(HttpContext.Server.MapPath(uploadDirectory), fileName);
+                var savingPath = Path.Combine(HttpContext.Server.MapPath(AppSettings.PROJECT_DOC_SAVING_PATH), fileName);
                 files.SaveAs(savingPath);
-                projectDocument.DocumentPath = VirtualPathUtility.ToAbsolute(Path.Combine(uploadDirectory, fileName));
+                projectDocument.DocumentPath = VirtualPathUtility.ToAbsolute(Path.Combine(AppSettings.PROJECT_DOC_SAVING_PATH, fileName));
 
                 projectDocumentRepository.Insert(projectDocument);
                 projectDocumentRepository.SaveChanges();
                 //throw new HttpException(403, "Forbidden");
             }
+            else
+            {
+                TempData["IsSuccess"] = false;
+                TempData["Message"] = "Документ не был добавлен, т.к. не заполнены все поля. Пожалуйста повторите попытку заполнив все поля.";
+                return RedirectToAction("Index");
+            }
+
+            TempData["IsSuccess"] = true;
+            TempData["Message"] = "Документ успешно добавлен!";
             return RedirectToAction("Index");
         }
 
@@ -112,6 +118,27 @@ namespace BrioPortal
             }
 
             return RedirectToAction("Index");
+        }
+
+        [HttpGet]
+        public ActionResult Serch(string q)
+        {
+            if (q != null && q != "")
+            {
+                IQueryable<ProjectDocument> docs = projectDocumentRepository.GetCompanyDocuments(brioContext.CurrentUser.CompanyId);
+
+                IQueryable<ProjectDocument> result =
+                    from d in docs
+                    where d.DocumentTitle.Contains(q)
+                    select d;
+
+                return View(result);
+            }
+            else
+            {
+                return RedirectToAction("Index");
+            }
+            
         }
     }
 }

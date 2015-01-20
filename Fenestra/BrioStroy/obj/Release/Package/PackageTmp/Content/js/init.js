@@ -126,7 +126,7 @@ function toogleBlock(showingBlockIndex /*Индекс DOM элемента в коллекции $(".blo
 
         // Fade in speed (in ms).
         fadeInSpeed: 1000,
-        minWidth: 800,
+        minWidth: 990,
         minHeight: 480
     };
 
@@ -144,7 +144,7 @@ function toogleBlock(showingBlockIndex /*Индекс DOM элемента в коллекции $(".blo
         var newHeight = $window.height() - $header.outerHeight() - $footer.outerHeight();
         $(".content .slider").css('height', newHeight > settings.minHeight ? newHeight : settings.minHeight);
         $(".content .slider").css('width', newWidth > settings.minWidth ? newWidth : settings.minWidth);
-        $(".content .container").css('width', ((newWidth > settings.minWidth ? newWidth : settings.minWidth) * 3));
+        //$(".content .cont").css('width', ((newWidth > settings.minWidth ? newWidth : settings.minWidth) * 3));
 
         // Resize.
         var resizeTimeout, resizeScrollTimeout;
@@ -159,7 +159,7 @@ function toogleBlock(showingBlockIndex /*Индекс DOM элемента в коллекции $(".blo
                 var newHeight = $window.height() - $header.outerHeight() - $footer.outerHeight();
                 $(".content .slider").css('height', newHeight > settings.minHeight ? newHeight : settings.minHeight);
                 $(".content .slider").css('width', newWidth > settings.minWidth ? newWidth : settings.minWidth);
-                $(".content .container").css('width', ((newWidth > settings.minWidth ? newWidth : settings.minWidth) * 3));
+                //$(".content .cont").css('width', ((newWidth > settings.minWidth ? newWidth : settings.minWidth) * 3));
             }, 100);
         });
         // Trigger events on load.
@@ -167,38 +167,85 @@ function toogleBlock(showingBlockIndex /*Индекс DOM элемента в коллекции $(".blo
             $window.trigger('resize');
         });
 
-
         $(".prevButton").bind("click", function () {
-            if ($(".container").hasClass(SLIDER1)) {
-                switchSlider(SLIDER3);
-            }
-            else if ($(".container").hasClass(SLIDER2)) {
-                switchSlider(SLIDER1);
-            }
-            else if ($(".container").hasClass(SLIDER3)) {
-                switchSlider(SLIDER2);
-            }
+            var owl = $(".owl-carousel").data('owlCarousel');
+            prev(owl);
         });
 
         $(".nextButton").bind("click", function () {
-            if ($(".container").hasClass(SLIDER1)) {
-                switchSlider(SLIDER2);
-            }
-            else if ($(".container").hasClass(SLIDER2)) {
-                switchSlider(SLIDER3);
-            }
-            else if ($(".container").hasClass(SLIDER3)) {
-                switchSlider(SLIDER1);
-            }
+            var owl = $(".owl-carousel").data('owlCarousel');
+            next(owl);
         });
 
         $(".slide_switch").bind("click", function () {
-            switch ($(this).attr("data-id")) {
-                case "0": switchSlider(SLIDER1); break;
-                case "1": switchSlider(SLIDER2); break;
-                case "2": switchSlider(SLIDER3); break;
-            }
+            var owl = $(".owl-carousel").data('owlCarousel');
+            var slideId = $(this).attr("data-id");
+            owl.goTo(slideId);
         });
+
+        if ($("#owl-demo")) {
+            $("#owl-demo").owlCarousel({
+                navigation: false, // Show next and prev buttons
+                pagination: false,
+                slideSpeed: 300,
+                paginationSpeed: 400,
+                singleItem: true,
+                mouseDrag: false,
+                touchDrag: true,
+                afterMove: after,
+                startDragging: dragg,
+            });
+        }
+
+        var isDragg = false;
+        
+        function after() {
+            var owl = $(".owl-carousel").data('owlCarousel');
+            markActualElementsToActive(owl);
+
+            if (!isDragg) {
+                return false;
+            }
+
+            if (owl.currentItem >= currentSlideIndex()) {
+                next(owl);
+            }
+            else {
+                prev(owl);
+            }
+            isDragg = false;
+        }
+
+        function markActualElementsToActive(owl) {
+            $('.slide_switch').removeClass('active');
+            $('.slide_switch[data-id="' + owl.currentItem + '"]').addClass('active');
+            $('.slider').removeClass('active');
+            $('.slider[data-id="' + owl.currentItem + '"]').addClass('active');
+        }
+
+        function dragg() {
+            isDragg = true;
+        }
+
+        function prev(owl) {
+            if (!isDragg) {
+                owl.prev();
+            }
+        }
+
+        function next(owl) {
+            if (!isDragg) {
+                owl.next();
+            }
+        }
+
+
+
+        function currentSlideIndex() {
+            var currentSlideIndex = $('.slider.active').attr('data-id');
+            console.log('currentSlideIndex: ' + currentSlideIndex);
+            return currentSlideIndex != undefined && (currentSlideIndex >= 0 && currentSlideIndex <= 2) ? currentSlideIndex : 0;
+        }
 
         var isBusy = false;
         $(document).mousewheel(function (event, delta) {

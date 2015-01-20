@@ -25,5 +25,7 @@ namespace Brio.Models
         public DateTime StartDate { get; set; }
         [Display(Name = "Конец")]
         public DateTime EndDate { get; set; }
+        [Display(Name = "Название документа")]
+        public string DocumentTitle { get; set; }
     }
 }

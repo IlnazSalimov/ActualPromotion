@@ -43,13 +43,9 @@ namespace Brio.Models
         public string Phone { get; set; }
 
         [Display(Name = "Отдел")]
-        public int DivisionId { get; set; }
+        public int? DivisionId { get; set; }
 
         [Required]
         public int RoleId { get; set; }
-
-        [Required]
-        [Display(Name = "Запомнить меня")]
-        public bool RememberMe { get; set; }
     }
 }

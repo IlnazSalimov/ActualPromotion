@@ -13,7 +13,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
   </PropertyGroup>
   <ItemGroup>
     <File Include="bin/Brio.dll">
-      <publishTime>12/11/2014 17:32:39</publishTime>
+      <publishTime>01/14/2015 12:00:18</publishTime>
     </File>
     <File Include="bin/EntityFramework.dll">
       <publishTime>11/19/2014 10:14:17</publishTime>
@@ -22,7 +22,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/19/2014 10:14:17</publishTime>
     </File>
     <File Include="bin/JelDorNiiProject.dll">
-      <publishTime>12/11/2014 17:32:45</publishTime>
+      <publishTime>01/14/2015 13:47:25</publishTime>
     </File>
     <File Include="bin/Microsoft.Web.Infrastructure.dll">
       <publishTime>11/19/2014 10:14:19</publishTime>
@@ -123,14 +123,20 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Content/css/kendo.default.min.css">
       <publishTime>11/19/2014 10:14:08</publishTime>
     </File>
+    <File Include="Content/css/owl.carousel.css">
+      <publishTime>05/13/2014 00:56:20</publishTime>
+    </File>
+    <File Include="Content/css/owl.theme.css">
+      <publishTime>05/13/2014 00:56:24</publishTime>
+    </File>
     <File Include="Content/css/reset.css">
       <publishTime>11/19/2014 10:14:08</publishTime>
     </File>
     <File Include="Content/css/specific-styles.css">
-      <publishTime>11/19/2014 10:14:08</publishTime>
+      <publishTime>12/15/2014 15:01:33</publishTime>
     </File>
     <File Include="Content/css/style.css">
-      <publishTime>12/15/2014 15:07:32</publishTime>
+      <publishTime>01/14/2015 15:02:50</publishTime>
     </File>
     <File Include="Content/fonts/RussoOne.eot">
       <publishTime>11/19/2014 10:14:08</publishTime>
@@ -262,7 +268,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/19/2014 10:14:08</publishTime>
     </File>
     <File Include="Content/js/init.js">
-      <publishTime>11/26/2014 10:23:04</publishTime>
+      <publishTime>01/14/2015 14:38:41</publishTime>
     </File>
     <File Include="Content/js/jquery-1.10.2.min.js">
       <publishTime>11/19/2014 10:14:08</publishTime>
@@ -291,6 +297,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Content/js/kendo.web.min.js">
       <publishTime>11/19/2014 10:14:10</publishTime>
     </File>
+    <File Include="Content/js/owl.carousel.min.js">
+      <publishTime>05/13/2014 00:48:58</publishTime>
+    </File>
     <File Include="Content/js/slider.js">
       <publishTime>11/19/2014 10:14:10</publishTime>
     </File>
@@ -310,7 +319,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/19/2014 10:14:10</publishTime>
     </File>
     <File Include="Views/Articles/About.cshtml">
-      <publishTime>12/11/2014 14:39:59</publishTime>
+      <publishTime>01/14/2015 15:05:20</publishTime>
     </File>
     <File Include="Views/Articles/Add.cshtml">
       <publishTime>11/19/2014 10:14:10</publishTime>
@@ -319,7 +328,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/19/2014 10:14:10</publishTime>
     </File>
     <File Include="Views/Contact/Index.cshtml">
-      <publishTime>11/19/2014 10:14:10</publishTime>
+      <publishTime>01/13/2015 15:40:46</publishTime>
     </File>
     <File Include="Views/Document/Add.cshtml">
       <publishTime>11/19/2014 10:14:10</publishTime>
@@ -331,10 +340,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/02/2014 14:28:12</publishTime>
     </File>
     <File Include="Views/Home/Index.cshtml">
-      <publishTime>11/19/2014 10:14:10</publishTime>
+      <publishTime>01/14/2015 09:07:03</publishTime>
     </File>
     <File Include="Views/Layouts/LayoutDefault.cshtml">
-      <publishTime>11/27/2014 14:29:19</publishTime>
+      <publishTime>01/14/2015 17:00:48</publishTime>
     </File>
     <File Include="Views/Portfolio/Index.cshtml">
       <publishTime>11/19/2014 10:14:10</publishTime>

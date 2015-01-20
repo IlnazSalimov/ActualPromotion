@@ -28,10 +28,12 @@ namespace Brio.Models
         public Nullable<System.DateTime> StartDate { get; set; }
         public Nullable<System.DateTime> EndDate { get; set; }
         public System.DateTime CreateDate { get; set; }
+        public int StateId { get; set; }
     
         public virtual Company Company { get; set; }
         public virtual ICollection<ProjectDocument> ProjectDocuments { get; set; }
         public virtual User User { get; set; }
         public virtual ICollection<ProjectStep> ProjectSteps { get; set; }
+        public virtual ProjectState ProjectState { get; set; }
     }
 }

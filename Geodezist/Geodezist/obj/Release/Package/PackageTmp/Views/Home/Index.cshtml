@@ -3,12 +3,24 @@
     Layout = "~/Views/Layouts/LayoutDefault.cshtml";
 }
 
+<link href="~/Content/css/owl.carousel.css" rel="stylesheet" />
+<link href="~/Content/css/owl.theme.css" rel="stylesheet" />
+<style>
+    #owl-demo .item .slider{
+    display: block;
+    width: 100%;
+    height: auto;
+}
+</style>
+
+<script src="~/Content/js/owl.carousel.min.js"></script>
+
 <div class="prevButton"></div>
 <div class="nextButton"></div>
-<div class="container run1">
-    <div data-id="0" class="slider"></div>
-    <div data-id="1" class="slider"></div>
-    <div data-id="2" class="slider"></div>
+<div id="owl-demo" class="container-x run1 owl-carousel owl-theme">
+    <div class="item"><div data-id="0" class="slider active"></div></div>
+    <div class="item"><div data-id="1" class="slider"></div></div>
+    <div class="item"><div data-id="2" class="slider"></div></div>
 </div>
 
 <div class="big-logo">

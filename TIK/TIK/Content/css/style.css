@@ -340,61 +340,73 @@ figure.banner {
 .rosjeldor{
     background: url('../images/rosjeldor.png') no-repeat 0 0;
     background-size: 100%;
+    background-size: contain;
 }
 
 .rosjeldor:hover{
     background: url('../images/rosjeldor_c.png') no-repeat 0 0;
     background-size: 100%;
+    background-size: contain;
 }
 
 .panel{
     background: url('../images/panel.png') no-repeat 0 0;
     background-size: 100%;
+    background-size: contain;
 }
 
 .panel:hover{
     background: url('../images/panel_c.png') no-repeat 0 0;
     background-size: 100%;
+    background-size: contain;
 }
 
 .kungur{
     background: url('../images/kungur.png') no-repeat 0 0;
     background-size: 100%;
+    background-size: contain;
 }
 
 .kungur:hover {
     background: url('../images/kungur_c.png') no-repeat 0 0;
     background-size: 100%;
+    background-size: contain;
 }
 
 .malan {
     background: url('../images/malan.png') no-repeat 0 0;
     background-size: 100%;
+    background-size: contain;
 }
 
 .malan:hover {
     background: url('../images/malan_c.png') no-repeat 0 0;
     background-size: 100%;
+    background-size: contain;
 }
 
 .dolina {
     background: url('../images/dolina.png') no-repeat 0 0;
     background-size: 100%;
+    background-size: contain;
 }
 
 .dolina:hover {
     background: url('../images/dolina_c.png') no-repeat 0 0;
     background-size: 100%;
+    background-size: contain;
 }
 
 .elvis {
     background: url('../images/elvis.png') no-repeat 0 0;
     background-size: 100%;
+    background-size: contain;
 }
 
 .elvis:hover {
     background: url('../images/elvis_c.png') no-repeat 0 0;
     background-size: 100%;
+    background-size: contain;
 }
 
 .documents .doc-container
@@ -543,7 +555,7 @@ footer .logo {
 .marker_descriptions {
     position: absolute;
     right: 0;
-    bottom: 50px;
+    top: 80px;
 }
 
 .marker {

@@ -37,7 +37,7 @@
 @{var i = 0;}
 
 @{i++;}
-<div class='block_ins partner current products'>
+<div class='block_ins rhombus current items-7'>
     <div class="logo_cont">
         <div class="partner_logo windows" data-id="1"></div>
         <div class="partner_logo facades" data-id="2"></div>
@@ -85,10 +85,10 @@
                         </div>
                         foreach (var doc in productDocuments)
                         {
-                            <button class="button-error pure-button" data-doc-id="@doc.ID">@Html.ActionLink(doc.DocumentTitle, "Show", "Document", new { id = doc.ID }, new { @class = "pdf-button show", target = "_blank" })</button>
+                            @Html.ActionLink(doc.DocumentTitle, "Show", "Document", new { id = doc.ID }, new { @class = "pdf-button show button-error pure-button", target = "_blank", data_doc_id = doc.ID })
                             if (User.Identity.IsAuthenticated)
                             {
-                                <div class="del_prod_doc"><a class="delete" href="" data-doc-id="@doc.ID"><i class="fa fa-times"></i></a></div>
+                                <div class="del_prod_doc"><a class="delete" href="" data_doc_id="@doc.ID"><i class="fa fa-times"></i></a></div>
                             }
                         }
                     }
@@ -146,10 +146,10 @@
                 type: 'POST',
                 dataType: 'json',
                 url: "/Document/Delete",
-                data: "id=" + $(that).attr("data-doc-id"),
+                data: "id=" + $(that).attr("data_doc_id"),
                 success: function (response) {
                     if (response.success) {
-                        $("button[data-doc-id='" + $(that).attr("data-doc-id") + "']").remove();
+                        $("a[data-doc-id='" + $(that).attr("data_doc_id") + "']").remove();
                         $(that).parent(".del_prod_doc").remove();
                         alert(response.message);
                     }

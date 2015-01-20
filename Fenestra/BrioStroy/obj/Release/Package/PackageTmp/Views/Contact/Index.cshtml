@@ -13,12 +13,56 @@
         </style>
     } 
 
+<script src="~/Content/js/jquery-ui.min.js"></script>
+<script src="~/Content/js/jquery.mousewheel.min.js"></script>
+
 <div class="container run1">
-    <div data-id="0" class="slider"></div>
+    <div data-id="0" class="slider">
+
+        <div class="units-nav-container">
+
+        </div>
+    </div>
 </div>
 <div class="page_logo_container"><div class="page_logo"></div></div>
 
-<div class="block_ins">
+<div class="block_ins disp_none">
+    <div class="title">
+        @ViewBag.Title
+    </div>
+    <article class="page-content">
+        <div class="articles">
+            <div class="contact-container">
+                <div class="adress">
+                    <div class="adress1">
+                        г. Казань, ул Калинина, 60
+                    </div>
+                    <div class="telephone">
+                        тел.: (843)500-00-82, (843)500-00-69, (843) 500-00-68
+                    </div>
+                </div>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2243.6177813046556!2d49.14739460000001!3d55.782509900000015!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x415ead0a78c21fa5%3A0x4f8776ec25b77746!2z0YPQuy4g0JrQsNC70LjQvdC40L3QsCwgNjAsINCa0LDQt9Cw0L3RjCwg0KDQtdGB0L8uINCi0LDRgtCw0YDRgdGC0LDQvSwgNDIwMDQz!5e0!3m2!1sru!2sru!4v1419341499505" height="220" frameborder="0" style="border:0; width:100%"></iframe>
+            </div>
+        </div>
+        <div class="brio-tasks">
+            @using (Html.BeginForm("SendFeedback", "Contact", FormMethod.Post, new { @class = "pure-form", enctype = "multipart/form-data" }))
+            {
+                <fieldset id="feedback_form" style="position: absolute; margin-left: 10%; width: 80%;">
+                    @Html.ValidationSummary(true)
+                    <p>@ViewBag.Message</p>
+                    <div class="feedback_title">ОБРАТНАЯ СВЯЗЬ</div>
+                    @Html.TextBoxFor(model => model.Name, new { placeholder = "Имя" })
+                    @Html.TextBoxFor(model => model.Email, new { placeholder = "E-mail" })
+                    @Html.TextBoxFor(model => model.Phone, new { placeholder = "Телефон" })
+                    @Html.TextAreaFor(model => model.Message, 4, 22, new { placeholder = "Текст" })
+                    <button class="button-error pure-button feedback">ОТПРАВИТЬ</button>
+                </fieldset>
+            }
+        </div>
+    </article>
+</div>
+
+<div class="block_ins current">
     <div class="title">
         @ViewBag.Title
     </div>
@@ -36,7 +80,7 @@
                         @contacts.Phone2
                     </div>
                 </div>
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2243.6622345521087!2d49.1254735!3d55.78173789999989!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x415ead060b262e81%3A0xabf4994e2a66837f!2z0KHQv9Cw0YDRgtCw0LrQvtCy0YHQutCw0Y8g0YPQuy4sIDIsINCa0LDQt9Cw0L3RjCwg0KDQtdGB0L_Rg9Cx0LvQuNC60LAg0KLQsNGC0LDRgNGB0YLQsNC9LCA0MjAwMDA!5e0!3m2!1sru!2sru!4v1410433593720" height="220" frameborder="0" style="border:0; width:100%"></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2241.8748528257765!2d37.647777999999995!3d55.812773!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b535dcfe89da29%3A0x7d0a122acbdd646c!2z0JzQsNC70L7QvNC-0YHQutC-0LLRgdC60LDRjyDRg9C7LiwgMTYsINCc0L7RgdC60LLQsCwgMTI5MTY0!5e0!3m2!1sru!2sru!4v1419341600660" height="220" frameborder="0" style="border:0; width:100%"></iframe>
             </div>
         </div>
         <div class="brio-tasks">
@@ -85,6 +129,55 @@
                 postFeedback();
             }
         });
+
+        (function () {
+            for (var i = 0; i < $(".block_ins").length; i++) {
+                if ($(".unit_nav").length == 0) {
+                    $(".units-nav-container").append('<div class="unit_nav"></div>');
+                }
+                else {
+                    $(".unit_nav").last().before('<div class="unit_nav"></div>');
+                }
+            }
+
+            $(".unit_nav").css({ "height": (100 / $(".unit_nav").length) - 2 + "%" });
+            $(".unit_nav").eq(0).addClass("active");
+
+            $(window).resize(function () {
+                showOrHidePageLogo($(".block_ins.current"));
+            });
+
+            $(".partner_logo").bind("click", function () {
+                toogleBlock($(".block_ins[data-id='" + $(this).attr("data-id") + "']").index(".block_ins"), 350, function () { }, false);
+            });
+
+            var isBusy = false;
+            $(document).mousewheel(function (event, delta) {
+                if (isBusy) {
+                    return false;
+                }
+                isBusy = true;
+                if (delta < 0) {
+                    var blockIndexToShow = $(".block_ins").index($(".block_ins.current").next());
+                    toogleBlock(blockIndexToShow, 350, function (activeElementIndex) {
+                        isBusy = false;
+                    });
+                }
+
+                if (delta > 0) {
+                    var blockIndexToShow = $(".block_ins").index($(".block_ins.current").prev());
+                    toogleBlock(blockIndexToShow, 350, function (activeElementIndex) {
+                        isBusy = false;
+                    });
+                }
+            });
+
+            $(".unit_nav").bind("click", function () {
+                toogleBlock($(this).index(), 350, function (activeElementIndex) {
+                    isBusy = false;
+                });
+            });
+        })();
     })();
 
     function validateEmail(email) { 

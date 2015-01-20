@@ -6,6 +6,11 @@ using System.Threading.Tasks;
 
 namespace Brio.Models
 {
+    public enum States
+    {
+        Active = 5,
+        Deleted = -99
+    }
     public partial class Division : IEntity
     {
         public int ID

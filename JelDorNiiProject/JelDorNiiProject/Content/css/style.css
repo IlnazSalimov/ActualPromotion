@@ -9,7 +9,7 @@
 body {
     font-family: Segoe UI Light, sans-serif;
     min-height: 480px;
-    min-width: 800px;
+    min-width: 990px;
     overflow: auto !important;
 }
 
@@ -127,11 +127,11 @@ a.price::before {
     overflow-y: hidden;
 }
 
-    .content .container {
+    /*.content .container {
         -webkit-transition: 500ms;
         transition: 500ms;
         -webkit-transform: translate3d(0%, 0px, 0px);
-    }
+    }*/
 
     .content .block_ins {
         position: absolute;
@@ -196,8 +196,12 @@ a.price::before {
             font-size: 15px;
             color: #4E565A;
             position: relative;
-            line-height: 17px;
+            line-height: 20px;
             overflow: hidden;
+        }
+
+        .block_ins:not(.company_works) .page-content .articles {
+            overflow: auto;
         }
 
         .content .page-content .contacts_container{
@@ -240,10 +244,11 @@ a.price::before {
 .article_container {
     margin-bottom: 23px;
     position: relative;
-    margin: 35px 20px 0 40px;
+    margin: 35px 40px 0;
 }
 
     .article_container .article {
+        font-size: 16px;
         font-weight: 100;
     }
     .company_works .article_container{
@@ -251,6 +256,19 @@ a.price::before {
     }
 
 .articles .article_header h1::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 2px;
+    height: 26px;
+    margin-top: -13px;
+    z-index: 1;
+}
+
+.articles .article_header h1::before,
+.brio-tasks aside header::before {
     content: '';
     display: block;
     position: absolute;
@@ -271,6 +289,25 @@ a.price::before {
 
     .content .block_ins .brio-tasks.sm {
         width: 190px;
+    }
+
+.brio-tasks aside {
+    padding: 0 25px 0 35px;
+    color: #fff;
+}
+
+.brio-tasks aside header
+{
+    font-size: 18px;
+    margin: 30px 0 10px;
+}
+
+    .brio-tasks aside header::before {
+        top: 25px;
+        left: 25px;
+        background-color: #fff;
+        margin-left: 0;
+        margin-top: 0;
     }
 
 .content .block_ins .relative-width .right-block {
@@ -918,6 +955,56 @@ div.price_container {
     background-size: contain;
 }
 
+.partner_logo.glass_ru{
+    background: url('../images/glass_ru.png') no-repeat 0 0;
+    background-size: contain;
+}
+
+.partner_logo.glass_ru:hover {
+    background: url('../images/glass_ru_c.png') no-repeat 0 0;
+    background-size: contain;
+}
+
+.partner_logo.glass{
+    background: url('../images/glass.png') no-repeat 0 0;
+    background-size: contain;
+}
+
+.partner_logo.glass:hover {
+    background: url('../images/glass_c.png') no-repeat 0 0;
+    background-size: contain;
+}
+
+.partner_logo.kraspan{
+    background: url('../images/kraspan.png') no-repeat 0 0;
+    background-size: contain;
+}
+
+.partner_logo.kraspan:hover {
+    background: url('../images/kraspan_c.png') no-repeat 0 0;
+    background-size: contain;
+}
+
+.partner_logo.tec{
+    background: url('../images/tec.png') no-repeat 0 0;
+    background-size: contain;
+}
+
+.partner_logo.tec:hover {
+    background: url('../images/tec_c.png') no-repeat 0 0;
+    background-size: contain;
+}
+
+.partner_logo.schuco{
+    background: url('../images/schuco.png') no-repeat 0 0;
+    background-size: contain;
+}
+
+.partner_logo.schuco:hover {
+    background: url('../images/schuco_c.png') no-repeat 0 0;
+    background-size: contain;
+}
+
 .partner_logo.windows{
     background: url('../images/1.png') no-repeat 0 0;
     background-size: contain;
@@ -1008,7 +1095,7 @@ div.price_container {
     position: relative;
 }
 
-.logo_cont.line2{
+.logo_cont.line2 {
     position: relative;
     width: 77%;
     top: 50px;
@@ -1020,49 +1107,62 @@ div.price_container {
     height: 100%;
     width: 100%;
 }
-@media screen and (max-width: 800px) {
-    .content .block_ins.partner.products {
-        width: 600px;
-        height: 160px;
-        margin-left: -265px;
-        top: 25%;
-    }
+
+.content .block_ins.rhombus {
+    position: absolute;
+    bottom: 220px;
+    left: 50%;
+    top: 23%;
+    display: block;
 }
 
-@media screen and (max-width: 1000px) and (min-width: 800px) {
-    .content .block_ins.partner.products {
+
+@media screen and (max-width: 1000px) {
+    .content .block_ins.rhombus {
         width: 700px;
         height: 210px;
-        margin-left: -310px;
+        margin-left: -230px;
         top: 26%;
+    }
+
+    .content .block_ins.rhombus.items-7 {
+        margin-left: -310px;
     }
 }
 
 @media screen and (max-width: 1200px) and (min-width: 1000px)  {
-    .content .block_ins.partner.products {
+    .content .block_ins.rhombus {
         width: 810px;
         height: 260px;
-        margin-left: -358px;
+        margin-left: -266px;
         top: 20%;
+    }
+
+    .content .block_ins.rhombus.items-7 {
+        margin-left: -358px;
     }
 }
 
 @media screen and (min-width: 1200px)  {
-    .content .block_ins.partner.products {
+    .content .block_ins.rhombus {
         width: 1000px;
         height: 325px;
-        margin-left: -435px;
+        margin-left: -325px;
         top: 16%;
     }
+
+        .content .block_ins.rhombus.items-7 {
+            margin-left: -435px;
+        }
 }
 
 @media screen and (min-height: 800px)  {
-    .content .block_ins.partner.products {
-        top: 31%;
+    .content .block_ins.rhombus {
+        top: 36%;
     }
 }
 
-@media screen and (max-height: 860px)  {
+@media screen and (max-height: 860px) {
     .page_logo_container {
         display: none;
     }
@@ -1072,14 +1172,6 @@ div.price_container {
     width: 26%;
     margin: 0 1.3% 2%;
 }
-
-.content .block_ins.partner {
-        position: absolute;
-        bottom: 220px;
-        left: 50%;
-        top: 23%;
-        display: block;
-    }
 
 .page_logo {
     position: absolute;
