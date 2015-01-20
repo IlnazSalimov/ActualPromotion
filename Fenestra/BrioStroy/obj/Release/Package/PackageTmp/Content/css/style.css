@@ -9,7 +9,7 @@
 body {
     font-family: Segoe UI Light, sans-serif;
     min-height: 480px;
-    min-width: 800px;
+    min-width: 990px;
     overflow: auto !important;
 }
 
@@ -18,6 +18,7 @@ body {
     width: 100%;
     height: 100%;
     z-index: 10;
+    overflow: hidden;
 }
 
 #header {
@@ -31,8 +32,7 @@ body {
 .menu {
     position: absolute;
     left: 50%;
-    margin-left: -395px;
-    width: 790px;
+    margin-left: -374px;
     color: #313131;
     font-size: 13px;
     z-index: 1000;
@@ -127,17 +127,17 @@ a.price::before {
     overflow-y: hidden;
 }
 
-    .content .container {
+    /*.content .container {
         -webkit-transition: 500ms;
         transition: 500ms;
         -webkit-transform: translate3d(0%, 0px, 0px);
-    }
+    }*/
 
     .content .block_ins {
         position: absolute;
-        width: 64%;
+        width: 808px;
         height: 315px;
-        left: calc(18% - 32px);
+        left: calc(50% - 420px);
         bottom: 32%;
     }
 
@@ -185,10 +185,10 @@ a.price::before {
     }
 
         .content .page-content .articles {
-            width: -moz-calc(100% - 285px) !important;
-            width: -webkit-calc(100% - 285px) !important;
-            width: -o-calc(100% - 285px) !important;
-            width: calc(100% - 285px) !important;
+            width: -moz-calc(100% - 265px) !important;
+            width: -webkit-calc(100% - 265px) !important;
+            width: -o-calc(100% - 265px) !important;
+            width: calc(100% - 265px) !important;
             height: 100%;
             float: left;
             box-sizing: border-box;
@@ -197,7 +197,11 @@ a.price::before {
             color: #4E565A;
             position: relative;
             line-height: 20px;
-            overflow-x: auto;
+            overflow: hidden;
+        }
+
+        .block_ins:not(.company_works) .page-content .articles {
+            overflow: auto;
         }
 
         .content .page-content .contacts_container{
@@ -244,11 +248,11 @@ a.price::before {
 }
 
     .article_container .article {
-        font-size: 17px;
+        font-size: 16px;
         font-weight: 100;
     }
     .company_works .article_container{
-        margin: 35px 28px 0;
+        margin: 35px 37px 0;
     }
 
 .articles .article_header h1::before {
@@ -264,7 +268,7 @@ a.price::before {
 }
 
 .content .block_ins .brio-tasks {
-    width: 285px;
+    width: 265px;
     height: 100%;
     float: right;
     position: relative;
@@ -292,7 +296,7 @@ a.price::before {
 .content .block_ins .bottom-corner {
     position: absolute;
     bottom: 0;
-    border-width: 0 285px 85px 0;
+    border-width: 0 265px 85px 0;
     border-style: solid;
     border-color: transparent transparent #fff transparent;
 }
@@ -310,11 +314,6 @@ a.price::before {
     left: 100px;
 }
 
-.content .nextButton {
-    right: 100px;
-    transform: rotateY(180deg);
-}
-
 .content .prevButton,
 .content .nextButton {
     background: url('../images/arrow.png') no-repeat 0 0;
@@ -324,6 +323,11 @@ a.price::before {
     z-index: 10;
     margin-top: -50px;
     cursor: pointer;
+}
+
+.content .nextButton {
+    right: 100px;
+    background: url('../images/arrow_right.png') no-repeat 0 0 !important;
 }
 
 .content .slider {
@@ -339,10 +343,11 @@ a.price::before {
 .bottom-logo {
     position: absolute;
     left: 50%;
-    color: rgb(131, 131, 131);
+    color: #fff;
     margin-top: 25px;
     font-family: 'Russo One', sans-serif;
     text-align: center;
+    margin-left: -57.5px !important;
 }
 
 .bottom-logo .company {
@@ -464,15 +469,16 @@ input.error, textarea.error {
     }
 
 .button-error {
-    background: #CA2728;
+    background: #CA2728;.price_buttons .pure-button
 }
 
 
 
 .price_buttons .pure-button {
     margin-bottom: 15px;
-    width: 100%;
-    height: 50px;
+    padding: 15px;
+    box-sizing: border-box;
+    color: #fff;
 }
 
 
@@ -586,13 +592,12 @@ div.price_container {
     height: 230px;
     margin-left: 9%;
     color: #fff;
-    overflow: auto;
 }
 
 .del_prod_doc {
     position: absolute;
-    right: 6px;
-    margin-top: -34px;
+    right: 10px;
+    margin-top: -35px;
 }
     .del_prod_doc a {
         color: #fff;
@@ -600,7 +605,7 @@ div.price_container {
 
     .show_buttons .pure-button {
         margin-bottom: 10px;
-        width: 98%;
+        color: #fff;
     }
 
     .show_buttons .empty_list {
@@ -610,8 +615,8 @@ div.price_container {
 .price_buttons_head {
     position: relative;
     margin: 25px 0 20px;
-    padding-left: 30px;
     font-size: 16px;
+    text-align:center;
 }
 
 .price_buttons_head.prod {
@@ -784,7 +789,7 @@ div.price_container {
 .marker_descriptions {
     position: absolute;
     right: 0;
-    bottom: 50px;
+    bottom: 115px;
 }
 
 .marker {
@@ -918,6 +923,56 @@ div.price_container {
     background-size: contain;
 }
 
+.partner_logo.glass_ru{
+    background: url('../images/glass_ru.png') no-repeat 0 0;
+    background-size: contain;
+}
+
+.partner_logo.glass_ru:hover {
+    background: url('../images/glass_ru_c.png') no-repeat 0 0;
+    background-size: contain;
+}
+
+.partner_logo.glass{
+    background: url('../images/glass.png') no-repeat 0 0;
+    background-size: contain;
+}
+
+.partner_logo.glass:hover {
+    background: url('../images/glass_c.png') no-repeat 0 0;
+    background-size: contain;
+}
+
+.partner_logo.kraspan{
+    background: url('../images/kraspan.png') no-repeat 0 0;
+    background-size: contain;
+}
+
+.partner_logo.kraspan:hover {
+    background: url('../images/kraspan_c.png') no-repeat 0 0;
+    background-size: contain;
+}
+
+.partner_logo.tec{
+    background: url('../images/tec.png') no-repeat 0 0;
+    background-size: contain;
+}
+
+.partner_logo.tec:hover {
+    background: url('../images/tec_c.png') no-repeat 0 0;
+    background-size: contain;
+}
+
+.partner_logo.schuco{
+    background: url('../images/schuco.png') no-repeat 0 0;
+    background-size: contain;
+}
+
+.partner_logo.schuco:hover {
+    background: url('../images/schuco_c.png') no-repeat 0 0;
+    background-size: contain;
+}
+
 .partner_logo.windows{
     background: url('../images/1.png') no-repeat 0 0;
     background-size: contain;
@@ -1008,7 +1063,7 @@ div.price_container {
     position: relative;
 }
 
-.logo_cont.line2{
+.logo_cont.line2 {
     position: relative;
     width: 77%;
     top: 50px;
@@ -1020,49 +1075,62 @@ div.price_container {
     height: 100%;
     width: 100%;
 }
-@media screen and (max-width: 800px) {
-    .block_ins.partner {
-        width: 600px;
-        height: 160px;
-        margin-left: -265px;
-        top: 25%;
-    }
+
+.content .block_ins.rhombus {
+    position: absolute;
+    bottom: 220px;
+    left: 50%;
+    top: 23%;
+    display: block;
 }
 
-@media screen and (max-width: 1000px) and (min-width: 800px) {
-    .block_ins.partner {
+
+@media screen and (max-width: 1000px) {
+    .content .block_ins.rhombus {
         width: 700px;
         height: 210px;
+        margin-left: -230px;
+        top: 26%;
+    }
+
+    .content .block_ins.rhombus.items-7 {
         margin-left: -310px;
-        top: 26% !important;
     }
 }
 
 @media screen and (max-width: 1200px) and (min-width: 1000px)  {
-    .block_ins.partner {
+    .content .block_ins.rhombus {
         width: 810px;
         height: 260px;
+        margin-left: -266px;
+        top: 20%;
+    }
+
+    .content .block_ins.rhombus.items-7 {
         margin-left: -358px;
-        top: 20% !important;
     }
 }
 
 @media screen and (min-width: 1200px)  {
-    .block_ins.partner {
+    .content .block_ins.rhombus {
         width: 1000px;
         height: 325px;
-        margin-left: -435px;
-        top: 16% !important;
+        margin-left: -325px;
+        top: 16%;
     }
+
+        .content .block_ins.rhombus.items-7 {
+            margin-left: -435px;
+        }
 }
 
 @media screen and (min-height: 800px)  {
-    .block_ins.partner {
-        top: 31% !important;
+    .content .block_ins.rhombus {
+        top: 36%;
     }
 }
 
-@media screen and (max-height: 860px)  {
+@media screen and (max-height: 860px) {
     .page_logo_container {
         display: none;
     }
@@ -1072,14 +1140,6 @@ div.price_container {
     width: 26%;
     margin: 0 1.3% 2%;
 }
-
-.content .block_ins.partner {
-        position: absolute;
-        bottom: 220px;
-        left: 50%;
-        top: 23%;
-        display: block;
-    }
 
 .page_logo {
     position: absolute;
@@ -1099,7 +1159,7 @@ div.price_container {
 .brio-tasks .task-title {
     margin: 25px 0 15px;
     color: #fff;
-    padding-left: 45px;
+    padding: 0 25px 0 45px;
     font-size: 20px;
 }
 
@@ -1148,9 +1208,8 @@ div.price_container {
     }
 
     .brio-tasks .navigation .right .arrow {
-        background: url('../images/arrow.png') no-repeat 0 0;
+        background: url('../images/arrow_right.png') no-repeat 0 0;
         background-size: contain;
-        transform: rotateY(180deg);
         float: right;
     }
 
@@ -1192,4 +1251,18 @@ div.price_container {
     {
         max-width: 470px;
         max-height: 260px;
+    }
+
+    .error-alert{
+        background-color: #f2dede;
+        padding: 20px;
+        text-align: center;
+        position: absolute;
+        top: 50%;
+        margin-top: -27.5px;
+        left: 50%;
+        margin-left: -271px;
+        color: #a94442;
+        border-radius: 5px;
+        border-color: #ebccd1;
     }

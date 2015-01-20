@@ -10,12 +10,22 @@
             background: url('../Content/images/about_company.png') no-repeat 0 0;
             background-size: contain;
         }
+
+         #owl-demo .item img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
         </style>
     } 
+<link href="~/Content/css/owl.carousel.css" rel="stylesheet" />
+<link href="~/Content/css/owl.theme.css" rel="stylesheet" />
 
-
+<script src="~/Content/js/owl.carousel.min.js"></script>
 <script src="~/Content/js/jquery-ui.min.js"></script>
 <script src="~/Content/js/jquery.mousewheel.min.js"></script>
+<script src="~/Content/js/knockout-3.2.0.js"></script>
+
 <div class="container run1">
     <div data-id="1" class="slider">
         <div class="units-nav-container">
@@ -103,9 +113,8 @@
                 </div>
             }
 
-            <div class="article_container disp_none">
-                <img src="" class="work_img disp_none current" />
-                <img src="" class="work_img disp_none" />
+            <div class="article_container disp_none owl-carousel owl-theme" data-bind="foreach: list">
+                <div class="item"><img class="work_img" data-bind="attr: { src: ImagesUrl }" /></div>
             </div>
         </div>
         <div class="brio-tasks">
@@ -123,9 +132,8 @@
 
                     <div class="right">
                         <div class="arrow"></div>
-                        <div class="text">Слудующая</div>
+                        <div class="text">Следующая</div>
                     </div>
-
                 </div>
             </div>
         </div>
@@ -134,22 +142,20 @@
 
 
 
-<div class='block_ins partner products' style='display: none;'>
+<div class='block_ins rhombus' style='display: none;'>
     <div class="logo_cont">
-        <div class="partner_logo rosjeldor"></div>
-        <div class="partner_logo panel"></div>
-        <div class="partner_logo kungur"></div>
-        <div class="partner_logo malan"></div>
+        <div class="partner_logo glass_ru"></div>
+        <div class="partner_logo glass"></div>
+        <div class="partner_logo kraspan"></div>
     </div>
     <div class="logo_cont line2">
         <div class="logo_inner_cont">
-            <div class="partner_logo dolina"></div>
-            <div class="partner_logo elvis"></div>
-            <div class="partner_logo vashbit"></div>
+            <div class="partner_logo tec"></div>
+            <div class="partner_logo schuco"></div>
         </div>
-        
-        </div>
+
     </div>
+</div>
 
     <div class="bottom_arrows_container">
         <div class="bottom-arrows">
@@ -161,7 +167,7 @@
     function companyWorksNavigationPanel(works) {
         var self = this;
 
-        var list = works;
+        this.list = ko.observableArray(works);
         var prevIndex = -1;
         var currentIndex = 0;
         var nextIndex = 1;
@@ -169,6 +175,7 @@
         var RIGHT = "right",
             LEFT = "left";
         var isBusy = false;
+        
 
         function rerenderNavigationPanel() {
             console.log("prevIndex: " + prevIndex);
@@ -202,32 +209,7 @@
             rerenderNavigationPanel();
         };
 
-        function appendCompanyWork(work, _direction) {
-            if (_direction == "right") {
-                $(".article_container img.work_img:not(.current)").attr("src", work.ImagesUrl);
-                $(".article_container img.work_img.current").toggle("drop", { direction: _direction }, 500, function () {
-                    var currentImg = this;
-                    $(".article_container img.work_img:not(.current)").toggle("drop", { direction: "left" }, 500, function () {
-                        $(currentImg).removeClass("current");
-                        $(this).addClass("current");
-                        isBusy = false;
-                    });
-                });
-            }
-            else if (_direction == "left") {
-                $(".article_container img.work_img:not(.current)").attr("src", work.ImagesUrl);
-                $(".article_container img.work_img.current").toggle("drop", { direction: _direction }, 500, function () {
-                    var currentImg = this;
-                    $(".article_container img.work_img:not(.current)").toggle("drop", { direction: "right" }, 500, function () {
-                        $(currentImg).removeClass("current");
-                        $(this).addClass("current");
-                        isBusy = false;
-                    });
-                });
-            }
-            else
-                $("img.work_img.current").attr("src", work.ImagesUrl).show();
-
+        function appendCompanyWork(work) {
             task.find(".task-title").text(work.Title);
             task.find(".task-container").text(work.Description);
             $(".admin_buttons").find(".delete").attr("data-work-id", work.Id);
@@ -235,33 +217,37 @@
         };
 
         self.isExistNextElement = function () {
-            if (list[nextIndex] !== undefined)
+            if (this.list()[nextIndex] !== undefined)
                 return true;
             else
                 return false;
         };
 
         self.isExistPrevElement = function () {
-            if (list[prevIndex] !== undefined)
+            if (this.list()[prevIndex] !== undefined)
                 return true;
             else
                 return false;
         };
 
-        self.showPrevWork = function () {
-            if (self.isExistPrevElement() && !isBusy) {
-                isBusy = true;
-                appendCompanyWork(list[prevIndex], RIGHT);
+        self.showPrevWork = function (isMoveOwl) {
+            if (self.isExistPrevElement()) {
+                if (isMoveOwl) {
+                    var owl = $(".owl-carousel").data('owlCarousel');
+                    owl.prev()
+                }
+                appendCompanyWork(this.list()[prevIndex]);
                 decIndexes();
             }
         };
 
         self.showCurrentWork = function () {
-            if (list !== undefined && list.length > 0) {
+            console.log(this.list().length)
+            if (this.list() !== undefined && this.list().length > 0) {
                 $(".article_container").removeClass("disp_none");
                 $(".veil").removeClass("disp_none");
 
-                appendCompanyWork(list[currentIndex]);
+                appendCompanyWork(this.list()[currentIndex]);
                 rerenderNavigationPanel();
             }
             else {
@@ -272,22 +258,29 @@
             }
         };
 
-        self.showNextWork = function () {
-            if (self.isExistNextElement() && !isBusy) {
-                isBusy = true;
-                appendCompanyWork(list[nextIndex], LEFT);
+        self.showNextWork = function (isMoveOwl) {
+            if (self.isExistNextElement()) {
+                if (isMoveOwl) {
+                    var owl = $(".owl-carousel").data('owlCarousel');
+                    owl.next()
+                }
+                appendCompanyWork(this.list()[nextIndex]);
                 incIndexes();
             }
+        };
+
+        self.CurrentIndex = function () {
+            return currentIndex;
         };
 
         self.showCurrentWork();
 
         $(".brio-tasks .navigation .left").bind("click", function () {
-            self.showPrevWork();
+            self.showPrevWork(true);
         });
 
         $(".brio-tasks .navigation .right").bind("click", function () {
-            self.showNextWork();
+            self.showNextWork(true);
         });
 
         $(".delete_button.works .delete").bind("click", function (e) {
@@ -305,17 +298,18 @@
                 data: "id=" + $(that).attr("data-work-id"),
                 success: function (response) {
                     if (response.success) {
-                        list.splice(currentIndex, 1);
+                        /*this.list().splice(currentIndex, 1);
 
                         if (self.isExistPrevElement()) {
-                            self.showPrevWork();
+                            self.showPrevWork(true);
                         }
                         else if (self.isExistNextElement()) {
-                            self.showNextWork();
+                            self.showNextWork(true);
                         }
                         else {
                             self.showCurrentWork();
-                        }
+                        }*/
+                        location.reload()
                     }
                     else {
                         console.log(response.message);
@@ -334,18 +328,21 @@
     (function () {
         for(var i = 0; i < $(".block_ins").length; i++){
             if ($(".unit_nav").length == 0){
-                $(".units-nav-container").append('<div class="unit_nav"></div>');
+                $(".units-nav-container").append('<div class="u-nav-container"><div class="unit_nav"></div></div>');
             }
             else
             {
-                $(".unit_nav").last().before('<div class="unit_nav"></div>');
+                $(".u-nav-container").last().after('<div class="u-nav-container"><div class="unit_nav"></div></div>');
+            }
+
+            if (i == $(".block_ins").length - 1) {
+                $(".unit_nav").last().after('<div class="block-desc disp_none">ПАРТНЕРЫ<div class="arrow_corner"></div></div>');
             }
         }
 
         $(window).resize(function () {
             showOrHidePageLogo($(".block_ins.current"));
         });
-        
         
         var _companyWorks;
 
@@ -356,6 +353,7 @@
             if (response.success) {
                 if (response.works.length > 0) {
                     _companyWorks = new companyWorksNavigationPanel(response.works);
+                    ko.applyBindings(_companyWorks);
                 }
                 else {
                     $(".delete_button.works").hide();
@@ -367,7 +365,7 @@
             }
         });
 
-        $(".unit_nav").css({ "height": (100 / $(".unit_nav").length) - 2 + "%" });
+        $(".u-nav-container").css({ "height": (100 / $(".unit_nav").length) - 2 + "%" });
         $(".unit_nav").eq(0).addClass("active");
 
         $(".delete_button:not(.works) .delete").bind("click", function (e) {
@@ -384,6 +382,7 @@
                 url: "/Articles/Delete",
                 data: "articleId=" + $(that).attr("data-articleid"),
                 success: function (response) {
+                    console.log(response);
                     if (response.success) {
                         var isFirstElement = $(".block_ins").index($(".block_ins.current")) == 0;
                         var isLastElement = $(".block_ins").index($(".block_ins.current")) == $(".block_ins").length - 1;
@@ -425,7 +424,7 @@
 
         
 
-        $(".unit_nav").bind("click", function () {
+        $(".u-nav-container").bind("click", function () {
             toogleBlock($(this).index(), 350, function (activeElementIndex) {
                 if (activeElementIndex !== undefined) {
                     $(".unit_nav").removeClass("active");
@@ -433,6 +432,46 @@
                 }
             });
         });
+
+
+        $(".owl-carousel").owlCarousel({
+            navigation: false, // Show next and prev buttons
+            pagination: false,
+            slideSpeed: 300,
+            paginationSpeed: 400,
+            singleItem: true,
+            afterMove: after,
+            startDragging: dragg,
+            mouseDrag: false,
+            touchDrag: true,
+        });
+
+        var isDragg = false;
+
+        function after() {
+            if (!isDragg) {
+                return;
+            }
+            
+            isDragg = false;
+            var owl = $(".owl-carousel").data('owlCarousel');
+            console.log(owl.currentItem);
+            console.log(_companyWorks.CurrentIndex());
+            if (owl.currentItem >= _companyWorks.CurrentIndex()) {
+                console.log('next');
+                _companyWorks.showNextWork(false);
+                return;
+            }
+            else {
+                console.log('prev');
+                _companyWorks.showPrevWork(false);
+                return;
+            }
+        }
+
+        function dragg() {
+            isDragg = true;
+        }
     })();
 
     

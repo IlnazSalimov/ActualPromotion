@@ -20,6 +20,11 @@ a {
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
 }
 
+.articles p:first-letter,
+.capital-letter-pink:first-letter {
+    color: #DE348A;
+}
+
 /*--  Header [  --*/
 .header {
     color: #fff;
@@ -27,7 +32,8 @@ a {
     height: 100px;
     background: url(../img/header_left_bottom_bckg.png), url(../img/header_up_right_bckg.png), #434242;
     background-repeat: no-repeat, no-repeat;
-    background-position: 0 22px, 808px 0;
+    background-position: 0 20px, 825px 0;
+    background-size: 110px, 75px;
 }
 
     .header .phone {
@@ -80,7 +86,7 @@ a {
 }
 
 .serch-submit {
-    background: url(img/search_icon.png), #fff;
+    background: url(../img/search_icon.png), #fff;
     background-repeat: no-repeat;
     background-position: 4px 1px;
 }
@@ -95,7 +101,7 @@ a {
 }
 
     .main-menu ul {
-        margin: 0 30px;
+        margin: 0;
     }
 
     .main-menu li {
@@ -123,16 +129,74 @@ a {
         display: none;
     }
 
-    .main-menu li.button {
-        float: right;
-        margin-right: 50px;
+    li.button-cont {
+        position: relative;
+        height: 300px;
     }
 
-    .main-menu li .pure-button {
-        margin: 8.5px 0;
+    .o-button {
+        margin: 8.5px 50px;
         background-color: #fff;
         padding: .35em 1em;
+        width: 180px;
     }
+
+    .enroll-form {
+        background: url(../img/bckg_for_enroll.png) no-repeat 210px 0;
+        background-size: 50px;
+        background-color: #fff;
+        width: 260px;
+        height: 300px;
+        position: relative;
+        top: -49px;
+        display: none;
+    }
+
+    .enroll-form .title
+    {
+        top: 18px;
+        left: 75px;
+        position: absolute;
+        cursor: pointer;
+    }
+
+    .enroll-form form {
+        padding: 10px;
+        margin-top: 50px;
+        margin-left: 7px;
+        margin-right: 7px;
+        background-color: #434242;
+        height: 222px;
+        position: absolute;
+    }
+
+        .enroll-form input,
+        .enroll-form select {
+            width: 100%;
+            margin: 7px 0;
+            background: #434242;
+            border: 1px solid #DE348A;
+            height: 27px;
+            padding: 0 5px;
+            box-sizing: border-box;
+            color: #fff;
+        }
+
+        .enroll-form input:focus,
+        .enroll-form select:focus
+        {
+            border: 1px solid #DE348A;
+        }
+
+        .enroll-form .submit
+        {
+            background-color: #DE348A;
+            border-radius: 0;
+            width: 100%;
+            color: #fff;
+            padding: inherit;
+            margin-top: 15px;
+        }
 
     .main-menu .hidden li a {
         display: block;
@@ -146,7 +210,7 @@ a {
         height: 100%;
         font: 300 16px/50px "TexgyReadVentor", sans-serif;
         color: #fff;
-        padding: 0 24px;
+        padding: 0 22px;
     }
 
         .main-menu .visible li a:hover,
@@ -169,9 +233,25 @@ a {
     margin-top: -50px;
 }
 
+.main-content section.top header
+{
+    top: 140px;
+    position: absolute;
+    font-size: 2.3em;
+    left: 30px;
+    color: #2B2A29;
+    font-weight: 100;
+}
+
 .content {
+    line-height: 29px;
     color: #2B2A29;
     padding: 30px 0;
+}
+
+.content [class *= pure-u]
+{
+    box-sizing: border-box;
 }
 
 /*--  table style [  --*/
@@ -202,16 +282,16 @@ a {
 /*--  ] table style  --*/
 
 .articles {
-    line-height: 29px;
     font-size: 1.1em;
 }
 
-    .articles p:first-letter {
-        font-size: 18px;
-        color: #DE348A;
-    }
+.articles [class *= pure-u]:first-child {
+    padding-right: 10px;
+}
 
-
+.articles [class *= pure-u]:last-child {
+    padding-left: 10px;
+}
 
 .b-wrap {
     -webkit-box-sizing: border-box;
@@ -231,8 +311,7 @@ a {
         padding-left: 16px;
     }
 
-.services .pure-g:not(:last-child),
-.photo-gallery .pure-g:not(:last-child) {
+.b-container .pure-g:not(:last-child) {
     margin-bottom: 35px;
 }
 
@@ -249,12 +328,48 @@ a {
         background-color: #DE348A;
     }
 
-.services .b-img img {
+.b-img img {
     height: 165px;
 }
 
 .photo-gallery .b-img img {
     height: 400px;
+}
+
+.v-block {
+    background-color: #434242;
+    padding: 10px;
+}
+
+    .v-block h2 {
+        font-size: 2em;
+    }
+
+.v-block img
+{
+    width: 100%;
+}
+
+.v-block [class *= pure-u]:first-child  {
+    padding-right: 10px;
+}
+
+.v-block [class *= pure-u]:last-child  {
+    padding-left: 10px;
+}
+
+.v-block iframe[src *= "www.google.com/maps"]
+{
+    width: 100%;
+    height: 400px;
+}
+
+.v-description {
+    color: #fff;
+}
+
+.v-description .v-title {
+    font-size: 32px;
 }
 /*--  ] Main content  --*/
 
@@ -264,7 +379,8 @@ a {
 .footer {
     background: url(../img/footer_right_bckg.png), #434242;
     background-repeat: no-repeat;
-    background-position: 305px 0;
+    background-position: 380px 0;
+    background-size: 520px;
     color: #fff;
 }
 
@@ -282,10 +398,6 @@ a {
             line-height: 25px;
             font-size: 1em;
         }
-
-            .footer .nav li.cap:first-letter {
-                color: #DE348A;
-            }
 
     .footer .nav a {
         text-decoration: none;

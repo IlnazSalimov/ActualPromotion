@@ -13,10 +13,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
   </PropertyGroup>
   <ItemGroup>
     <File Include="bin/Brio.dll">
-      <publishTime>11/26/2014 10:31:14</publishTime>
+      <publishTime>01/14/2015 12:00:18</publishTime>
     </File>
     <File Include="bin/BrioStroy.dll">
-      <publishTime>11/26/2014 10:38:07</publishTime>
+      <publishTime>01/14/2015 12:00:21</publishTime>
     </File>
     <File Include="bin/EntityFramework.dll">
       <publishTime>11/19/2014 10:13:46</publishTime>
@@ -123,6 +123,12 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Content/css/kendo.default.min.css">
       <publishTime>11/19/2014 10:13:43</publishTime>
     </File>
+    <File Include="Content/css/owl.carousel.css">
+      <publishTime>05/13/2014 00:56:20</publishTime>
+    </File>
+    <File Include="Content/css/owl.theme.css">
+      <publishTime>05/13/2014 00:56:24</publishTime>
+    </File>
     <File Include="Content/css/reset.css">
       <publishTime>11/19/2014 10:13:43</publishTime>
     </File>
@@ -130,7 +136,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/19/2014 10:13:43</publishTime>
     </File>
     <File Include="Content/css/style.css">
-      <publishTime>12/02/2014 16:45:18</publishTime>
+      <publishTime>01/14/2015 13:53:41</publishTime>
     </File>
     <File Include="Content/fonts/RussoOne.eot">
       <publishTime>11/19/2014 10:13:43</publishTime>
@@ -145,7 +151,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/19/2014 10:13:43</publishTime>
     </File>
     <File Include="Content/images/1.png">
-      <publishTime>11/12/2014 10:22:06</publishTime>
+      <publishTime>11/12/2014 10:23:34</publishTime>
     </File>
     <File Include="Content/images/1hover.png">
       <publishTime>11/12/2014 10:24:58</publishTime>
@@ -154,7 +160,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/16/2014 14:48:56</publishTime>
     </File>
     <File Include="Content/images/2hover.png">
-      <publishTime>11/12/2014 10:25:22</publishTime>
+      <publishTime>01/14/2015 12:33:24</publishTime>
     </File>
     <File Include="Content/images/3.png">
       <publishTime>12/16/2014 14:48:00</publishTime>
@@ -163,7 +169,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/12/2014 10:25:48</publishTime>
     </File>
     <File Include="Content/images/4.png">
-      <publishTime>11/12/2014 10:23:16</publishTime>
+      <publishTime>01/14/2015 12:19:11</publishTime>
     </File>
     <File Include="Content/images/4hover.png">
       <publishTime>11/12/2014 10:26:08</publishTime>
@@ -190,19 +196,19 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/19/2014 10:13:40</publishTime>
     </File>
     <File Include="Content/images/active_slide.png">
-      <publishTime>11/19/2014 10:13:40</publishTime>
+      <publishTime>11/19/2014 10:13:43</publishTime>
     </File>
     <File Include="Content/images/arrow-right.png">
       <publishTime>12/01/2014 11:30:12</publishTime>
     </File>
     <File Include="Content/images/arrow.png">
-      <publishTime>11/19/2014 10:13:40</publishTime>
+      <publishTime>11/19/2014 10:13:43</publishTime>
     </File>
     <File Include="Content/images/arrow_right.png">
       <publishTime>12/01/2014 11:30:12</publishTime>
     </File>
     <File Include="Content/images/big_logo.png">
-      <publishTime>11/19/2014 10:13:40</publishTime>
+      <publishTime>11/19/2014 10:13:43</publishTime>
     </File>
     <File Include="Content/images/brio_stroy_bkg1.jpg">
       <publishTime>12/22/2014 14:18:52</publishTime>
@@ -211,7 +217,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/22/2014 14:18:36</publishTime>
     </File>
     <File Include="Content/images/brio_stroy_bkg3.jpg">
-      <publishTime>11/19/2014 10:13:40</publishTime>
+      <publishTime>11/19/2014 10:13:43</publishTime>
     </File>
     <File Include="Content/images/contacts.png">
       <publishTime>11/19/2014 10:13:40</publishTime>
@@ -232,13 +238,31 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/19/2014 10:13:40</publishTime>
     </File>
     <File Include="Content/images/figure.png">
-      <publishTime>11/19/2014 10:13:40</publishTime>
+      <publishTime>11/19/2014 10:13:43</publishTime>
+    </File>
+    <File Include="Content/images/glass.png">
+      <publishTime>01/14/2015 11:28:28</publishTime>
+    </File>
+    <File Include="Content/images/glass_c.png">
+      <publishTime>12/30/2014 10:14:51</publishTime>
+    </File>
+    <File Include="Content/images/glass_ru.png">
+      <publishTime>01/14/2015 11:28:28</publishTime>
+    </File>
+    <File Include="Content/images/glass_ru_c.png">
+      <publishTime>12/30/2014 10:14:51</publishTime>
     </File>
     <File Include="Content/images/grey.png">
-      <publishTime>11/19/2014 10:13:40</publishTime>
+      <publishTime>11/19/2014 10:13:43</publishTime>
     </File>
     <File Include="Content/images/inactive_slide.png">
-      <publishTime>11/19/2014 10:13:40</publishTime>
+      <publishTime>11/19/2014 10:13:43</publishTime>
+    </File>
+    <File Include="Content/images/kraspan.png">
+      <publishTime>01/14/2015 11:28:28</publishTime>
+    </File>
+    <File Include="Content/images/kraspan_c.png">
+      <publishTime>12/30/2014 10:14:51</publishTime>
     </File>
     <File Include="Content/images/kungur.png">
       <publishTime>11/19/2014 10:13:40</publishTime>
@@ -247,13 +271,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/19/2014 10:13:40</publishTime>
     </File>
     <File Include="Content/images/left_arrow.png">
-      <publishTime>11/19/2014 10:13:40</publishTime>
+      <publishTime>11/19/2014 10:13:43</publishTime>
     </File>
     <File Include="Content/images/line.png">
-      <publishTime>11/19/2014 10:13:40</publishTime>
+      <publishTime>11/19/2014 10:13:43</publishTime>
     </File>
     <File Include="Content/images/logo.png">
-      <publishTime>11/19/2014 10:13:40</publishTime>
+      <publishTime>11/19/2014 10:13:43</publishTime>
     </File>
     <File Include="Content/images/malan.png">
       <publishTime>11/19/2014 10:13:40</publishTime>
@@ -262,16 +286,16 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/19/2014 10:13:40</publishTime>
     </File>
     <File Include="Content/images/marker.png">
-      <publishTime>11/19/2014 10:13:40</publishTime>
+      <publishTime>11/19/2014 10:13:43</publishTime>
     </File>
     <File Include="Content/images/marker2.png">
-      <publishTime>11/19/2014 10:13:40</publishTime>
+      <publishTime>11/19/2014 10:13:43</publishTime>
     </File>
     <File Include="Content/images/marker3.png">
-      <publishTime>11/19/2014 10:13:40</publishTime>
+      <publishTime>11/19/2014 10:13:43</publishTime>
     </File>
     <File Include="Content/images/overlay.png">
-      <publishTime>11/19/2014 10:13:40</publishTime>
+      <publishTime>11/19/2014 10:13:43</publishTime>
     </File>
     <File Include="Content/images/panel.png">
       <publishTime>11/19/2014 10:13:40</publishTime>
@@ -294,14 +318,26 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Content/images/rosjeldor_c.png">
       <publishTime>11/19/2014 10:13:40</publishTime>
     </File>
+    <File Include="Content/images/schuco.png">
+      <publishTime>01/14/2015 11:28:28</publishTime>
+    </File>
+    <File Include="Content/images/schuco_c.png">
+      <publishTime>12/30/2014 10:14:52</publishTime>
+    </File>
+    <File Include="Content/images/tec.png">
+      <publishTime>01/14/2015 11:28:28</publishTime>
+    </File>
+    <File Include="Content/images/tec_c.png">
+      <publishTime>12/30/2014 10:14:52</publishTime>
+    </File>
     <File Include="Content/images/text.png">
-      <publishTime>11/19/2014 10:13:40</publishTime>
+      <publishTime>11/19/2014 10:13:43</publishTime>
     </File>
     <File Include="Content/images/title_background.png">
-      <publishTime>11/19/2014 10:13:40</publishTime>
+      <publishTime>11/19/2014 10:13:43</publishTime>
     </File>
     <File Include="Content/images/triple_arrow.png">
-      <publishTime>11/19/2014 10:13:40</publishTime>
+      <publishTime>11/19/2014 10:13:43</publishTime>
     </File>
     <File Include="Content/images/vashbit.png">
       <publishTime>11/19/2014 10:13:40</publishTime>
@@ -310,7 +346,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/19/2014 10:13:40</publishTime>
     </File>
     <File Include="Content/js/init.js">
-      <publishTime>11/26/2014 10:23:04</publishTime>
+      <publishTime>01/14/2015 10:58:41</publishTime>
     </File>
     <File Include="Content/js/jquery-1.10.2.min.js">
       <publishTime>11/19/2014 10:13:43</publishTime>
@@ -339,8 +375,14 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Content/js/kendo.web.min.js">
       <publishTime>11/19/2014 10:13:44</publishTime>
     </File>
+    <File Include="Content/js/knockout-3.2.0.js">
+      <publishTime>01/13/2015 09:39:42</publishTime>
+    </File>
+    <File Include="Content/js/owl.carousel.min.js">
+      <publishTime>05/13/2014 00:48:58</publishTime>
+    </File>
     <File Include="Content/js/slider.js">
-      <publishTime>11/19/2014 10:13:44</publishTime>
+      <publishTime>01/12/2015 15:30:17</publishTime>
     </File>
     <File Include="Controllers/ProductController.cs">
       <publishTime>11/20/2014 10:07:08</publishTime>
@@ -388,7 +430,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/19/2014 10:13:44</publishTime>
     </File>
     <File Include="Views/Articles/About.cshtml">
-      <publishTime>12/05/2014 16:40:20</publishTime>
+      <publishTime>01/14/2015 16:11:28</publishTime>
     </File>
     <File Include="Views/Articles/Add.cshtml">
       <publishTime>11/19/2014 10:13:44</publishTime>
@@ -403,7 +445,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/25/2014 15:54:02</publishTime>
     </File>
     <File Include="Views/Contact/Index.cshtml">
-      <publishTime>12/23/2014 16:35:19</publishTime>
+      <publishTime>01/14/2015 12:23:35</publishTime>
     </File>
     <File Include="Views/Document/Add.cshtml">
       <publishTime>11/19/2014 10:13:44</publishTime>
@@ -418,10 +460,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/02/2014 14:28:12</publishTime>
     </File>
     <File Include="Views/Home/Index.cshtml">
-      <publishTime>11/24/2014 11:17:37</publishTime>
+      <publishTime>01/14/2015 14:29:30</publishTime>
     </File>
     <File Include="Views/Layouts/LayoutDefault.cshtml">
-      <publishTime>11/27/2014 14:25:36</publishTime>
+      <publishTime>01/14/2015 14:02:35</publishTime>
     </File>
     <File Include="Views/Portfolio/Index.cshtml">
       <publishTime>10/08/2014 16:07:10</publishTime>
@@ -439,7 +481,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/19/2014 10:17:39</publishTime>
     </File>
     <File Include="Views/Product/GetAll.cshtml">
-      <publishTime>12/02/2014 16:08:27</publishTime>
+      <publishTime>01/14/2015 11:58:25</publishTime>
     </File>
     <File Include="Views/Review/Add.cshtml">
       <publishTime>11/19/2014 10:13:44</publishTime>
